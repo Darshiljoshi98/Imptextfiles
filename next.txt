@@ -1,0 +1,122 @@
+Next.js is a flexible React framework that gives you building blocks to create fast web applications.
+
+
+CSR
+SSR
+SSG
+
+
+
+The code above is a good example of imperative programming. You’re writing the steps for how the user interface should be updated. But when it comes to building user interfaces, a declarative approach is often preferred because it can speed up the development process. Instead of having to write DOM methods, it would be helpful if developers were able to declare what they want to show (in this case, an h1 tag with some text).
+
+In other words, imperative programming is like giving a chef step-by-step instructions on how to make a pizza. Declarative programming is like ordering a pizza without being concerned about the steps it takes to make the pizza. 🍕
+
+
+The environment where your code runs: Development vs. Production
+When your code runs: Build Time vs. Runtime
+Where rendering happens: Client vs. Server
+
+
+Minification is the process of removing unnecessary code formatting and comments without changing the code’s functionality. The goal is to improve the application’s performance by decreasing file sizes.
+
+
+What is Compiling?
+Developers write code in languages that are more developer-friendly such as JSX, TypeScript, and modern versions of JavaScript. While these languages improve the efficiency and confidence of developers, they need to be compiled into JavaScript before browsers can understand them.
+
+
+
+Bundling is the process of resolving the web of dependencies and merging (or ‘packaging’) the files (or modules) into optimized bundles for the browser, with the goal of reducing the number of requests for files when a user visits a web page.
+What is the difference between compiling and bundling in web development?
+Compiling is transforming code into something parsable by browsers. Bundling is resolving your applications dependency graph and reducing the number of files
+
+
+n a standard React application, the browser receives an empty HTML shell from the server along with the JavaScript instructions to construct the UI. This is called client-side rendering because the initial rendering work happens on the user's device.
+
+
+In contrast, Next.js pre-renders every page by default. Pre-rendering means the HTML is generated in advance, on a server, instead of having it all done by JavaScript on the user's device.
+
+In practice, this means that for a fully client-side rendered app, the user will see a blank page while the rendering work is being done. Compared to a pre-rendered app, where the user will see the constructed HTML:
+
+With server-side rendering, the HTML of the page is generated on a server for each request. The generated HTML, JSON data, and JavaScript instructions to make the page interactive are then sent to the client.
+
+On the client, the HTML is used to show a fast non-interactive page, while React uses the JSON data and JavaScript instructions to make components interactive (for example, attaching event handlers to a button). This process is called hydration.
+
+In Next.js, you can use the Link Component next/link to link between pages in your application. <Link> allows you to do client-side navigation and accepts props that give you better control over the navigation behavior.
+Code splitting and prefetching
+Next.js does code splitting automatically, so each page only loads what’s necessary for that page. That means when the homepage is rendered, the code for other pages is not served initially.
+
+This ensures that the homepage loads quickly even if you have hundreds of pages.
+
+Only loading the code for the page you request also means that pages become isolated. If a certain page throws an error, the rest of the application would still work.
+
+Furthermore, in a production build of Next.js, whenever Link components appear in the browser’s viewport, Next.js automatically prefetches the code for the linked page in the background. By the time you click the link, the code for the destination page will already be loaded in the background, and the page transition will be near-instant!
+
+Tailwind CSS.
+
+
+Next.js has two forms of pre-rendering: Static Generation and Server-side Rendering. The difference is in when it generates the HTML for a page.
+
+Static Generation is the pre-rendering method that generates the HTML at build time. The pre-rendered HTML is then reused on each request.
+Server-side Rendering is the pre-rendering method that generates the HTML on each request.
+
+
+
+
+SWR
+The team behind Next.js has created a React hook for data fetching called SWR. We highly recommend it if you’re fetching data on the client side. It handles caching, revalidation, focus tracking, refetching on interval, and more. We won’t cover the details here, but here’s an example usage:
+
+
+First, we’ll create a page called [id].js under pages/posts. Pages that begin with [ and end with ] are dynamic routes in Next.js.
+
+In pages/posts/[id].js, we’ll write code that will render a post page — just like other pages we’ve created.
+Naming the file inside the route folder page.jsx transforms it into a UI route. This means that it will serve as a regular page with UI components. On the other hand, if you name the file as route.js, it becomes an API route. This signifies that it will handle API requests and responses.
+
+Server-side rendering methods in Next.js
+Next.js provides several methods for rendering pages. Each of these methods serves a specific purpose and can be used in different scenarios:
+
+Static Site Generation (SSG): Static Generation is a server-side rendering method where Next.js generates HTML at build time. During the build process, Next.js fetches data from APIs or other data sources and pre-renders the HTML pages. These pre-rendered pages can then be served to the client upon request. SSG is suitable for websites with content that doesn't frequently change.
+Server-Side Rendering (SSR): Server-Side Rendering is another method where Next.js generates HTML on each request. When a user visits a page, Next.js fetches the data and renders the HTML on the server before sending it to the client. SSR is useful for websites with frequently updated content or personalized user experiences.
+Incremental Static Regeneration (ISR): ISR is a feature in Next.js that allows you to statically generate pages on-demand, rather than at build time. This means that your site can be both statically generated and dynamic at the same time.
+
+https://www.freecodecamp.org/news/build-a-full-stack-application-with-nextjs/
+
+
+Routing as folder
+each folder has page.js file.
+
+
+The useRouter hook allows you to programmatically change routes.
+
+This hook can only be used inside Client Components and is imported from next/navigation.
+
+The useRouter hook allows you to programmatically change routes.
+
+This hook can only be used inside Client Components and is imported from next/navigation.
+
+
+NextResponse
+The NextResponse API allows you to:
+
+redirect the incoming request to a different URL
+rewrite the response by displaying a given URL
+Set request headers for API Routes, getServerSideProps, and rewrite destinations
+Set response cookies
+Set response headers
+
+
+fetching data after some time  time based/ondemand  Revalidation
+
+
+React renders Server Components into a special data format called the React Server Component Payload (RSC Payload).
+
+
+Rest api
+https://www.youtube.com/watch?v=-MFiza7ZRzs
+
+folder->page.tsx is used for routing
+component like is not use for routing like add to cart button
+
+What do you understand about Redux Thunk?
+Using Redux Thunk middleware, we can write action creators returning a function instead of an action. This thunk can postpone the dispatch of an action, or do conditional dispatchment. The arguments passed to the inner function are the store methods dispatch and getState(). In the event of an action creator returning a function, the function gets executed by the Redux Thunk middleware and it does not have to be pure. In other words, the function is allowed to have side effects, including executing asynchronous API calls. It can even dispatch actions. Redux thunk is used to delay the dispatch of an action, or to dispatch in the event of a certain condition being met. At the time of dispatch of a function instead of an action object, if Redux Thunk middleware is enabled, the middleware will call that function with the dispatch method itself as the first argument.
+
+8. What are the workflow features in Redux?

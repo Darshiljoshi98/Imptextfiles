@@ -1,0 +1,759 @@
+22-03-2023, 14:14
+Account information for new or modified users
+
+SET SQL_SAFE_UPDATES = 0;
+
+# your code SQL here
+
+SET SQL_SAFE_UPDATES = 1;
+
+	
+User name: darshil.joshi@spec-india.com
+Temporary password: Vor17558
+
+
+need to watch:https://www.youtube.com/watch?v=VbGl3msgce8
+
+Global protect vpn cred.
+
+portal: gp.schneider-electric.com
+IP:10.239.19.102
+sesa691460
+Schneidersesa@000089j
+adm621815/4fFCfvzwA+=lwkf
+darshil.joshi@spec-india.com
+
+UAT
+ distributor:  vidhi.pipariya@spec-india.com/Test@123
+ admin :  siddharth.shah@spec-india.com/ Test@123
+ 
+ prod cross xref -admin
+ parth.jotangiya@spec-india.com/Xrefv3@2023j
+ distributor: komal.sidhapura@spec-india.com/Xrefv3@2022
+ kinvey
+ username: jeff.weidner@se.comz`
+pwd:bushFUGS08geHUT5435asEUST
+
+
+Cloudfront_CSP_4_tools_se_app  : csp lambada
+https://www.youtube.com/watch?v=QmZ5baNgZLc
+
+
+ Otship api document
+  https://api-explorer.se.com/en/api/partner-order-status-v1#/.
+  https://api-explorer.se.com/en/api/order-status-v1.0#/orderStatus/orderSearch
+
+mailto:
+parth.jotangiya@spec-india.com
+Spec@123 / Spec@2022
+Prod - Xrefv3@2023j
+darshil.joshi@spec-india.com
+dev-		Xrefv3@2023j																																							
+Spec@india89 -github password/Chatgpt/tawk	
+darshil.joshi@spec-india.com
+Xrefv3@2023j - mongodb password
+
+darshil2015@gmail.com
+Darshil7890 mongb password
+	
+Global protect vpn cred.
+
+mongo 
+darshil.joshi@spec-india.com
+ASDFGHJK@345
+
+
+darshil2015
+ASDFGHJK@345
+user:darshil
+password:Spec@123
+
+chat gpt
+
+darshil.joshi@spec-india.com
+Spec@123
+
+
+portal: gp.schneider-electric.com
+IP:10.239.19.102
+sesa691460
+Schneidersesa@000089j
+
+otship admin 
+otship-user name
+encryptiion text https://stackblitz.com/edit/cryptojs-aes-encrypt-decrypt?file=index.js
+
+ots@123
+https://stackblitz.com/edit/cryptojs-aes-encrypt-decrypt?file=index.js
+For v2 create build
+https://www.youtube.com/watch?v=JyTaWsaqH7E
+set NODE_OPTIONS=--openssl-legacy-provider
+
+#skype id
+
+darshil.joshi@spec-india.net
+
+djIndia@123
+
+
+When someone left spec remove mail from application
+
+Xrefv3-> Help request -lambdadev prod
+OTSHIP - datbase ots_configuration,OTShip.ots_qa_distMaster
+GREYBAR - event bridge 
+OSUBSTITUTE - ebs
+DDS UPLOAD - dce qa
+DDs upload - adm ec2
+PART NUMBER SCHDULER V1,V2,V3 - event bridge
+Dailystock-env
+history scheduler
+	CBMHOST_Parts_Fetch
+	Run_PartNumber_Everyday
+	xrefv3-syncpartnumbers
+
+bhavika.rafaliya@spec-india.com
+
+arn:aws:lambda:us-east-2:023080219996:function:ots-qa-graybarpos
+
+
+PPT
+
+
+https://www.freepik.com/vectors/mahadev/4
+
+
+XREF-V3 Competitor_Data Update From CBM_HOST Daily Scheduler -  xref env/prod ebs
+XREF-V3 Daily Scheduler - PROD
+XREF-V3 Competitor_Data Update From CBM_HOST Scheduler - PROD
+CBM_HOST_PART_2 Scheduler - PROD
+
+CBM_HOST Osubstitution data process completed - xref env/prod ebs
+
+CBM HOST 1,2,3  -
+
+DDS Files Upload on -dce prod/qa/qa2
+
+ 1)MSSQL Express edition latest version 
+ 2)Visual Studio Code 
+ 3) HeidiSQL
+ 4) MySQL Workbench
+ 5) WinSCP 
+ 6)Putty
+ 7) AWS CLI 
+ 8)Global Protect VPN 
+ 9) Filezilla 
+
+ 10) Postman
+ 11)Skype
+Mass Upload latest solution D:\Massupload 2023039Du2-xref_scheduler_4.0.17
+
+https://support.mozilla.org/en-US/kb/organize-your-messages-using-filters
+
+Design automation api's path :- Git repo/2. SourceCode\trunk\LF-Design_Automation
+
+1 
+
+https://www.truecodex.com/course/react-js
+
+
+npm install flag-icons
+
+EventBridge Rule name: Graybar-create-txt
+EventBridge Rule name:Graybar-get-json
+
+Lammbda:ots-qa-graybarpos
+
+--------------------------------------------------------------------------------------------------------
+MyRole
+http://localhost:1355/massUpload
+ACEstand alone   - 7  -static product for cLC
+Fa ultCalc - 1  - calc fault
+EZ List - 5 - - ADD PRODUCTS IN CART 
+EZ Reporting -20 - api   - with event bridge schedule every 1 hour   -update part price part list   hcj1473:1:f   productname(from cbm host table):quantity:ignore thing   
+LF SEA API - 11 node js api  - 6 API GET DETAILS OF PRODUCT /TOKEN
+LayoutFast : Design Automation APIs - 10  - REVIT FILE BUTTON  IN APP THAT GIVE 3D MODEL OF DESIGN 
+Cross Reference V2/V3 Mass upload - 16
+X-Ref V3 SSO Login  - 16 			
+LFQ-LFT Pipeline   - 10
+
+
+Newark and Graybar file pass(daily stock) - in ec2 
+
+
+DDS Data Pass from ADM to FTP - 19  
+
+https://www.spec-india.com/blog/nextjs-vs-react
+https://www.spec-india.com/blog/mobx-vs-redux
+https://www.spec-india.com/blog/redux-alternatives
+https://stackshare.io/reduxjs/alternatives
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+SET SQL_SAFE_UPDATES = 0;
+
+# your code SQL here
+
+SET SQL_SAFE_UPDATES = 1
+
+
+
+	Task	Schnieder : Weekly Status Meeting	 
+L176283	Task	Document preparation for any application / Flow of the any functionality	
+L177595	Task	R&D and Analysis for New EZ3 Engine Tool	
+L177692	Task	New Changes / Support / Bug Fixes for Xref V3 Application	
+L177694	Task	New Changes / Support / Bug Fixes for Xref V1 & V2 Application	
+L177695	Task	AWS - Changes / Support / Issue Fixes / R&D / Deployment
+L177684 Task	New Changes/Bug fixes for OT Ship Report (Daily Shipment Details)
+
+
+
+
+
+
+L164561	 Schnieder : Weekly Status Meeting	
+L176283	 Document preparation for any application / Flow of the any functionality	 
+L177595	 Analysis & development support for EZ3 Engine Tool	
+L177684	 New Changes/Bug fixes for OT Ship Report (Daily Shipment Details)	  
+L177692	 New Changes / Support / Bug Fixes for Xref V3 Application	
+L177694	 New Changes / Support / Bug Fixes for Xref V1 & V2 Application	
+L177695	 AWS - Changes / Support / Issue Fixes / R&D / Deployment	
+L177696	 DDS / CBM_HOST - Changes / Bug Fixes	
+L191379 Biweekly meeting
+R&D and new learning for SE
+
+https://spectrum.specindia.com/RED/Issue/191139
+
+  
+meeting link
+ https://teams.microsoft.com/_#/l/meetup-join/19:meeting_YTQ4OTYzOGEtZjBhNC00MDg3LThlY2EtODdhZWVjYzQ5YzQ2@thread.v2/0?context=%7B%22Tid%22:%226e51e1ad-c54b-4b39-b598-0ffe9ae68fef%22,%22Oid%22:%2288bf4bc5-0b3c-430d-92a0-34af81ef7156%22%7D&anon=true&deeplinkId=0e384098-ac9e-4b6b-98d9-575fda0d2ae4
+
+
+26 jan
+holi
+15 aug
+rakshabandhan
+janmashtami
+Mahatma Gandhi J
+Diwali - 3
+
+jan-23
+feb -21
+mar-21
+apr -22
+may-23
+jun-20
+jul-23
+aug-22
+sep-21
+oct-23
+nov-21
+dec-22
+
+
+15jan
+26jan
+march 25 holi
+15aug
+19aug rasksha bandhan
+26aug janmashatmi
+2 oct gandhi jaynti
+31oct diwali
+1nov new year
+	
+CPB2
+CPB3
+CPB1(work on manual cat sheet complete)
+	- product (completed for one subset 4subset remaining)in progress)
+	A044 
+	D03A
+	A019
+	
+	
+	
+	E2D09Q1  - NQ Panelboards
+	E2D09A    - ILINE
+	E2D03A - Safety Switches(manual cat sheet)
+	E2DOA1-Load center
+	E2CPB3-Lighting Panelboards 600V 3 Phase
+	E2CPB3-Lighting Panelboards 240V Single Phase
+	E2CPB1-Square D 120/208V Three Phase Lighting Panels(MANUAL CAT)
+	E2A044 -LV Transformers
+	E2A019-EZ METER 
+	
+	1h45m
+	
+	npx create-next-app@latest
+	
+
+	
+	
+	
+	
+	npx tsc --init - genrate ts file
+	
+
+
+
+
+Xrefv3	Help request -lambda 	Dev/Prod	
+OTSHIP 	Database(ots_configuration)		
+GREYBAR	Event Bridge		
+OSUBSTITUTE	EBS 	XREFPROD	
+DDS UPLOAD 	 dce qa /ADMIN EC2		
+PART NUMBER SCHDULER V1,V2,V3	event bridge		
+Dailystock-env	eBS		
+
+
+
+
+Xrefv3-> Help request -lambdadev prod
+event brideg-CBMHOST_Parts_Fetch - dev /prod - completed
+Help request lambda - qa /prod - COMPLETED	
+event brideg-Run_PartNumber_Everyday - COMPLETED
+event brideg-xrefv3-syncpartnumbers	 -COMPLETED
+GREYBAR - event bridge 	
+PART NUMBER SCHDULER V1,V2,V3 - event bridge
+XREF-V3_PartNumbers
+
+history scheduler lambda- completed
+
+OTSHIP - datbase ots_configuration -completed
+OSUBSTITUTE - ebs -completed
+DDS UPLOAD - dce qa -completed
+DDs upload - adm ec2 (from earl side)
+Dailystock-env - completed
+
+ebs ->xref dev/prod -completed
+
+Help request lambda - qa /prod - COMPLETED
+	
+		
+
+Aws whitelisted origin 
+aws phntom js issue
+resolved file not genrate issue after komal resign
+process 10digit code in othsip colnial
+learn next js in 1.5 days(for interview uk project)
+implement mexico in xrefv3
+changed node js verdion 12 - 14
+
+
+1 vidhwashwar shita
+2 rudra shita
+  sati khand
+  parvati khand
+  kumar khandyudh khand
+  
+ tarksur
+ jalandhar/vrunda  part2 ->1:10  laxmi ->jalandhar brother becuse of sagar -> vrunda pati vrata bhang by vishnuji -> vrunda next birth tulsi
+ sankhchud and tulsi -> vishnu ji take kavach of sankhchud which is given by tulsi -> curse by tulsi to vishnu ji become shaligram as rock(pathar)
+ 
+ andhak-> son of hirynaksh
+ BANASUR ->kanya-> usha
+ gajasur
+
+ 
+ 3satrudra
+ shiv avtar
+ 
+ ishan
+ pursush
+ ghor
+ yamdev
+ braham
+
+8murti
+sarva
+bhay
+rudra
+ugra 
+bhiim
+pashupati
+ishan
+mahadev  
+  
+  
+Sophos password with  authentication code
+sophos connect  password with authentication code darshil.joshi
+connect remoote no need to authentication code
+
+1:42
+
+
+
+re_eEhY7Qvh_28Wbe94KXoVEfzQV4m785aus
+
+Cloudfront_CSP_4_tools_se_app  	 - virgina
+
+
+
+sesa699823/ Schneidersesa@000rp
+
+	Darshil
+DDS	n
+CBM-	n
+p1	
+p2	
+p3	
+	
+V3 UTILITY	
+	
+COMPITIOR UPDATE	n
+OSUBSTI	Y
+MEXICO  OSUBSTI	y
+	
+EZ3 	y
+EZ3 UTILITY	
+	
+1.ExceltoJsonConverter	y
+2.Manualcat creation	y
+3.Mark // into excel file	
+4.Create Asset file utility	
+5.Create Datasheet  file utility	
+	
+	
+	
+XREF V3	y
+NEWARK /gRAYBAR	y
+DOLLY	y
+	
+OTSHIP	y
+mayer	y
+colonial	y
+
+
+
+
+https://evault.kfintech.com/ipostatus/
+
+
+
+Type of Breakers	Amperes Rating	Poles	Breaker Voltage Rating	AIC Rating	Neutral Type	Shunt Trip (Rated Voltage)	Auxiliary Switches	Alarm Switch
+
+
+https://react-themes.com/
+
+
+3:18
+
+
+0 0 * * *
+
+5	0.08
+10	0.17
+15	0.25
+20	0.33
+25	0.42
+30	0.5
+35	0.58
+40	0.67
+45	0.75
+50	0.84
+55	0.92
+60	1
+
+https://karthickragavendran.medium.com/setup-guide-for-nextauth-with-google-and-credentials-providers-in-next-js-13-8f5f13414c1e
+
+
+manually execute bash file bash ~/OTShip/colonial-SendToSFTP.sh
+
+bash ~/OTShip/colonial-SendToSFTP.sh
+bash ~/OTShip/scheduler/Colonial/SHFiles/colonial-SendToSFTP.sh
+bash ~/OTShip/colonial-distOrder.sh
+bash ~/OTShip/colonial-distItem.sh
+bash ~/OTShip/colonial-itemShipment1.sh
+bash ~/OTShip/colonial-itemShipment2.sh
+bash ~/OTShip/colonial-itemShipment3.sh
+bash ~/OTShip/colonial-itemShipment4.sh
+
+
+bash ~/OTShip/scheduler/Colonial/SHFiles/colonial-SendToSFTP.sh
+
+bash ~/OTShip/scheduler/Colonial/SHFiles/Order.sh
+bash ~/OTShip/scheduler/Colonial/SHFiles/Item.sh
+bash ~/OTShip/scheduler/Colonial/SHFiles/Shipment1.sh
+bash ~/OTShip/scheduler/Colonial/SHFiles/Shipment2.sh
+bash ~/OTShip/scheduler/Colonial/SHFiles/Shipment3.sh
+bash ~/OTShip/scheduler/Colonial/SHFiles/Shipment4.sh
+bash ~/OTShip/scheduler/Colonial/SHFiles/SendToSFTP.sh
+
+bash ~/OTShip/scheduler/Mayor/SHFiles/Order.sh
+
+~/OTShip/scheduler/Colonial/Order/OTSDistributorOrder
+/scheduler/Mayor/Order
+
+
+
+
+30 21 * * 1-6 bash ~/OTShip/colonial-itemShipment3.sh
+
+
+#!/bin/sh
+#SendToSFTP.sh
+echo "Start SendToSFTP.sh"
+echo "------------------------------"
+~/OTShip/scheduler/Colonial/SendToSFTP/SendToSFTP
+echo "------------------------------"
+echo "End SendToSFTP.sh"
+
+new 
+bash ~/OTShip/scheduler/Colnial/SendToSFTP/SendToSFTP
+~/OTShip/scheduler/Colonial/SendToSFTP/SendToSFTP
+
+
+40 8 * * 2-6 bash ~/OTShip/colonial-distOrder.sh
+50 8 * * 2-6 bash ~/OTShip/colonial-distItem.sh
+:wq
+
+
+crontab -l 	: to view all the configured cron jobs into Lenux server
+crontab -e 	: to open all the configured cron jobs in edit mode.
+i			: to modify any changes after above command. Please press "esc" button & enter ":wq" to apply your modifications.
+
+
+
+ots_userMaster
+ots_distItems
+ots_distLocation
+ots_distOrders
+ots_itemShipData
+ots_distMaster
+
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_CE_5d_tokenURL','https://api.se.com/token','To generate token for distributor')
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_CE_5d_orderURL','https://api.se.com/v1/supply-chain/partner-order-status/orders/US?limit=#PageSize#&page=#PageNumber#&purchaser-id=#PurchaserId#','To get Orders of distributor. This URL also include parameter Like. #paraName# which will replace in code with actual value');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_CE_5d_itemURL','https://api.se.com/v1/supply-chain/partner-order-status/orders/US/#OrderNumber#?purchaser-id=#PurchaserId#','To get Items of Order. This URL also include parameter Like. #OrderNumber# which will replace in code with actual value');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_CE_5d_shipURL','https://api.se.com/v1/supply-chain/partner-order-status/orders/US/#OrderNumber#/#ItemNumber#/shipment-schedules?purchaser-id=#PurchaserId#','To get Ship details of Item. This URL also include parameter Like. #OrderNumber#,#ItemNumber# which will replace in code with actual value');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_pageSize','100','Based on the page size decide how many Orders get per call');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_countForRefreshForOrder','10','After this number of purchaserID proceed, access_token will be re-generate and also MySQL re-connect. May be access_token will expire so we need to handle this.');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_dateTimeFormate','yyyy/MM/dd hh:mm:ss tt','Date time formate. Default yyyy/MM/dd h:mm set in code.');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_numbersOfLogFile','	10	Number of log file will create per day. If number is exceeded then last file delete and create new.');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_noOfMonth	','-3','Get previous  noOfMonth date from today. To check estimatedDeliveryDate is noOfMonth early then no need to check for Shipping.');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_countForRefreshForShip','3','After this number of purchaserID proceed, access_token will be re-generate and also MySQL re-connect. May be access_token will expire so we need to handle this.');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_countForRefreshForItem','1','After this number of purchaserID proceed, access_token will be re-generate and also MySQL re-connect. May be access_token will expire so we need to handle this.');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_cc','earl.pond@se.com','this user will in cc when send mail notification to distributor every day');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_bcc','schneider.devteam@spec-india.com','this users will in bcc when send mail notification to distributor every day');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_subject','Order ShipDate Change Notification (#locationName# - #locationId#)	subject is use for new nottification mail of distributor');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_reCallOrderOfDist','3','ReCall whole scheduler to check is any error occure. Second time check only error data.');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_todailyreport','schneider.devteam@spec-india.com	To all email id send daily report.');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_ccDailyReport','To CC all email id send daily report.');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_subjectDailyReport','Order ShipDate Change Notification Daily Report	Daily report mail subject');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_hereLink','https://s3.us-east-2.amazonaws.com/order-track-web/qa/home.html',This link will bind on here (,please visit here)');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_reCallItemsOfOrder','3','ReCall whole scheduler to check is any error occure. Second time check only error data.');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_colonia_host','crown.col-elec.com');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_colonia_user','Schneider');')
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_colonia_pwd','\#|.6e:dF;co8&fnyL/G');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_CE_10d_tokenURL','https://api.se.com/token','To generate token for distributor');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_CE_10d_orderURL','https://api.se.com/v1/supply-chain/partner-order-status/orders/US?page-size=#PageSize#&page=#PageNumber#&purchaser-id=#PurchaserId#','To get Orders of distributor. This URL also include parameter Like. #paraName# which will replace in code with actual value');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_CE_10d_shipURL','https://api.se.com/v1/supply-chain/partner-order-status/orders//US/#OrderNumber#/#ItemNumber#/shipment-schedules','To get Ship details of Item. This URL also include parameter Like. #OrderNumber#,#ItemNumber# which will replace in code with actual value');
+INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_CE_10d_itemURL','https://api.se.com/v1/supply-chain/partner-order-status/orders/US/#OrderNumber#','To get Orders of distributor. This URL also include parameter Like. #paraName# which will replace in code with actual value');
+
+ShipmentDetails4
+
+https://desgy-solutions-nextjs-v1-psi.vercel.app/
+
+https://notion-blog-wildcatco.vercel.app/blog
+
+https://recoiljs.org/docs/introduction/motivation
+
+   
+		
+		https://www.svgrepo.com/svg/259518/browser
+		
+		https://www.svgrepo.com/svg/405417/flag-for-flag-australia?edit=true
+		
+		
+		
+		Fri
+		monday - twak.io/mongo account switch
+		
+		https://react-themes.com/product/chefs-kitchen-free-nextjs-13-landing-page-template
+		
+		https://michaelscott-nextjstemp.vercel.app/
+		https://react-themes.com/product/jazila-bazar
+		
+		https://tools.se.app/xref/v2/qa/index.html
+		
+		https://www.freepik.com/search?format=search&last_filter=page&last_value=2&page=2&query=international+business+#uuid=1683cb95-760e-44a2-9a46-0e353cab3ba1
+		
+		
+		30 20
+		
+		
+		https://www.peakpx.com/en/hd-wallpaper-desktop-nrphq/download
+		https://wallpapercave.com/desktop-lord-shiva-wallpapers
+		
+		shiv hd wallpaper for pc
+		
+		https://freeconvert.com/jpg-to-svg/download
+		
+		 <div className='grid grid-cols-1 md:grid-cols-2 my-16'>
+		 
+		 
+		 put git config file in all ebs
+		 check graybar related mail
+		 chanfge db credential in othship
+		 
+		 Webs Optimization Software Solution
+		 
+		 https://www.vecteezy.com/free-videos/seo-animation
+		 https://iconscout.com/lottie-animation/search-engine-optimization-4338336
+		 
+		 rgba(32,80,35,255) - green
+		 #205023
+		 
+		 
+		 #b7ac9d - brown 
+		 
+		 #245127
+		 
+		 #9c5637
+		 
+		 
+		 
+.subtitleTextColor{
+  color: #245127;
+}
+
+
+.DescriptionTextColor{
+  color: #9c5637;
+}
+
+  background-color:#15803d;
+  padding: 1rem;
+  color: azure;
+  
+  
+  
+  https://cloudinary.com/blog/3-ways-to-implement-a-carousel
+  -in-nextjs
+  
+  #245127
+}
+
+
+Also, here are the links:
+Mail: zarna@bedigital.live 
+2nd mail : seo.bedigital@gmail.com (ama inquiries add karvani che)
+Linkedin: linkedin.com/in/zarna-joshi
+FB : https://www.facebook.com/profile.php?id=100070063160778
+
+
+
+mon:
+
+rudri
+108 shiv name
+
+tue:
+bajrang ban
+hree Hanuman Moksha Keertan Hey Dukh
+Mangalmurti Maruti Nandan
+
+ganesh stotra 
+athrvshisra path
+
+wed:
+shiv 1000 name
+
+
+
+use text-balance when multiple text
+
+
+
+
+
+create detail page of service
+spacing
+change icons
+
+https://dev.to/singhanuj620/mongoose-populate-in-most-simple-way-how-to-import-a-collection-into-another-schema-in-mongodb-4nnf - populate
+https://studio3t.com/knowledge-base/articles/mongodb-aggregation-framework/
+
+https://www.youtube.com/watch?v=9B4CvtzXRpc
+
+
+
+
+scrum master : https://www.youtube.com/watch?v=Jhm5Fky30hg
+
+
+
+7874074605
+tel:+91 7874074605
+
+
+https://www.infoq.com/articles/Cosmos-DB-Tutorial/
+
+sm:pl-45 md:pl-0 lg:pl-0 xl:pl-0 2xl:pl-0
+
+
+https://www.youtube.com/watch?v=MLWlWrRAb4w
+
+
+
+
+
+order_schduler    =>  distorder
+order_items => distItem
+order_shipment 1=> itemshipment1
+order_shipment 2=>itemshipment2
+order_shipment 3=>itemshipment3
+order_shipment 4=>itemshipment4
+send to sftp  =>SendToSftp
+
+
+INSERT INTO ots_configuration (confg_name, confg_value,confg_description)VALUES ('ots_numbersOfLogFile','	10	,Number of log file will create per day. If number is exceeded then last file delete and create new.');
+INSERT INTO ots_configuration (confg_name, confg_value,confg_description)VALUES ('ots_subject','Order ShipDate Change Notification (#locationName# - #locationId#)',	subject is use for new nottification mail of distributor');
+
+INSERT INTO ots_configuration (confg_name, confg_value,confg_description)VALUES ('ots_todailyreport','schneider.devteam@spec-india.com',	To all email id send daily report.');
+INSERT INTO ots_configuration (confg_name, confg_value,confg_description)VALUES ('ots_ccDailyReport','','To CC all email id send daily report.');
+INSERT INTO ots_configuration (confg_name, confg_value,confg_description)VALUES ('ots_subjectDailyReport','Order ShipDate Change Notification',Daily Report	Daily report mail subject');
+INSERT INTO ots_configuration (confg_name, confg_value,confg_description)VALUES ('ots_colonia_host','crown.col-elec.com','');
+INSERT INTO ots_configuration (confg_name, confg_value,confg_description)VALUES ('ots_colonia_user','Schneider','');
+INSERT INTO ots_configuration (confg_name, confg_value,confg_description)VALUES ('ots_colonia_pwd','\#|.6e:dF;co8&fnyL/G','');
+
+
+namo bahgvate vasudavay
+
+
+
+
+
+
+
+ots_ShipmentData
+
+
+ots_distMaster
+ots_distLocation
+
+
+
+work on goal
+ Agile methodology - scrum
+-Learn tailwind css   - 2
+
+
+condition on grouping $group in mopngo db
+
+
+
+
+fri open tab
+-------------------------------------------------------------
+
+https://www.youtube.com/watch?v=R_Fi59j6BMo -cosmosdb
+
+https://www.youtube.com/watch?v=8eJJe4Slnik - 5:08 - mongo
+https://mongodb.com/docs/manual/tutorial/model-tree-structures-with-parent-references/ - mongo
+https://www.mongodb.com/docs/manual/introduction/#document-database
+https://mongoosejs.com/docs/middleware.html
+
+https://masteringjs.io/mongoose - blog
+
+
+12:15 -53

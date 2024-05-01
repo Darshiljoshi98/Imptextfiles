@@ -1,0 +1,955 @@
+React:
+---------------------------------------------------------------------------------------------------
+1PWA:https://medium.com/@toricpope/transform-a-react-app-into-a-progressive-web-app-pwa-dea336bd96e6
+2:Asyncronous updates on with websocket
+3:Robot.txt in react folder structured
+4:Npm Package https://www.freecodecamp.org/news/how-to-create-and-publish-your-first-npm-package/
+5:PersistantGate,ApplicationInsights,persistReducer :
+                     https://github.com/rt2zz/redux-persist/blob/master/docs/PersistGate.md
+                     https://betterprogramming.pub/implementing-react-redux-store-with-persistence-44a030bbbf94#:~:text=The%20persistReducer%20method%20allows%20us,the%20store%20will%20be%20persisted.
+6:Webpack:https://www.scaler.com/topics/react/webpack-in-react/
+		 :HtmlWebpackPlugin
+
+7:Publish React Component As Npm Package:https://levelup.gitconnected.com/publish-react-components-as-an-npm-package-7a671a2fb7f
+8:Lazy Loading:https://react.dev/reference/react/lazy
+9:Advance Guide React:https://legacy.reactjs.org/docs/accessibility.html
+10:Error Boundaries :https://legacy.reactjs.org/docs/error-boundaries.html
+11:Convert App intoPwa:https://medium.com/@toricpope/transform-a-react-app-into-a-progressive-web-app-pwa-dea336bd96e6
+12:When build is not Build:https://create-react-app.dev/docs/deployment/
+13:React hogher order component:https://www.smashingmagazine.com/2020/06/higher-order-components-react/
+
+Nodejs:
+-----------------------------------------------------------------------------------------------------
+1Free cource:https://www.scaler.com/topics/course/nodejs/
+2Evevent loop/event/custom events   -https://www.youtube.com/watch?v=8eJJe4Slnik
+3Npm Helment(For Security):https://blog.logrocket.com/using-helmet-node-js-secure-application/   
+4:express-validator :https://express-validator.github.io/docs/guides/getting-started
+5bcryptjs
+6Asyncronous updates on with websocket
+7Event Loop and Non-blocking I/O
+8Advance Concept Node js https://medium.com/@khaledq_43881/advanced-node-js-concepts-a-comprehensive-guide-for-senior-engineers-8e49a5456b60
+9Nestjs  
+Exit code : Exit codes are a collection of specific codes whose function is to complete a specific process. Examples of exit codes are fatal error, unused, internal JavaScript evaluation failure, etc.
+https://www.geeksforgeeks.org/node-js-exit-codes/
+
+https://www.youtube.com/watch?v=GHTA143_b-s
+https://www.youtube.com/watch?v=Mgr5_r70OJQ
+
+R&d on cors
+
+https://medium.com/@anjanava.biswas/nodejs-runtime-environment-with-aws-lambda-layers-f3914613e20e
+
+https://www.youtube.com/watch?v=baQh1X3LN5s
+
+R&d on Cross Domain
+https://www.youtube.com/watch?v=baQh1X3LN5s
+
+
+https://www.youtube.com/watch?v=DFKgON0QDQI
+
+https://www.youtube.com/watch?v=ZKRATKg706U   -> direct cors option
+
+https://cors.serverlessland.com/
+
+https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies-examples.html = >  resource policy
+
+npx depcheck ->for find unused npm
+Nodejs Course:https://youtube.com/watch?v=5eaBOxXABkU&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_LhxS&index=1
+			  https://www.youtube.com/watch?v=f2EqECiTBL8
+
+Npm Packages:throttledQueue/multer/xml2js/moment/Jimp/schedule/ping
+multithreading-in-node-js:	https://www.digitalocean.com/community/tutorials/how-to-use-multithreading-in-node-js	
+Streams:https://www.freecodecamp.org/news/node-js-streams-everything-you-need-to-know-c9141306be93/
+Child process:https://www.freecodecamp.org/news/node-js-child-processes-everything-you-need-to-know-e69498fe970a/
+worker Threads :https://www.youtube.com/watch?v=OGkOxkSYrUg
+	
+	
+child process methods	https://www.youtube.com/watch?v=7cFNTD73N88    ----	https://www.youtube.com/watch?v=bbmFvCbVDqo
+MongoDb:
+-----------------------------------------------------------------------------------------------------
+https://www.techtarget.com/searchdatamanagement/definition/MongoDB
+aggrigation
+index - mongo db
+https://www.youtube.com/watch?v=4EjKroJCpFA&list=PLA3GkZPtsafZydhN4nP0h7hw7PQuLsBv1
+https://www.youtube.com/watch?v=8eJJe4Slnik
+https://www.youtube.com/watch?v=9JSG7Na2S4M&list=PLRAV69dS1uWTaoxyeBbKpAEF90i4ijUQZ  - need to watch
+https://www.youtube.com/watch?v=s44QWegr2l8&list=PLWkguCWKqN9OwcbdYm4nUIXnA2IoXX0LI - need to watch
+
+
+Gridfs chaunk collection - need to learn
+-it use to store larger collection because collection limit is 16 mb
+so use to store image/video filess
+index
+caaped collection
+authentication
+
+
+map/reduce in mongodb
+coverd query
+atomic in mongodb
+
+Database  -Datbase
+Table -    collection
+Row -      Documents(Store BSON)
+$means reserve keyword for mongoDb
+#Default DataBase Of MongoDb
+
+admin
+local
+config
+
+Mongo Shell?
+It is a JavaScript shell that allows interaction with a MongoDB instance from the command line. With that one can perform administrative functions, inspecting an instance, or exploring MongoDB. 
+
+features of MongoDB?
+Indexing: It supports generic secondary indexes and provides unique, compound, geospatial, and full-text indexing capabilities as well.
+Aggregation: It provides an aggregation framework based on the concept of data processing pipelines.
+Special collection and index types: It supports time-to-live (TTL) collections for data that should expire at a certain time
+File storage: It supports an easy-to-use protocol for storing large files and file metadata.
+Sharding: Sharding is the process of splitting data up across machines.
+Sharding in MongoDB is a strategy used to distribute data horizontally across numerous servers or clusters, efficiently managing extensive datasets and heavy workloads. In this approach, data is divided into distinct subsets known as shards, and MongoDB's query router directs queries to the relevant shard as needed
+
+You can back up a MongoDB database using tools like `mongodump` or by configuring regular snapshots at the file system or cluster level.
+# Create a Database:
+use mydatabase
+
+# Insert a Document:
+db.mycollection.insertOne({ name: "John", age: 30, city: "New York" })
+
+# Find Documents: Find return cursor which helps to retrive data from array
+# Find all documents in a collection:
+db.mycollection.find()
+db.mycollection.find().toArray()
+
+# Find documents with a specific condition:
+db.mycollection.find({ age: 30 })
+
+You can use findOne() to retrieve the document for a specific user, for example, This not return cursor so we not implment function like count
+ db.users.findOne(
+  { name: "Bob" }  // Filter: Retrieve the document for Bob
+)
+
+
+#Projection
+In MongoDB, projection is a way to control which fields are included or excluded from the result set when querying documents from a collection. It allows you to shape the output of a query by specifying which fields should be returned or excluded.
+JSON
+{ "_id": 1, "name": "Alice", "age": 25, "city": "Wonderland" }
+{ "_id": 2, "name": "Bob", "age": 30, "city": "Dreamland" }
+{ "_id": 3, "name": "Charlie", "age": 22, "city": "Fantasyville" }
+
+// Only include the name and age fields
+db.users.find({}, { name: 1, age: 1, _id: 0 })
+
+rESULT
+{ "name": "Alice", "age": 25 }
+{ "name": "Bob", "age": 30 }
+{ "name": "Charlie", "age": 22 }
+
+
+
+// Exclude the age field
+db.users.find({}, { age: 0 })
+
+
+result
+{ "_id": 1, "name": "Alice", "city": "Wonderland" }
+{ "_id": 2, "name": "Bob", "city": "Dreamland" }
+{ "_id": 3, "name": "Charlie", "city": "Fantasyville" }
+
+nESTED Document
+
+
+{
+  "_id": 1,
+  "name": "Alice",
+  "department": {
+    "name": "Engineering",
+    "location": "Office A",
+    "team": [
+      {
+        "role": "Developer",
+        "experience": 3
+      },
+      {
+        "role": "Designer",
+        "experience": 2
+      }
+    ]
+  }
+}
+
+
+
+db.employees.find(
+  { "department.name": "Engineering" },   // Filter
+  { "department.team.name": 1, "department.team.role": 1, _id: 0 }  // Projection
+)
+
+
+db.users.find({}, { "department.team.0.name": 1, "department.team.0.role": 1, _id: 0 })
+
+{
+  "_id": 1,
+  "name": "Alice",
+  "department": {
+    "team": [
+      { "name": "John", "role": "Developer" },
+      { "name": "Emma", "role": "Designer" }
+    ]
+  }
+}
+
+
+
+# Update a Document:
+
+
+Certainly! The updateOne() and updateMany() methods are used in MongoDB to update documents in a collection. Below are examples of both methods:
+
+1. updateOne()
+The updateOne() method updates a single document that matches the specified filter criteria.
+db.mycollection.updateOne({ name: "John" }, { $set: { age: 31 } })
+
+
+The updateMany() method updates all documents that match the specified filter criteria.
+
+db.users.updateMany(
+  { age: { $lt: 30 } },  // Filter: Users under 30
+  { $inc: { age: 1 } }    // Update: Increment age by 1
+)	
+
+
+db.users.replaceOne(
+  { name: "Bob" },   // Filter: Replace the document for Bob
+  { name: "Bobby", age: 31, city: "New Dreamland" }  // Replacement document
+)
+
+
+Choosing between updateOne() and replaceOne()
+Use updateOne() when you want to modify specific fields within a document, leaving other fields intact. It's suitable for making incremental updates.
+
+Use replaceOne() when you want to completely replace a document with a new one. This is suitable when you need to update the entire document or when you want to ensure that the document has a specific structure.
+
+
+
+# Delete a Document:
+db.mycollection.deleteOne({ name: "John" })
+
+Certainly! The deleteMany() method in MongoDB is used to delete multiple documents that match the specified filter criteria. Here's an example:
+Certainly! The deleteMany() method in MongoDB is used to delete multiple documents that match the specified filter criteria. Here's an example:.
+db.users.deleteMany(
+  { age: { $lt: 30 } }  // Filter: Users with age less than 30
+)
+
+
+#Find nested documents
+{
+  "_id": 1,
+  "name": "Alice",
+  "department": {
+    "name": "Engineering",
+    "location": "Office A",
+    "team": [
+      {
+        "role": "Developer",
+        "experience": 3
+      },
+      {
+        "role": "Designer",
+        "experience": 2
+      }
+    ]
+  }
+}
+let result = db.employees.find({ "department.team.role": "Developer" })
+
+# Create an Index:
+db.mycollection.createIndex({ name: 1 })
+
+# Aggregation:
+# Group documents and calculate the average age:
+db.mycollection.aggregate([
+  { $group: { _id: null, avgAge: { $avg: "$age" } } }
+])
+
+# Text Search:
+# Create a text index:
+db.mycollection.createIndex({ name: "text" })
+
+# Search for documents containing a specific word:
+db.mycollection.find({ $text: { $search: "John" } })
+
+# Import/Export Data:
+# Import data from a JSON file:
+mongoimport --db mydatabase --collection mycollection --file data.json
+
+# Export data to a JSON file:
+mongoexport --db mydatabase --collection mycollection --out data.json
+https://blog.e-zest.com/basic-commands-for-mongodb
+
+Populate:
+
+Need of Population: Whenever in the schema of one collection we provide a reference (in any field) to a document from any other collection, we need a populate() method to fill the field with that document.
+
+
+const userSchema = new mongoose.Schema({
+    username: String,
+    email: String
+})
+ 
+const postSchema = new mongoose.Schema({
+    title: String,
+    postedBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    }
+})
+ 
+// Creating models from userSchema and postSchema
+const User = mongoose.model('User', userSchema);
+const Post = mongoose.model('Post', postSchema);
+ 
+// Query to find and show all the posts
+Post.find()
+    .then(p => console.log(p))
+    .catch(error => console.log(error));
+
+
+	Aggrigation
+		[
+		{} -pipelines it's result is data for second pipeline
+ 		{} -pipelines fetch data from first pipleline
+		]
+		
+		plipleline seprate by comma
+
+ -pipelines
+ https://www.youtube.com/watch?v=tQ-AWUR49AQ&list=PLRAV69dS1uWQ6CZCehxKy0rjkqhQ2Z88t&index=7   -refer For pipline
+ 
+ 
+ 
+ 
+ 
+ https://www.mongodb.com/docs/manual/reference/operator/aggregation/group/
+ 
+ 
+ 
+ q1-fetch user  which have active
+ [
+		{
+		//is active is field name
+		$match:{isActive:true}
+		
+		} 
+ 		
+		]
+q2- fecth which have active and need count
+ [
+		{
+		//is active is field name
+		$match:{isActive:true}
+		
+		},
+		{
+		//acrTIVE USER IS DISPLAY NAME WHICH RETURN BY  MONGO DB
+		$count:'active user'
+		}		
+ 		
+		]
+Q3 AVRAGE AGE OF ALL USER
+first  group by gender
+ [
+		{
+		//is active is field name
+		$group{
+		_id:"$gender",
+		
+		}
+		
+		}		
+ 		
+		]
+main answer group by gender
+		 [
+		 {
+		$group{
+		_id:"$gender",
+		avrageAge:{
+		$avg:"$avg"
+		}
+		
+		
+		}}
+		
+		]
+		
+grop by all gender
+
+//grup first is id,second is condition or accumulator
+//avrage age is variable name and $avg is defult function and "$avg' is filed name
+		 [
+		 {
+				$group{
+				_id:null,
+				avrageAge:{
+				$avg:"$avg"
+				}
+				
+				
+				}
+		}
+		
+		]
+		
+	q3- list top 5 comman fruit among user
+ findout count of each fruit like banana - 5 mango -2
+	 [
+		 {
+		$group{
+		_id:"$favfruite",
+		count:{
+		$sum:1
+		}
+		
+		
+		}
+		}
+		
+		]
+do sorting
+//-1 give hifghest value first
+//1 give lowest value first
+ [
+		
+	{
+		$group{
+		_id:null,
+		avrageAge:{
+		$avg:"$avg"
+		}
+		
+		
+		}
+	},
+	{
+	$sort:{
+count: -1 
+	}
+	}
+	
+		
+		]
+
+main answer
+// give answer top 2 fav fruit linke banana-15 peole loved mango -6 people love
+ [
+		
+	{
+		$group{
+		_id:null,
+		avrageAge:{
+		$avg:"$avg"
+		}
+		
+		
+		}
+	},
+	{
+	$sort:{
+count: -1 
+	}
+	},
+	{
+	$limit:2
+	
+	}
+	
+		
+		]
+
+
+q4find total no of male and female
+
+// sum is adding value when it matcgh condition
+like gender have 2 value male/female if he find male in every document it's increse by 1
+
+like {dj},{dj2} it gives count 2 
+[
+	 {
+		$group{
+		_id:"$gender",
+		gendercount:{
+		$sum:1
+		}
+		
+		
+		}
+	}
+	]
+	
+q5 which country have highest register user
+//country is inide comnpny->locatiomn->country
+object inside object
+[
+{
+$group{
+_id:"$compny.location.country",
+countryusercount:{
+$sum:1
+}
+
+},
+{
+$sort{
+countryusercount: -1
+},{
+$limit:5
+}
+}
+
+}
+]
+
+q6 avg number  of tag par user
+tag is array
+unwind is used  for wrap up all element inside array
+
+ex {dj,tag["aaa","bbb']}
+unwind create
+{dj,tags:id",name:"aaa"},
+{dj,tags:id",name:"bbb"}
+
+[
+{
+$unwind:path:"$tags"
+}
+]
+
+[
+{
+$unwind:path:"$tags"
+},{
+
+$group:{
+_id:"$_id",
+nooftages:{$sum:1}
+},
+{
+
+$group:{
+_id:null,
+avgnooftag:{$avg:"$nooftages"}
+}
+}
+}
+]
+
+
+
+other way
+
+[
+$addFields:{
+nooftags:{
+$size:{$ifNull:["$tags",[] ]}
+}
+},
+
+{
+$group:{
+_id:null,
+avgnooftag:{$avg:"$nooftags"}
+}
+
+}
+
+]
+
+
+q-how many user enimn as tag
+
+[
+{
+$match:{
+tags:"enim"
+}
+},
+{
+$count:'userwithenimtag'
+}
+
+]
+
+q-names & age of user who inactive and velit tag
+
+project pass document with requested fields to next stage
+
+[
+{
+	$match:{
+	isActive:fasle,tags:"velit"
+	}
+},
+
+{
+Sproject:{
+name:1,
+age:1
+}
+
+}
+
+
+]
+
+
+q- phone starting with '+1(940)
+
+[
+
+{$match:{"company.phone":/^\+1\(940\)/},
+{$count:'usercount}
+
+]
+
+
+
+q who register most recent
+/-1 latest register
+[
+
+{$sort:{registered:-1},
+{$limit:4},
+{$project:{name:1,registered:1,favfruit:1}}
+
+]
+
+
+q categorize by fav food
+
+push -  append specific value in array
+it create array name users and push name field
+
+[
+{$group:{_id:"$favfruit",users:{$push : '$name'}
+
+
+]
+
+
+q- how many user havwe 'ad' as the second tag in list of tag
+"tages.1": "ads"  ->it return which have value ads in 1 position
+
+[
+
+{$match:{"tages.1": "ads" },
+{$count:'secondTagAd'}
+
+]
+
+
+
+q find user who have 'enim' and  'id' as tag
+
+$all - select adocument where value filed is array which contain  specific element
+[
+
+{$match:{tags: {$all:["enim","id"]} }
+
+
+]
+
+
+
+q list all compny located in usa with coorresponding user count
+
+if we need count only for usa then
+
+[
+{$match:{"compny.location.country":"usa"}
+{$group:{_id:null,userCount:{$sum:1}}
+]
+
+
+but we need spacific comnpany inside usa
+and with count
+
+[
+{$match:{"compny.location.country":"usa"}
+{$group:{_id:"$company.title",userCount:{$sum:1}}
+]
+
+
+conditional
+
+if condition match set falg as 1
+
+const getCategories = async(req, res) => {
+    const data = await Product.aggregate([
+      {$unwind: "$category"},
+      {$group: {_id: "$category", quantity: {$sum: {
+          $cond: [ {$eq: ["$status", "present"]}, 1, 0]
+       }}}}
+    ])
+
+}
+
+
+
+lookup: one type of left JOIN
+
+COLLECTION
+
+book
+
+title: " grat gatsby"
+author_id:100
+genre:"classic"
+
+authors
+
+_id:100
+nme:"f.scott"
+birthyear:1986
+
+
+
+$lookup:{
+
+from:collection
+localfield:field
+foreignfield:field
+as:result
+
+}
+
+$first : it scan array and return first value
+addFields: add new filed in collection
+
+
+
+in books
+[
+{
+$lookup:{
+from:"authors",
+localfield:"author_id"
+foreignfield:"_id",
+as:"author_details"
+}
+
+},
+]
+
+IT RETURN  author_details AS ARRAY
+
+return 
+title:""
+author_id
+genre:
+author_details:array ->id:1,title:"great","id:160
+
+
+SO TO RETURN Object
+
+[
+{
+$lookup:{from:"authors",localfield:"author_id"foreignfield:"_id",as:"author_details"},
+
+$addFields:{author_details:{ $first:"$author_details  } }
+
+]
+-return as object
+
+
+onther way 
+$arrayelemtAt	
+
+[
+{
+$lookup:{from:"authors",localfield:"author_id"foreignfield:"_id",as:"author_details"},
+
+$addFields:{author_details:{ $arrayEleAt:["$author_details",0]  } }
+
+]
+
+
+
+
+
+
+
+
+
+
+
+ What is the role of a sharding key in MongoDB?
+A sharding key determines how data is distributed across multiple shards (database partitions) in a sharded cluster. MongoDB uses a field in the document to decide which shard should store the document. Choosing an appropriate sharding key is crucial for even data distribution and efficient queries.
+
+How does MongoDB handle transactions?
+MongoDB introduced multi-document transactions in version 4.0, allowing you to perform ACID-compliant transactions. Transactions ensure that a series of operations succeeds or fails, maintaining data consistency.
+MongoDB supports various indexes, including single-field indexes, compound indexes, geospatial indexes, text indexes, hashed indexes, and wildcard indexes.
+
+GridFS represents a MongoDB standard designed to handle storing and retrieving substantial files, such as images, videos, and binary data. This approach involves breaking down large files into smaller segments and then saving them as individual documents within collections. This method enables the efficient handling, retrieval, and administration of such files.
+
+https://www.simplilearn.com/mongodb-interview-questions-and-answers-article
+
+Aws:
+-------------------------------------------------------------------------------------------------------
+1.Amplify:https://docs.amplify.aws/lib/project-setup/create-application/q/platform/js/
+2.Aws-serverless-express/middleware
+3.Elestic beanstalks
+4.Elestic block storage
+5CLOUD TRAIL
+ 
+ 
+NextJs
+-------------------------------------------------------------------------------------------------------
+Notes: Run dev server ->npm run dev /Run production:npm start
+1Deploy Next js On Vercel:https://www.youtube.com/watch?v=2HBIzEx6IZA
+2Crud Operation:https://www.youtube.com/watch?v=kuV_iAIDT5Y
+3Build-a-full-stack-application-with-nextjs :https://www.freecodecamp.org/news/build-a-full-stack-application-with-nextjs/
+4REST Api:https://www.youtube.com/watch?v=-MFiza7ZRzs
+5:Next Js BackEnd:https://medium.com/@oruchan.asar/nextjs-13-app-backend-development-d044c804c3
+6:RestApi:https://jasonwatmore.com/post/2021/08/31/next-js-combined-add-edit-create-update-form-example
+7:Use Swr:https://swr.vercel.app/docs/with-nextjs - For data fatching
+8:Nextjs Auth with 13:https://medium.com/ascentic-technology/authentication-with-next-js-13-and-next-auth-9c69d55d6bfd
+-Next.js is a flexible React framework that gives you building blocks to create fast web applications.
+-CSR,SSR,SSG
+-Imperative & Declarative Programming:
+									The code above is a good example of imperative programming. You’re writing the steps for how the user interface should be updated. 
+									But when it comes to building user interfaces, a declarative approach is often preferred because it can speed up the development process. 
+									Instead of having to write DOM methods, it would be helpful if developers were able to declare what they want to 
+									show (in this case, an h1 tag with some text).In other words,  programming is like giving a chef step-by-step instructions on 
+									how to make a pizza. Declarative programming is like ordering a pizza without being concerned about the steps it takes to make the pizza. 🍕
+The environment where your code runs: Development vs. Production
+When your code runs: Build Time vs. Runtime
+Where rendering happens: Client vs. Server
+-Minification:
+				Minification is the process of removing unnecessary code formatting and comments without changing the code’s functionality. 
+				The goal is to improve the application’s performance by decreasing file sizes.
+-What is Compiling?
+					Developers write code in languages that are more developer-friendly such as JSX, TypeScript, and modern versions of JavaScript. 
+					While these languages improve the efficiency and confidence of developers, they need to be compiled into JavaScript before browsers can understand them.
+-client-side rendering:
+					React application, the browser receives an empty HTML shell from the server along with the JavaScript instructions to construct the UI. 
+					This is called client-side rendering because the initial rendering work happens on the user's device.
+-Bundling:
+		Bundling is the process of resolving the web of dependencies and merging (or ‘packaging’) the files (or modules) into optimized bundles for the browser, 
+		with the goal of reducing the number of requests for files when a user visits a web page.
+-What is the difference between compiling and bundling in web development?
+																		Compiling is transforming code into something parsable by browsers. 
+																		Bundling is resolving your applications dependency graph and reducing the number of files
+Some Concepts:
+-Routing as folder
+-each folder has page.js file.
+-The useRouter hook allows you to programmatically change routes.
+-This hook can only be used inside Client Components and is imported from next/navigation.
+-The useRouter hook allows you to programmatically change routes.
+-This hook can only be used inside Client Components and is imported from next/navigation.
+-NextResponse:The NextResponse API allows you to:Redirect the incoming request to a different URL
+												 Rewrite the response by displaying a given URL
+												 Set request headers for API Routes, getServerSideProps, and rewrite destinations
+												 Set response cookies
+												 Set response headers
+												 Fetching data after some time  time based/ondemand  Revalidation
+												 React renders Server Components into a special data format called the React Server Component Payload (RSC Payload).
+
+Static Site Generation (SSG): 
+							Static Generation is a server-side rendering method where Next.js generates HTML at build time. 
+							During the build process, Next.js fetches data from APIs or other data sources and pre-renders the HTML pages. 
+							These pre-rendered pages can then be served to the client upon request. SSG is suitable for websites with content that doesn't frequently change.
+Server-Side Rendering (SSR): 
+							Server-Side Rendering is another method where Next.js generates HTML on each request.
+							When a user visits a page, Next.js fetches the data and renders the HTML on the server before sending it to the client. 
+							SSR is useful for websites with frequently updated content or personalized user experiences.
+Incremental Static Regeneration (ISR): 
+										ISR is a feature in Next.js that allows you to statically generate pages on-demand, rather than at build time. 
+										This means that your site can be both statically generated and dynamic at the same time.
+SWR:The team behind Next.js has created a React hook for data fetching called SWR. 
+	We highly recommend it if you’re fetching data on the client side. It handles caching, revalidation, focus tracking, refetching on interval, and more. 
+	We won’t cover the details here, but here’s an example usage:
+
+
+												 
+-folder->page.tsx is used for routing
+-component like is not use for routing like add to cart button
+
+
+---------------------------------------------------------------------------------------------------------
+Redux tookit:
+Important Points:
+-No need to action
+-Vite is a build tool and development server designed to improve the development process of modern web applications. It does this by dividing your application modules into dependencies and source code. Dependencies are modules that do not change often, while source code is typically edited frequently during developmen
+-configureStore(): wraps createStore to provide simplified configuration options and good defaults. It can automatically combine your slice reducers, adds whatever Redux middleware you supply, includes redux-thunk by default, and enables use of the Redux DevTools Extension.
+-createReducer(): that lets you supply a lookup table of action types to case reducer functions, rather than writing switch statements. In addition, it automatically uses the immer library to let you write simpler immutable updates with normal mutative code, like state.todos[3].completed = true.
+-createAction(): generates an action creator function for the given action type string. The function itself has toString() defined, so that it can be used in place of the type constant.
+-createSlice(): accepts an object of reducer functions, a slice name, and an initial state value, and automatically generates a slice reducer with corresponding action creators and action types.
+-createAsyncThunk: accepts an action type string and a function that returns a promise, and generates a thunk that dispatches pending/fulfilled/rejected action types based on that promise
+-createEntityAdapter: generates a set of reusable reducers and selectors to manage normalized data in the store
+-The createSelector utility from the Reselect library, re-exported for ease of use.
+https://www.youtube.com/watch?v=2OaAbSgmIWo
+https://www.youtube.com/watch?v=L6AYquaHvWk&list=PLwGdqUZWnOp354xMD8u0hxX-1qmCvfLiY&index=12
+https://www.youtube.com/watch?v=poQXNp9ItL4
+-What do you understand about Redux Thunk?
+-Using Redux Thunk middleware, we can write action creators returning a function instead of an action. This thunk can postpone the dispatch of an action, or do conditional dispatchment. The arguments passed to the inner function are the store methods dispatch and getState(). In the event of an action creator returning a function, the function gets executed by the Redux Thunk middleware and it does not have to be pure. In other words, the function is allowed to have side effects, including executing asynchronous API calls. It can even dispatch actions. Redux thunk is used to delay the dispatch of an action, or to dispatch in the event of a certain condition being met. At the time of dispatch of a function instead of an action object, if Redux Thunk middleware is enabled, the middleware will call that function with the dispatch method itself as the first argument.
+-What are the workflow features in Redux?
+
+--------------------------------------------------------------------------------------------------------------
+CSS:
+	Tailwindcss:https://tailwindcss.com/.
+	
+	
+	
+	
+	Architecture View layer of MVC
+Data-Binding Uni-directional
+Rendering Server-Side
+
+node js It is different from other JavaScript environments because it is asynchronous and event-driven.
+Google uses V8 for Node.js because it is faster and more efficient. It compiles the JavaScript code directly into machine code.
+Node red is a visual programming tool for Node.js that is used to wire hardware devices and online services as part of IoT applications.
+In such cases, the multiple thread options are better but they are sluggish in performance. Moreover, if a relational database is used with Node.js, it behaves strangely, preventing favorable outcomes that the users can be sure of. Since Node.js does not support multiple threads, it is better suited for lightweight applications but not large-scale or heavy applications
+We use req.connection.remote address to get the IP address.
+
+
+Exit code : Exit codes are a collection of specific codes whose function is to complete a specific process. Examples of exit codes are fatal error, unused, internal JavaScript evaluation failure, etc.
+https://www.geeksforgeeks.org/node-js-exit-codes/
+
+Dependencies are present in the package.json file.
+There are three layers in the application architecture - API, service, and integration layers.
+Two input arguments for asynchronous queue are concurrency value and task function.
+It is possible to run external processes with Node.js. This can be done with the help of the child_process module.
+
+27.
+How does Node.js handle concurrency if it is single-threaded?
+Node.js prevents bottlenecks and aids programmers in easily writing the code because of the single-thread model. Internally, there are several POSIX threads for different I/O operations like File, DNS, etc.
+
+So, when Node receives an I/O request, it uses one of these threads for the I/O operation. Once the operation is complete, the result joins the event queue. Because of the event mechanism, the event loop starts after each event, checks the queue, and if Node’s execution stack is free, then the loop adds the queue result to it, thus managing concurrency.
+The emit() function is used to fire an event.
+
+Error-first callbacks are used to pass data and identify if an error has occurred.
+
+Libuv is a library that provides an event loop and a thread pool for handling asynchronous operations seamlessly. It helps in handling file systems, child processes, files, DNS, etc.
+Punycode is a way of encoding internationalized domain names that use characters outside of the ASCII range.
+
+ Traditionally on the web, we had a request/response format where a user sends an HTTP request and the server responds to that. This is still applicable in most cases, especially those using RESTful API. But a need was felt for the server to also communicate with the client, without getting polled(or requested) by the client. The server in itself should be able to send information to the client or the browser. This is where Web Socket comes into the picture.
+ 6. What is Callback hell? How can you avoid them?
+A problematic phenomenon for a JavaScript developer when he tries to execute multiple asynchronous operations consecutively is termed callback hell. An asynchronous function is one that requires some external activity completion before processing a result. These asynchronous functions require a callback function to tackle errors and process the result.
+
+
+Spawned Child Processes
+The spawn function launches a command in a new process and we can use it to pass that command any arguments. For example, here’s code to spawn a new process that will execute the pwd command.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

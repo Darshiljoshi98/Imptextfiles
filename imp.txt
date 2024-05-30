@@ -1,3 +1,9 @@
+
+Delivered
+
+
+
+
 22-03-2023, 14:14
 Account information for new or modified users
 
@@ -78,6 +84,13 @@ portal: gp.schneider-electric.com
 IP:10.239.19.102
 sesa691460
 Schneidersesa@000089j
+
+
+username:
+spec password
+5432 port
+
+
 
 otship admin 
 otship-user name
@@ -373,6 +386,8 @@ bhiim
 pashupati
 ishan
 mahadev  
+
+3 koti shita
   
   
 Sophos password with  authentication code
@@ -457,20 +472,11 @@ https://react-themes.com/
 https://karthickragavendran.medium.com/setup-guide-for-nextauth-with-google-and-credentials-providers-in-next-js-13-8f5f13414c1e
 
 
-manually execute bash file bash ~/OTShip/colonial-SendToSFTP.sh
-
-bash ~/OTShip/colonial-SendToSFTP.sh
-bash ~/OTShip/scheduler/Colonial/SHFiles/colonial-SendToSFTP.sh
-bash ~/OTShip/colonial-distOrder.sh
-bash ~/OTShip/colonial-distItem.sh
-bash ~/OTShip/colonial-itemShipment1.sh
-bash ~/OTShip/colonial-itemShipment2.sh
-bash ~/OTShip/colonial-itemShipment3.sh
-bash ~/OTShip/colonial-itemShipment4.sh
 
 
-bash ~/OTShip/scheduler/Colonial/SHFiles/colonial-SendToSFTP.sh
+Manually run schdulers
 
+colonial
 bash ~/OTShip/scheduler/Colonial/SHFiles/Order.sh
 bash ~/OTShip/scheduler/Colonial/SHFiles/Item.sh
 bash ~/OTShip/scheduler/Colonial/SHFiles/Shipment1.sh
@@ -478,16 +484,12 @@ bash ~/OTShip/scheduler/Colonial/SHFiles/Shipment2.sh
 bash ~/OTShip/scheduler/Colonial/SHFiles/Shipment3.sh
 bash ~/OTShip/scheduler/Colonial/SHFiles/Shipment4.sh
 bash ~/OTShip/scheduler/Colonial/SHFiles/SendToSFTP.sh
-
+Mayor
 bash ~/OTShip/scheduler/Mayor/SHFiles/Order.sh
 
 ~/OTShip/scheduler/Colonial/Order/OTSDistributorOrder
 /scheduler/Mayor/Order
 
-
-
-
-30 21 * * 1-6 bash ~/OTShip/colonial-itemShipment3.sh
 
 
 #!/bin/sh
@@ -513,41 +515,6 @@ crontab -e 	: to open all the configured cron jobs in edit mode.
 i			: to modify any changes after above command. Please press "esc" button & enter ":wq" to apply your modifications.
 
 
-
-ots_userMaster
-ots_distItems
-ots_distLocation
-ots_distOrders
-ots_itemShipData
-ots_distMaster
-
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_CE_5d_tokenURL','https://api.se.com/token','To generate token for distributor')
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_CE_5d_orderURL','https://api.se.com/v1/supply-chain/partner-order-status/orders/US?limit=#PageSize#&page=#PageNumber#&purchaser-id=#PurchaserId#','To get Orders of distributor. This URL also include parameter Like. #paraName# which will replace in code with actual value');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_CE_5d_itemURL','https://api.se.com/v1/supply-chain/partner-order-status/orders/US/#OrderNumber#?purchaser-id=#PurchaserId#','To get Items of Order. This URL also include parameter Like. #OrderNumber# which will replace in code with actual value');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_CE_5d_shipURL','https://api.se.com/v1/supply-chain/partner-order-status/orders/US/#OrderNumber#/#ItemNumber#/shipment-schedules?purchaser-id=#PurchaserId#','To get Ship details of Item. This URL also include parameter Like. #OrderNumber#,#ItemNumber# which will replace in code with actual value');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_pageSize','100','Based on the page size decide how many Orders get per call');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_countForRefreshForOrder','10','After this number of purchaserID proceed, access_token will be re-generate and also MySQL re-connect. May be access_token will expire so we need to handle this.');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_dateTimeFormate','yyyy/MM/dd hh:mm:ss tt','Date time formate. Default yyyy/MM/dd h:mm set in code.');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_numbersOfLogFile','	10	Number of log file will create per day. If number is exceeded then last file delete and create new.');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_noOfMonth	','-3','Get previous  noOfMonth date from today. To check estimatedDeliveryDate is noOfMonth early then no need to check for Shipping.');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_countForRefreshForShip','3','After this number of purchaserID proceed, access_token will be re-generate and also MySQL re-connect. May be access_token will expire so we need to handle this.');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_countForRefreshForItem','1','After this number of purchaserID proceed, access_token will be re-generate and also MySQL re-connect. May be access_token will expire so we need to handle this.');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_cc','earl.pond@se.com','this user will in cc when send mail notification to distributor every day');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_bcc','schneider.devteam@spec-india.com','this users will in bcc when send mail notification to distributor every day');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_subject','Order ShipDate Change Notification (#locationName# - #locationId#)	subject is use for new nottification mail of distributor');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_reCallOrderOfDist','3','ReCall whole scheduler to check is any error occure. Second time check only error data.');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_todailyreport','schneider.devteam@spec-india.com	To all email id send daily report.');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_ccDailyReport','To CC all email id send daily report.');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_subjectDailyReport','Order ShipDate Change Notification Daily Report	Daily report mail subject');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_hereLink','https://s3.us-east-2.amazonaws.com/order-track-web/qa/home.html',This link will bind on here (,please visit here)');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_reCallItemsOfOrder','3','ReCall whole scheduler to check is any error occure. Second time check only error data.');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_colonia_host','crown.col-elec.com');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_colonia_user','Schneider');')
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_colonia_pwd','\#|.6e:dF;co8&fnyL/G');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_CE_10d_tokenURL','https://api.se.com/token','To generate token for distributor');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_CE_10d_orderURL','https://api.se.com/v1/supply-chain/partner-order-status/orders/US?page-size=#PageSize#&page=#PageNumber#&purchaser-id=#PurchaserId#','To get Orders of distributor. This URL also include parameter Like. #paraName# which will replace in code with actual value');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_CE_10d_shipURL','https://api.se.com/v1/supply-chain/partner-order-status/orders//US/#OrderNumber#/#ItemNumber#/shipment-schedules','To get Ship details of Item. This URL also include parameter Like. #OrderNumber#,#ItemNumber# which will replace in code with actual value');
-INSERT INTO table_name (confg_name, confg_value,confg_description)VALUES ('ots_CE_10d_itemURL','https://api.se.com/v1/supply-chain/partner-order-status/orders/US/#OrderNumber#','To get Orders of distributor. This URL also include parameter Like. #paraName# which will replace in code with actual value');
 
 ShipmentDetails4
 
@@ -634,12 +601,6 @@ https://recoiljs.org/docs/introduction/motivation
 }
 
 
-Also, here are the links:
-Mail: zarna@bedigital.live 
-2nd mail : seo.bedigital@gmail.com (ama inquiries add karvani che)
-Linkedin: linkedin.com/in/zarna-joshi
-FB : https://www.facebook.com/profile.php?id=100070063160778
-
 
 
 mon:
@@ -677,6 +638,7 @@ https://www.youtube.com/watch?v=9B4CvtzXRpc
 
 
 
+SELECT * FROM OTShip.ots_distOrders where  cast(orderCreatedDateTime as date) > '2023/06/04'  
 
 scrum master : https://www.youtube.com/watch?v=Jhm5Fky30hg
 
@@ -757,3 +719,51 @@ https://masteringjs.io/mongoose - blog
 
 
 12:15 -53
+
+7556
+
+68,003.00
+71093
+
+https://10.37.54.254:8090/httpclient.html
+.
+
+
+
+Checked graybar issue
+Manulally execute order/item/send to sftp scheduler 
+chaecked why product refrence is blank in most of case in  5 digit
+
+0	108	14:50:54	INSERT INTO ots_distItems (
+   distId, purchaserId, orderNumber, 
+   itemNumber, itemStatus, customerID, 
+   customerName, catalogNumber, description, 
+   totalQtyOrdered, totalQtyShipped, 
+   itemHasShipped, estimatedDeliveryDate, 
+   requestedDeliveryDate, itemResponse, 
+   itemResponseMessage, isProcessDoneForShip, 
+   designation, productReference
+ ) 
+ VALUES 
+   (
+     '3', '1000006021', '0058078859', '010', 
+     'Processing', '1000006021', 'COLONIAL ELECTRIC SUPPLY CO INC', 
+     'HGA36150U31X', 'MOLDED CASE CIRCUIT BREAKER 600V 150A', 
+     '1', '0', 'False', '2024/05/21', '0001/01/01', 
+     'success', 'New data insert', 'false', 
+     ''
+   ),	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 19	0.219 sec
+   
+   
+   
+   graybar json
+   
+   0 09  ? * Mon *
+   
+   
+   
+   node js 
+   middleare -https://www.esparkinfo.com/blog/how-to-create-middleware-in-node-js-and-express-js.html
+   
+   https://www.loginradius.com/blog/engineering/guest-post/nodejs-authentication-guide/
+   https://www.loginradius.com/blog/engineering/guest-post/nodejs-authentication-guide/

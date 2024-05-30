@@ -17,7 +17,7 @@ React:
 11:Convert App intoPwa:https://medium.com/@toricpope/transform-a-react-app-into-a-progressive-web-app-pwa-dea336bd96e6
 12:When build is not Build:https://create-react-app.dev/docs/deployment/
 13:React hogher order component:https://www.smashingmagazine.com/2020/06/higher-order-components-react/
-
+persistReducer and persistStor
 Nodejs:
 -----------------------------------------------------------------------------------------------------
 1Free cource:https://www.scaler.com/topics/course/nodejs/
@@ -70,10 +70,10 @@ MongoDb:
 https://www.techtarget.com/searchdatamanagement/definition/MongoDB
 aggrigation
 index - mongo db
-https://www.youtube.com/watch?v=4EjKroJCpFA&list=PLA3GkZPtsafZydhN4nP0h7hw7PQuLsBv1
-https://www.youtube.com/watch?v=8eJJe4Slnik
-https://www.youtube.com/watch?v=9JSG7Na2S4M&list=PLRAV69dS1uWTaoxyeBbKpAEF90i4ijUQZ  - need to watch
-https://www.youtube.com/watch?v=s44QWegr2l8&list=PLWkguCWKqN9OwcbdYm4nUIXnA2IoXX0LI - need to watch
+https://www.youtube.com/watch?v=4EjKroJCpFA&list=PLA3GkZPtsafZydhN4nP0h7hw7PQuLsBv1 - full seiesd - 23 video start
+https://www.youtube.com/watch?v=8eJJe4Slnik - simpli learn seriesd
+https://www.youtube.com/watch?v=9JSG7Na2S4M&list=PLRAV69dS1uWTaoxyeBbKpAEF90i4ijUQZ  - mongo db hitesh
+https://www.youtube.com/watch?v=s44QWegr2l8&list=PLWkguCWKqN9OwcbdYm4nUIXnA2IoXX0LI - Aggrigation
 
 
 Gridfs chaunk collection - need to learn
@@ -287,6 +287,18 @@ mongoimport --db mydatabase --collection mycollection --file data.json
 mongoexport --db mydatabase --collection mycollection --out data.json
 https://blog.e-zest.com/basic-commands-for-mongodb
 
+
+#or opertor
+
+db.products.find({
+  $or: [
+    { category: "Electronics" },
+    { price: { $gt: 1000 } }
+  ]
+})
+his query will retrieve all documents from the products collection where the category is "Electronics" or the price is greater than $1000.
+
+
 Populate:
 
 Need of Population: Whenever in the schema of one collection we provide a reference (in any field) to a document from any other collection, we need a populate() method to fill the field with that document.
@@ -324,10 +336,7 @@ Post.find()
 		plipleline seprate by comma
 
  -pipelines
- https://www.youtube.com/watch?v=tQ-AWUR49AQ&list=PLRAV69dS1uWQ6CZCehxKy0rjkqhQ2Z88t&index=7   -refer For pipline
- 
- 
- 
+ https://www.youtube.com/watch?v=tQ-AWUR49AQ&list=PLRAV69dS1uWQ6CZCehxKy0rjkqhQ2Z88t&index=7   -refer For pipline 
  
  
  https://www.mongodb.com/docs/manual/reference/operator/aggregation/group/
@@ -776,10 +785,23 @@ $addFields:{author_details:{ $arrayEleAt:["$author_details",0]  } }
 
 
 
+How to Optimize Performance in MongoDB Aggregation
+One of the best features of the MongoDB aggregation pipeline is that it automatically reshapes the query to improve its performance. Having said that, here are a few things to consider for optimized query performance.
+
+Pipeline stages have a limit of 100 megabytes of RAM. If a stage exceeds this limit, MongoDB will produce an error. To allow for the handling of large datasets, use the allowDiskUse option to enable aggregation pipeline stages to write data to temporary files. Keep in mind that allowDiskUse will store the data into the disk rather than the memory, which might result in slower performance.
+
+The db.aggregate() command can return either a cursor or store the results in a collection. When returning a cursor or storing the results in a collection, each document in the result set is subject to the BSON Document Size limit, currently 16 megabytes; if any single document exceeds the BSON Document Size limit, the command will produce an error.
+
+If you have multiple stages in your pipeline, it’s always better to understand the overhead associated with each stage. For instance, if you have both $sort and $match stage in your pipeline, it’s highly recommended that you use a $match before $sort in order to minimize the documents that need to be sorted.
 
 
+Function
+:
+$addFields
+Adds new fields to documents. $addFields outputs documents that contain all existing fields from the input documents and newly added fields.
 
-
+$bucket
+Categorizes incoming documents into groups, called buckets, based on a specified expression and bucket boundaries and outputs a document per each bucket. Each output document contains an _id field whose value specifies the inclusive lower bound of the bucket. The output option specifies the fields included in each output document.
 
 
 
@@ -953,3 +975,90 @@ The spawn function launches a command in a new process and we can use it to pass
 	
 	
 	
+Certainly! Here's a list of beginner to advanced concepts in MongoDB:
+
+### Beginner Level:
+1. **Introduction to MongoDB**:
+   - Understanding NoSQL databases and MongoDB's role.
+   - Installation and setup of MongoDB.
+
+2. **Basic CRUD Operations**:
+   - Creating, reading, updating, and deleting documents.
+   - Using `insert`, `find`, `update`, and `remove` operations.
+
+3. **Data Modeling**:
+   - Document-oriented data modeling concepts.
+   - Designing schemas for MongoDB collections.
+
+4. **Indexes**:
+   - Introduction to indexes in MongoDB.
+   - Creating and managing indexes for efficient querying.
+
+5. **Aggregation Framework**:
+   - Performing aggregation operations on MongoDB data.
+   - Using stages like `$match`, `$group`, `$project`, etc.
+
+### Intermediate Level:
+6. **Query Optimization**:
+   - Techniques for optimizing MongoDB queries.
+   - Analyzing query performance and using explain plans.
+
+7. **Schema Design Patterns**:
+   - Understanding common schema design patterns in MongoDB.
+   - Embedding vs. referencing documents.
+
+8. **Transactions**:
+   - Introduction to transactions in MongoDB.
+   - Using multi-document transactions for atomic operations.
+
+9. **Replication**:
+   - Setting up replication in MongoDB for high availability.
+   - Understanding replica sets and their configurations.
+
+10. **Sharding**:
+    - Scaling MongoDB horizontally using sharding.
+    - Shard key selection and distribution of data across shards.
+
+### Advanced Level:
+11. **Security**:
+    - Authentication and authorization in MongoDB.
+    - Configuring users and roles with appropriate permissions.
+
+12. **Geospatial Queries**:
+    - Performing geospatial queries in MongoDB.
+    - Indexing geospatial data for efficient querying.
+
+13. **Change Streams**:
+    - Monitoring changes in MongoDB collections in real-time.
+    - Using change streams for reactive applications.
+
+14. **Full-Text Search**:
+    - Implementing full-text search capabilities in MongoDB.
+    - Configuring text indexes and executing text search queries.
+
+15. **Data Encryption**:
+    - Encrypting data at rest and in transit in MongoDB.
+    - Implementing encryption using MongoDB encryption options.
+
+### Expert Level:
+16. **Performance Tuning**:
+    - Advanced techniques for optimizing MongoDB performance.
+    - Fine-tuning configuration parameters for specific workloads.
+
+17. **Data Partitioning**:
+    - Advanced strategies for partitioning data in MongoDB.
+    - Using zone sharding and custom shard keys.
+
+18. **MongoDB Atlas**:
+    - Deep dive into MongoDB's cloud database service.
+    - Managing clusters, backups, and performance tuning in MongoDB Atlas.
+
+19. **Backup and Restore Strategies**:
+    - Implementing robust backup and restore strategies for MongoDB.
+    - Automating backup processes and ensuring data integrity.
+
+20. **Advanced Aggregation Pipelines**:
+    - Leveraging the full power of MongoDB's aggregation framework.
+    - Writing complex aggregation pipelines for analytics and reporting.
+
+Mastering these concepts will provide a solid foundation for working with MongoDB, whether you're building simple applications or complex, scalable systems.

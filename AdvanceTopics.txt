@@ -1,3 +1,5 @@
+( functiobn abc(){ console.log('h1)}()  -it execute aautomatically without callig
+
 React:
 ---------------------------------------------------------------------------------------------------
 1PWA:https://medium.com/@toricpope/transform-a-react-app-into-a-progressive-web-app-pwa-dea336bd96e6
@@ -18,6 +20,10 @@ React:
 12:When build is not Build:https://create-react-app.dev/docs/deployment/
 13:React hogher order component:https://www.smashingmagazine.com/2020/06/higher-order-components-react/
 persistReducer and persistStor
+React helmet for seo
+https://medium.com/@franklynugege/seo-in-react-two-simple-step-implementation-7d9382381718
+https://www.freecodecamp.org/news/react-helmet-examples/
+
 Nodejs:
 -----------------------------------------------------------------------------------------------------
 1Free cource:https://www.scaler.com/topics/course/nodejs/
@@ -65,6 +71,9 @@ worker Threads :https://www.youtube.com/watch?v=OGkOxkSYrUg
 	
 	
 child process methods	https://www.youtube.com/watch?v=7cFNTD73N88    ----	https://www.youtube.com/watch?v=bbmFvCbVDqo
+node sj helmet for security :https://blog.logrocket.com/using-helmet-node-js-secure-application/#referrer-policy-header
+
+
 MongoDb:
 -----------------------------------------------------------------------------------------------------
 https://www.techtarget.com/searchdatamanagement/definition/MongoDB

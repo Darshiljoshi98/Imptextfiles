@@ -1,7 +1,17 @@
 
 Delivered
+Hesader footer url
+Header Dev
+https://www.se.com/assets-sdl/v2/uiaas/components/se/us_en/header/header.html
 
+Footer Dev
+https://www.se.com/assets-sdl/v2/uiaas/components/se/us_en/footer/footer.html
 
+Header -Prod
+https://www.se.com/ww/confsdl/api/components/header?locale=EN_US&output=html&consumer=se?1716971845941
+
+Footer-Prod
+https://www.se.com/ww/confsdl/api/components/footer?locale=EN_US&output=html&consumer=se?1716971845944
 
 
 22-03-2023, 14:14

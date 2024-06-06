@@ -44,13 +44,14 @@ subtitleTextColor
 
 
 
-JS full series : https://www.youtube.com/watch?v=WvTMIKHvPxU&list=PLRAV69dS1uWSxUIk5o3vQY2-_VKsOpXLD&index=57
-ts full : https://www.youtube.com/watch?v=j89BvWz8Eag&list=PLRAV69dS1uWRPSfKzwZsIm-Axxq-LxqhW
+JS full series : https://www.youtube.com/watch?v=WvTMIKHvPxU&list=PLRAV69dS1uWSxUIk5o3vQY2-_VKsOpXLD&index=57  - done
+ts full : https://www.youtube.com/watch?v=j89BvWz8Eag&list=PLRAV69dS1uWRPSfKzwZsIm-Axxq-LxqhW  done
 Nextjs:https://www.youtube.com/watch?v=OgS1ZWZItno&list=PLu71SKxNbfoBAaWGtn9GA2PTw0HO0tXzq
 Next auth :https://www.youtube.com/watch?v=3BEn2E9PvBM&list=PLu71SKxNbfoCXO80Z4miZHTL5GxfFbz7A
 Backend series:https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW&pp=iAQB
 Node js:https://www.youtube.com/watch?v=ohIAiuHMKMI&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo
-
-
+		https://www.youtube.com/watch?v=SxCfcE4AHxQ&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_LhxS&index=23
+eXPRESS JS:Express JS Full Course:https://www.youtube.com/watch?v=nH9E25nkk3I
 Mongodb
 prisma:https://www.youtube.com/watch?v=IiqhMNPWGEs&list=PLRAV69dS1uWTuDGJBa7UdqX_pxoEXy00p&pp=iAQB
+https://www.youtube.com/watch?v=DZBGEVgL2eE

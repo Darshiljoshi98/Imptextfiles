@@ -23,6 +23,8 @@ persistReducer and persistStor
 React helmet for seo
 https://medium.com/@franklynugege/seo-in-react-two-simple-step-implementation-7d9382381718
 https://www.freecodecamp.org/news/react-helmet-examples/
+Fiber:
+https://github.com/acdlite/react-fiber-architecture   - reconceilation
 
 Nodejs:
 -----------------------------------------------------------------------------------------------------
@@ -974,6 +976,45 @@ The spawn function launches a command in a new process and we can use it to pass
 	
 	
 	
+	json.parse() - convert json into js object
+	fs.read and fs.write read/write data attime and store buffer and give to us
+	Streams:  we can process data pice by piece 
+	READ
+	WRITE
+	DUPLEX
+	TRANSFORM
+	Architecture
+	luvb -> thredpool,eventloop->responsible for excute code in asynchronous( where all callback function is waitfor execution)
+	process:one type of task which is excute
+	thread: which is responsible for excute process
+	(node js single thred)
+	
+	Express node js framework
+	
+	
+	put vs patch
+	in put you neeed to pass entire object although you have update 1 field like {"name":'dj,"age":26,"hobby":cricket"} if i want to change hobby then
+	in put i pass all data like{"name":'dj,"age":26,"hobby":cricket"}
+	in patch {"hobby":cricket"} [pass field name which u update]
+	
+	param middleware : Param middleware is middleware that runs only when certain parameters are present in the URL. It enables you to apply specific middleware functions to routes that have particular parameters, making your code more organized and efficient. 
+	https://medium.com/@navneetskahlon/using-param-middleware-in-express-simplifying-route-validation-36e939635567#:~:text=Setting%20Up%20Param%20Middleware&text=Define%20Your%20Middleware%20Function%3A%20Create,res%20)%2C%20and%20next%20function.
+	router.param('id', checkID);
+	we check based on id - like localhost:3000/movie/:id
+	
+	
+	
+	
+	
+	
+React
+difference between useCallback and useMemo 
+To summarize, the main 
+difference between useCallback and useMemo is the type of value they return. useCallback returns a memoized callback function, while useMemo returns a
+ memoized value. Both hooks can be used to optimize the performance of your React components by avoiding unnecessary re-creations of functions or values.
+
+
+usememo hold value which is retu	
 	
 	
 	

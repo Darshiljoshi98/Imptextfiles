@@ -1,0 +1,226 @@
+Advance Topics
+Nodejs:
+-----------------------------------------------------------------------------------------------------
+1Free cource:https://www.scaler.com/topics/course/nodejs/ 
+2Evevent loop/event/custom events  
+3Npm Helment(For Security):https://blog.logrocket.com/using-helmet-node-js-secure-application/   
+							https://blog.logrocket.com/using-helmet-node-js-secure-application/#referrer-policy-header
+
+4:express-validator(fOR vALIDATION) :https://express-validator.github.io/docs/guides/getting-started
+5 bcryptjs
+6Asyncronous updates on with websocket
+7Event Loop and Non-blocking I/O
+8 NEST JS:
+			https://www.youtube.com/watch?v=GHTA143_b-s
+			https://www.youtube.com/watch?v=Mgr5_r70OJQ
+9:	child process methods	https://www.youtube.com/watch?v=7cFNTD73N88    ----	https://www.youtube.com/watch?v=bbmFvCbVDqo
+
+10:multithreading-in-node-js:	https://www.digitalocean.com/community/tutorials/how-to-use-multithreading-in-node-js	
+11:Streams:https://www.freecodecamp.org/news/node-js-streams-everything-you-need-to-know-c9141306be93/
+12:Child process:https://www.freecodecamp.org/news/node-js-child-processes-everything-you-need-to-know-e69498fe970a/
+13:worker Threads :https://www.youtube.com/watch?v=OGkOxkSYrUg
+	
+
+Nodejs Course:https://youtube.com/watch?v=5eaBOxXABkU&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_LhxS&index=1 -completed
+			  https://www.youtube.com/watch?v=f2EqECiTBL8-completed
+
+Npm Packages:throttledQueue/multer/xml2js/moment/Jimp/schedule/ping
+
+Node js:https://www.youtube.com/watch?v=ohIAiuHMKMI&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo
+		https://www.youtube.com/watch?v=SxCfcE4AHxQ&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_LhxS&index=23
+eXPRESS JS:Express JS Full Course:https://www.youtube.com/watch?v=nH9E25nkk3I
+
+jAVASCRIPT
+-------------------
+
+JS full series : https://www.youtube.com/watch?v=WvTMIKHvPxU&list=PLRAV69dS1uWSxUIk5o3vQY2-_VKsOpXLD&index=57  - done
+ts full : https://www.youtube.com/watch?v=j89BvWz8Eag&list=PLRAV69dS1uWRPSfKzwZsIm-Axxq-LxqhW  done
+
+=>Architecture View layer of MVC
+=>Data-Binding Uni-directional
+=>Rendering Server-Side
+( functiobn abc(){ console.log('h1)}()  -it execute aautomatically without calLING
+=>json.parse() - convert json into js object
+
+	
+	
+
+Node jS
+----------------------------------------------------
+npx depcheck ->for find unused npm
+Q=>Node js:
+node js It is different from other JavaScript environments because it is asynchronous and event-driven.
+Google uses V8 for Node.js because it is faster and more efficient. It compiles the JavaScript code directly into machine code.
+Node red is a visual programming tool for Node.js that is used to wire hardware devices and online services as part of IoT 
+applications.In such cases, the multiple thread options are better but they are sluggish in performance. Moreover, 
+if a relational database is used with Node.js, it behaves strangely, preventing favorable outcomes that the users can be sure of. Since Node.js does not support multiple threads, it is better suited for lightweight applications but not large-scale or heavy applications
+We use req.connection.remote address to get the IP address.
+
+
+Q=>Exit code : Exit codes are a collection of specific codes whose function is to complete a specific process.
+			   Examples of exit codes are fatal error, unused, internal JavaScript evaluation failure, etc.
+			   https://www.geeksforgeeks.org/node-js-exit-codes/
+
+=>Dependencies are present in the package.json file.
+There are three layers in the application architecture - API, service, and integration layers.
+Two input arguments for asynchronous queue are concurrency value and task function.
+It is possible to run external processes with Node.js. This can be done with the help of the child_process module.
+
+Q=>How does Node.js handle concurrency if it is single-threaded?
+Node.js prevents bottlenecks and aids programmers in easily writing the code because of the single-thread model. 
+Internally, there are several POSIX threads for different I/O operations like File, DNS, etc.
+So, when Node receives an I/O request, it uses one of these threads for the I/O operation. Once the operation is complete, 
+the result joins the event queue. Because of the event mechanism, the event loop starts after each event, checks the queue, and if Node’s execution stack is free, then the loop adds the queue result to it, thus managing concurrency.
+The emit() function is used to fire an event.
+
+=>Error-first callbacks are used to pass data and identify if an error has occurred.
+
+=>Libuv is a library that provides an event loop and a thread pool for handling asynchronous operations seamlessly. 
+It helps in handling file systems, child processes, files, DNS, etc.
+Punycode is a way of encoding internationalized domain names that use characters outside of the ASCII range.
+
+=>Traditionally on the web, we had a request/response format where a user sends an HTTP request and the server responds to that. 
+This is still applicable in most cases, especially those using RESTful API. But a need was felt for the server to also 
+communicate with the client, without getting polled(or requested) by the client.
+ The server in itself should be able to send information to the client or the browser. 
+ This is where Web Socket comes into the picture.
+
+
+Q=>What is Callback hell? How can you avoid them?(a=>CALL BACK INSIDE CALLBACK)
+A problematic phenomenon for a JavaScript developer when he tries to execute multiple asynchronous operations consecutively 
+is termed callback hell. An asynchronous function is one that requires some external activity completion before processing a 
+result. These asynchronous functions require a callback function to tackle errors and process the result.
+
+
+Q=>Spawned Child Processes
+The spawn function launches a command in a new process and we can use it to pass that command any arguments.
+ For example, here’s code to spawn a new process that will execute the pwd command.
+ 
+=>fs.read and fs.write read/write data attime and store buffer and give to us
+
+=>Architecture
+	luvb -> thredpool,eventloop->responsible for excute code in asynchronous( where all callback function is waitfor execution)
+=>process:one type of task which is excute
+=>thread: which is responsible for excute process(node js single thred)
+
+=>Express node js framework
+=>param middleware : 	
+			Param middleware is middleware that runs only when certain parameters are present in the URL. It enables you to 
+			apply specific middleware functions to routes that have particular parameters, making your code more organized and 
+			efficient. 
+			https://medium.com/@navneetskahlon/using-param-middleware-in-express-simplifying-route-validation-36e939635567#:~:text=Setting%20Up%20Param%20Middleware&text=Define%20Your%20Middleware%20Function%3A%20Create,res%20)%2C%20and%20next%20function.
+			router.param('id', checkID);
+			we check based on id - like localhost:3000/movie/:id			
+			req.query=fetch data from url
+			re.body - fetch dat afrom body
+	
+Advance concepts
+----------------------------
+Advance Concept Node js
+1. Event Loop and Non-blocking I/O
+	What it is: Mechanism allowing Node.js to perform non-blocking I/O despite being single-threaded.
+	Components:
+		Call Stack: Executes synchronous code.
+		Callback Queue: Holds callbacks waiting to be executed after their asynchronous operations complete.
+		Event Loop: Checks if call stack is empty, then fetches callbacks from the callback queue.
+	Important Functions:
+		process.nextTick(): Places callback in a separate queue, which runs before the event loop next cycle.
+		setImmediate(): Queues callback to be executed in the next event loop cycle.
+2. Buffers:
+		What they are: Raw memory allocations outside V8’s heap.
+		Usage:
+			Reading or writing to the file system.
+			Handling binary data from network protocols.
+			General-purpose binary data manipulations.
+		Method:
+			Creation: Buffer.alloc(), Buffer.from().
+			Access and modify: buf.readUInt8(), buf.writeUInt8().
+			Conversion: buf.toString().
+3:Streams:  we can process data pice by piece 
+			Readable: For data consumption (e.g., fs.createReadStream()).
+			Writable: For data production (e.g., fs.createWriteStream()).
+			Duplex: Both readable and writable.
+			Transform: Can modify the data while reading and writing.
+4. Error Handling
+			Event Listeners:
+			process.on('uncaughtException'): Captures uncaught exceptions.
+			process.on('unhandledRejection'): Captures unhandled promise
+			Demo
+			----------------------
+			process.on(‘uncaughtException’, (err) => {
+			console.error(‘There was an uncaught error’, err);
+			process.exit(1); // Exiting process
+			});
+			throw new Error(‘This will be caught.’);
+5:Clusters
+			What they are: A way to utilize multi-core systems.
+			Master-Worker Architecture:
+			Master: Creates worker processes.
+			Worker: Executes app logic.
+			Methods:
+			cluster.fork(): Spawn a new worker.
+			worker.send(): Communicate between master and worker.
+			Events: online, exit, disconnect.
+			
+			Demo
+			-------------------
+					const cluster = require(‘cluster’);
+					const http = require(‘http’);
+					const numCPUs = require(‘os’).cpus().length;
+
+					if (cluster.isMaster) {
+					for (let i = 0; i < numCPUs; i++) {
+					cluster.fork();
+					}
+					} else {
+					http.createServer((req, res) => {
+					res.writeHead(200);
+					res.end(‘Hello from Cluster!’);
+					}).listen(8000);
+					}
+6:Pomises & Async/Await:
+						States: pending, fulfilled, rejected.
+						Methods: then(), catch(), finally().
+						Creation: new Promise((resolve, reject) => {...}).
+						Async/Await:
+						Usage: async function() { await someAsyncFunction(); }.
+						Error Handling: Use with try...catch for asynchronous errors.
+7: ES Modules (ESM) in Node.js => EXPORT/IMPORT Method]
+
+8:Dependency Injection (DI):A pattern where objects receive their dependencies from outside.
+								Demo
+								--------------------------
+								import { Injectable, Inject } from ‘@nestjs/common’;
+								@Injectable()
+								export class CatsService {
+								constructor(@Inject(‘DATABASE_CONNECTION’) private dbConnection) {}
+
+								findAll() {
+								return this.dbConnection.query(‘SELECT * FROM cats’);
+								}
+								}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+

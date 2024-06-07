@@ -775,5 +775,33 @@ chaecked why product refrence is blank in most of case in  5 digit
    node js 
    middleare -https://www.esparkinfo.com/blog/how-to-create-middleware-in-node-js-and-express-js.html
    
-   https://www.loginradius.com/blog/engineering/guest-post/nodejs-authentication-guide/
-   https://www.loginradius.com/blog/engineering/guest-post/nodejs-authentication-guide/
+Authenticate   https://www.loginradius.com/blog/engineering/guest-post/nodejs-authentication-guide/
+
+
+
+R&d on cors
+
+https://medium.com/@anjanava.biswas/nodejs-runtime-environment-with-aws-lambda-layers-f3914613e20e
+
+https://www.youtube.com/watch?v=baQh1X3LN5s
+
+R&d on Cross Domain
+https://www.youtube.com/watch?v=baQh1X3LN5s
+
+
+https://www.youtube.com/watch?v=DFKgON0QDQI
+
+https://www.youtube.com/watch?v=ZKRATKg706U   -> direct cors option
+
+https://cors.serverlessland.com/
+
+https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies-examples.html = >  resource policy
+
+
+Aws:
+-------------------------------------------------------------------------------------------------------
+1.Amplify:https://docs.amplify.aws/lib/project-setup/create-application/q/platform/js/
+2.Aws-serverless-express/middleware
+3.Elestic beanstalks
+4.Elestic block storage
+5CLOUD TRAIL

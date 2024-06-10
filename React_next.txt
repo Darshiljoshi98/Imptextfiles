@@ -22,6 +22,7 @@ React:
 	https://www.freecodecamp.org/news/react-helmet-examples/
 15Fiber:https://github.com/acdlite/react-fiber-architecture   - reconceilation
 
+16React 18 Feture :https://www.acil.in/what-new-in-react-18/
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -143,9 +144,33 @@ it callback which allow to perfom opertion when u click route it's call before u
 	
 	
 
+Context api
+
+context.js
+=> var usecontext =   React.createContext( need to pass defult value)
+export default usecontext
+
+
+provider file
+
+
+const [user,setuser] =React.usestate()
+<usercontext.priovider value={{user,setuser}}>
+{children}
+</usercontext.priovider >
+
+
+Login file
+import UserContext  from 'context.js'
+
+const {setUser} = useContext(UserContext)]
 
 
 
+profile file
+import UserContext  from 'context.js'
+
+const {user} = useContext(UserContext)
 
 
 

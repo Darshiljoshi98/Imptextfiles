@@ -198,25 +198,7 @@ Advance Concept Node js
 								findAll() {
 								return this.dbConnection.query(‘SELECT * FROM cats’);
 								}
-								}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+								}	
 	
 	
 
@@ -224,3 +206,4 @@ Advance Concept Node js
 
 
 
+	

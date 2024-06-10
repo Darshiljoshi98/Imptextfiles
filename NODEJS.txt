@@ -41,7 +41,9 @@ ts full : https://www.youtube.com/watch?v=j89BvWz8Eag&list=PLRAV69dS1uWRPSfKzwZs
 =>Rendering Server-Side
 ( functiobn abc(){ console.log('h1)}()  -it execute aautomatically without calLING
 =>json.parse() - convert json into js object
-
+When you insert data in local storgae set as json.stringify
+=>Localstorgae give value as sting so always convort into json.parse
+=> We are not use this keyword in arrow function we can create function with function keyword
 	
 	
 
@@ -126,6 +128,8 @@ Advance Concept Node js
 	Important Functions:
 		process.nextTick(): Places callback in a separate queue, which runs before the event loop next cycle.
 		setImmediate(): Queues callback to be executed in the next event loop cycle.
+		
+
 2. Buffers:
 		What they are: Raw memory allocations outside V8’s heap.
 		Usage:

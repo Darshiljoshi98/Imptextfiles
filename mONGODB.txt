@@ -842,6 +842,12 @@ if you have both $sort and $match stage in your pipeline, it’s highly recommen
 the documents that need to be sorted.
 
 
+
+in mongoose
+﻿
+
+
+
 Function
 :
 $addFields
@@ -866,9 +872,101 @@ specifies the fields included in each output document.
 						text indexes, hashed indexes, and wildcard indexes.
 
 GridFS represents a MongoDB standard designed to handle storing and retrieving substantial files, such as images, videos, and binary data. This approach involves breaking down large files into smaller segments and then saving them as individual documents within collections. This method enables the efficient handling, retrieval, and administration of such files.
+virtual  property
+=>In Mongoose, a virtual is a property that is not stored in MongoDB.
+	Virtuals are typically used for computed properties on documents.
+	https://mongoosejs.com/docs/tutorials/virtuals.html
+	Suppose you have a User model. Every user has an email, but you also want the email's domain. 
+	For example, the domain portion of 'test@gmail.com' is 'gmail.com'.
+
+				Below is one way to implement the domain property using a virtual.
+				You define virtuals on a schema using the Schema#virtual() function.
+
+				const userSchema = mongoose.Schema({
+				  email: String
+				});
+				// Create a virtual property `domain` that's computed from `email`.
+				userSchema.virtual('domain').get(function() {
+				  return this.email.slice(this.email.indexOf('@') + 1);
+				});
+				const User = mongoose.model('User', userSchema);
+
+				const doc = await User.create({ email: 'test@gmail.com' });
+				// `domain` is now a property on User documents.
+				doc.domain; // 'gmail.com'
+				
+							const userSchema = mongoose.Schema({
+			  firstName: String,
+			  lastName: String
+			});
+			// Create a virtual property `fullName` with a getter and setter.
+			userSchema.virtual('fullName').
+			  get(function() { return `${this.firstName} ${this.lastName}`; }).
+			  set(function(v) {
+				// `v` is the value being set, so use the value to set
+				// `firstName` and `lastName`.
+				const firstName = v.substring(0, v.indexOf(' '));
+				const lastName = v.substring(v.indexOf(' ') + 1);
+				this.set({ firstName, lastName });
+			  });
+			const User = mongoose.model('User', userSchema);
+
+			const doc = new User();
+			// Vanilla JavaScript assignment triggers the setter
+			doc.fullName = 'Jean-Luc Picard';
+
+			doc.fullName; // 'Jean-Luc Picard'
+			doc.firstName; // 'Jean-Luc'
+			doc.lastName; // 'Picard'
+=> Middleware
+Mongoose has 4 types of middleware: document middleware, model middleware, aggregate middleware, and query middleware.
+1Doument Middleware => it will point document
+// pre: Before saving document => call when we excute .save() or  .create() method
+// post:After Sving Document
+2 Query Middleware =>it will point query
+call when we beffore of excute .find() 
+3Aggrigation middleware  => Before and after aggrigation happen
+
+
+
+			
+=>Populate()
+
+// Creating Schemas
+const userSchema = new mongoose.Schema({
+    username: String,
+    email: String
+})
+ 
+const postSchema = new mongoose.Schema({
+    title: String,
+    postedBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    }
+})
+ 
+// Creating models from userSchema and postSchema
+const User = mongoose.model('User', userSchema);
+const Post = mongoose.model('Post', postSchema);
+
+
+Post.find()
+.populate("postedBy")
+.then(p=>console.log(p))
+.catch(error=>console.log(error));
+
+We will perform the query to find all the posts using populate() method.
+ To overcome the above problem, populate() method is used to replace the user ObjectId field with the whole document consisting of all the user data. 
+For this we only have to replace the query part in the above code in main.js file with:
+Note: In the argument of the populate() method we pass the field we want to populate with the user data.
+
+
 
 https://www.simplilearn.com/mongodb-interview-questions-and-answers-article	
 	
+	
+
 	
 	
 	

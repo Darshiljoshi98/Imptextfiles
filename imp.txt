@@ -804,4 +804,53 @@ Aws:
 2.Aws-serverless-express/middleware
 3.Elestic beanstalks
 4.Elestic block storage
-5CLOUD TRAIL
+5CLOUD TRAIL]
+
+
+Git is software and github is service(Git hub is online service which host git)
+Git is Version Control
+Git status
+git config --global user.name ""
+git config --global user.email ""
+git config --list
+
+git init - Create repository
+write=>add => commit
+git init
+git add => staging area	
+git commit
+git push
+
+
+ex git add file1.txt file2.txt
+	git add.
+git log
+git log --oneline
+
+Commit->tree->blob
+Head point current branch
+Git branch
+gt branch bug-fix(nAME)
+GIT SWITCH bug-fix
+OR 
+git checkout orangemode(branch name)
+
+
+switch vs checkout 
+switch create new branch if not exits
+checkout throe error if branch is not cexits
+
+Merge
+From main file
+git merge bug-fix 
+
+
+Git diff --staged
+git stash
+git stash apply
+
+
+git tag
+
+
+https://mongoosejs.com/docs/middleware.html = > refer docs

@@ -23,6 +23,7 @@ React:
 15Fiber:https://github.com/acdlite/react-fiber-architecture   - reconceilation
 
 16React 18 Feture :https://www.acil.in/what-new-in-react-18/
+
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -121,6 +122,157 @@ https://www.youtube.com/watch?v=poQXNp9ItL4
 -What do you understand about Redux Thunk?
 -Using Redux Thunk middleware, we can write action creators returning a function instead of an action. This thunk can postpone the dispatch of an action, or do conditional dispatchment. The arguments passed to the inner function are the store methods dispatch and getState(). In the event of an action creator returning a function, the function gets executed by the Redux Thunk middleware and it does not have to be pure. In other words, the function is allowed to have side effects, including executing asynchronous API calls. It can even dispatch actions. Redux thunk is used to delay the dispatch of an action, or to dispatch in the event of a certain condition being met. At the time of dispatch of a function instead of an action object, if Redux Thunk middleware is enabled, the middleware will call that function with the dispatch method itself as the first argument.
 -What are the workflow features in Redux?
+
+Store
+reducer -> need to change value
+useselector
+usedispatch
+
+
+Redux Demo
+store=>Reducer=>state=>ui=>dispatch=>store
+						Store:
+
+							export const configureStore = (services) => createStore(
+								reducers, 
+								
+							);
+
+
+							index.js
+							ReactDOM.render(
+								<Provider store={configureStore(services)} context={ReactReduxContext} >
+									<AuthComp />
+									{/* <App /> */}
+								</Provider>,
+								document.getElementById('root')
+							);
+
+
+							Action
+
+							export const getDataSuccess = result => ({
+								type: GET_DATA_SUCCESS,
+								payload: result,
+							});
+
+
+							Reducer
+							const initialState = {
+							  
+								allData: [],
+							   
+							};
+
+							const reducer = (state = initialState, action) => {
+								switch (action.type) {
+									case GET_DATA_SUCCESS:
+										return { ...state, allData: action.payload, error: null };        
+									default:
+										return state;
+								}
+							}
+
+							export default reducer;
+
+
+							Selector
+
+							export const getisEnable = state => state.home.isEnable;GET_DATA_SUCCESS
+
+							Reducer index file
+
+							const createRootReducer = (history) => combineReducers({
+								router: connectRouter(history),
+								ui,
+								home,
+								addNew,
+								historyReducer,
+								requestSearchSEReducer,
+								multiSearchReducer
+							})
+
+							export default createRootReducer
+
+
+
+							Dispatch
+							  dispatch(getDataSuccess(result));
+
+							Selector
+							  const isEnable = useSelector(getisEnable);
+  
+  
+  
+ ---------------------------------------------------
+  
+  
+  Redux toolkit
+  
+  Slice/Reducer
+  
+			  import { createSlice } from '@reduxjs/toolkit';
+
+			export const counterSlice = createSlice({
+			  name: 'counter',
+			  initialState: {
+				count: 0,
+			  },
+			  reducers: {
+				increment: (state) => {
+				  state.count += 1;
+				},
+				decrement: (state) => {
+				  state.count -= 1;
+				},
+			  },
+			});
+
+			// Action creators are generated for each case reducer function
+			export const { increment, decrement } = counterSlice.actions;
+
+			export default counterSlice.reducer;
+			
+	Store
+	
+				import { configureStore } from '@reduxjs/toolkit';
+			import counterReducer from '../features/counter/counterSlice';
+
+			export const store = configureStore({
+			  reducer: {
+				counter: counterReducer,
+			  },
+});
+
+	index,js
+	ReactDOM.render(
+	  <Provider store={store}>
+		<App />
+	  </Provider>,
+	  document.getElementById('root')
+	);
+				 
+	app.js
+								import React from 'react';
+			import { useSelector, useDispatch } from 'react-redux';
+			import { increment, decrement } from './features/counter/counterSlice';
+
+			function App() {
+			  const count = useSelector((state) => state.counter.count);
+			  const dispatch = useDispatch();
+
+			  return (
+				<div>
+				  <h1>Counter: {count}</h1>
+				  <button onClick={() => dispatch(increment())}>Increment</button>
+				  <button onClick={() => dispatch(decrement())}>Decrement</button>
+				</div>
+			  );
+			}
+
+			export default App;
+  
+  
 --------------------------------------------------------------------------------------------------------------
 
 
@@ -172,7 +324,23 @@ import UserContext  from 'context.js'
 
 const {user} = useContext(UserContext)
 
+React 18 
 
+useData
+USETRANSITION -The use of Transition hooks allows us to specify certain state updates as less important
+USEDEFERREDVALUE-The React.useDeferredValue() function is used to achieve asynchronous rendering. 
+=>suspense
+=>Automatic batching
+=>Userid ->The useId() hook is an easy way to generate a random and unique ID number in React 18
+=>concurrent rendering
+=>Server component
+=>Portals in React
+				Portals are a new concept in React 18 which allows you to render content in a different part of the DOM. 
+				Portals are only supported on React 18.
+						 return ReactDOM.createPortal(
+			<h1>Portal demo</h1>,
+			document.getElementById('portal')
+		  )
 
 
 
@@ -313,26 +481,6 @@ React renders Server Components into a special data format called the React Serv
 
 folder->page.tsx is used for routing
 component like is not use for routing like add to cart button
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 Redux Thunk

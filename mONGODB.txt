@@ -923,11 +923,89 @@ Mongoose has 4 types of middleware: document middleware, model middleware, aggre
 1Doument Middleware => it will point document
 // pre: Before saving document => call when we excute .save() or  .create() method
 // post:After Sving Document
+
+Document middleware is supported for the following document functions. In Mongoose, 
+a document is an instance of a Model class. In document middleware functions, this refers to the document. 
+To access the model, use this.constructor.
+
+validate
+save
+remove
+updateOne
+deleteOne
+init (note: init hooks are synchronous)
+
 2 Query Middleware =>it will point query
 call when we beffore of excute .find() 
-3Aggrigation middleware  => Before and after aggrigation happen
 
 
+Query middleware is supported for the following Query functions. 
+Query middleware executes when you call exec() or then() on a Query object, or await on a Query object. In query middleware functions, 
+this refers to the query.
+
+count
+countDocuments
+deleteMany
+deleteOne
+estimatedDocumentCount
+find
+findOne
+findOneAndDelete
+findOneAndReplace
+findOneAndUpdate
+remove
+replaceOne
+updateOne
+updateMany
+validate
+
+
+3 Aggrigation middleware  => Before and after aggrigation happen
+Aggregate middleware is for MyModel.aggregate(). Aggregate middleware executes when you call exec() on an aggregate object.
+ In aggregate middleware, this refers to the aggregation object.
+
+aggregate
+
+4 Model middleware
+Model middleware is supported for the following model functions. Don't confuse model middleware and document middleware: model middleware hooks into static functions on a Model class, document middleware hooks into methods on a Model class. In model middleware functions, this refers to the model.
+
+bulkWrite
+createCollection
+insertMany
+
+Here are the possible strings that can be passed to pre()
+
+aggregate
+bulkWrite
+count
+countDocuments
+createCollection
+deleteOne
+deleteMany
+estimatedDocumentCount
+find
+findOne
+findOneAndDelete
+findOneAndReplace
+findOneAndUpdate
+init
+insertMany
+remove
+replaceOne
+save
+update
+updateOne
+updateMany
+validate
+
+
+Use Cases
+Middleware are useful for atomizing model logic. Here are some other ideas:
+
+complex validation
+removing dependent documents (removing a user removes all their blogposts)
+asynchronous defaults
+asynchronous tasks that a certain action triggers
 
 			
 =>Populate()

@@ -39,6 +39,7 @@ Notes: Run dev server ->npm run dev /Run production:npm start
 6:RestApi:https://jasonwatmore.com/post/2021/08/31/next-js-combined-add-edit-create-update-form-example
 7:Use Swr:https://swr.vercel.app/docs/with-nextjs - For data fatching
 8:Nextjs Auth with 13:https://medium.com/ascentic-technology/authentication-with-next-js-13-and-next-auth-9c69d55d6bfd
+9: optimize 3rdf party script:https://nextjs.org/docs/pages/building-your-application/optimizing/scripts
 -Next.js is a flexible React framework that gives you building blocks to create fast web applications.
 -CSR,SSR,SSG
 -Imperative & Declarative Programming:
@@ -105,31 +106,25 @@ Next auth :https://www.youtube.com/watch?v=3BEn2E9PvBM&list=PLu71SKxNbfoCXO80Z4m
 Backend series:https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW&pp=iAQB
 
 ---------------------------------------------------------------------------------------------------------
-Redux tookit:
-Important Points:
--No need to action
--Vite is a build tool and development server designed to improve the development process of modern web applications. It does this by dividing your application modules into dependencies and source code. Dependencies are modules that do not change often, while source code is typically edited frequently during developmen
--configureStore(): wraps createStore to provide simplified configuration options and good defaults. It can automatically combine your slice reducers, adds whatever Redux middleware you supply, includes redux-thunk by default, and enables use of the Redux DevTools Extension.
--createReducer(): that lets you supply a lookup table of action types to case reducer functions, rather than writing switch statements. In addition, it automatically uses the immer library to let you write simpler immutable updates with normal mutative code, like state.todos[3].completed = true.
--createAction(): generates an action creator function for the given action type string. The function itself has toString() defined, so that it can be used in place of the type constant.
--createSlice(): accepts an object of reducer functions, a slice name, and an initial state value, and automatically generates a slice reducer with corresponding action creators and action types.
--createAsyncThunk: accepts an action type string and a function that returns a promise, and generates a thunk that dispatches pending/fulfilled/rejected action types based on that promise
--createEntityAdapter: generates a set of reusable reducers and selectors to manage normalized data in the store
--The createSelector utility from the Reselect library, re-exported for ease of use.
-https://www.youtube.com/watch?v=2OaAbSgmIWo
-https://www.youtube.com/watch?v=L6AYquaHvWk&list=PLwGdqUZWnOp354xMD8u0hxX-1qmCvfLiY&index=12
-https://www.youtube.com/watch?v=poQXNp9ItL4
--What do you understand about Redux Thunk?
--Using Redux Thunk middleware, we can write action creators returning a function instead of an action. This thunk can postpone the dispatch of an action, or do conditional dispatchment. The arguments passed to the inner function are the store methods dispatch and getState(). In the event of an action creator returning a function, the function gets executed by the Redux Thunk middleware and it does not have to be pure. In other words, the function is allowed to have side effects, including executing asynchronous API calls. It can even dispatch actions. Redux thunk is used to delay the dispatch of an action, or to dispatch in the event of a certain condition being met. At the time of dispatch of a function instead of an action object, if Redux Thunk middleware is enabled, the middleware will call that function with the dispatch method itself as the first argument.
--What are the workflow features in Redux?
-
-Store
-reducer -> need to change value
-useselector
-usedispatch
 
 
-Redux Demo
+
+
+Redux
+
+Redux is really:
+
+A single store containing "global" state
+Dispatching plain object actions to the store when something happens in the app
+Pure reducer functions looking at those actions and returning immutably updated state
+
+createStore to actually create a Redux store
+combineReducers to combine multiple slice reducers into a single larger reducer
+applyMiddleware to combine multiple middleware into a store enhancer
+compose to combine multiple store enhancers into a single store enhancer
+
+
+Demo
 store=>Reducer=>state=>ui=>dispatch=>store
 						Store:
 
@@ -207,7 +202,31 @@ store=>Reducer=>state=>ui=>dispatch=>store
  ---------------------------------------------------
   
   
-  Redux toolkit
+ Redux toolkit
+  
+  Important Points:
+-No need to action
+-Vite is a build tool and development server designed to improve the development process of modern web applications. It does this by dividing your application modules into dependencies and source code. Dependencies are modules that do not change often, while source code is typically edited frequently during developmen
+-configureStore(): wraps createStore to provide simplified configuration options and good defaults. It can automatically combine your slice reducers, adds whatever Redux middleware you supply, includes redux-thunk by default, and enables use of the Redux DevTools Extension.
+-createReducer(): that lets you supply a lookup table of action types to case reducer functions, rather than writing switch statements. In addition, it automatically uses the immer library to let you write simpler immutable updates with normal mutative code, like state.todos[3].completed = true.
+-createAction(): generates an action creator function for the given action type string. The function itself has toString() defined, so that it can be used in place of the type constant.
+-createSlice(): accepts an object of reducer functions, a slice name, and an initial state value, and automatically generates a slice reducer with corresponding action creators and action types.
+-createAsyncThunk: accepts an action type string and a function that returns a promise, and generates a thunk that dispatches pending/fulfilled/rejected action types based on that promise
+-createEntityAdapter: generates a set of reusable reducers and selectors to manage normalized data in the store
+-The createSelector utility from the Reselect library, re-exported for ease of use.
+https://www.youtube.com/watch?v=2OaAbSgmIWo
+
+
+-What do you understand about Redux Thunk?
+-Using Redux Thunk middleware, we can write action creators returning a function instead of an action. This thunk can postpone the dispatch of an action, or do conditional dispatchment. The arguments passed to the inner function are the store methods dispatch and getState(). In the event of an action creator returning a function, the function gets executed by the Redux Thunk middleware and it does not have to be pure. In other words, the function is allowed to have side effects, including executing asynchronous API calls. It can even dispatch actions. Redux thunk is used to delay the dispatch of an action, or to dispatch in the event of a certain condition being met. At the time of dispatch of a function instead of an action object, if Redux Thunk middleware is enabled, the middleware will call that function with the dispatch method itself as the first argument.
+-What are the workflow features in Redux?
+
+Store
+reducer -> need to change value
+useselector
+usedispatch
+
+
   
   Slice/Reducer
   

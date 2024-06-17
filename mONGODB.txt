@@ -1086,7 +1086,14 @@ https://www.simplilearn.com/mongodb-interview-questions-and-answers-article
 	
 	
 
-	
+Using Lean
+
+By default, Mongoose queries return an instance of the Mongoose Document class. Documents are much heavier than vanilla JavaScript objects,
+ because they have a lot of internal state for change tracking. Enabling the lean option tells Mongoose to skip instantiating a full Mongoose 
+ document and just give you the POJO.
+ 
+ // To enable the `lean` option for a query, use the `lean()` function.
+const leanDoc = await MyModel.findOne().lean();
 	
 	
 	

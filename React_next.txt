@@ -360,6 +360,15 @@ USEDEFERREDVALUE-The React.useDeferredValue() function is used to achieve asynch
 			<h1>Portal demo</h1>,
 			document.getElementById('portal')
 		  )
+		  
+		  
+=>Forword ref:
+
+when you use multiple input fileld with comman componenet so we need to pass refrence to component in that case forword ref use
+
+like common component name->inputfield
+main component name- login
+so we need to pass ref to inputfield to login component
 
 
 

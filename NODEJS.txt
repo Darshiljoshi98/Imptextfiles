@@ -19,16 +19,19 @@ Nodejs:
 11:Streams:https://www.freecodecamp.org/news/node-js-streams-everything-you-need-to-know-c9141306be93/
 12:Child process:https://www.freecodecamp.org/news/node-js-child-processes-everything-you-need-to-know-e69498fe970a/
 13:worker Threads :https://www.youtube.com/watch?v=OGkOxkSYrUg
-	
 
 Nodejs Course:https://youtube.com/watch?v=5eaBOxXABkU&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_LhxS&index=1 -completed
 			  https://www.youtube.com/watch?v=f2EqECiTBL8-completed
 
-Npm Packages:throttledQueue/multer/xml2js/moment/Jimp/schedule/ping
+Npm Packages:throttledQueue/multer/xml2js/moment/Jimp/schedule/ping /rate limit(for secuity)
 
 Node js:https://www.youtube.com/watch?v=ohIAiuHMKMI&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo
 		https://www.youtube.com/watch?v=SxCfcE4AHxQ&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_LhxS&index=23
 eXPRESS JS:Express JS Full Course:https://www.youtube.com/watch?v=nH9E25nkk3I
+
+morgan and winston  => logger
+morgan and winston  => logger
+
 
 jAVASCRIPT
 -------------------

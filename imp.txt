@@ -648,7 +648,7 @@ https://www.youtube.com/watch?v=9B4CvtzXRpc
 
 
 
-SELECT * FROM OTShip.ots_distOrders where  cast(orderCreatedDateTime as date) > '2023/06/04'  
+SELECT * FROM OTShip.ots_distOrders where  	 
 
 scrum master : https://www.youtube.com/watch?v=Jhm5Fky30hg
 
@@ -860,6 +860,13 @@ process
 child spawn fork
 thread -https://www.youtube.com/watch?v=OGkOxkSYrUg
 
+https://youtube.com/watch?v=MuwJJrfIfsU&list=PL5Lsd0YA4OMGN86vWiW7O52izu-cTxcS3&index=2
+
+
 mongo
 Model Tree Structures with Nested Sets
 Model Tree Structures with Parent References
+model.discriminator()
+
+
+change cron url 

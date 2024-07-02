@@ -18,18 +18,18 @@ Nodejs:
 10:multithreading-in-node-js:	https://www.digitalocean.com/community/tutorials/how-to-use-multithreading-in-node-js	
 11:Streams:https://www.freecodecamp.org/news/node-js-streams-everything-you-need-to-know-c9141306be93/
 12:Child process:https://www.freecodecamp.org/news/node-js-child-processes-everything-you-need-to-know-e69498fe970a/
+12:Child process:https://www.freecodecamp.org/news/node-js-child-processes-everything-you-need-to-know-e69498fe970a/
 13:worker Threads :https://www.youtube.com/watch?v=OGkOxkSYrUg
 
 Nodejs Course:https://youtube.com/watch?v=5eaBOxXABkU&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_LhxS&index=1 -completed
 			  https://www.youtube.com/watch?v=f2EqECiTBL8-completed
 
-Npm Packages:throttledQueue/multer/xml2js/moment/Jimp/schedule/ping /rate limit(for secuity)
+Npm Packages:throttledQueue/multer/xml2js/moment/Jimp/schedule/ping /rate limit(for secuity),npm audit
 
 Node js:https://www.youtube.com/watch?v=ohIAiuHMKMI&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo
 		https://www.youtube.com/watch?v=SxCfcE4AHxQ&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_LhxS&index=23
 eXPRESS JS:Express JS Full Course:https://www.youtube.com/watch?v=nH9E25nkk3I
 
-morgan and winston  => logger
 morgan and winston  => logger
 
 
@@ -132,6 +132,15 @@ The spawn function launches a command in a new process and we can use it to pass
 			req.query=fetch data from url
 			re.body - fetch dat afrom body
 	
+=>Put vs patch
+
+PUT is a method of modifying resources where the client sends data that updates the entire resource.
+PATCH does partial update e.g. Fields that need to be updated by the client, only that field is updated without modifying the other field.
+
+example: if only need to update name then in put you need to send whole request (means all filed which avilable in table) if used put
+{name:"dj2",lastname:"45"} 
+in patch if u want upadte name then u send only name like {name:"dj2"} no need to send whole object send field which is necessary
+
 Advance concepts
 ----------------------------
 Advance Concept Node js

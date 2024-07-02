@@ -371,6 +371,22 @@ main component name- login
 so we need to pass ref to inputfield to login component
 
 
+React 19
+
+=> include new compiler which compile react code
+=>Automatic memoization
+=>Document meta data
+=>Ref pass as regular prop(no need to pass as forwordref)
+=> no more react.lazy
+=><context.provider> replace with <context>
+Hooks
+use()  -> replace useContext()
+Action
+useFormStatus()
+useFormState()
+useOptimistic(
+)
+
 
 Nextjs
 ------------------------
@@ -524,6 +540,11 @@ effects, including executing asynchronous API calls. It can even dispatch action
 
 8. What are the workflow features in Redux?
 
+
+
+
+
+"FORCE-DYNAMIC" force next js to load page dynamivally
 
 
 

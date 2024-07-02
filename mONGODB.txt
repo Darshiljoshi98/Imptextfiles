@@ -171,6 +171,35 @@ You can use findOne() to retrieve the document for a specific user, for example,
 )
 
 
+  // 1. Basic find
+  const allUsers = await User.find();
+  console.log('All Users:', allUsers);
+
+  // 2. Find with conditions
+  const usersOver30 = await User.find({ age: { $gt: 30 } });
+  console.log('Users over 30:', usersOver30);
+
+  // 3. Find One
+  const singleUser = await User.findOne({ name: 'Alice' });
+  console.log('Single User:', singleUser);
+
+  // 4. Find by ID
+  const userId = singleUser._id;
+  const userById = await User.findById(userId);
+  console.log('User by ID:', userById);
+
+  // 5. Find One and Update
+  const updatedUser = await User.findOneAndUpdate(
+    { name: 'Bob' },
+    { age: 32 },
+    { new: true }
+  );
+  console.log('Updated User:', updatedUser);
+
+  // 6. Find by ID and Remove
+  const removedUser = await User.findByIdAndRemove(userId);
+  console.log('Removed User:', removedUse
+
 #Projection
 In MongoDB, projection is a way to control which fields are included or excluded from the result set when querying documents from a collection. 
 				It allows you to shape the output of a query by specifying which fields should be returned or excluded.

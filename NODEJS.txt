@@ -31,6 +31,7 @@ Node js:https://www.youtube.com/watch?v=ohIAiuHMKMI&list=PLinedj3B30sDby4Al-i13h
 eXPRESS JS:Express JS Full Course:https://www.youtube.com/watch?v=nH9E25nkk3I
 
 morgan and winston  => logger
+Joi ->Schema validation
 
 
 jAVASCRIPT
@@ -231,8 +232,353 @@ Advance Concept Node js
 	
 	
 
+----------------------------
+app.set("view engine", "ejs");
 
+The line app.set("view engine", "ejs"); is used in an Express.js application to set up the view engine to 
+use EJS (Embedded JavaScript) for rendering HTML templates.
+
+Explanation
+
+EJS (Embedded JavaScript): A templating language that lets you generate HTML markup with plain JavaScript. 
+It allows you to embed JavaScript code within your HTML templates.
+Purpose
+By setting the view engine to EJS, you enable Express to render .ejs files located in your views directory. This makes it easier to dynamically generate HTML pages based on your application data.
+
+Usage
+Set Up EJS in Express:
+
+Ensure you have installed EJS:
+npm install ejs
+Then, in your Express application, set EJS as the view engine:
+const express = require('express');
+const app = express();
+
+// Set the view engine to EJS
+app.set('view engine', 'ejs');
+Create an EJS Template:
+
+Create a directory named views in the root of your project. 
+Inside the views directory, create an EJS file, for example, index.ejs:
+
+html
+Copy code
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+</head>
+<body>
+  <h1>Welcome to <%= title %></h1>
+  <p>Hello, <%= user %>!</p>
+</body>
+</html>
+Render the EJS Template in a Route:
+
+Define a route in your Express application that renders the index.ejs template:
+
+javascript
+Copy code
+app.get('/', (req, res) => {
+  res.render('index', { title: 'My Website', user: 'John Doe' });
+});
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+Start the Server:
+
+Run your Express server:
+
+sh
+Copy code
+node app.js
+When you navigate to http://localhost:3000 in your browser, 
+you should see the rendered HTML content from index.ejs, with the dynamic values for title and user injected.
+
+
+
+Setting the view engine to EJS in an Express.js application allows you to render dynamic HTML pages using EJS templates. 
+This enhances your application's ability to generate HTML content dynamically based on the data passed from your server-side code.
 
 
 
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+Package with use------------------
+Unifaires  Code:
+
+
+1. @elasticemail/elasticemail-client (^4.0.23)
+	Usage: A client for interacting with the Elastic Email API, used for sending emails.
+	Example: Sending an email through Elastic Email.
+
+	const ElasticEmail = require('@elasticemail/elasticemail-client');
+	const client = new ElasticEmail.Client({ apiKey: 'your-api-key' });
+	client.Email.Send({ ... });
+
+2. @joi/date (^2.1.0)
+	Usage: An extension for Joi to handle date validations.
+	Example: Validating a date.
+
+		const Joi = require('joi').extend(require('@joi/date'));
+		const schema = Joi.date().format('YYYY-MM-DD');
+
+3. @sendgrid/mail (^8.1.0)
+		Usage: A library for sending emails using the SendGrid API.
+		Example: Sending an email through SendGrid.
+
+		const sgMail = require('@sendgrid/mail');
+		sgMail.setApiKey('your-sendgrid-api-key');
+		const msg = { to: 'recipient@example.com', from: 'sender@example.com', subject: 'Hello', text: 'Hello World' };
+		sgMail.send(msg);
+
+4. axios (^1.4.0)
+		Usage: A promise-based HTTP client for making requests to APIs.
+		Example: Making a GET request.
+
+		const axios = require('axios');
+		axios.get('https://api.example.com/data').then(response => console.log(response.data));
+
+5. bcryptjs (^2.4.3)
+		Usage: A library for hashing and comparing passwords using bcrypt.
+		Example: Hashing a password.
+
+		const bcrypt = require('bcryptjs');
+		const hash = bcrypt.hashSync('myPassword', 10);
+		
+6. cloudinary (^1.36.4)
+	Usage: A library for managing images and videos in Cloudinary.
+	Example: Uploading an image to Cloudinary.
+
+	const cloudinary = require('cloudinary').v2;
+	cloudinary.config({ cloud_name: 'your-cloud-name', api_key: 'your-api-key', api_secret: 'your-api-secret' });
+	cloudinary.uploader.upload('path/to/image.jpg');
+
+7. cookie-parser (~1.4.4)
+	Usage: A middleware for parsing cookies in an Express application.
+	Example: Using the cookie parser middleware.
+
+		const cookieParser = require('cookie-parser');
+		app.use(cookieParser());
+8. cors (^2.8.5)
+	Usage: A middleware to enable Cross-Origin Resource Sharing (CORS) in Express.
+	Example: Enabling CORS for all routes.
+
+	const cors = require('cors');
+	app.use(cors());
+
+9. dayjs (^1.11.11)
+
+	Usage: A lightweight library for working with dates and times.
+	Example: Formatting a date.
+
+	const dayjs = require('dayjs');
+	console.log(dayjs().format('YYYY-MM-DD'));
+10. debug (~2.6.9)
+	Usage: A small debugging utility that outputs logs to the console.
+	Example: Creating a debug instance.
+
+	const debug = require('debug')('app');
+	debug('This is a debug message');
+
+11. dotenv (^16.0.1)
+	Usage: A library for loading environment variables from a .env file.
+	Example: Loading environment variables.
+
+	require('dotenv').config();
+	console.log(process.env.MY_ENV_VAR);
+
+12. ejs (^3.1.9)
+	Usage: A templating engine for generating HTML markup with plain JavaScript.
+	Example: Rendering a template with data.
+
+	app.set('view engine', 'ejs');
+	app.get('/', (req, res) => res.render('index', { title: 'EJS Example' }));
+
+13. express (^4.18.2)
+	Usage: A web framework for building web applications and APIs.
+	Example: Creating a basic Express server.
+
+	const express = require('express');
+	const app = express();
+	app.get('/', (req, res) => res.send('Hello World'));
+	app.listen(3000);
+
+14. flutterwave-node-v3 (^1.1.7)
+	Usage: A library for integrating with the Flutterwave payment gateway.
+	Example: Initiating a payment.
+
+	const Flutterwave = require('flutterwave-node-v3');
+	const flw = new Flutterwave('your-public-key', 'your-secret-key');
+	flw.Charge.card({ ... });
+
+15. geoip-lite (^1.4.9)
+	Usage: A library for looking up IP addresses to determine geographical location.
+	Example: Getting the location of an IP address.
+
+	const geoip = require('geoip-lite');
+	const geo = geoip.lookup('207.97.227.239');
+	console.log(geo);
+
+16. http-errors (~1.6.3)
+	Usage: A utility for creating HTTP errors with status codes.
+	Example: Creating a 404 error.
+
+	const createError = require('http-errors');
+	app.use((req, res, next) => next(createError(404, 'Not Found')));
+
+17. joi (^17.6.0)
+	Usage: A library for data validation.
+	Example: Validating an object.
+
+	const Joi = require('joi');
+	const schema = Joi.object({ username: Joi.string().required() });
+	const result = schema.validate({ username: 'user123' });
+
+18. jsonwebtoken (^9.0.0)
+	Usage: A library for creating and verifying JSON Web Tokens (JWT).
+	Example: Signing a token.
+
+	const jwt = require('jsonwebtoken');
+	const token = jwt.sign({ userId: 1 }, 'your-secret-key');
+
+19. linkedin-jobs-api (^1.0.0)
+	Usage: A wrapper for LinkedIn Jobs API to search for jobs on LinkedIn.
+	Example: Searching for jobs.
+
+	const linkedinJobs = require('linkedin-jobs-api');
+	linkedinJobs.searchJobs({ query: 'software engineer', location: 'San Francisco' });
+
+20. morgan (~1.9.1)
+	Usage: A middleware for logging HTTP requests in an Express application.
+	Example: Setting up request logging.
+
+	const morgan = require('morgan');
+	app.use(morgan('combined'));
+
+21. multer (^1.4.5-lts.1)
+	Usage: A middleware for handling file uploads in an Express application.
+	Example: Setting up file upload handling.
+
+	const multer = require('multer');
+	const upload = multer({ dest: 'uploads/' });
+	app.post('/upload', upload.single('file'), (req, res) => res.send('File uploaded'));
+	
+22. mysql2 (^2.3.3)
+	Usage: A MySQL client for Node.js with improved performance and features.
+	Example: Connecting to a MySQL database.
+
+	const mysql = require('mysql2');
+	const connection = mysql.createConnection({ host: 'localhost', user: 'root', database: 'test' });
+	connection.query('SELECT * FROM users', (err, results) => console.log(results));
+
+23. n-digit-token (^2.2.0)
+	Usage: A library for generating n-digit numeric tokens.
+	Example: Generating a 6-digit token.
+
+	const tokenGenerator = require('n-digit-token');
+	const token = tokenGenerator(6);
+	console.log(token); // Example output: 123456
+
+24. node-cron (^3.0.3)
+	Usage: A task scheduling library for running cron jobs in Node.js.
+	Example: Scheduling a job to run every minute.
+
+	const cron = require('node-cron');
+	cron.schedule('* * * * *', () => console.log('Running a task every minute'));
+
+25. node-fetch (^2.0.0)
+	Usage: A lightweight module that brings window.fetch to Node.js.
+	Example: Making a fetch request.
+
+	const fetch = require('node-fetch');
+	fetch('https://api.example.com/data').then(response => response.json()).then(data => console.log(data));
+
+26. nodemailer (^6.9.13)
+	Usage: A module for sending emails using Node.js.
+	Example: Sending an email.
+
+	const nodemailer = require('nodemailer');
+	const transporter = nodemailer.createTransport({ service: 'gmail', auth: { user: 'your-email@gmail.com', pass: 'your-password' } });
+	transporter.sendMail({ from: 'your-email@gmail.com', to: 'recipient@example.com', subject: 'Hello', text: 'Hello World' });
+
+27. nodemon (^2.0.22)
+	Usage: A tool that automatically restarts your Node.js application when files change.
+	Example: Running a server with nodemon.
+	bash
+	Copy code
+	nodemon server.js
+
+28. request-ip (^3.3.0)
+	Usage: A middleware to retrieve a user's IP address in an Express application.
+	Example: Getting the IP address from a request.
+
+	const requestIp = require('request-ip');
+	app.use(requestIp.mw());
+	app.use((req, res) => res.send(req.clientIp));
+
+29. sequelize (^6.21.3)
+	Usage: An ORM for Node.js that supports MySQL, PostgreSQL, SQLite, and more.
+	Example: Defining a model and querying data.
+
+	const { Sequelize, Model, DataTypes } = require('sequelize');
+	const sequelize = new Sequelize('sqlite::memory:');
+	class User extends Model {}
+	User.init({ username: DataTypes.STRING }, { sequelize, modelName: 'user' });
+	await User.create({ username: 'JohnDoe' });
+
+30. sequelize-hierarchy-next (^1.0.0)
+	Usage: An extension for Sequelize to handle hierarchical data structures.
+	Example: Creating a hierarchical relationship.
+
+	const { Model } = require('sequelize-hierarchy-next')(sequelize);
+
+31. sha1 (^1.1.1)
+	Usage: A library for generating SHA-1 hashes.
+	Example: Generating a SHA-1 hash.
+
+	const sha1 = require('sha1');
+	console.log(sha1('message'));
+
+32. slugify (^1.6.6)
+	Usage: A library to create URL-friendly slugs from strings.
+	Example: Generating a slug from a string.
+
+	const slugify = require('slugify');
+	const slug = slugify('Hello World!', { lower: true });
+	console.log(slug); // Outputs: hello-world
+
+33. socket.io (^4.7.5)
+	Usage: A library for real-time web socket communication.
+	Example: Setting up a basic Socket.io server.
+
+	const { Server } = require('socket.io');
+	const io = new Server(3000);
+	io.on('connection', (socket) => console.log('a user connected'));
+
+34. stripe (^12.5.0)
+	Usage: A library for integrating Stripe payment processing.
+	Example: Creating a payment intent.
+
+	const stripe = require('stripe')('your-stripe-secret-key');
+	const paymentIntent = await stripe.paymentIntents.create({ amount: 1000, currency: 'usd' }
+
+
+
+

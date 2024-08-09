@@ -74,6 +74,58 @@ Darshil7890 mongb password
 	
 Global protect vpn cred.
 
+
+
+admin console: https://admin.unifaires.com/
+username: admin@unifaires.com 
+password: 123456
+
+
+personal account: https://dev.unifaires.com/ 
+username: user@unifaires.com
+password: 123456
+
+
+Expiration Date
+Business account: -https://dev.unifaires.com/  
+username: business@unifaires.com 
+password: 123456
+
+
+test application
+refer 
+
+Access  Via Institution 	
+Business 
+unifaires@gmail.com
+Access code 50f154RczZ
+
+ahamefula.utom159134@gmail.com
+- Standard159134# (Darshil)
+For chart 	
+https://recharts.org/en-US/examples/SimpleLineChart
+
+
+test application AntD-Components ,Cloudinary,SendGrid
+
+
+●AntD-Components
+●Video Hosting: Cloudinary,
+●Payment Processing: Stripe API, Flutter wave
+●Email Service: SendGrid,
+●Career Data: LinkedIn API
+●Location API: IpAPI (ip-api.com)
+Exchange Rate: Open Exchange rate(openExchangeRate.org)
+
+●Maintain a maximum cyclomatic complexity of 10
+
+SEQUEL
+○Caching of API responses with configurable TTL
+○Asynchronous processing for non-critical tasks using message queues
+Unifaires 
+
+
+
 mongo 
 darshil.joshi@spec-india.com
 ASDFGHJK@345
@@ -870,3 +922,20 @@ model.discriminator()
 
 
 change cron url 
+
+
+
+
+
+
+
+
+
+
+check shipped status issue
+verify data
+verify cancel data
+prepare biweekly ppt
+
+
+

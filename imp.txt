@@ -65,15 +65,16 @@ Spec@123 / Spec@2022
 Prod - Xrefv3@2023j
 darshil.joshi@spec-india.com
 dev-		Xrefv3@2023j																																							
-Spec@india89 -github password/Chatgpt/tawk	
+Spec@india89 -github password/Chatgpt/tawk/gls alumi password
 darshil.joshi@spec-india.com
 Xrefv3@2023j - mongodb password
 
 darshil2015@gmail.com
 Darshil7890 mongb password
+Spec@india89 - github
 	
 Global protect vpn cred.
-
+https://chatgpt.com/share/ee8c6cc7-f793-433b-bd87-e158e27efb44
 
 
 admin console: https://admin.unifaires.com/
@@ -85,6 +86,7 @@ personal account: https://dev.unifaires.com/
 username: user@unifaires.com
 password: 123456
 
+Dashboard
 
 Expiration Date
 Business account: -https://dev.unifaires.com/  
@@ -106,6 +108,7 @@ For chart
 https://recharts.org/en-US/examples/SimpleLineChart
 
 
+
 test application AntD-Components ,Cloudinary,SendGrid
 
 
@@ -118,7 +121,8 @@ test application AntD-Components ,Cloudinary,SendGrid
 Exchange Rate: Open Exchange rate(openExchangeRate.org)
 
 ●Maintain a maximum cyclomatic complexity of 10
-
+SideFilter - For filter
+    const find = await courseService.getAllDistinctAttributes();
 SEQUEL
 ○Caching of API responses with configurable TTL
 ○Asynchronous processing for non-critical tasks using message queues
@@ -449,56 +453,20 @@ pashupati
 ishan
 mahadev  
 
-3 koti shita
+3 koti shita 
+part 2
+after 12 hour  -12:15  shivarati puja vidhi
   
   
 Sophos password with  authentication code
 sophos connect  password with authentication code darshil.joshi
 connect remoote no need to authentication code
 
-1:42
-
-
 
 re_eEhY7Qvh_28Wbe94KXoVEfzQV4m785aus
 
 Cloudfront_CSP_4_tools_se_app  	 - virgina
 
-
-
-sesa699823/ Schneidersesa@000rp
-
-	Darshil
-DDS	n
-CBM-	n
-p1	
-p2	
-p3	
-	
-V3 UTILITY	
-	
-COMPITIOR UPDATE	n
-OSUBSTI	Y
-MEXICO  OSUBSTI	y
-	
-EZ3 	y
-EZ3 UTILITY	
-	
-1.ExceltoJsonConverter	y
-2.Manualcat creation	y
-3.Mark // into excel file	
-4.Create Asset file utility	
-5.Create Datasheet  file utility	
-	
-	
-	
-XREF V3	y
-NEWARK /gRAYBAR	y
-DOLLY	y
-	
-OTSHIP	y
-mayer	y
-colonial	y
 
 
 
@@ -655,173 +623,12 @@ https://recoiljs.org/docs/introduction/motivation
   color: azure;
   
   
-  
-  https://cloudinary.com/blog/3-ways-to-implement-a-carousel
-  -in-nextjs
-  
-  #245127
-}
 
 
 
 
-mon:
 
-rudri
-108 shiv name
 
-tue:
-bajrang ban
-hree Hanuman Moksha Keertan Hey Dukh
-Mangalmurti Maruti Nandan
-
-ganesh stotra 
-athrvshisra path
-
-wed:
-shiv 1000 name
-
-
-
-use text-balance when multiple text
-
-
-
-
-
-create detail page of service
-spacing
-change icons
-
-https://dev.to/singhanuj620/mongoose-populate-in-most-simple-way-how-to-import-a-collection-into-another-schema-in-mongodb-4nnf - populate
-https://studio3t.com/knowledge-base/articles/mongodb-aggregation-framework/
-
-https://www.youtube.com/watch?v=9B4CvtzXRpc
-
-
-
-SELECT * FROM OTShip.ots_distOrders where  	 
-
-scrum master : https://www.youtube.com/watch?v=Jhm5Fky30hg
-
-
-
-7874074605
-tel:+91 7874074605
-
-
-https://www.infoq.com/articles/Cosmos-DB-Tutorial/
-
-sm:pl-45 md:pl-0 lg:pl-0 xl:pl-0 2xl:pl-0
-
-
-https://www.youtube.com/watch?v=MLWlWrRAb4w
-
-
-
-
-
-order_schduler    =>  distorder
-order_items => distItem
-order_shipment 1=> itemshipment1
-order_shipment 2=>itemshipment2
-order_shipment 3=>itemshipment3
-order_shipment 4=>itemshipment4
-send to sftp  =>SendToSftp
-
-
-INSERT INTO ots_configuration (confg_name, confg_value,confg_description)VALUES ('ots_numbersOfLogFile','	10	,Number of log file will create per day. If number is exceeded then last file delete and create new.');
-INSERT INTO ots_configuration (confg_name, confg_value,confg_description)VALUES ('ots_subject','Order ShipDate Change Notification (#locationName# - #locationId#)',	subject is use for new nottification mail of distributor');
-
-INSERT INTO ots_configuration (confg_name, confg_value,confg_description)VALUES ('ots_todailyreport','schneider.devteam@spec-india.com',	To all email id send daily report.');
-INSERT INTO ots_configuration (confg_name, confg_value,confg_description)VALUES ('ots_ccDailyReport','','To CC all email id send daily report.');
-INSERT INTO ots_configuration (confg_name, confg_value,confg_description)VALUES ('ots_subjectDailyReport','Order ShipDate Change Notification',Daily Report	Daily report mail subject');
-INSERT INTO ots_configuration (confg_name, confg_value,confg_description)VALUES ('ots_colonia_host','crown.col-elec.com','');
-INSERT INTO ots_configuration (confg_name, confg_value,confg_description)VALUES ('ots_colonia_user','Schneider','');
-INSERT INTO ots_configuration (confg_name, confg_value,confg_description)VALUES ('ots_colonia_pwd','\#|.6e:dF;co8&fnyL/G','');
-
-
-namo bahgvate vasudavay
-
-
-
-
-
-
-
-ots_ShipmentData
-
-
-ots_distMaster
-ots_distLocation
-
-
-
-work on goal
- Agile methodology - scrum
--Learn tailwind css   - 2
-
-
-condition on grouping $group in mopngo db
-
-
-
-
-fri open tab
--------------------------------------------------------------
-
-https://www.youtube.com/watch?v=R_Fi59j6BMo -cosmosdb
-
-https://www.youtube.com/watch?v=8eJJe4Slnik - 5:08 - mongo
-https://mongodb.com/docs/manual/tutorial/model-tree-structures-with-parent-references/ - mongo
-https://www.mongodb.com/docs/manual/introduction/#document-database
-https://mongoosejs.com/docs/middleware.html
-
-https://masteringjs.io/mongoose - blog
-
-
-12:15 -53
-
-7556
-
-68,003.00
-71093
-
-https://10.37.54.254:8090/httpclient.html
-.
-
-
-
-Checked graybar issue
-Manulally execute order/item/send to sftp scheduler 
-chaecked why product refrence is blank in most of case in  5 digit
-
-0	108	14:50:54	INSERT INTO ots_distItems (
-   distId, purchaserId, orderNumber, 
-   itemNumber, itemStatus, customerID, 
-   customerName, catalogNumber, description, 
-   totalQtyOrdered, totalQtyShipped, 
-   itemHasShipped, estimatedDeliveryDate, 
-   requestedDeliveryDate, itemResponse, 
-   itemResponseMessage, isProcessDoneForShip, 
-   designation, productReference
- ) 
- VALUES 
-   (
-     '3', '1000006021', '0058078859', '010', 
-     'Processing', '1000006021', 'COLONIAL ELECTRIC SUPPLY CO INC', 
-     'HGA36150U31X', 'MOLDED CASE CIRCUIT BREAKER 600V 150A', 
-     '1', '0', 'False', '2024/05/21', '0001/01/01', 
-     'success', 'New data insert', 'false', 
-     ''
-   ),	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 19	0.219 sec
-   
-   
-   
-   graybar json
-   
-   0 09  ? * Mon *
-   
    
    
    node js 
@@ -858,7 +665,8 @@ Aws:
 4.Elestic block storage
 5CLOUD TRAIL]
 
-
+Git
+--------------
 Git is software and github is service(Git hub is online service which host git)
 Git is Version Control
 Git status
@@ -921,21 +729,23 @@ Model Tree Structures with Parent References
 model.discriminator()
 
 
-change cron url 
+
+Need to watch:
+https://www.youtube.com/watch?v=-6LvNku2nJE&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige&index=27 - react	
+https://www.youtube.com/watch?v=hoki6PNu82c&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_LhxS&index=109 - 107 video node js
+https://www.youtube.com/watch?v=MuwJJrfIfsU&list=PL5Lsd0YA4OMGN86vWiW7O52izu-cTxcS3&index=2 - watch whole cource Advance nODEJS 
+
+https://amplication.com/blog/nodejs-worker-threads-vs-child-processes-which-one-should-you-use
 
 
+https://www.youtube.com/watch?v=vzyzjqy1I5k&list=PLRAV69dS1uWSl459HU5liKv8q4iZ44xBq- watch series
 
+https://www.youtube.com/watch?v=aS41Y_eyNrU - fiber
+https://www.youtube.com/watch?v=5QP0mvrJkiY - next js
 
+Debounce
 
-
-
-
-
-
-check shipped status issue
-verify data
-verify cancel data
-prepare biweekly ppt
+https://stripe.com/in/payments/features
 
 
 

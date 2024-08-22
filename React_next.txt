@@ -386,10 +386,20 @@ useFormStatus()
 useFormState()
 useOptimistic(
 )
+]
 
+
+Reconsilation
 
 Nextjs
 ------------------------
+Intercepting Routes 
+https://www.youtube.com/watch?v=zDZBKEvU8b0
+Parallel Routes I
+https://www.youtube.com/watch?v=wi8kF8UniUI
+catch all
+default
+catch all vsdefault
 Q=>what is Nextjs 
 Next.js is a flexible React framework that gives you building blocks to create fast web applications.
 CSR
@@ -549,7 +559,24 @@ effects, including executing asynchronous API calls. It can even dispatch action
 
 
 
+
+
 Rest api
 https://www.youtube.com/watch?v=-MFiza7ZRzs
 
 https://www.freecodecamp.org/news/build-a-full-stack-application-with-nextjs/
+
+--------------------------------------
+@google-cloud/translate:
+
+Google Cloud Translation API client for Node.js.
+js
+Copy code
+const { Translate } = require('@google-cloud/translate').v2;
+const translate = new Translate();
+
+async function translateText(text) {
+  const [translation] = await translate.translate(text, 'es');
+  console.log(`Translation: ${translation}`);
+}
+translateText('Hello, world!');

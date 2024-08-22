@@ -29,6 +29,9 @@ Npm Packages:throttledQueue/multer/xml2js/moment/Jimp/schedule/ping /rate limit(
 Node js:https://www.youtube.com/watch?v=ohIAiuHMKMI&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo
 		https://www.youtube.com/watch?v=SxCfcE4AHxQ&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_LhxS&index=23
 eXPRESS JS:Express JS Full Course:https://www.youtube.com/watch?v=nH9E25nkk3I
+https://www.youtube.com/watch?v=MuwJJrfIfsU&list=PL5Lsd0YA4OMGN86vWiW7O52izu-cTxcS3&index=2 - watch whole cource Advance nODEJS 
+https://amplication.com/blog/nodejs-worker-threads-vs-child-processes-which-one-should-you-use
+
 
 morgan and winston  => logger
 Joi ->Schema validation
@@ -578,6 +581,305 @@ Unifaires  Code:
 
 	const stripe = require('stripe')('your-stripe-secret-key');
 	const paymentIntent = await stripe.paymentIntents.create({ amount: 1000, currency: 'usd' }
+	
+	sharp:
+
+A high-performance image processing library.
+js
+Copy code
+const sharp = require('sharp');
+
+sharp('input.jpg')
+  .resize(200, 200)
+  .toFile('output.jpg', (err, info) => {
+    if (err) throw err;
+    console.log(info);
+  });
+  
+ ------------------------------------------------------------------------------	 
+
+Sequelize  Method
+Basic Retrieval
+findOne: Finds a single entry that matches the query options.
+findByPk: Finds a single entry by its primary key.
+findAll: Finds all entries that match the query options.
+findOrCreate: Finds or creates an entry. If the entry does not exist, it will be created.
+findAndCountAll: Finds all entries and counts the total number of matching records.
+findAndCount: Similar to findAndCountAll but more flexible.
+findAndCountByPk: Finds a single entry by its primary key and counts total number of matching records.
+Advanced Retrieval
+aggregate: Runs an aggregation function (e.g., sum, avg) over specified attributes.
+count: Counts the number of matching records.
+max: Returns the maximum value of a specified attribute.
+min: Returns the minimum value of a specified attribute.
+sum: Returns the sum of a specified attribute.
+Bulk Retrieval
+findAll: Finds all entries that match the query options.
+findAndCountAll: Finds all entries and counts the total number of matching records.
+findOrCreate: Finds or creates an entry. If the entry does not exist, it will be created.
+findCreateFind: Tries to find an existing entry and create it if not found.
+Insertion Methods
+create: Creates a new entry in the database.
+bulkCreate: Creates multiple entries in the database in bulk.
+Update Methods
+update: Updates multiple entries in the database that match the query options.
+increment: Increments the value of one or more attributes.
+decrement: Decrements the value of one or more attributes.
+Deletion Methods
+destroy: Deletes multiple entries in the database that match the query options.
+truncate: Truncates the table, deleting all entries.
+Instance Methods
+Instance methods operate on instances (records) of the model.
+
+save: Saves an instance to the database (either inserting or updating).
+destroy: Deletes an instance from the database.
+reload: Reloads an instance from the database.
+update: Updates an instance with new values.
+increment: Increments the value of one or more attributes of an instance.
+decrement: Decrements the value of one or more attributes of an instance.
+Association Methods
+Association methods are used to manage relationships between models.
+
+belongsTo: Defines a many-to-one relationship.
+hasOne: Defines a one-to-one relationship.
+hasMany: Defines a one-to-many relationship.
+belongsToMany: Defines a many-to-many relationship.
+Miscellaneous Methods
+sync: Syncs the model with the database, creating the table if it doesn’t exist.
+drop: Drops the table associated with the model.
+describe: Describes the table structure.
+scope: Applies predefined scopes to queries.
+unscoped: Removes applied scopes from queries.
+Transaction Methods
+Sequelize also provides methods to manage transactions.
+
+transaction: Starts a new transaction.
+commit: Commits the transaction.
+rollback: Rolls back the transaction.
+Hook Methods
+Hooks (also known as lifecycle events) allow you to execute custom logic at various points in the model lifecycle.
+
+beforeCreate: Triggered before an instance is created.
+afterCreate: Triggered after an instance is created.
+beforeUpdate: Triggered before an instance is updated.
+afterUpdate: Triggered after an instance is updated.
+beforeDestroy: Triggered before an instance is destroyed.
+afterDestroy: Triggered after an instance is destroyed.
+beforeBulkCreate: Triggered before multiple instances are created in bulk.
+afterBulkCreate: Triggered after multiple instances are created in bulk.
+beforeBulkUpdate: Triggered before multiple instances are updated in bulk.
+afterBulkUpdate: Triggered after multiple instances are updated in bulk.
+beforeBulkDestroy: Triggered before multiple instances are destroyed in bulk.
+afterBulkDestroy: Triggered after multiple instances are destroyed in bulk.
+
+	
+	const { Sequelize } = require('sequelize');
+
+const sequelize = new Sequelize({
+  dialect: 'sqlite',
+  storage: './database.sqlite',
+  logging: false,
+});
+
+module.exports = sequelize;
+
+
+
+
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/database');
+
+class User extends Model {
+  static associate(models) {
+    this.hasMany(models.Post, { foreignKey: 'userId', as: 'posts' });
+  }
+}
+
+User.init({
+  username: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+}, {
+  sequelize,
+  modelName: 'User',
+});
+
+module.exports = User;
+
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/database');
+
+class Post extends Model {
+  static associate(models) {
+    this.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
+  }
+}
+
+Post.init({
+  title: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  content: {
+    type: DataTypes.TEXT,
+    allowNull: false,
+  },
+}, {
+  sequelize,
+  modelName: 'Post',
+});
+
+module.exports = Post;
+
+
+
+
+const sequelize = require('../config/database');
+const User = require('./User');
+const Post = require('./Post');
+
+const models = {
+  User,
+  Post,
+};
+
+Object.keys(models).forEach(modelName => {
+  if (models[modelName].associate) {
+    models[modelName].associate(models);
+  }
+});
+
+models.sequelize = sequelize;
+models.Sequelize = Sequelize;
+
+module.exports = models;
+
+const { Sequelize } = require('sequelize');
+const models = require('./models');
+
+async function main() {
+  await models.sequelize.sync({ force: true }); // Sync database
+
+  // Create a user
+  const user = await models.User.create({ username: 'john_doe', email: 'john.doe@example.com' });
+  console.log('User created:', user.toJSON());
+
+  // Create a post
+  const post = await models.Post.create({ title: 'First Post', content: 'This is the first post.', userId: user.id });
+  console.log('Post created:', post.toJSON());
+
+  // Find one user
+  const foundUser = await models.User.findOne({ where: { username: 'john_doe' } });
+  console.log('User found:', foundUser ? foundUser.toJSON() : 'User not found');
+
+  // Find user by primary key
+  const userByPk = await models.User.findByPk(user.id);
+  console.log('User found by primary key:', userByPk ? userByPk.toJSON() : 'User not found');
+
+  // Find all users
+  const users = await models.User.findAll();
+  console.log('All users:', users.map(u => u.toJSON()));
+
+  // Count users
+  const userCount = await models.User.count();
+  console.log('Number of users:', userCount);
+
+  // Update a user
+  const [affectedRows] = await models.User.update({ email: 'john.new@example.com' }, { where: { username: 'john_doe' } });
+  console.log(`Number of rows updated: ${affectedRows}`);
+
+  // Find or create a user
+  const [newUser, created] = await models.User.findOrCreate({
+    where: { username: 'jane_doe' },
+    defaults: { email: 'jane.doe@example.com' },
+  });
+  console.log('User find or created:', newUser.toJSON(), 'Created:', created);
+
+  // Increment user's email
+  await user.increment('age', { by: 1 });
+  console.log('User age incremented:', (await user.reload()).toJSON());
+
+  // Destroy a user
+  const rowsDeleted = await models.User.destroy({ where: { username: 'john_doe' } });
+  console.log(`Number of rows deleted: ${rowsDeleted}`);
+
+  // Find user and associated posts
+  const userWithPosts = await models.User.findOne({
+    where: { username: 'jane_doe' },
+    include: { model: models.Post, as: 'posts' },
+  });
+  console.log('User with posts:', userWithPosts ? userWithPosts.toJSON() : 'User not found');
+
+  await models.sequelize.close(); // Close connection
+}
+
+main().catch(err => {
+  console.error('Error occurred:', err);
+});
+
+
+Relationship
+
+This code defines the relationships between three models in an ORM (Object-Relational Mapping) setup, likely using Sequelize, a popular ORM for Node.js. Here’s a breakdown of each part:
+
+Models
+Help: This model represents a help request or ticket.
+HelpTrack: This model tracks changes or assignments related to a help request.
+User: This model represents a user in the system.
+Associations
+Help.hasMany(HelpTrack, { foreignKey: { allowNull: false } }):
+
+Association: This sets up a one-to-many relationship between Help and HelpTrack.
+Details: One Help can have many HelpTrack entries. The foreignKey constraint ensures that the foreign key in HelpTrack referring to Help cannot be null, meaning every HelpTrack must be associated with a Help.
+HelpTrack.belongsTo(Help):
+
+Association: This sets up a many-to-one relationship from HelpTrack back to Help.
+Details: Each HelpTrack entry belongs to a single Help. This is the inverse of the previous association.
+HelpTrack.belongsTo(User, { foreignKey: "assignToId", as: "assignToUser" }):
+
+Association: This sets up a many-to-one relationship from HelpTrack to User.
+Details: Each HelpTrack entry is assigned to a user, identified by the foreign key assignToId. The association is given an alias assignToUser for easier reference in queries.
+HelpTrack.belongsTo(User, { foreignKey: "assignById", as: "assignByUser" }):
+
+Association: This sets up another many-to-one relationship from HelpTrack to User.
+Details: Each HelpTrack entry is assigned by a user, identified by the foreign key assignById. The association is given an alias assignByUser for easier reference in queries.
+Summary
+A Help can have multiple HelpTrack entries.
+Each HelpTrack entry is associated with a single Help.
+Each HelpTrack entry is assigned to a user (assignToUser).
+Each HelpTrack entry is assigned by a user (assignByUser).
+
+1. .belongsTo()
+Defines a many-to-one relationship. The model on which you call this method has a foreign key that references the primary key of another model.
+
+2. .hasOne()
+Defines a one-to-one relationship. The model on which you call this method has a foreign key that references the primary key of another model. This is the inverse of .belongsTo().
+
+3. .hasMany()
+Defines a one-to-many relationship. The model on which you call this method has multiple records in the associated model.
+
+4. .belongsToMany()
+Defines a many-to-many relationship through a junction table (or join table). Both models will have foreign keys that reference each other.
+
+Methods Breakdown
+.belongsTo(targetModel, options)
+targetModel: The model that this model belongs to.
+options: Options to customize the association (e.g., foreignKey, as, constraints).
+.hasOne(targetModel, options)
+targetModel: The model that this model has one instance of.
+options: Options to customize the association.
+.hasMany(targetModel, options)
+targetModel: The model that this model has many instances of.
+options: Options to customize the association.
+.belongsToMany(targetModel, options)
+targetModel: The model that this model belongs to many instances of, and vice versa.
+options: Options to customize the association, including specifying the through model.
+
 
 
 

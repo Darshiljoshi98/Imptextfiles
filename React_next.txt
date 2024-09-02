@@ -106,8 +106,19 @@ Next auth :https://www.youtube.com/watch?v=3BEn2E9PvBM&list=PLu71SKxNbfoCXO80Z4m
 Backend series:https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW&pp=iAQB
 
 ---------------------------------------------------------------------------------------------------------
+with return keyword in map
+const names = characters.map((character) ⇒ { return character.name;
+});
+
+without return 
+const minified Records = characters.map((character) ⇒ (//thisbracket show as return object 
+{
+name: character.name,
+height: character.height,
+}));
 
 
+---------------------------
 
 
 Redux

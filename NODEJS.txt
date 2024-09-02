@@ -2,39 +2,55 @@ Advance Topics
 Nodejs:
 -----------------------------------------------------------------------------------------------------
 1Free cource:https://www.scaler.com/topics/course/nodejs/ 
+
 2Evevent loop/event/custom events  
+
 3Npm Helment(For Security):https://blog.logrocket.com/using-helmet-node-js-secure-application/   
 							https://blog.logrocket.com/using-helmet-node-js-secure-application/#referrer-policy-header
 
 4:express-validator(fOR vALIDATION) :https://express-validator.github.io/docs/guides/getting-started
+
 5 bcryptjs
+
 6Asyncronous updates on with websocket
+
 7Event Loop and Non-blocking I/O
+
 8 NEST JS:
 			https://www.youtube.com/watch?v=GHTA143_b-s
 			https://www.youtube.com/watch?v=Mgr5_r70OJQ
-9:	child process methods	https://www.youtube.com/watch?v=7cFNTD73N88    ----	https://www.youtube.com/watch?v=bbmFvCbVDqo
-
-10:multithreading-in-node-js:	https://www.digitalocean.com/community/tutorials/how-to-use-multithreading-in-node-js	
+			
+9:	child process methods	https://www.youtube.com/watch?v=7cFNTD73N88 - fork -> utilize cpu power
+					----	https://www.youtube.com/watch?v=bbmFvCbVDqo - spawn,exec, execFile 
+					Exec-> error -> when command is not found  vs standard error -> come after command excute
+					- it's fetch output and store in buffer and give output so it's not used for big command 
+					ExecFile-> it's use for some command but not for all because give maxbuffer error
+10:multithreading-in-node-js[worker Threads]:https://www.digitalocean.com/community/tutorials/how-to-use-multithreading-in-node-js	
 11:Streams:https://www.freecodecamp.org/news/node-js-streams-everything-you-need-to-know-c9141306be93/
 12:Child process:https://www.freecodecamp.org/news/node-js-child-processes-everything-you-need-to-know-e69498fe970a/
 12:Child process:https://www.freecodecamp.org/news/node-js-child-processes-everything-you-need-to-know-e69498fe970a/
 13:worker Threads :https://www.youtube.com/watch?v=OGkOxkSYrUg
 
-Nodejs Course:https://youtube.com/watch?v=5eaBOxXABkU&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_LhxS&index=1 -completed
+Nodejs Course:
+https://youtube.com/watch?v=5eaBOxXABkU&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_LhxS&index=1 -[start from 107]
 			  https://www.youtube.com/watch?v=f2EqECiTBL8-completed
 
-Npm Packages:throttledQueue/multer/xml2js/moment/Jimp/schedule/ping /rate limit(for secuity),npm audit
-
-Node js:https://www.youtube.com/watch?v=ohIAiuHMKMI&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo
-		https://www.youtube.com/watch?v=SxCfcE4AHxQ&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_LhxS&index=23
+Npm Packages:throttledQueue/multer/xml2js/moment/Jimp/schedule/ping /rate limit(for secuity),npm audit,
+Passport is Express-compatible authentication middleware for Node.js.
+Node js:https://www.youtube.com/watch?v=ohIAiuHMKMI&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo		
 eXPRESS JS:Express JS Full Course:https://www.youtube.com/watch?v=nH9E25nkk3I
+
+Advance Node js:
 https://www.youtube.com/watch?v=MuwJJrfIfsU&list=PL5Lsd0YA4OMGN86vWiW7O52izu-cTxcS3&index=2 - watch whole cource Advance nODEJS 
 https://amplication.com/blog/nodejs-worker-threads-vs-child-processes-which-one-should-you-use
 
 
 morgan and winston  => logger
 Joi ->Schema validation
+
+Mongo NoSQL Injection Attack and How to Prevent Them /with NodeJs-Express Code Examples:
+https://medium.com/@huseyin.isik000/mongo-nosql-injection-attack-and-how-to-prevent-them-with-nodejs-express-code-examples-beebae1a3d98Mongo NoSQL Injection Attack and How to Prevent Them /with NodeJs-Express Code Examples
+express-mongo-sanitize - package
 
 
 jAVASCRIPT
@@ -118,6 +134,118 @@ Q=>Spawned Child Processes
 The spawn function launches a command in a new process and we can use it to pass that command any arguments.
  For example, here’s code to spawn a new process that will execute the pwd command.
  
+Q=>child process methods 
+ 			
+fork -> utilize cpu power				
+Exec-> error -> when command is not found  vs standard error -> come after command excute
+- it's fetch output and store in buffer and give output so it's not used for big command 
+ExecFile-> it's use for some command but not for all because give maxbuffer error
+spwn-> for run big process
+
+
+
+
+
+
+
+The spawn() method is used to launch a new process with a given command. 
+It is the most flexible and efficient way to start a child process.
+
+const { spawn } = require('child_process');
+
+const ls = spawn('ls', ['-lh', '/usr']); // Running the `ls` command with arguments
+
+ls.stdout.on('data', (data) => {
+  console.log(`Output: ${data}`);
+});
+
+ls.stderr.on('data', (data) => {
+  console.error(`Error: ${data}`);
+});
+
+ls.on('close', (code) => {
+  console.log(`Child process exited with code ${code}`);
+});
+----------------------------------------
+exec() Method:
+The exec() method is used to run a command in a shell and buffer the output. 
+This method is simpler but less efficient than spawn() because it buffers the output, 
+making it less suitable for handling large amounts of data.
+
+const { exec } = require('child_process');
+
+exec('ls -lh /usr', (error, stdout, stderr) => {
+  if (error) {
+    console.error(`Error: ${error.message}`);
+    return;
+  }
+  if (stderr) {
+    console.error(`Stderr: ${stderr}`);
+    return;
+  }
+  console.log(`Stdout: ${stdout}`);
+});
+
+---------------------------------------------
+execFile() Method
+The execFile() method is similar to exec(), but it directly executes a file without invoking a shell.
+ It is more efficient and safer when you do not need shell features.
+
+javascript
+Copy code
+const { execFile } = require('child_process');
+
+execFile('node', ['--version'], (error, stdout, stderr) => {
+  if (error) {
+    console.error(`Error: ${error.message}`);
+    return;
+  }
+  if (stderr) {
+    console.error(`Stderr: ${stderr}`);
+    return;
+  }
+  console.log(`Stdout: ${stdout}`);
+});
+
+---------------------------------------------
+ execSync() and spawnSync()
+If you need to run a process synchronously (blocking the main event loop until the process completes),
+ you can use execSync() or spawnSync(). These methods are similar to exec() and spawn(), 
+ but they run synchronously.
+
+javascript
+Copy code
+const { execSync } = require('child_process');
+
+try {
+  const output = execSync('ls -lh /usr');
+  console.log(`Output: ${output.toString()}`);
+} catch (error) {
+  console.error(`Error: ${error.message}`);
+}
+
+-------------------------------------
+
+
+
+fork() Method
+The fork() method is a special case of spawn() used to create a new Node.js process. 
+It’s specifically designed for spawning new Node.js processes, 
+and it allows inter-process communication (IPC) between the parent and child processes.
+
+javascript
+Copy code
+const { fork } = require('child_process');
+
+const child = fork('child.js'); // Running a Node.js script in a new process
+
+child.on('message', (msg) => {
+  console.log('Message from child:', msg);
+});
+
+child.send({ hello: 'world' }); // Sending a message to the child process
+ 
+ 
 =>fs.read and fs.write read/write data attime and store buffer and give to us
 
 =>Architecture
@@ -145,10 +273,290 @@ example: if only need to update name then in put you need to send whole request 
 {name:"dj2",lastname:"45"} 
 in patch if u want upadte name then u send only name like {name:"dj2"} no need to send whole object send field which is necessary
 
+
+Multithreading :
+we have two api first is blocking.unblocking
+in blocking we have some large process 
+so When this process start to excute it's use main thread so this action is also block ourSecond api
+which is unblocking sO OUR APPLIATION IS NOT WORK untill blocking process complete
+https://www.youtube.com/watch?v=MuwJJrfIfsU
+
+worker.js -> worker_thread
+postmessage is method for communicate with main thread
+
+
+Worker Threads
+
+Why Use Worker Threads?
+Node.js is traditionally single-threaded, meaning that the main event loop
+ runs on a single thread. This can become a bottleneck for CPU-bound tasks,
+ such as data processing, image manipulation, or complex calculations.
+ Worker Threads provide a way to offload these tasks to separate threads,
+ allowing the main thread to remain responsive.
+
+How Worker Threads Work
+
+Key Points:
+Worker: Represents a worker thread. You instantiate it with a file that contains the code to run in the worker thread.
+parentPort: A reference to the communication channel between the main thread and the worker thread. It allows you to send and receive messages.
+postMessage: Used to send messages from the main thread to the worker thread or vice versa.
+on('message'): Listens for messages sent from the other thread.
+
+
+Worker Threads are part of the worker_threads module in Node.js.
+ A worker thread runs in its own context, meaning it has its own event loop, memory,
+ and global objects. You can pass data between the main thread and worker threads using postMessage() 
+ and parentPort.on('message').
+ 
+ 
+ worker.js
+ // worker.js
+const { parentPort } = require('worker_threads');
+
+// Perform a CPU-intensive task (e.g., calculating Fibonacci sequence)
+function fibonacci(n) {
+  if (n < 2) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// Listen for messages from the main thread
+parentPort.on('message', (n) => {
+  const result = fibonacci(n);
+  parentPort.postMessage(result); // Send result back to the main thread
+});
+
+
+main.js
+
+// main.js
+const { Worker } = require('worker_threads');
+
+function runWorker(n) {
+  return new Promise((resolve, reject) => {
+    const worker = new Worker('./worker.js');
+
+    // Send data to the worker
+    worker.postMessage(n);
+
+    // Receive data from the worker
+    worker.on('message', (result) => {
+      resolve(result);
+    });
+
+    // Handle errors
+    worker.on('error', reject);
+
+    // Handle worker exit
+    worker.on('exit', (code) => {
+      if (code !== 0) {
+        reject(new Error(`Worker stopped with exit code ${code}`));
+      }
+    });
+  });
+}
+
+// Run the worker and get the result
+runWorker(10)
+  .then((result) => {
+    console.log(`Fibonacci result: ${result}`);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+
+
+=>Piping is a mechanism used to connect the output of one stream to another stream. 
+It is normally used to retrieve data from one stream and pass output to another stream
+
+
+=>Rate limit vs. Throttle
+The key difference between rate limit and throttle lies in the level 
+at which these techniques operate and their responses when limits are reached. 
+Rate limiting gently slows down clients, reminding them of the specified request limits,
+ while throttling takes a more rigid approach,
+ temporarily halting clients from making requests for a set period.
+
+-> rate limit
+https://medium.com/@olumideadewusis/implementing-rate-limiting-in-node-js-apis-94f18cd74695
+const rateLimit = require('express-rate-limit');
+
+const limiter = rateLimit({
+  windowMs: 60 * 1000, // 1 minute
+  max: 2, // maximum number of requests allowed in the windowMs
+  message: 'Too many requests, please try again later.',
+});
+
+module.exports = limiter;
+
+https://www.digitalocean.com/community/tutorials/understanding-the-event-loop-callbacks-promises-and-async-await-in-javascript
+
+5. If Node.js is single-threaded, then how does it handle concurrency?
+The Multi-Threaded Request/Response Stateless Model is not followed by the Node JS Platform, and it adheres to the Single-Threaded Event Loop Model. The Node JS Processing paradigm is heavily influenced by the JavaScript Event-based model and the JavaScript callback system. As a result, Node.js can easily manage more concurrent client requests. The event loop is the processing model's beating heart in Node.js.
+
+
+Q. If Node.js is single-threaded, then how does it handle concurrency?
+The Multi-Threaded Request/Response Stateless Model is not followed by the Node JS Platform,
+ and it adheres to the Single-Threaded Event Loop Model. The Node JS Processing paradigm is 
+ heavily influenced by the JavaScript Event-based model and the JavaScript callback system.
+ As a result, Node.js can easily manage more concurrent client requests. 
+ The event loop is the processing model's beating heart in Node.js.
+
+
+Q:How is Node.js most frequently used?
+Node.js is widely used in the following applications:
+
+Real-time chats
+Internet of Things
+Complex SPAs (Single-Page Applications)
+Real-time collaboration tools
+Streaming applications
+Microservices architecture
+
+
+Q:What is the purpose of the module .Exports?
+In Node.js, a module encapsulates all related codes into a single unit of code that 
+can be parsed by moving all relevant functions into a single file. 
+You may export a module with the module and export the function, 
+which lets it be imported into another file with a needed keyword.
+
+Q. What does event-driven programming mean?
+An event-driven programming approach uses events to trigger various functions. 
+An event can be anything, such as typing a key or clicking a mouse button.
+A call-back function is already registered with the element executes whenever an event is triggered.
+
+Q. What is an Event Loop in Node.js?
+Event loops handle asynchronous callbacks in Node.js. 
+It is the foundation of the non-blocking input/output in Node.js,
+ making it one of the most important environmental features.
+
+Q. Differentiate between process.nextTick() and setImmediate()?
+The distinction between method and product. This is accomplished through the use of nextTick() 
+and setImmediate(). next Tick() postpones the execution of action until the next pass around
+ the event loop, or it simply calls the callback function once the event loop's 
+ current execution is complete, whereas setImmediate() executes a callback on the next cycle 
+ of the event loop and returns control to the event loop for any I/O operations.
+ 
+QWhat is REPL in Node.js?
+REPL stands for Read Eval Print Loop, and it represents a computer environment. 
+It’s similar to a Windows console or Unix/Linux shell in which a command is entered.
+ Then, the system responds with an output
+ 
+ 
+ 
+ Qfork() VS spawn()
+
+	
+fork() is a particular case of spawn() that generates a new instance of a V8 engine.
+
+Spawn() launches a new process with the available set of commands.
+
+fork() Multiple workers run on a single node code base for multiple tasks.
+
+Spawn()  This method doesn’t generate a new V8 instance, and only a single copy of the node module is 
+			active on the processor.
+			
+Q->What is a reactor pattern in Node.js?
+A reactor pattern is a concept of non-blocking I/O operations. 
+This pattern provides a handler that is associated with each I/O operation. 
+As soon as an I/O request is generated, it is then submitted to a demultiplexer
+
+q-> List the various Node.js timing features.
+The setTimeout() function schedules the execution of a callback function after a 
+specified delay (in milliseconds). The callback is executed once after the delay has passed.
+
+The setInterval() function schedules the execution of a callback function at regular 
+intervals (in milliseconds). 
+The callback is executed repeatedly until the interval is cleared.
+
+The setImmediate() function schedules the execution of a callback function 
+to occur immediately after the current event loop cycle.
+ This allows you to execute code after the I/O events callbacks.
+ 
+ 
+The process.nextTick() function schedules a callback function to be 
+executed on the next iteration of the event loop, before any I/O events. 
+It's typically used to defer the execution of a function until the current operation completes.
+
+Promise and async/await (Microtasks)
+
+Though not part of the traditional timing functions, Promises and async/await are worth mentioning 
+as they deal with microtask scheduling. The callbacks attached to a Promise (via .then() 
+or catch()) are executed in the microtask queue, which is processed after the current operation and 
+before the next event loop tick.
+
+queueMicrotask()
+The queueMicrotask() function allows you to queue a microtask directly, 
+
+
+which is similar to process.nextTick() but more standardized.
+
+Key Differences Between These Timing Functions:
+
+setTimeout() and setInterval(): Schedule callbacks to run after a delay or repeatedly at intervals. 
+These are part of the macro task queue.
+
+setImmediate(): Runs after the current event loop cycle. Useful for deferring execution to allow I/O to 
+complete.
+
+process.nextTick(): Runs before any I/O events in the next event loop tick. It has higher priority 
+than setImmediate() and setTimeout().
+
+queueMicrotask(): Schedules microtasks to run after the current operation and before 
+the next event loop tick. Similar to process.nextTick() but part of the standard.
+
+
+QList down the two arguments that async. First, does the queue take as input?
+The async.queue function in Node.js takes two arguments as input:
+ a worker function and an optional  concurrency limit. 
+It is used to create a task queue executed in parallel.
+
+Q-What is Libuv?
+Libuv is a critical component of Node.js, and it's what makes it possible to handle
+ I/O operations in a non-blocking and efficient manner.
+ 
+Q-What is a thread pool, and which library handles it in Node.js?
+A thread pool is a collection of threads that are used to execute tasks in parallel. 
+In Node.js, the thread pool is handled by the libuv library, which is a multi-platform support 
+library that provides asynchronous I/O operations.
+
+QHow are worker threads different from clusters?
+Worker threads and clusters are two different approaches to leveraging the
+ power of multiple CPUs in Node.js. While clusters create multiple instances of a
+ Node.js process, each running on a separate CPU core, worker threads provide a way to create
+ multiple threads within a single process.
+
+Q->What is a passport in Node.js?
+Passport is a popular authentication middleware for Node.js. It provides a simple and modular way to 
+implement authentication in Node.js applications. Passport supports many authentication mechanisms,
+ including username/password, social logins like Facebook and Google, and JSON Web Tokens (JWTs).
 Advance concepts
 ----------------------------
+Libuv/ Architecture Node js
+->https://www.youtube.com/watch?v=59C1dvLRIrI&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_LhxS&index=27
+event Loop - > Responsible for execute Normal task like io/execute Call Back Function/network
+
+Thread pool->Responsible for execute Normal task FILE ACCESS/COMPARASION/crypto task( we have 4 Thread pool)
+
+Process:Which is currently	executing -> use by process keyword in node js
+Thread:> Responsible for executing pogram code in process
+
+->Code which have not call back run main Thread 
+->Function which run  ASYNCHRONOUSLY  is run in ThreadPool
+-> And callback of ThreadPool execute in Eventloop
+->Eventloop move function to MAin thread
+
+like fs.readFile('Demo.txt', 'utf8', function (err, data) {
+    // Display the file content
+    console.log(data);
+});
+
+->demo.txt scan and run in thread pool but err,data which is callback is executed in Eventloop
+
+
 Advance Concept Node js
+[ The order of execution is determined by the event loop.]
 1. Event Loop and Non-blocking I/O
+->each cycle  of eventloop is tick
 	What it is: Mechanism allowing Node.js to perform non-blocking I/O despite being single-threaded.
 	Components:
 		Call Stack: Executes synchronous code.
@@ -158,7 +566,33 @@ Advance Concept Node js
 		process.nextTick(): Places callback in a separate queue, which runs before the event loop next cycle.
 		setImmediate(): Queues callback to be executed in the next event loop cycle.
 		
+=>Differentiate between process.nextTick() and setImmediate()?
+		The distinction between method and product. This is accomplished through the use of nextTick() 
+		and setImmediate(). next Tick() postpones the execution of action until the next pass around
+		 the event loop, or it simply calls the callback function once the event loop's 
+		 current execution is complete, whereas setImmediate() executes a callback on the next cycle 
+		 of the event loop and returns control to the event loop for any I/O operations.
+		 
+=>What are the asynchronous tasks that should occur in an event loop?
+Asynchronous tasks that should occur in an event loop in Node.js include I/O operations,
+ timers, and callback functions. By performing these tasks asynchronously, 
+ Node.js can handle a large number of concurrent requests without blocking the event loop.
+ 
+ 
+Microtask queue :Store callback which is Attach of resolve promise
+Next click Queue:Store callback which is process.nextClick() function
+Above queue executed after current phase executed
+ex:if 1st phase running and promise resolved so first Microtask/Next click  executed insted of 2 nd phase
+Phase of event loop:
+->When all callback of particular phase is completed then next phase is executed
+Expired tIMERS:[Set timeout/set Intervals]
+io task & polling[file system operation (fs.read/writ file)] -> polling is looking for new io operation and put in to call back
+setImmediate callback[setImmediate]:it's special function which excute after 2nd phase complete
+closed callback:[socket.on('close')]->webserver and websocket is closed 
 
+
+		
+https://www.youtube.com/watch?v=5F4iO-W0ZbY&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_LhxS&index=28
 2. Buffers:
 		What they are: Raw memory allocations outside V8’s heap.
 		Usage:
@@ -194,6 +628,10 @@ Advance Concept Node js
 			cluster.fork(): Spawn a new worker.
 			worker.send(): Communicate between master and worker.
 			Events: online, exit, disconnect.
+			
+			Clustering can be used to improve the performance of HTTP servers,
+			database connections, and other I/O operations. However, it is important 
+			to note that clustering does not guarantee a linear increase in performance.
 			
 			Demo
 			-------------------
@@ -308,17 +746,97 @@ Setting the view engine to EJS in an Express.js application allows you to render
 This enhances your application's ability to generate HTML content dynamically based on the data passed from your server-side code.
 
 
+---------------------
+	Passport:Passport is Express-compatible authentication middleware for Node.js.
+Node.js Async Flows:
+https://www.youtube.com/watch?v=WXF8RxqhP_c&list=PLg7SrwZOiNdXEoMc0vFEXUV2xmcrrtJ3X&index=3
+https://medium.com/velotio-perspectives/understanding-node-js-async-flows-parallel-serial-waterfall-and-queues-6f9c4badbc17
+1. Parallel
+When we have to run multiple tasks independent of each other without waiting until the previous 
+task has completed, parallel comes into the picture.
 
+async.parallel(tasks, callback)
+async.parallel([]) or async.parallel({})
+
+asks: A collection of functions to run. It can be an array, an object or any iterable.
+
+Callback: This is the callback where all the task results are passed and executed once all the task
+ execution has completed.
+
+In case an error is passed to a function’s callback, the main callback is immediately called
+ with the error. Although parallel is about starting I/O tasks in parallel, it’s not about parallel 
+ execution since Javascript is single-threaded.
+-> if one function give error it's stop execution
+
+2. Series
+When we have to run multiple tasks which depend on the output of the previous task, 
+series comes to our rescue.
+async.series(tasks, callback)
+
+Tasks: A collection of functions to run. It can be an array, an object or any iterable.
+
+Callback: This is the callback where all the task results are passed and executed once all the 
+task execution has completed.
+
+The callback function receives an array of result objects when all the tasks have completed. 
+If an error is encountered in any of the tasks,
+ no more functions are run but the final callback is called with the error value.
+-> it runs with array
+3.Waterfall
+When we have to run multiple tasks which depend on the output of the previous task,
+ Waterfall can be helpful.
+async.waterfall(tasks, callback)
+
+Tasks: A collection of functions to run. It can be an array, an object or any iterable structure.
+
+Callback: This is the callback where all the task results are passed and is executed once all the 
+task execution has completed.
+
+It will run one function at a time and pass the result of the previous function to the next one.
+
+4.Queue
+When we need to run a set of tasks asynchronously, a queue can be used. 
+A queue object based on an asynchronous function can be created which is passed as a worker.
+async.queue(task, concurrency)
+
+Task: Here, it takes two parameters, first — the task to be performed and second — the callback function.
+
+Concurrency: It is the number of functions to be run in parallel.
+
+async.queue returns a queue object that supports few properties:
+
+Push: Adds tasks to the queue to be processed.
+Drain: The drain function is called after the last task of the queue.
+Unshift: Adds tasks in front of the queue.
+->list all object from  s3
+5.Priority Queue
+It is the same as the queue, the only difference being that a priority can be assigned to 
+the tasks which are considered in ascending order.	
+	
+async.priorityQueue(task,concurrency)
+Task: Here, it takes three parameters:
+
+First — The task to be performed.
+Second — Priority, it is a number that determines the sequence of execution. For an array of tasks, 
+the priority remains the same for all of them.
+Third — Callback function.
+
+6.Race
+It runs all the tasks in parallel, but as soon as any of the function completes its execution 
+or passes an error to its callback, the main callback is immediately called
+async.race(tasks, callback)
+Task: Here, it is a collection of functions to run. It is an array or any iterable.
+
+Callback: The result of the first complete execution is passed. It may be the result or error.
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
+--------------------	
+Security:
+Dos attack -> send multilple request -> Rate limit->express-rate-limit
+Password encryption ->node.bcrypt.js
+Schema validation ->joi
+HTML & CSS escaping->escap-html
+Use orm
 	
 	
 	
@@ -461,7 +979,7 @@ Unifaires  Code:
 	const jwt = require('jsonwebtoken');
 	const token = jwt.sign({ userId: 1 }, 'your-secret-key');
 
-19. linkedin-jobs-api (^1.0.0)
+19.  (^1.0.0)
 	Usage: A wrapper for LinkedIn Jobs API to search for jobs on LinkedIn.
 	Example: Searching for jobs.
 
@@ -586,7 +1104,7 @@ Unifaires  Code:
 
 A high-performance image processing library.
 js
-Copy code
+
 const sharp = require('sharp');
 
 sharp('input.jpg')
@@ -880,7 +1398,41 @@ options: Options to customize the association.
 targetModel: The model that this model belongs to many instances of, and vice versa.
 options: Options to customize the association, including specifying the through model.
 
+add this field in sequelize model 
+update model
+state2: {
+  type: DataTypes.STRING,
+  allowNull: false,
+},
+Create a New Migration
+npx seCreate a New Migrationquelize-cli migration:generate --name add-state2-to-yourmodel
+Edit the Migration File
+
+
+https://sequelize.org/docs/v6/other-topics/query-interface/  - Methods of  Query Interface
+'use strict';
+
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.addColumn('YourModel', 'state2', {
+      type: Sequelize.STRING,
+      allowNull: false,
+    });
+  },
+
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.removeColumn('YourModel', 'state2');
+  }
+};
+
+
+. Run the Migration
+npx sequelize-cli db:migrate
 
 
 
-
+=> npm init vs imp init  -y
+if you run npm init it asks you a bunch of questions to configure your package.json, 
+but if you include the -y flag then it auto generates it with no specific information provided. 
+It's perfectly fine to do it. 
+It won't hurt anything, and in fact is common to do.

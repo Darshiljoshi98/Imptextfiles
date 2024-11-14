@@ -1,6 +1,7 @@
 Advance Topics
 Nodejs:
 -----------------------------------------------------------------------------------------------------
+
 1Free cource:https://www.scaler.com/topics/course/nodejs/ 
 
 2Evevent loop/event/custom events  
@@ -1436,3 +1437,633 @@ if you run npm init it asks you a bunch of questions to configure your package.j
 but if you include the -y flag then it auto generates it with no specific information provided. 
 It's perfectly fine to do it. 
 It won't hurt anything, and in fact is common to do.
+
+
+Nest js Microservice
+
+Real-time updates->	WebSocket->	WebSocket
+Low-latency, synchronous communication->	gRPC->	gRPC with Protocol Buffers
+Asynchronous, event-driven systems->	Message Queue->	RabbitMQ, Kafka, NATS
+Standard request-response API	->HTTP REST API->	HTTP
+Cross-language, high-performance RPC->	gRPC->	gRPC
+Serverless or event-based tasks	->Message Queue or HTTP->	AWS Lambda with SQS or SNS
+
+
+Nest js
+
+Controllers:
+
+Controllers handle incoming requests and return responses. They define application endpoints and are responsible for routing.
+Example: @Controller('users') defines a route for handling requests to /users.
+
+Providers and Services:
+Providers are classes that provide some form of functionality (like a service) to be used across the application.
+Services are a type of provider and are responsible for the business logic and data manipulation. They can be injected into controllers and other services using dependency injection.
+
+Modules:
+Modules encapsulate a specific feature, such as authentication or user management, and help organize code into cohesive groups.
+The AppModule is the root module, but you can create multiple modules to structure the application.
+
+Middleware:
+Middleware functions process requests before they reach controllers. They are useful for tasks like authentication, logging, and request transformation.
+
+Pipes:
+Pipes transform incoming data or validate it before it reaches the handler. This is helpful for data sanitization and validation.
+
+Guards:
+Guards control access to routes based on specific conditions, such as roles or authentication status. They are useful for implementing authorization.
+
+Interceptors:
+Interceptors modify or transform requests and responses, such as for logging, caching, or formatting response data.
+
+
+
+// app.module.ts
+import { Module } from '@nestjs/common';
+import { UsersModule } from './users/users.module';
+
+@Module({
+  imports: [UsersModule],
+})
+export class AppModule {}
+
+// users.module.ts
+import { Module } from '@nestjs/common';
+import { UsersService } from './users.service';
+import { UsersController } from './users.controller';
+
+@Module({
+  providers: [UsersService],
+  controllers: [UsersController],
+})
+export class UsersModule {}
+
+// users.controller.ts
+import { Controller, Get } from '@nestjs/common';
+import { UsersService } from './users.service';
+
+@Controller('users')
+export class UsersController {
+  constructor(private readonly usersService: UsersService) {}
+
+  @Get()
+  findAll() {
+    return this.usersService.findAll();
+  }
+}
+
+// users.service.ts
+import { Injectable } from '@nestjs/common';
+
+@Injectable()
+export class UsersService {
+  findAll() {
+    return [{ id: 1, name: 'John Doe' }];
+  }
+}
+
+
+=> nest Js Concepts:
+Basic Concepts
+Modules
+
+Definition: Modules are containers that help group related components (controllers, providers, etc.) together. Every NestJS application has at least one module, the root module (often AppModule).
+	Example:
+	typescript
+	Copy code
+	// app.module.ts
+	import { Module } from '@nestjs/common';
+	import { UsersModule } from './users/users.module';
+
+	@Module({
+	  imports: [UsersModule],
+	})
+	export class AppModule {}
+
+Controllers
+
+	Definition: Controllers handle incoming HTTP requests and return responses to the client. They define application endpoints and route traffic.
+	Example:
+	typescript
+	Copy code
+	import { Controller, Get } from '@nestjs/common';
+
+	@Controller('users')
+	export class UsersController {
+	  @Get()
+	  findAll() {
+		return 'This action returns all users';
+	  }
+	}
+	
+Providers and Services
+
+	Definition: Providers are classes that Nest can inject as dependencies. Services are a specific type of provider that contain business logic.
+	Example:
+	typescript
+	Copy code
+	import { Injectable } from '@nestjs/common';
+
+	@Injectable()
+	export class UsersService {
+	  findAll() {
+		return ['User1', 'User2'];
+	  }
+	}
+Dependency Injection (DI)
+	Definition: DI is a design pattern in which objects are injected into classes rather than created directly, promoting loose coupling and easier testing.
+	Example:
+	typescript
+	Copy code
+	// Injecting UsersService into UsersController
+	@Controller('users')
+	export class UsersController {
+	  constructor(private readonly usersService: UsersService) {}
+
+	  @Get()
+	  findAll() {
+		return this.usersService.findAll();
+	  }
+	}
+Middleware
+
+	Definition: Middleware functions execute before the route handler and are useful for tasks like logging and authentication.
+	Example:
+	typescript
+	Copy code
+	import { Injectable, NestMiddleware } from '@nestjs/common';
+	import { Request, Response, NextFunction } from 'express';
+
+	@Injectable()
+	export class LoggerMiddleware implements NestMiddleware {
+	  use(req: Request, res: Response, next: NextFunction) {
+		console.log(`Request...`);
+		next();
+	  }
+	}
+Pipes
+
+	Definition: Pipes transform and validate incoming data before it reaches the route handler.
+	Example:
+	typescript
+	Copy code
+	import { PipeTransform, Injectable, ArgumentMetadata } from '@nestjs/common';
+
+	@Injectable()
+	export class ParseIntPipe implements PipeTransform<string, number> {
+	  transform(value: string, metadata: ArgumentMetadata): number {
+		return parseInt(value, 10);
+	  }
+	}
+	
+Guards
+	Definition: Guards are used to implement authorization logic and control access to routes.
+	Example:
+	typescript
+	Copy code
+	import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
+
+	@Injectable()
+	export class AuthGuard implements CanActivate {
+	  canActivate(context: ExecutionContext): boolean {
+		const request = context.switchToHttp().getRequest();
+		return request.headers.authorization === 'secret-token';
+	  }
+	}
+	
+Interceptors
+
+	Definition: Interceptors are used to transform or log data before it's sent to the client.
+	Example:
+	typescript
+	Copy code
+	import { Injectable, NestInterceptor, ExecutionContext, CallHandler } from '@nestjs/common';
+	import { Observable } from 'rxjs';
+	import { tap } from 'rxjs/operators';
+
+	@Injectable()
+	export class LoggingInterceptor implements NestInterceptor {
+	  intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
+		console.log('Before...');
+		return next.handle().pipe(tap(() => console.log('After...')));
+	  }
+	}
+Advanced Concepts
+
+Custom Decorators
+
+	Definition: Custom decorators allow you to define custom metadata and reuse logic across your application.
+	Example:
+	typescript
+	Copy code
+	import { createParamDecorator, ExecutionContext } from '@nestjs/common';
+
+	export const User = createParamDecorator(
+	  (data: unknown, ctx: ExecutionContext) => {
+		const request = ctx.switchToHttp().getRequest();
+		return request.user;
+	  },
+	);
+Event Emitters
+
+	Definition: Event Emitters allow you to create and listen to custom events within your application, useful for decoupling services.
+	Example:
+	typescript
+	Copy code
+	import { Injectable, EventEmitter2 } from '@nestjs/event-emitter';
+
+	@Injectable()
+	export class UserService {
+	  constructor(private eventEmitter: EventEmitter2) {}
+
+	  createUser() {
+		// Emit a 'user.created' event
+		this.eventEmitter.emit('user.created', { name: 'John Doe' });
+	  }
+	}
+	
+Microservices
+	Definition: NestJS supports microservices, allowing you to build a distributed system with multiple independent services.
+	Example:
+	typescript
+	Copy code
+	import { Controller, Get } from '@nestjs/common';
+	import { ClientProxy, ClientProxyFactory, Transport } from '@nestjs/microservices';
+
+	@Controller()
+	export class AppController {
+	  private client: ClientProxy;
+
+	  constructor() {
+		this.client = ClientProxyFactory.create({
+		  transport: Transport.TCP,
+		  options: { host: 'localhost', port: 8877 },
+		});
+	  }
+
+	  @Get()
+	  sendMessage() {
+		return this.client.send('message_print', 'Hello from microservice');
+	  }
+	}
+	
+WebSockets
+	Definition: WebSockets allow for real-time, bidirectional communication between clients and servers.
+	Example:
+	typescript
+	Copy code
+	import { WebSocketGateway, WebSocketServer, OnGatewayConnection } from '@nestjs/websockets';
+	import { Server } from 'socket.io';
+
+	@WebSocketGateway()
+	export class ChatGateway implements OnGatewayConnection {
+	  @WebSocketServer()
+	  server: Server;
+
+	  handleConnection(client: any) {
+		client.emit('message', 'Welcome to the chat');
+	  }
+	}
+GraphQL Integration
+	Definition: NestJS provides a GraphQL module to create GraphQL APIs, offering an alternative to REST.
+	Example:
+	typescript
+	Copy code
+	import { Query, Resolver } from '@nestjs/graphql';
+
+	@Resolver()
+	export class UserResolver {
+	  @Query(() => String)
+	  sayHello() {
+		return 'Hello World';
+	  }
+	}
+CQRS (Command Query Responsibility Segregation)
+	Definition: CQRS is a design pattern that separates read and write operations, improving scalability and organization in complex systems.
+	Example:
+	typescript
+	Copy code
+	import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
+
+	export class CreateUserCommand {
+	  constructor(public readonly username: string) {}
+	}
+
+	@CommandHandler(CreateUserCommand)
+	export class CreateUserHandler implements ICommandHandler<CreateUserCommand> {
+	  async execute(command: CreateUserCommand) {
+		const { username } = command;
+		// Logic to create a user
+	  }
+	}
+Authentication with Passport
+	Definition: NestJS integrates with the Passport library to implement various authentication strategies.
+	Example:
+	typescript
+	Copy code
+	import { Injectable } from '@nestjs/common';
+	import { PassportStrategy } from '@nestjs/passport';
+	import { Strategy } from 'passport-local';
+
+	@Injectable()
+	export class LocalStrategy extends PassportStrategy(Strategy) {
+	  async validate(username: string, password: string): Promise<any> {
+		// Validate user
+	  }
+	}
+	
+Task Scheduling
+	Definition: Schedule recurring tasks within NestJS, useful for periodic tasks like sending notifications or cleaning up data.
+	Example:
+	typescript
+	Copy code
+	import { Injectable } from '@nestjs/common';
+	import { Cron, CronExpression } from '@nestjs/schedule';
+
+	@Injectable()
+	export class TasksService {
+	  @Cron(CronExpression.EVERY_HOUR)
+	  handleCron() {
+		console.log('Task running every hour');
+	  }
+	}
+	
+Transactional Outbox Pattern
+
+Definition: Use this pattern to ensure reliable event propagation by storing events in a transactional outbox.
+Example: Store an event in the database within a transaction, then use a background worker to publish events from the outbox table to an event bus.
+
+Custom Exception Filters
+	Definition: Exception filters handle and format errors globally, or on specific routes.
+	Example:
+	typescript
+	Copy code
+	import { ExceptionFilter, Catch, ArgumentsHost, HttpException } from '@nestjs/common';
+
+	@Catch(HttpException)
+	export class HttpExceptionFilter implements ExceptionFilter {
+	  catch(exception: HttpException, host: ArgumentsHost) {
+		const ctx = host.switchToHttp();
+		const response = ctx.getResponse();
+		const status = exception.getStatus();
+
+		response.status(status).json({
+		  statusCode: status,
+		  message: exception.message,
+		});
+	  }
+	}
+Databse Integration
+
+Mongoose (for MongoDB)
+Installation:
+npm install --save @nestjs/mongoose mongoose
+
+Example Configuration:
+
+
+	import { Module } from '@nestjs/common';
+	import { MongooseModule } from '@nestjs/mongoose';
+	import { UsersModule } from './users/users.module';
+
+	@Module({
+	  imports: [
+		MongooseModule.forRoot('mongodb://localhost/nest'),
+		UsersModule,
+	  ],
+	})
+	export class AppModule {}
+Schema Example:
+
+	typescript
+	Copy code
+	import { Schema, Document } from 'mongoose';
+
+	export const UserSchema = new Schema({
+	  name: String,
+	  email: String,
+	});
+
+	export interface User extends Document {
+	  name: string;
+	  email: string;
+	}
+	
+Service Example:
+
+	import { Injectable } from '@nestjs/common';
+	import { InjectModel } from '@nestjs/mongoose';
+	import { Model } from 'mongoose';
+	import { User } from './user.schema';
+
+	@Injectable()
+	export class UsersService {
+	  constructor(@InjectModel('User') private userModel: Model<User>) {}
+
+	  async findAll(): Promise<User[]> {
+		return this.userModel.find().exec();
+	  }
+
+	  async create(createUserDto: any): Promise<User> {
+		const createdUser = new this.userModel(createUserDto);
+		return createdUser.save();
+	  }
+	}
+
+SecuritY:
+	
+Rate Limiting in NestJS
+	To prevent brute-force attacks and limit the number of requests a user can make to your API, you can use the Throttler Module.
+
+Installation:
+npm install @nestjs/throttler
+
+Configuration:
+In your AppModule, you can set up rate limiting as follows:
+
+
+	import { Module } from '@nestjs/common';
+	import { ThrottlerModule } from '@nestjs/throttler';
+	import { UsersModule } from './users/users.module';
+
+	@Module({
+	  imports: [
+		ThrottlerModule.forRoot({
+		  ttl: 60,   // Time-to-live in seconds (e.g., 60 seconds)
+		  limit: 10, // Max requests per TTL
+		}),
+		UsersModule,
+	  ],
+	})
+	export class AppModule {}
+	This will limit each user to 10 requests per 60 seconds. You can adjust the ttl and limit as needed for your use case.
+
+Using Rate Limiting in Specific Routes:
+You can apply the rate limit to specific routes with the @UseGuards() decorator:
+
+
+	import { Controller, Get, UseGuards } from '@nestjs/common';
+	import { ThrottlerGuard } from '@nestjs/throttler';
+
+	@Controller('users')
+	@UseGuards(ThrottlerGuard) // Applies the rate limit to this route
+	export class UsersController {
+	  @Get()
+	  findAll() {
+		return 'This is the rate-limited endpoint';
+	  }
+	}
+	
+2. Helmet (Securing HTTP Headers)
+Helmet is a middleware to secure your application by setting various HTTP headers like Content-Security-Policy, X-Frame-Options, and others.
+
+
+	npm install helmet
+	Configuration:
+	In your main main.ts file, add Helmet to secure HTTP headers globally:
+
+	typescript
+	Copy code
+	import { NestFactory } from '@nestjs/core';
+	import { AppModule } from './app.module';
+	import * as helmet from 'helmet';
+
+	async function bootstrap() {
+	  const app = await NestFactory.create(AppModule);
+	  
+	  app.use(helmet()); // Enable Helmet for securing HTTP headers
+	  
+	  await app.listen(3000);
+	}
+	bootstrap();
+	
+3. CORS (Cross-Origin Resource Sharing)
+Cross-Origin Resource Sharing (CORS) helps control which domains can access your APIs. By default, CORS is disabled in NestJS.
+
+Enabling CORS:
+To enable CORS for your NestJS application, you can configure it globally:
+
+	typescript
+	Copy code
+	import { NestFactory } from '@nestjs/core';
+	import { AppModule } from './app.module';
+
+	async function bootstrap() {
+	  const app = await NestFactory.create(AppModule);
+
+	  app.enableCors(); // Enable CORS globally
+	  
+	  await app.listen(3000);
+	}
+	bootstrap();
+Configuring CORS:
+You can also specify more restrictive CORS settings, like allowing only specific domains:
+
+
+app.enableCors({
+  origin: 'https://example.com', // Allow only a specific domain
+  methods: 'GET,POST', // Allow specific HTTP methods
+  allowedHeaders: 'Content-Type', // Allow specific headers
+});
+
+4. Data Validation with class-validator and class-transformer
+Data validation ensures the incoming requests meet the expected structure, type, and format.
+
+
+npm install class-validator class-transformer
+Using class-validator:
+You can create a DTO (Data Transfer Object) and use validation decorators to enforce constraints.
+
+import { IsString, IsInt, IsEmail } from 'class-validator';
+
+export class CreateUserDto {
+  @IsString()
+  name: string;
+
+  @IsEmail()
+  email: string;
+
+  @IsInt()
+  age: number;
+}
+
+Applying Validation:
+You can apply the validation pipe globally or to specific routes.
+
+To enable it globally, modify your main.ts file:
+
+import { ValidationPipe } from '@nestjs/common';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+
+  app.useGlobalPipes(new ValidationPipe()); // Apply validation globally
+
+  await app.listen(3000);
+}
+bootstrap();
+
+Alternatively, apply the validation pipe to specific routes:
+
+
+	import { Controller, Post, Body } from '@nestjs/common';
+	import { CreateUserDto } from './create-user.dto';
+	import { ValidationPipe } from '@nestjs/common';
+
+	@Controller('users')
+	export class UsersController {
+	  @Post()
+	  create(@Body(new ValidationPipe()) createUserDto: CreateUserDto) {
+		return 'User created successfully';
+	  }
+	}
+	
+5. Other Security Best Practices
+Here are a few additional security practices that can be implemented in NestJS:
+
+Using JWT for Authentication:
+JWT (JSON Web Token) is widely used for secure user authentication. You can use Passport.js along with the passport-jwt strategy to secure your application.
+
+Install the required libraries:
+
+
+npm install passport passport-jwt @nestjs/passport @nestjs/jwt
+Example of setting up JWT authentication:
+
+AuthService:
+
+	typescript
+	Copy code
+	import { Injectable } from '@nestjs/common';
+	import { JwtService } from '@nestjs/jwt';
+
+	@Injectable()
+	export class AuthService {
+	  constructor(private jwtService: JwtService) {}
+
+	  login(user: any) {
+		const payload = { username: user.username, sub: user.userId };
+		return {
+		  access_token: this.jwtService.sign(payload),
+		};
+	  }
+	}
+JwtStrategy:
+
+	import { Injectable } from '@nestjs/common';
+	import { PassportStrategy } from '@nestjs/passport';
+	import { ExtractJwt, Strategy } from 'passport-jwt';
+
+	@Injectable()
+	export class JwtStrategy extends PassportStrategy(Strategy) {
+	  constructor() {
+		super({
+		  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+		  secretOrKey: 'secretKey',
+		});
+	  }
+
+	  async validate(payload: any) {
+		return { userId: payload.sub, username: payload.username };
+	  }
+	}

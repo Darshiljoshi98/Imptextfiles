@@ -104,7 +104,7 @@ SWR:The team behind Next.js has created a React hook for data fetching called SW
 Nextjs:https://www.youtube.com/watch?v=OgS1ZWZItno&list=PLu71SKxNbfoBAaWGtn9GA2PTw0HO0tXzq
 Next auth :https://www.youtube.com/watch?v=3BEn2E9PvBM&list=PLu71SKxNbfoCXO80Z4miZHTL5GxfFbz7A
 Backend series:https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW&pp=iAQB
-
+Shared folder:https://medium.com/capriza-engineering/sharing-source-code-and-libraries-in-react-bd30926df312
 ---------------------------------------------------------------------------------------------------------
 with return keyword in map
 const names = characters.map((character) ⇒ { return character.name;

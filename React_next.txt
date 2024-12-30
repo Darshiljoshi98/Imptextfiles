@@ -24,6 +24,7 @@ React:
 
 16React 18 Feture :https://www.acil.in/what-new-in-react-18/
 
+
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -40,6 +41,9 @@ Notes: Run dev server ->npm run dev /Run production:npm start
 7:Use Swr:https://swr.vercel.app/docs/with-nextjs - For data fatching
 8:Nextjs Auth with 13:https://medium.com/ascentic-technology/authentication-with-next-js-13-and-next-auth-9c69d55d6bfd
 9: optimize 3rdf party script:https://nextjs.org/docs/pages/building-your-application/optimizing/scripts
+Cache issue
+https://www.youtube.com/watch?v=3RyguimNe8s&t=697s
+export const dynamic = "force-dynamic"
 -Next.js is a flexible React framework that gives you building blocks to create fast web applications.
 -CSR,SSR,SSG
 -Imperative & Declarative Programming:
@@ -356,16 +360,166 @@ const {user} = useContext(UserContext)
 
 React 18 
 
-useData
-USETRANSITION -The use of Transition hooks allows us to specify certain state updates as less important
-USEDEFERREDVALUE-The React.useDeferredValue() function is used to achieve asynchronous rendering. 
+useId =>is a new Hook for generating unique IDs on both the client and server, while avoiding hydration mismatches. 
+		const id = useId()
+		
+useTransition=>The use of Transition hooks allows us to specify certain state updates as less important
+	if i have 3 tab about/post/contact and post have 2500 post then if i click
+	post tab and click contact then contact not render untill post data comes
+	so we use useTransition to reolve this issue
+ 
+ const [isPending, startTransition] = useTransition()
+
+useDeferredValue-The React.useDeferredValue() function is used to achieve asynchronous rendering. 
+	-same as debounce which use for search like if i write one letter then it's call api insted
+	of after 3,4 letter start seraching but react introduce hook same as debounce which help to
+	perfomance 
+	
+	-useDeferredValue is a built-in hook in React that helps improve the performance
+	of your application by deferring the re-rendering of some components when the value
+	they depend on changes. It is particularly useful for handling high-priority UI updates while deferring 
+	lower-priority updates that do not need to be immediate, thus preventing janky or slow interfaces.
+	
+ const deferredValue = useDeferredValue(value); 
+ 
+useSyncExternalStore => (simple use case use your local variable and when add button 
+						 value add we can achive using this)
+					useSyncExternalStore is a hook introduced in React 18 to safely subscribe to external
+					stores or state that are not controlled by React (e.g., external libraries, global 
+					state management systems, or even custom stores). It is particularly useful when 
+					dealing with shared state or managing subscriptions to data sources outside React.
+					
+					const state = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+					
+					subscribe: A function that subscribes to an external store and allows React to be 
+								notified when the store's state changes. It should accept a callback function
+								and invoke that callback when the store updates.
+					getSnapshot: A function that returns the current state from the store. 
+								This function will be called to get the value that your component 
+								should render.
+					getServerSnapshot (optional): A function for server-side rendering (SSR). 
+										It returns a snapshot of the state for rendering on the server, 
+										which ensures the initial render is consistent when the component 
+										mounts on the client.
+										
+								import React, { useState } from "react";
+								import { useSyncExternalStore } from "react";
+
+								// A simple external store (could be any external state management or library)
+								let count = 0;
+								const listeners = new Set<() => void>();
+
+								// Function to get the current state (snapshot)
+								const getCountSnapshot = () => count;
+
+								// Function to subscribe to store updates
+								const subscribeToStore = (callback: () => void) => {
+								  listeners.add(callback);
+								  // Return an unsubscribe function to remove the listener
+								  return () => listeners.delete(callback);
+								};
+
+								// Function to update the store and notify subscribers
+								const incrementCount = () => {
+								  count += 1;
+								  // Notify all subscribers when the state changes
+								  listeners.forEach((listener) => listener());
+								};
+
+								const Counter: React.FC = () => {
+								  // Use `useSyncExternalStore` to subscribe to the external store
+								  const currentCount = useSyncExternalStore(subscribeToStore, getCountSnapshot);
+
+								  return (
+									<div>
+									  <h1>Counter: {currentCount}</h1>
+									  <button onClick={incrementCount}>Increment</button>
+									</div>
+								  );
+								};
+
+								export default Counter;
+
+															
+useimprativehandle:
+
+				The useImperativeHandle hook in React is used to customize the instance
+				value that is exposed when using React.forwardRef. This hook allows you to 
+				explicitly define what methods or properties will be accessible to a parent component 
+				when a child component is wrapped with forwardRef.
+
+To allow a parent component to call specific methods or access properties of a child component.
+To encapsulate internal details of a component and expose only what the parent needs.
+To manipulate DOM elements or trigger child behaviors programmatically.
+
+useImperativeHandle(ref, createHandle, [dependencies])
+							ref: The forwarded ref from the parent component.
+							createHandle: A function that returns an object containing the values/methods
+											to expose to the parent.
+							dependencies: (Optional) An array of dependencies that trigger a 
+										re-creation of the exposed handle when they change.
+										
+										
+										import React, { useState, forwardRef, useImperativeHandle } from "react";
+
+											// Modal Component
+											const Modal = forwardRef((props, ref) => {
+											  const [isVisible, setIsVisible] = useState(false);
+
+											  useImperativeHandle(ref, () => ({
+												open: () => setIsVisible(true),
+												close: () => setIsVisible(false),
+											  }));
+
+											  if (!isVisible) return null;
+
+											  return (
+												<div style={{ background: "rgba(0, 0, 0, 0.5)", padding: "20px" }}>
+												  <p>{props.message || "This is a modal!"}</p>
+												  <button onClick={() => setIsVisible(false)}>Close</button>
+												</div>
+											  );
+											});
+
+											// Parent Component
+											const ParentComponent = () => {
+											  const modalRef = useRef(null);
+
+											  return (
+												<div>
+												  <button onClick={() => modalRef.current.open()}>Open Modal</button>
+												  <Modal ref={modalRef} />
+												</div>
+											  );
+											};
+
+											export default ParentComponent;
+											
+useInsertionEffect =>useInsertionEffect allows inserting elements into the DOM before any layout
+									Effects fire.
+					useInsertionEffect is for CSS-in-JS library authors. Unless you are working on 
+					a CSS-in-JS library 
+					and need a place to inject the styles,
+					 you probably want useEffect or useLayoutEffect instead.
+useEffect:
+	This is useful for side effects that don't need to interact with the DOM right after the render:
+	Data fetching, subscriptions, timers
+	For side effects that don't affect layout
+
+useLayoutEffect:
+	This is useful when you need to measure the layout or perform an effect that needs to be done 
+	synchronously after the render but before the UI is painted
+	DOM measurement, layout adjustments, animations
+	For effects that need to manipulate or measure layout immediately after the render
+
 =>suspense
 =>Automatic batching
 =>Userid ->The useId() hook is an easy way to generate a random and unique ID number in React 18
 =>concurrent rendering
 =>Server component
 =>Portals in React
-				Portals are a new concept in React 18 which allows you to render content in a different part of the DOM. 
+				Portals are a new concept in React 18 which allows you to render content in a different
+				part of the DOM. 
 				Portals are only supported on React 18.
 						 return ReactDOM.createPortal(
 			<h1>Portal demo</h1>,
@@ -375,7 +529,8 @@ USEDEFERREDVALUE-The React.useDeferredValue() function is used to achieve asynch
 		  
 =>Forword ref:
 
-when you use multiple input fileld with comman componenet so we need to pass refrence to component in that case forword ref use
+		when you use multiple input fileld with comman componenet so we need to pass refrence to 
+		component in that case forword ref use
 
 like common component name->inputfield
 main component name- login
@@ -399,6 +554,13 @@ useOptimistic(
 )
 ]
 
+useActionState
+useCallback
+useContext
+useDebugValue
+useLayoutEffect
+useLayoutEffect
+useMemo
 
 Reconsilation
 

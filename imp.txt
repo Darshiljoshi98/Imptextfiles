@@ -1,3 +1,25 @@
+Short cut
+ctrl + /. - comment
+ctrl + p - search box
+ctrl + shift + f  - find files
+ctrl + shift + l - alternative of ctrl +f - add cusror to mattching collextion	m
+Shift + tab- unindent
+ctrl + n - new file
+ctrl + enter - create new line
+alt + mouse - select multiline
+ctrl + D = heighlight same word and changed all occurrence
+alt + arrow keys - move lines
+shift + arrow key then alt+arrow key for move multiple line up and down
+ctrl + b - file strucher
+ctrl +j - open terminal
+ctrl + \ - spilt code
+ctrl + f4 - close
+ctrl + tab - previous file
+window + v- shoe  clipboard history 
+window + number - open tab window + 1
+ctrl + k+w - close all files
+
+
 
 Delivered
 Hesader footer url
@@ -68,7 +90,7 @@ dev-		Xrefv3@2023j
 Spec@india89 -github password/Chatgpt/tawk/gls alumi password
 darshil.joshi@spec-india.com
 Xrefv3@2023j - mongodb password
-darshiljoshi8@gmail.com
+
 https://alumni.glsuniversity.ac.in/user/login.dz
 
 darshil2015@gmail.com
@@ -175,6 +197,8 @@ set NODE_OPTIONS=--openssl-legacy-provider
 darshil.joshi@spec-india.net
 
 djIndia@123
+Viharspec@1234
+
 
 
 When someone left spec remove mail from application
@@ -751,3 +775,16 @@ https://stripe.com/in/payments/features
 
 
 
+cursor ai tool
+create
+Pdf 
+
+ritu.patel@non.se.com
+sesa699823/ Schneidersesa@000RP24
+
+
+
+watch MEETING Video
+R&D ON HOW TO CALL LAMBDA WITH Version
+check if we deploy new version so vpc is configurabe or not
+create list of lambda which not have version 

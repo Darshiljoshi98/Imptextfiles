@@ -2067,3 +2067,831 @@ JwtStrategy:
 		return { userId: payload.sub, username: payload.username };
 	  }
 	}
+-----------------------
+@Global() decorator is used to create globally accessible modules. 
+When a module is decorated with @Global(), it can be imported once and made available across 
+the entire application without needing to import it in each module individually. 
+This is particularly useful for modules that contain shared services or providers,
+ such as a logging service, configuration service, or database connection.
+ 
+Create a Global Module
+Define a module with the @Global() decorator:
+
+	import { Global, Module } from '@nestjs/common';
+	import { ConfigService } from './config.service';
+
+	@Global()
+	@Module({
+	  providers: [ConfigService],
+	  exports: [ConfigService],
+	})
+	export class ConfigModule {}
+	
+Use the Global Module in AppModule
+Import the global module in the main AppModule:
+
+
+	import { Module } from '@nestjs/common';
+	import { ConfigModule } from './config/config.module';
+
+	@Module({
+	  imports: [ConfigModule],
+	})
+	export class AppModule {}
+	Access the Global Service in Other Modules
+Now, any module that requires ConfigService can inject it without needing to import ConfigModule again:
+
+
+	import { Injectable } from '@nestjs/common';
+	import { ConfigService } from '../config/config.service';
+
+	@Injectable()
+	export class SomeService {
+	  constructor(private readonly configService: ConfigService) {}
+
+	  getSomeConfig() {
+		return this.configService.get('someKey');
+	  }
+	}
+	
+=>Recursive issue
+
+recursive issue often happens when there’s a circular dependency between modules or services. 
+This occurs when two or more providers (like services or modules) depend on each other, 
+which can result in an error like Cannot read property 'X' of undefined or Nest can't resolve 
+dependencies.
+
+
+
+Example of a Recursive (Circular) Dependency Issue
+
+Suppose we have two services, UserService and OrderService, and each service depends on the other:
+
+UserService needs OrderService to get user orders.
+OrderService needs UserService to get user details for an order.
+
+This dependency can create a recursive cycle that causes NestJS to fail when trying to resolve 
+the dependencies.
+
+Problem Code
+
+	// user.service.ts
+	import { Injectable } from '@nestjs/common';
+	import { OrderService } from './order.service';
+
+	@Injectable()
+	export class UserService {
+	  constructor(private orderService: OrderService) {}
+
+	  getUserOrders(userId: string) {
+		return this.orderService.getOrdersByUserId(userId);
+	  }
+	}
+
+	// order.service.ts
+	import { Injectable } from '@nestjs/common';
+	import { UserService } from './user.service';
+
+	@Injectable()
+	export class OrderService {
+	  constructor(private userService: UserService) {}
+
+	  getOrdersByUserId(userId: string) {
+		const user = this.userService.getUserById(userId);
+		// Retrieve orders based on user information
+		return [{ orderId: '123', userId }];
+	  }
+	}
+In this code, UserService depends on OrderService, and OrderService also depends on UserService, 
+creating a circular dependency. NestJS won’t be able to resolve this, and an error will occur.
+
+Solution: Use forwardRef()
+To resolve this issue, you can use the forwardRef() helper function provided by NestJS. 
+This function allows NestJS to resolve dependencies even when circular references exist.
+
+Solution Code
+
+
+	// user.service.ts
+	import { Injectable, Inject, forwardRef } from '@nestjs/common';
+	import { OrderService } from './order.service';
+
+	@Injectable()
+	export class UserService {
+	  constructor(
+		@Inject(forwardRef(() => OrderService))
+		private orderService: OrderService,
+	  ) {}
+
+	  getUserOrders(userId: string) {
+		return this.orderService.getOrdersByUserId(userId);
+	  }
+
+	  getUserById(userId: string) {
+		return { id: userId, name: 'John Doe' };
+	  }
+	}
+
+	// order.service.ts
+	import { Injectable, Inject, forwardRef } from '@nestjs/common';
+	import { UserService } from './user.service';
+
+	@Injectable()
+	export class OrderService {
+	  constructor(
+		@Inject(forwardRef(() => UserService))
+		private userService: UserService,
+	  ) {}
+
+	  getOrdersByUserId(userId: string) {
+		const user = this.userService.getUserById(userId);
+		return [{ orderId: '123', userId, userName: user.name }];
+	  }
+	}
+	
+In this solution:
+
+@Inject(forwardRef(() => UserService)) and @Inject(forwardRef(() => OrderService)) tell NestJS that 
+these dependencies will be resolved later, breaking the circular dependency.
+
+forwardRef() delays the dependency injection until all modules and providers are available.
+
+Module Setup
+To ensure this works, make sure each module exports the services if they need to be used across modules:
+
+// user.module.ts
+import { Module, forwardRef } from '@nestjs/common';
+import { UserService } from './user.service';
+import { OrderModule } from './order.module';
+
+@Module({
+  imports: [forwardRef(() => OrderModule)],
+  providers: [UserService],
+  exports: [UserService],
+})
+export class UserModule {}
+
+// order.module.ts
+import { Module, forwardRef } from '@nestjs/common';
+import { OrderService } from './order.service';
+import { UserModule } from './user.module';
+
+@Module({
+  imports: [forwardRef(() => UserModule)],
+  providers: [OrderService],
+  exports: [OrderService],
+})
+export class OrderModule {}
+Using forwardRef in both modules and services resolves the circular dependency issue,
+ allowing UserService and OrderService to access each other without causing a recursive loop error.
+ 
+ Application
+1. REST API Applications
+	Description: These handle standard HTTP requests and responses using controllers, services, and modules. Suitable for CRUD operations.
+	Use Cases:
+	Web applications
+	Backend services for frontend apps
+	Example:
+	Building a user management system with endpoints like /users.
+	
+2. GraphQL API Applications
+	Description: Uses GraphQL to define APIs and handle data querying. NestJS provides integrations with Apollo Server and Mercurius.
+	Use Cases:
+	Data-driven applications with complex relationships
+	Applications needing flexible querying
+	Example:
+	Building a content management system (CMS).
+	
+3. Microservices
+	Description: Enables building distributed systems using various transport layers like TCP, Redis, NATS, RabbitMQ, Kafka, etc.
+	Use Cases:
+	High-performance and scalable systems
+	Decoupled architecture
+	Example:
+	Building an order processing system using RabbitMQ.
+	
+4. Server-Side Rendered (SSR) Applications
+	Description: Enables server-side rendering for frontend frameworks like Angular or React using NestJS.
+	Use Cases:
+	SEO-friendly web applications
+	Applications needing fast initial load times
+	Example:
+	An e-commerce site using Angular Universal.
+	
+5. WebSocket Applications
+	Description: Supports real-time bidirectional communication between the server and the client.
+	Use Cases:
+	Real-time chat applications
+	Live notifications or streaming
+	Example:
+	Building a stock price ticker.
+	
+6. CLI Tools
+	Description: Custom CLI applications built to automate tasks or perform specific operations.
+	Use Cases:
+	Automated deployments
+	Code generation tools
+	Example:
+	A CLI tool for managing database migrations.
+	
+7. Hybrid Applications
+	Description: Combines different types of NestJS applications into a single app.
+	Use Cases:
+	Applications requiring a mix of REST APIs, GraphQL APIs, and WebSockets.
+	Example:
+	A social media platform with APIs, real-time updates, and GraphQL for flexible data fetching.
+	
+8. Task Scheduling Applications
+	Description: Used for cron jobs, recurring tasks, or background processing.
+	Use Cases:
+	Automated reporting
+	Data synchronization
+	Example:
+	A notification system that sends daily emails.
+	
+9. Event-Driven Applications
+	Description: Uses event patterns for inter-service communication or within the same application.
+	Use Cases:
+	Applications with asynchronous processes
+	Example:
+	An e-commerce system handling inventory updates after order completion.
+	
+10. Monorepo Applications
+	Description: Organizes code into multiple modules or services under a single repository.
+	Use Cases:
+	Enterprise-level applications
+	Systems needing shared modules or libraries
+	Example:
+	A large-scale application combining user management, product catalog, and order services.
+
+	 
+ 1. REST API Application
+
+	// users.controller.ts
+	@Controller('users')
+	export class UsersController {
+	  @Get()
+	  findAll() {
+		return [{ id: 1, name: 'John Doe' }];
+	  }
+
+	  @Post()
+	  create(@Body() user: any) {
+		return { message: 'User created', user };
+	  }
+	}
+	
+2. GraphQL API Application
+	
+	// user.resolver.ts
+	@Resolver()
+	export class UserResolver {
+	  @Query(() => String)
+	  hello() {
+		return 'Hello World';
+	  }
+
+	  @Query(() => [UserType])
+	  getUsers() {
+		return [{ id: 1, name: 'Jane Doe' }];
+	  }
+	}
+	
+3. Microservices
+
+	// main.ts (TCP microservice)
+	async function bootstrap() {
+	  const app = await NestFactory.createMicroservice(AppModule, {
+		transport: Transport.TCP,
+	  });
+	  await app.listen();
+	}
+
+	// app.service.ts
+	@Injectable()
+	export class AppService {
+	  @MessagePattern({ cmd: 'sum' })
+	  accumulate(data: number[]) {
+		return data.reduce((a, b) => a + b, 0);
+	  }
+	}
+	
+4. Server-Side Rendered (SSR) Application
+
+	// app.controller.ts
+	@Controller()
+	export class AppController {
+	  @Get()
+	  renderPage(@Res() res: Response) {
+		res.render('index', { title: 'NestJS SSR Example' });
+	  }
+	}
+	
+5. WebSocket Application
+
+	// app.gateway.ts
+	@WebSocketGateway()
+	export class AppGateway {
+	  @WebSocketServer()
+	  server: Server;
+
+	  @SubscribeMessage('message')
+	  handleMessage(@MessageBody() message: string): void {
+		this.server.emit('message', `Echo: ${message}`);
+	  }
+	}
+	
+6. CLI Tool
+
+	// cli.ts
+	import { CommandFactory } from 'nest-commander';
+	import { AppModule } from './app.module';
+
+	CommandFactory.run(AppModule, ['log', '--message=Hello from CLI']);
+	
+7. Hybrid Application
+
+	// app.module.ts
+	@Module({
+	  imports: [
+		GraphQLModule.forRoot({ autoSchemaFile: true }),
+		HttpModule,
+	  ],
+	  controllers: [UsersController],
+	  providers: [UserResolver],
+	})
+export class AppModule {}
+
+8. Task Scheduling Application
+
+	// app.service.ts
+	@Injectable()
+	export class AppService {
+	  @Cron('45 * * * * *')
+	  handleCron() {
+		console.log('Task runs every 45 seconds');
+	  }
+	}
+	
+9. Event-Driven Application
+
+	// app.service.ts
+	@Injectable()
+	export class AppService {
+	  @OnEvent('user.created')
+	  handleUserCreated(payload: any) {
+		console.log('User created event received:', payload);
+	  }
+	}
+	
+10. Monorepo Application
+
+	// apps/api/users.controller.ts
+	@Controller('users')
+	export class UsersController {
+	  @Get()
+	  findAll() {
+		return [{ id: 1, name: 'Monorepo User' }];
+	  }
+	}
+
+	// apps/api/main.ts
+	async function bootstrap() {
+	  const app = await NestFactory.create(AppModule);
+	  await app.listen(3000);
+	}
+
+
+MongooseModule.forFeature([{ name: Quiz.name, schema: QuizSchema }])
+
+is used in NestJS to register a Mongoose model with a specific schema 
+in the module's dependency injection system. Here’s a breakdown of its purpose:
+
+
+What it Does
+	Registers the Mongoose Model:
+
+	It tells NestJS to associate the Quiz model (identified by the Quiz.name) with the QuizSchema in the context of the module.
+	Once registered, this model can be injected into services or other providers in the module using @InjectModel.
+	Makes the Model Available via Dependency Injection:
+
+	After registration, you can use the @InjectModel() decorator in your services to access this model.
+	Example:
+
+	constructor(@InjectModel(Quiz.name) private quizModel: Model<Quiz>) {}
+	This allows you to perform database operations (e.g., create, find, update, delete) on the Quiz collection in MongoDB.
+	Defines the Schema:
+
+	The schema defines the structure of the Quiz documents in MongoDB, including the fields, their types, and any constraints or validations.
+	Example:
+
+	export const QuizSchema = SchemaFactory.createForClass(Quiz);
+	Why It’s Needed
+	Module-Level Scope:
+
+	By using MongooseModule.forFeature, the model is scoped only to the module where it’s declared, ensuring modularity and separation of concerns.
+	Reusable Models:
+
+	You can reuse the Quiz model across different modules by importing the module where the model is registered.
+	Database Abstraction:
+
+	It abstracts the low-level database logic, enabling NestJS to handle the lifecycle and provide a consistent API to work with MongoDB.
+
+
+
+Optional providers
+	Occasionally, you might have dependencies which do not necessarily have to be resolved. 
+	For instance, your class may depend on a configuration object, but if none is passed,
+	 the default values should be used. In such a case, the dependency becomes optional,
+	 because lack of the configuration provider wouldn't lead to errors.
+
+	To indicate a provider is optional, use the @Optional() decorator in the constructor's signature.
+
+
+
+	import { Injectable, Optional, Inject } from '@nestjs/common';
+
+	@Injectable()
+	export class HttpService<T> {
+	  constructor(@Optional() @Inject('HTTP_OPTIONS') private httpClient: T) {}
+	}
+
+Global modules#
+
+	If you have to import the same set of modules everywhere, it can get tedious. Unlike in Nest,
+	Angularproviders are registered in the global scope. Once defined, they're available everywhere.
+	Nest, however, encapsulates providers inside the module scope. You aren't able to use a module's
+	providers elsewhere without first importing the encapsulating module.
+
+	When you want to provide a set of providers which should be available everywhere out-of-the-box
+	(e.g., helpers, database connections, etc.), make the module global with the @Global() decorator.
+
+
+
+	import { Module, Global } from '@nestjs/common';
+	import { CatsController } from './cats.controller';
+	import { CatsService } from './cats.service';
+
+	@Global()
+	@Module({
+	  controllers: [CatsController],
+	  providers: [CatsService],
+	  exports: [CatsService],
+	})
+	export class CatsModule {}
+	The @Global() decorator makes the module global-scoped. Global modules should be registered only 
+	once, generally by the root or core module. In the above example, the CatsService provider will be ubiquitous, and modules that wish to inject the service will not need to import the CatsModule in their imports array.
+
+
+Dynamic modules#
+	The Nest module system includes a powerful feature called dynamic modules. 
+	This feature enables you to easily create customizable modules that can register and 
+	configure providers dynamically. Dynamic modules are covered extensively here. In this chapter, 
+	we'll give a brief overview to complete the introduction to modules.
+
+	Following is an example of a dynamic module definition for a DatabaseModule:
+
+	import { Module, DynamicModule } from '@nestjs/common';
+	import { createDatabaseProviders } from './database.providers';
+	import { Connection } from './connection.provider';
+
+	@Module({
+	  providers: [Connection],
+	  exports: [Connection],
+	})
+	export class DatabaseModule {
+	  static forRoot(entities = [], options?): DynamicModule {
+		const providers = createDatabaseProviders(options, entities);
+		return {
+		  module: DatabaseModule,
+		  providers: providers,
+		  exports: providers,
+		};
+	  }
+	}
+
+	The forRoot() method may return a dynamic module either synchronously or asynchronously 
+	(i.e., via a Promise).
+	This module defines the Connection provider by default (in the @Module() decorator metadata), 
+	but additionally - depending on the entities and options objects passed into the forRoot()
+	 method - exposes a collection of providers, for example, repositories. Note that the properties
+	 returned by the dynamic module extend (rather than override) the base module metadata defined in the
+	 @Module() decorator. That's how both the statically declared Connection provider and the dynamically 
+	 generated repository providers are exported from the module.
+
+	If you want to register a dynamic module in the global scope, set the global property to true.
+
+
+
+	{
+	  global: true,
+	  module: DatabaseModule,
+	  providers: providers,
+	  exports: providers,
+	}
+Warning
+	As mentioned above, making everything global is not a good design decision.
+	The DatabaseModule can be imported and configured in the following manner:
+
+
+
+	import { Module } from '@nestjs/common';
+	import { DatabaseModule } from './database/database.module';
+	import { User } from './users/entities/user.entity';
+
+	@Module({
+	  imports: [DatabaseModule.forRoot([User])],
+	})
+	export class AppModule {}
+	If you want to in turn re-export a dynamic module, you can omit the forRoot() method call in the exports array:
+
+
+
+	import { Module } from '@nestjs/common';
+	import { DatabaseModule } from './database/database.module';
+	import { User } from './users/entities/user.entity';
+
+	@Module({
+	  imports: [DatabaseModule.forRoot([User])],
+	  exports: [DatabaseModule],
+	})
+	export class AppModule {}
+	
+Middleware
+	Middleware is a function which is called before the route handler. 
+	Middleware functions have access to the request and response objects, and the next() m
+	iddleware function in the application’s request-response cycle. The next middleware function 
+	is commonly denoted by a variable named next.
+	
+	
+	
+	import { Injectable, NestMiddleware } from '@nestjs/common';
+	import { Request, Response, NextFunction } from 'express';
+
+	@Injectable()
+	export class LoggerMiddleware implements NestMiddleware {
+	  use(req: Request, res: Response, next: NextFunction) {
+		console.log('Request...');
+		next();
+	  }
+	}
+	
+	
+		
+Applying middleware#
+			There is no place for middleware in the @Module() decorator.
+			Instead, we set them up using the configure() method of the module class. 
+			Modules that include middleware have to implement the NestModule interface. 
+			Let's set up the LoggerMiddleware at the AppModule level.
+
+
+	app.module.tsJS
+
+	import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
+	import { LoggerMiddleware } from './common/middleware/logger.middleware';
+	import { CatsModule } from './cats/cats.module';
+
+	@Module({
+	  imports: [CatsModule],
+	})
+	export class AppModule implements NestModule {
+	  configure(consumer: MiddlewareConsumer) {
+		consumer
+		  .apply(LoggerMiddleware)
+		  .forRoutes('cats');
+	  }
+	  
+Excluding routes#
+	At times we want to exclude certain routes from having the middleware applied
+	. We can easily exclude certain routes with the exclude() method. This method can 
+	take a single string, multiple strings, or a RouteInfo object identifying routes to be 
+	excluded, as shown below:
+
+
+
+	consumer
+	  .apply(LoggerMiddleware)
+	  .exclude(
+		{ path: 'cats', method: RequestMethod.GET },
+		{ path: 'cats', method: RequestMethod.POST },
+		'cats/(.*)',
+	  )
+	  .forRoutes(CatsController);
+	  
+Multiple middleware#
+, in order to bind multiple middleware that are executed sequentially, 
+	simply provide a comma separated list inside the apply() method:
+	consumer.apply(cors(), helmet(), logger).forRoutes(CatsController);
+Global middleware#
+	If we want to bind middleware to every registered route at once, we can use the use() method that is supplied by the INestApplication instance:
+
+
+	main.tsJS
+
+	const app = await NestFactory.create(AppModule);
+	app.use(logger);
+	await app.listen(process.env.PORT ?? 3000);
+	
+Exception filters:
+		Out of the box, this action is performed by a built-in global exception filter, 
+		which handles exceptions of type HttpException (and subclasses of it). 
+		When an exception is unrecognized (is neither HttpException nor a class that inherits
+		from HttpException), the built-in exception filter generates the following default JSON 
+		response
+		
+			
+			{
+	  "statusCode": 500,
+	  "message": "Internal server error"
+	}
+	
+	Nest provides a built-in HttpException class, exposed from the @nestjs/common package. 
+	For typical HTTP REST/GraphQL API based applications, it's best practice to send standard
+	HTTP response objects when certain error conditions occur.	
+		
+			@Get()
+	async findAll() {
+	  throw new HttpException('Forbidden', HttpStatus.FORBIDDEN);
+	}
+	
+	
+The HttpException constructor takes two required arguments which determine the response:
+
+	The response argument defines the JSON response body.
+		It can be a string or an object as described below.
+	The status argument defines the HTTP status code.
+	By default, the JSON response body contains two properties:
+
+		statusCode: defaults to the HTTP status code provided in the status argument
+		message: a short description of the HTTP error based on the status	
+		
+		@Get()
+		async findAll() {
+		  try {
+			await this.service.findAll()
+		  } catch (error) {
+			throw new HttpException({
+			  status: HttpStatus.FORBIDDEN,
+			  error: 'This is a custom message',
+			}, HttpStatus.FORBIDDEN, {
+			  cause: error
+			});
+		  }
+		}
+Custom exceptions:
+		export class ForbiddenException extends HttpException {
+	  constructor() {
+		super('Forbidden', HttpStatus.FORBIDDEN);
+	  }
+	}
+
+
+	@Get()
+	async findAll() {
+	  throw new ForbiddenException();
+	}
+	
+	Built in exception:
+			BadRequestException
+			UnauthorizedException
+			NotFoundException
+			ForbiddenException
+			NotAcceptableException
+			RequestTimeoutException
+			ConflictException
+			GoneException
+			HttpVersionNotSupportedException
+			PayloadTooLargeException
+			UnsupportedMediaTypeException
+			UnprocessableEntityException
+			InternalServerErrorException
+			NotImplementedException
+			ImATeapotException
+			MethodNotAllowedException
+			BadGatewayException
+			ServiceUnavailableException
+			GatewayTimeoutException
+			PreconditionFailedException
+ you may want to add logging or use a different JSON schema based on some dynamic factors. Exception filters are designed for exactly this purpose. 
+	
+		import { ExceptionFilter, Catch, ArgumentsHost, HttpException } from '@nestjs/common';
+		import { Request, Response } from 'express';
+
+		@Catch(HttpException)
+		export class HttpExceptionFilter implements ExceptionFilter {
+		  catch(exception: HttpException, host: ArgumentsHost) {
+			const ctx = host.switchToHttp();
+			const response = ctx.getResponse<Response>();
+			const request = ctx.getRequest<Request>();
+			const status = exception.getStatus();
+
+			response
+			  .status(status)
+			  .json({
+				statusCode: status,
+				timestamp: new Date().toISOString(),
+				path: request.url,
+			  });
+		  }
+		}
+	The @Catch(HttpException) decorator binds the required metadata to the exception filter, 
+	telling Nest that this particular filter is looking for exceptions of type HttpException
+	 and nothing else. The @Catch() decorator may take a single parameter, or a comma-separated list. 
+	 This lets you set up the filter for several types of exceptions at once.
+ 
+	 
+	 @Post()
+	@UseFilters(new HttpExceptionFilter())
+	async create(@Body() createCatDto: CreateCatDto) {
+	  throw new ForbiddenException();
+	}
+	We have used the @UseFilters() decorator here. Similar to the @Catch() decorator, 
+	it can take a single filter instance, or a comma-separated list of filter instances. 
+	Here, we created the instance of HttpExceptionFilter in place. Alternatively,
+	 you may pass the class (instead of an instance), leaving responsibility for instantiation to the 
+	 framework,and enabling dependency injection.
+
+Make it global
+
+	async function bootstrap() {
+	  const app = await NestFactory.create(AppModule);
+	  app.useGlobalFilters(new HttpExceptionFilter());
+	  await app.listen(process.env.PORT ?? 3000);
+	}
+	bootstrap();
+
+	app.module.tsJS
+
+	import { Module } from '@nestjs/common';
+	import { APP_FILTER } from '@nestjs/core';
+
+	@Module({
+	  providers: [
+		{
+		  provide: APP_FILTER,
+		  useClass: HttpExceptionFilter,
+		},
+	  ],
+	})
+	export class AppModule {}
+	
+Pipes
+
+	A pipe is a class annotated with the @Injectable() decorator, 
+	which implements the PipeTransform interface.
+
+	Pipes have two typical use cases:
+
+	transformation: transform input data to the desired form (e.g., from string to integer)
+	validation: evaluate input data and if valid, simply pass it through unchanged; otherwise, 
+	throw an exception
+	
+		Built-in pipes#
+		Nest comes with nine pipes available out-of-the-box:
+
+		ValidationPipe
+		ParseIntPipe
+		ParseFloatPipe
+		ParseBoolPipe
+		ParseArrayPipe
+		ParseUUIDPipe
+		ParseEnumPipe
+		DefaultValuePipe
+		ParseFilePipe
+		They're exported from the @nestjs/common package.
+		
+		
+stripe:
+
+https://www.mitrahsoft.com/blog/stripe-payment-api-using-reactjs-nodejs
+https://medium.com/@shaikhrezwan66/implementing-payment-system-in-your-react-app-using-stripe-7e0e3f984532
+https://thushaltk.medium.com/how-to-add-stripe-payment-gateway-to-your-mern-project-82f34691dc57
+
+For the card number, enter 4242 4242 4242 4242 which is given by Stripe for testing.
+https://www.youtube.com/watch?v=hq-IKhRjIHQ
+Node js
+Create Customer
+  stripe.customer.create -> email,name
+Add Card
+	stripe.token.create('card')
+	stripe.customer.createSource() 
+  customer id,card name,card exp year,card exp month,card number,card cvv
+  
+Payment -> cardid,customerid,amount
+	stripe.charges.create
+  
+  
+oExperience designing and implementing microservices architectures.
+oKnowledge of service discovery, API gateways, and distributed tracing.
+
+microservices
+https://www.youtube.com/watch?v=fEDT4lWWe9g
+https://radixweb.com/blog/building-microservices-with-node-js
+
+
+Nest js
+https://www.freecodecamp.org/news/build-web-apis-with-nestjs-beginners-guide/
+
+
+cloudflared tunnel --url http://localhost:4000/
+

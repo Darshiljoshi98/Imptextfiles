@@ -344,28 +344,26 @@ Mahatma Gandhi J
 Diwali - 3
 
 jan-23
-feb -21
+feb -20
 mar-21
 apr -22
-may-23
-jun-20
+may-22
+jun-21
 jul-23
-aug-22
-sep-21
+aug-21
+sep-22
 oct-23
-nov-21
-dec-22
+nov-20
+dec-23
 
 
-15jan
-26jan
-march 25 holi
+14jan
+26feb shivratri
+march 14 holi
 15aug
-19aug rasksha bandhan
-26aug janmashatmi
 2 oct gandhi jaynti
-31oct diwali
-1nov new year
+5 leave  diwali
+
 	
 CPB2
 CPB3
@@ -788,3 +786,6 @@ watch MEETING Video
 R&D ON HOW TO CALL LAMBDA WITH Version
 check if we deploy new version so vpc is configurabe or not
 create list of lambda which not have version 
+
+
+mrutunjay raduray

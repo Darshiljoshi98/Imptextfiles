@@ -1,0 +1,462 @@
+https://blog.logrocket.com/how-to-create-video-audio-recorder-react/
+https://react.dev/reference/rsc/server-functions
+
+PLANNING POKER 
+
+
+Agile
+https://www.youtube.com/watch?v=hgPUM-_SMg8
+https://www.youtube.com/watch?v=KNBHQ0pyaG8
+
+https://www.youtube.com/watch?v=wmJfx7zAfQI&list=PLEiEAq2VkUUJKZEL96YBV78Dd5gsHSVZ7 - last
+
+
+
+Agile:Agile manifesto outlines four values
+		Individuals and interactions over processes and tools
+		Working software over comprehensive documentation
+		Customer collaboration over contract negotiation
+		Responding to change over following a plan
+
+Scrum:
+Scrum is a framework used in Agile project management to help teams work collaboratively, efficiently, 
+and flexibly while developing complex products, typically software. It emphasizes iterative progress, 
+continuous feedback, and adaptability to change.
+
+Scrum Role:
+	Product Owner
+	Scrum Master
+	Development Team
+
+
+Agile vs scrum:
+Agile: A philosophy or mindset for software development and project management that focuses on 
+iterative progress, collaboration, and flexibility to adapt to change.
+Scrum: A framework that falls under the Agile umbrella. It provides specific practices, 
+roles, events, and artifacts to implement Agile principles.
+
+
+The scrum product owner:
+	They are focused on understanding business, customer, and market requirements, then prioritizing 
+	the work to be done by the engineering team accordingly.
+	Build and manage the product backlog.
+	work:
+	
+	Closely partner with the business and the team to ensure everyone understands the work items 
+	in the product backlog.
+	Give the team clear guidance on which features to deliver next.
+	Decide when to ship the product with a predisposition towards more frequent delivery.
+
+The scrum master:
+	scrum master deeply understands the work being done by the team and can help the team 
+	optimize their transparency and delivery flow. As the facilitator-in-chief, he/she schedules 
+	the needed resources (both human and logistical) for sprint planning, stand-up, sprint review, 
+	and the sprint retrospective.
+
+The scrum development team:
+		The scrum team drives the plan for each sprint. They forecast how much work they believe they 
+		can complete over the iteration using their historical velocity as a guide
+		
+--------------		
+Scrum artifacts:Iportant information used by the scrum team that helps define the product and what work 
+				to be done to create the product. 
+				->There are three artifacts in scrum: product backlog, a sprint backlog, and an increment with your definition of “done”.
+			*Product Backlog :primary list of work that needs to get done and maintained by the product owner or product manager
+							 - The product backlog is constantly revisited, re-prioritized and maintained by the Product Owner		
+			*Sprint Backlog: list of items, user stories, or bug fixes, selected by the development team for implementation in the current sprint cycle
+			*Incrementor(Sprint Goal):usable end-product from a sprint
+									-we usually demonstrate the “increment” during the end-of-sprint demo, where the team shows what was completed 
+									
+---------------
+Scrum ceremonies or events:
+*Organize the backlog:-sometimes known as backlog grooming
+					 -responsibility of the product owner.
+*Sprint planning:-The work to be performed (scope) during the current sprint is planned during this meeting by the entire development team
+				-This meeting is led by the scrum master and is where the team decides on the sprint goal
+				-Specific user stories are then added to the sprint from the product backlog.
+				
+*Sprint:-A sprint is the actual time period when the scrum team works together to finish an increment.
+		-Two weeks is a pretty typical length for a sprint
+		-All the events — from planning to retrospective — happen during the sprint
+		-This helps the team learn from past experiences and apply that insight to future sprints.
+		
+*Daily scrum or stand up:-This is a daily super-short meeting that happens at the same time (usually mornings) and a place to keep it simple
+						-The goal of the daily scrum is for everyone on the team to be on the same page, aligned with the sprint goal, and to get a plan out for the next 24 hours.
+						A common way to conduct a stand up is for every team member to answer three questions in the context of achieving the sprint goal:
+							•      What did I do yesterday?
+							•      What do I plan to do today?
+							•      Are there any obstacles?
+*Sprint review: -At the end of the sprint, the team gets together for an informal session to view a demo of, or inspect, the increment
+
+*Sprint Retrospective:The retrospective is where the team comes together to document and discuss what worked and what didn’t work in a sprint
+---------
+scrum and kanban use visual methods such as the scrum board or kanban board to track the progress of work
+When to Use Scrum vs. Kanban
+Use Scrum if:
+
+	You need structured iterations.
+	Your team thrives on well-defined roles and ceremonies.
+	Incremental product delivery is essential.
+Use Kanban if:
+
+	You need flexibility and real-time changes.
+	Your focus is on optimizing workflow and reducing bottlenecks.
+	You handle continuous tasks, such as customer support or operations.
+	Both frameworks can even be combined (e.g., Scrumban) to leverage the strengths of each!
+	
+Scrum vs. Kanban:
+Scrum: focuses on smaller, fixed-length iterations. Once the time period for a sprint is finalized, the stories or product backlog entries that can be implemented during this sprint cycle are then determined. 
+kanban:The number of tasks or the work in progress (WIP limit) to be implemented in the current cycle is fixed at first. The time taken to implement these features is then calculated backward.	
+	.
+----------
+
+Agile is a set of principles and scrum is a framework for getting s#it done.  
+------------
+
+sprints in project management:
+A sprint is a short, time-boxed period when a scrum team works to complete a set amount of work. 
+Sprints are at the very heart of scrum and agile methodologies, and getting sprints right will help 
+your agile team ship better software with fewer headaches.  
+
+
+steps:
+-Sprint plan->What work can get done in this sprint and how will the chosen work get done?
+- product owner->product backlog
+-daily scrum,Standup
+-Sprint review-team demonstrates what they’ve completed 
+-sprint retrospective->identify areas of improvement for the next sprin
+------------------
+What is sprint planning?
+Sprint planning is an event in scrum that kicks off the sprint. 
+The purpose of sprint planning is to define what can be delivered in the sprint and how that work will be achieved. 
+Sprint planning is done in collaboration with the whole scrum team.
+
+The sprint planning session kicks off the sprint by setting the agenda and focus:
+
+The What –  The product owner describes the objective(or goal) of the sprint and what backlog items contribute to that goal. The scrum team decides what can be done in the coming sprint and what they will do during the sprint to make that happen.
+The How – The development team plans the work necessary to deliver the sprint goal. Ultimately, the resulting sprint plan is a negotiation between the development team and product owner based on value and effort.
+The Who – You cannot do sprint planning without the product owner or the development team. The product owner defines the goal based on the value that they seek. The development team needs to understand how they can or cannot deliver that goal. If either is missing from this event it makes planning the sprint almost impossible.
+The Inputs – A great starting point for the sprint plan is the product backlog as it provides a list of ‘stuff’ that could potentially be part of the current sprint. The team should also look at the existing work done in the increment and have a view to capacity.
+The Outputs – The most important outcome for the sprint planning meeting is that the team can describe the goal of the sprint and how it will start working toward that goal. This is made visible in the sprint backlog.
+
+Setting a time limit for sprint planning
+-The sprint planning meeting for a two-week sprint would be no longer than four hours. This is called "timeboxing"
+Focus on the outcomes, not the work
+
+-User stories are one great way of describing the work from a customer point of view.  
+User stories, written like the one below, re-focus defects, issues, and improvements on the outcome the customer 
+is seeking rather than the observed problem.
+
+
+Estimates are required but don’t pretend you know more than you do
+
+-------------------------
+What are scrum ceremonies?
+Sprint planning:
+	Attendees: Development team, scrum master, product owner
+	When: At the beginning of a sprint.
+	Duration: Usually around one hour per week of iteration. e.g. a two-week sprint kicks off with a two-hour planning meeting.
+	Agile framework: Scrum. 
+	Purpose: Sprint planning sets up the entire team for success throughout the sprint.
+Daily stand-up:
+		daily scrum – is a short, 15-minute (or less) daily meeting to discuss progress and identify blockers. 
+		Attendees are urged to participate while standing to help keep the meeting short.
+		
+		Attendees: Development team, scrum master, product owner
+		When: Once per day, typically in the morning.
+		Duration: No more than 15 minutes. Don't book a conference room and conduct the stand-up sitting down. 
+				 Standing up helps keep the meeting short!
+		Agile framework: Scrum and kanban.
+		Purpose: A daily stand-up is designed to quickly inform everyone of what's going on across the team
+Sprint review:
+				The sprint review, also called an iteration review, is where the scrum team meets to reveal what 
+				was accomplished during the sprint. A development team shows which backlog items are “Done” to 
+				stakeholders and teammates, who can then give feedback.
+				
+				Attendees: Development team, scrum master, product owner
+				When: At the end of a sprint.
+				Duration: Typically 45 minutes per week of iteration - 
+				e.g. a 90-minute retrospective after a two-week sprint.
+				Agile framework: Scrum and kanban. Scrum teams do sprint retrospectives based on a fixed cadence. 
+								Kanban teams can benefit from occasional retrospectives, too.
+				Purpose: A sprint review is a time to showcase the work of the team. They can be in a casual format like "demo Fridays",
+Sprint retrospective:
+					A sprint retrospective is a meeting to review what was successful during the sprint 
+					and what can be improved upon. 
+					
+					Attendees: Development team, scrum master, product owner
+					When: At the end of a sprint.
+					Duration: Typically 45 minutes per week of iteration-
+					e.g. a 90-minute retrospective after a two-week sprint.
+					Agile framework: Scrum and kanban. Scrum teams do sprint retrospectives based on a fixed cadence.
+									Kanban teams can benefit from occasional retrospectives, too.
+
+					Purpose:  Agile is about getting rapid feedback to make the product and development culture better. 
+							 Retrospectives help the team understand what worked well and what didn't.
+--------------------------
+Product Backlog - What is it & How to create one
+->A product backlog is a prioritized list of work for the development team that is derived from the product 
+	roadmap and its requirements.
+
+Start with the two "R"s:(roadmap and requirements)
+RoadMap: Roadmap initiatives break down into several epics, and each epic will have several requirements and user stories.
+
+
+*Regular review of the backlog is often called "backlog grooming"
+-------------------
+What is a sprint review? & What is the main purpose of a sprint review?
+-The main goal of a sprint review is to gather feedback and ensure transparency in the next steps of the
+ development process. It has several key objectives:
+ 
+ Demonstration of completed work: 
+ Feedback collection
+ Alignment with product vision:
+ Celebration of achievements:
+ Identification of improvements:
+ 
+ 
+ Sprint review vs retrospective:
+ Step 1: Define 'done':
+						As a regular user of Jira, user, nothing is more satisfying 
+						than moving a task from “code review” to “done.” That transition represents the completed 
+						work we set out to accomplish as a team. Done and done!
+			-Defining ‘done’ on each work item:(Acceptance criteria.Testing Notes)
+												-when the product owner adds work to the team’s backlog, defining the 
+												acceptance criteria is a key part of his or her process. 
+												
+												-At Atlassian, the Jira team tracks acceptance criteria and testing notes
+												in line with the rest of the user story inside of Jira. 
+												
+												Acceptance criteria: Metrics the product owner uses to confirm 
+																	the story is implemented to their satisfaction.
+																	
+												Testing notes: Short, focused guidance from the quality assistance team 
+																that enables the development engineer to write better 
+																feature code and automated tests.
+Step 2: Celebrate the team:
+Step 3: Reach across geographies
+			Product Understanding: The entire team gets to hear the feature's intention, rationale, and implementation,
+									broadening everyone's understanding of the product.
+									
+			Team Building: Videos create more personal connections across the team. We get to see who's behind 
+								every aspect of a product. The bridges created by this practice make us a tighter,
+								more cohesive group despite geographies.
+								
+
+
+Benefits of a sprint review:
+Iterative feedback loop
+Early detection of issues
+Opportunity for iterative refinement
+Adaptation to changing priorities
+Empowerment of stakeholders
+
+-----------------------
+What is a stand up meeting & tips to run one:
+
+	What did I work on yesterday?
+	What am I working on today?
+	What issues are blocking me?
+Choose a time that works for everyone :Genrally 9 to 10Am
+Keep stand-up efficient :
+Play catch :
+Make the stand-up a part of the team’s retrospective
+
+Tips for remote stand-ups:
+Make team members visual
+Reference your scrum board
+Be open to asynchronous stand-up
+
+------------------------
+What is a scrum master & their responsibilities?
+	The scrum master serves to facilitate scrum to the larger team by ensuring the scrum framework is followed. 
+	
+	A Scrum master is the facilitator of scrum, a lightweight agile framework focusing on time-boxed iterations 
+	called sprints
+	
+Scrum master responsibilities:
+Standups: Facilitate daily standups (or the daily scrum) as needed.
+Iteration/sprint planning meetings: Protect the team from over-committing and scope creep. Aid in estimation and sub task creation.
+Sprint reviews: Participate in the meeting and capture feedback.
+Retrospectives: Note areas for improvement and action items for future sprints.
+Board administration: Work as the administrator of the scrum board. Ensure that cards are up to date and the scrum tools like Jira are working well.
+1 on 1s: Meet individually with team members and stakeholders as needed. Iron out team disagreements about process and work styles. 
+Internal Consulting: Scrum masters should consult with team members and internal stakeholders on how best to work with the scrum team.
+Reporting: Regular analysis of burndown charts and other portfolio planning tools to understand what gets built and at what cadence.
+Blockers: The scrum master aids the team by eliminating external blockers and managing internal roadblocks through process or workflow improvements.
+
+Scrum master skills:
+Leadership,Effective communication,Empathy,Problem-solving:,Adaptability,Facilitation skills,Coaching and mentoring
+Technical knowledge,Time management:
+
+Scrum team:Development team,Product owner,Scrum master
+
+Product owner: The product owner represents the interests of the stakeholders and is responsible for managing the 
+			   product backlog and prioritizing work.
+Scrum master: As discussed in the previous sections, the scrum master is pivotal in facilitating the scrum process 
+			 and ensuring that the team adheres to scrum principles.
+
+*Scrum framework:
+Sprints,Product backlog: ,Sprint backlog, Scrum artifacts,Scrum events:
+
+
+Sprints: Sprints are time-boxed iterations, typically two-to-four weeks in length, where the development team works to complete a set of planned work items.
+Product backlog: The product backlog is a prioritized list of all the features, enhancements, and bug fixes the product needs to address. The product owner manages and maintains this backlog.
+Sprint backlog: The sprint backlog is a subset of the product backlog, containing the work items selected for a specific sprint.
+Scrum artifacts: Scrum employs various artifacts, such as burndown charts and task boards, to track progress and make the work visible to the team and stakeholders.
+Scrum events: Scrum events, including sprint planning, daily stand-ups, sprint reviews, and sprint retrospectives, provide structure and opportunities for collaboration within the team.
+
+
+Scrum master vs. product owner:
+The Scrum Master ensures the process works smoothly and helps the team follow Agile principles.
+The Product Owner is focused on the product itself, ensuring it delivers maximum value to the customer.
+
+Scrum Master vs. Project Manager:
+The Scrum Master emphasizes team empowerment and Agile practices without traditional management authority.
+The Project Manager is responsible for the project's overall delivery, managing scope, resources, and deadlines,
+typically in a more traditional framework.
+
+------------------------------
+Agile Retrospectives:
+The when:After sprint
+The who::Every team member should attend the retrospective, 
+The what:
+		-Create a short list of things that worked well and things that could be improved.
+		-Prioritize this list by importance as a team.
+		-Discuss ways and tactics to improve the top two items on the "room for improvement" list. 
+		-Create an action plan
+----------------		
+product owners responsibilities
+	Managing the scrum backlog 
+	Release management
+	Stakeholder management
+-------------
+What is Scrum of Scrums?
+
+Scrum of Scrums is a scaled agile technique that offers a way to connect multiple teams 
+who need to work together to deliver complex solutions.
+	
+-------------
+Agile scrum artifacts
+	
+Product backlog:The product backlog is a list of new features, enhancements, bug fixes, tasks, or work requirements needed to build a product
+Sprint backlog:The sprint backlog is a set of product backlog tasks that have been promoted to be developed during the next product increment.
+				-updated using sprint planning
+				
+Product increment:A product increment is the customer deliverables that were produced by 
+				 completing product backlog tasks during a sprint.
+Extended artifacts:
+Burndown chart:communicate and track progress toward the sprint goal during the sprint
+			  -Burndown charts are graphs that display tasks completed over the duration of a sprint.
+			  -During sprint planning, teams can look at previous burndown charts to get an idea of 
+				how many tasks they can realistically complete in an upcoming sprint.
+The definition of “done”
+-------------
+Why do you need scrum metrics?
+Scrum metrics can help teams establish benchmarks and guide the direction of the work. For this reason, 
+scrum metrics are helpful for established and new teams alike. 
+
+Team velocity
+A velocity chart, like the one we use in Jira, reveals the amount of value delivered during a sprint. 
+This helps us to predict the volume of work a team can perform for future sprints
+
+Sprint burndown
+A sprint burndown chart tracks the completion of work throughout a sprint. 
+It does so by comparing the time and amount of work to complete, measured in story points or hours. 
+It helps predict a team’s ability to complete work in a designated time and helps track scope creep. 
+If a burndown chart has a sharp drop, it could be related to an inaccurate estimate of work. 
+--------------------------
+Refinement board:
+The goal of the refinement board is to ensure work is prepared and planned properly in order to 
+conduct a successful sprint. 
+
+Jira:
+Velocity tracking - The Velocity Chart shows the amount of value delivered in each sprint, 
+					enabling you to predict the amount of work your team can get done in future sprints. 
+					It is useful during sprint planning meetings to help your team decide how much work 
+					they can feasibly commit to. 
+					
+Team health monitor -The Health Monitor assesses your team against the eight attributes 
+					most commonly found among healthy teams. At the end of the Health 
+					Monitor session, you will identify strengths for your team to exploit, 
+					as well as challenge areas to grow.
+					
+					
+--------------------------------------------------
+What is kanban?
+Kanban is an agile framework that helps teams deliver work on a continuous basis. 
+Kanban teams organize their work on a kanban board with cards, columns, WIP limits, 
+and specific commitment and delivery points. Kanban is best for knowledge work, 
+where the product or service is largely invisible. Kanban helps teams visualize their and make strides day after day. 
+
+
+
+-----------------------------------Kanban-----------------------------------
+
+Kanban flow:
+			-A cornerstone of agile and DevOps methodologies, drives efficiency by orchestrating 
+				seamless task progression through visualized workflows.
+				
+Visualize workflow: Begin by visualizing your team's workflow on a Kanban board. Whether physical or virtual, the board should depict each stage of the development process, from task inception to completion.
+
+Standardize workflow: Define and standardize the workflow stages according to your team's processes and requirements. Common stages include "To Do," "In Progress," and "Done," but customize as needed to reflect your unique workflow.
+
+Identify blockers and dependencies: Ensure that your kanban board enables immediate identification of blockers and dependencies. This transparency allows for prompt resolution and prevents workflow disruptions.
+
+Set work-in-progress (WIP) limits: Implement WIP limits for each workflow stage to avoid overburdening and to maintain a steady workflow. WIP limits help optimize resource allocation and reduce multitasking, fostering higher productivity.
+
+Encourage collaboration: Foster a culture of collaboration within your team, where members collectively address bottlenecks and work together to ensure smooth workflow progression. This collaborative approach promotes efficiency and accelerates task completion.
+
+Utilize kanban cards: Represent each task as a kanban card on the board, containing essential details such as task description, assignee, and estimated time for completion. Kanban cards facilitate visual tracking of task progress and promote transparency within the team.
+
+
+
+Elements of a kanban board:
+Visual signals, columns, work-in-progress limits, a commitment point, and a delivery point.
+	Visual Signals:
+
+				Work items or projects are represented as cards (e.g., stickies, tickets) on the board.
+				Each card encapsulates a single task or user story, enabling teams and stakeholders to quickly 
+				understand the status and progress.
+	Columns:
+
+			Represent stages of the workflow, such as "To Do," "In Progress," and "Complete."
+			Cards move through these columns as the work progresses.
+			
+	Work In Progress (WIP) Limits:
+			Define the maximum number of cards allowed in a column at one time.
+			Prevent overloading and expose bottlenecks in the workflow.
+			Encourage teams to focus on completing tasks before starting new ones.
+			
+	Commitment Point:
+			The point where work is pulled from the backlog, and the team commits to starting the task.
+			Ensures that tasks are picked up only when the team is ready.
+			
+	Delivery Point:
+			Marks the end of the workflow, typically when the product or service reaches the customer.
+			The time between the commitment point and the delivery point is the Lead Time, which teams aim to minimize.
+			
+Types of Board:
+Physical boards
+Digital boards:Trello
+
+Kanban vs. scrum board
+->Scrum sprints have start and stop dates whereas kanban is an ongoing process.
+->Team roles are clearly defined in scrum (product owner, dev team, and scrum master), while kanban has no formal roles. 
+	Both teams are self-organized.
+->A kanban board is used throughout the lifecycle of a project whereas a 
+	scrum board is cleared and recycled after each sprint.  
+->A scrum board has a set number of tasks and strict deadline to complete them.
+->Kanban boards are more flexible with regards to tasks and timing. Tasks can be reprioritized, reassigned, 
+or updated as needed.
+
+What are WIP limits?
+work in progress (WIP) limits set the maximum amount of work that can exist in each status of a workflow. 
+Limiting the amount of work in progress makes it easier to identify inefficiency in a team's workflow.
+->WIP limits for each status
+
+The Cumulative Flow Diagram (CFD) is another analytical tool used by kanban teams 
+to understand the number of work items in each state. CFDs help identify specific bottlenecks that 
+need to be resolved for better throughput.
+
+---------------What is agile project management?-----------------------------------

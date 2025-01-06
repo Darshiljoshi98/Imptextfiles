@@ -111,8 +111,7 @@ Backend series:https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_
 Shared folder:https://medium.com/capriza-engineering/sharing-source-code-and-libraries-in-react-bd30926df312
 ---------------------------------------------------------------------------------------------------------
 with return keyword in map
-const names = characters.map((character) ⇒ { return character.name;
-});
+const names = characters.map((character) ⇒ { return character.name;});
 
 without return 
 const minified Records = characters.map((character) ⇒ (//thisbracket show as return object 
@@ -824,7 +823,8 @@ usedispatch
   
 --------------------------------------------------------------------------------------------------------------
 
-
+session vs jwt
+session data store in server and jwt data store in client side
 React
 -------------------------------
 Q=>difference between useCallback and useMemo 
@@ -842,7 +842,186 @@ Q=>loader in react route:
 it callback which allow to perfom opertion when u click route it's call before use effect
 		https://medium.com/@younusraza909/loaders-in-react-router-71558c2988eb
 
+Q->spread Vs rest operators
+spread and rest operators in JavaScript use the same syntax (...) but serve different purposes depending 
+on the context. Here's a detailed explanation of each:
+
+
+1. Spread Operator (...)
+The spread operator expands elements of an array or object into individual elements or properties. It's commonly used for copying, merging, or passing elements of arrays and objects.
+
+Key Uses of Spread Operator
+Copying Arrays:
+
+
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1]; // Copy arr1 into arr2
+console.log(arr2); // Output: [1, 2, 3]
+Merging Arrays:
+
+
+const arr1 = [1, 2];
+const arr2 = [3, 4];
+const merged = [...arr1, ...arr2];
+console.log(merged); // Output: [1, 2, 3, 4]
+Copying Objects:
+
+
+const obj1 = { a: 1, b: 2 };
+const obj2 = { ...obj1 }; // Shallow copy of obj1
+console.log(obj2); // Output: { a: 1, b: 2 }
+
+Merging Objects:
+const obj1 = { a: 1, b: 2 };
+const obj2 = { b: 3, c: 4 };
+const merged = { ...obj1, ...obj2 }; // `b` from obj2 overrides `b` from obj1
+console.log(merged); // Output: { a: 1, b: 3, c: 4 }
+
+Passing Array Elements as Arguments:
+const numbers = [1, 2, 3];
+console.log(Math.max(...numbers)); // Output: 3
+
+2. Rest Operator (...)
+The rest operator collects multiple elements or properties and condenses them into a single 
+array or object. It's often used in function arguments and destructuring.
+
+Key Uses of Rest Operator
+
+Function Parameters: Collects all remaining arguments into a single array.
+
+function sum(...numbers) {
+    return numbers.reduce((acc, num) => acc + num, 0);
+}
+console.log(sum(1, 2, 3, 4)); // Output: 10
+
+Destructuring Arrays: Collects remaining elements into an array.
+const [first, ...rest] = [1, 2, 3, 4];
+console.log(first); // Output: 1
+console.log(rest);  // Output: [2, 3, 4]
+
+Destructuring Objects: Collects remaining properties into a new object.
+const { a, ...rest } = { a: 1, b: 2, c: 3 };
+console.log(a);    // Output: 1
+console.log(rest); // Output: { b: 2, c: 3 }
+
+Comparison Table
+
+Feature	     Spread Operator	                            Rest Operator
+Purpose	 Expands arrays or objects into individual elements	--Collects multiple elements into an array/object
+Context	Used in array and object manipulation	            --Used in function parameters or destructuring
+Example Usage	...array → Expands array elements	        ...args → Collects arguments into an array
+Input/Output	Spreads out elements	                   Collects elements into one
+Examples of Both in Action
+
+
+Using Spread in Arrays:
+const numbers = [1, 2, 3];
+const newNumbers = [...numbers, 4, 5];
+console.log(newNumbers); // Output: [1, 2, 3, 4, 5]
+
+Using Rest in Function:
+function printNumbers(first, ...rest) {
+    console.log(first); // First element
+    console.log(rest);  // Remaining elements
+}
+printNumbers(1, 2, 3, 4); // Output: 1, [2, 3, 4]
+
+Using Both Together:
+const [first, ...rest] = [1, 2, 3, 4, 5]; // Rest
+const all = [first, ...rest];             // Spread
+console.log(all); // Output: [1, 2, 3, 4, 5]
+
+Operator	React Use Case
+Spread->	Passing props, merging state, combining additional props
+Rest->	Extracting props, handling variable arguments, dynamically updating state fields
+
+*Spread Operator in React
+-Passing Props to Components
+	const Button = ({ label, onClick }) => (
+	  <button onClick={onClick}>{label}</button>
+	);
+
+	const App = () => {
+	  const buttonProps = {
+		label: "Click Me",
+		onClick: () => alert("Button clicked!")
+	  };
+
+	  return <Button {...buttonProps} />;
+	};
 	
+-Merging State Updates
+When using useState, the spread operator helps preserve existing state while updating specific fields.
+const App = () => {
+  const [user, setUser] = React.useState({ name: "John", age: 30 });
+
+  const updateName = () => {
+    setUser(prevState => ({ ...prevState, name: "Jane" }));
+  };
+
+  return (
+    <div>
+      <p>{user.name}</p>
+      <button onClick={updateName}>Change Name</button>
+    </div>
+  );
+};
+
+-Combining Props
+The spread operator can merge additional props into existing ones.
+
+
+const App = () => {
+  const baseProps = { className: "button", type: "submit" };
+  const extraProps = { disabled: true };
+
+  return <button {...baseProps} {...extraProps}>Submit</button>;
+};
+
+*Rest Operator in React
+
+-Destructuring Props
+The rest operator allows you to extract specific props and collect the rest into a single object.
+
+const Button = ({ label, ...rest }) => (
+  <button {...rest}>{label}</button>
+);
+
+const App = () => {
+  return <Button label="Click Me" onClick={() => alert("Clicked!")} />;
+};
+
+-Handling Variable Arguments in Event Handlers
+The rest operator is useful in functions that accept varying numbers of arguments.
+
+const handleEvent = (type, ...args) => {
+  console.log(`Event Type: ${type}`, args);
+};
+
+const App = () => {
+  return <button onClick={() => handleEvent("click", 1, 2, 3)}>Click</button>;
+};
+
+-State Updates with Dynamic Keys
+You can dynamically update multiple state fields by collecting them into an object.
+
+const App = () => {
+  const [formData, setFormData] = React.useState({ name: "", email: "" });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({ ...prevState, [name]: value }));
+  };
+
+  return (
+    <form>
+      <input name="name" value={formData.name} onChange={handleChange} />
+      <input name="email" value={formData.email} onChange={handleChange} />
+    </form>
+  );
+};
+
+-------------------------------------------
 	
 
 Context api
@@ -1080,7 +1259,7 @@ useMemo
 Reconsilation
 
 
-spred vs rest
+
 use call back
 Nextjs
 ------------------------

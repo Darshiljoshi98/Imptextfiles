@@ -534,6 +534,9 @@ Generics: Define reusable types that maintain type safety across different input
 
 Node jS
 ----------------------------------------------------
+nvm manages different versions of node. And node contains npm (package manager).
+Use Node.js: If you only need a single, stable version for your projects and don't expect frequent changes in requirements.
+Use NVM: If you're working on multiple projects with different Node.js version requirements or testing applications in different Node environments.
 npx depcheck ->for find unused npm
 Q=>Node js:
 node js It is different from other JavaScript environments because it is asynchronous and event-driven.

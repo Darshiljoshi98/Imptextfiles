@@ -1,0 +1,1168 @@
+start node js project with
+npm init -y
+npm install express mongoose bcryptjs jsonwebtoken express-validator dotenv
+
+Node.js is a free, open-source JavaScript runtime environment that allows developers to run web applications outside of a browser. 
+
+Event-driven: Node.js uses an asynchronous, event-driven model to optimize throughput and scalability.
+Non-blocking: Node.js's standard library provides asynchronous I/O primitives to prevent JavaScript code from blocking
+Single process: Node.js apps run in a single process, without creating a new thread for each request. 
+
+
+
+
+Features of Node.js:
+Extremely fast:
+I/O is Asynchronous and Event Driven
+Single threaded:
+Highly Scalable:
+No buffering:
+
+
+https://docs.google.com/document/d/19-Vjk7nnspDwhQh9BKLiplEPHxFLLyc7W_TQFUD4aro/edit?usp=sharing
+
+nodemon server.js -- to start nodemon server
+
+How to create node.js web applications
+
+Import required module:
+var http = require("http");  
+
+Create server: In the second step, you have to use created http instance and call http.createServer() 
+method to create server instance and then bind it at port 8081 using listen method associated with server instance.
+ Pass it a function with request and response parameters and write the sample implementation to return "Hello World". For example:
+
+http.createServer(function (request, response) {  
+   // Send the HTTP header   
+   // HTTP Status: 200 : OK  
+   // Content Type: text/plain  
+   response.writeHead(200, {'Content-Type': 'text/plain'});  
+   // Send the response body as "Hello World"  
+   response.end('Hello World\n');  
+}).listen(8081);  
+// Console will print the message  
+console.log('Server running at http://127.0.0.1:8081/');  
+
+*****************************************pagination and filtering
+Pagination: The limit and page query parameters define how many tasks are returned and which page is currently displayed.
+Filtering: The status and title fields allow filtering based on task status or title.
+
+Node.js REPL
+The term REPL stands for Read Eval Print and Loop. 
+
+node js global objetcs
+
+setImmediate():
+setInterval(): 
+setTimeout():
+
+In Node.js, both setTimeout and setInterval are functions used to schedule 
+the execution of code after a certain delay or at regular intervals, respectively
+
+
+The Node.js applications generally face four types of errors:
+
+Standard JavaScript errors i.e. <EvalError>, <SyntaxError>, <RangeError>, <ReferenceError>, <TypeError>, <URIError> etc.
+System errors
+User-specified errors
+Assertion errors
+
+
+Node.js Net
+Node.js provides the ability to perform socket programming.
+ We can create chat application or communicate client and server applications using socket programming in Node.js.
+ The Node.js net module contains functions for creating both servers and clients.
+
+const net = require('net');  
+var server = net.createServer((socket) => {  
+  socket.end('goodbye\n');  
+}).on('error', (err) => {  
+  // handle errors here  
+  throw err;  
+});  
+// grab a random port.  
+server.listen(() => {  
+  address = server.address();  
+  console.log('opened server on %j', address);  
+});  
+
+
+
+
+const fs  = require('fs');
+const path = require('path')
+console.log(path.join(__dirname,'files','rename.txt'))
+fs.writeFile(path.join(__dirname,'files','rename.txt'),'hello greeting from spec india',(err)=>{
+  if(err) throw err
+  console.log('opration cretaed sucessfully');
+  fs.rename('repaly.txt','rename.txt',(err)=>{
+    if(err) throw err
+  });
+})
+
+append file :rename file and updatwe the content of file
+
+delete  file fs.unlink('file name)
+
+
+cretae new directory
+
+fs.mkdir('./new',(err)=>{
+})
+exiwst directory directoryfs.existSync
+for remove diractory
+
+
+fs.rkdir('./new',(err)=>{
+})
+
+
+event emiiter.
+
+
+
+routing in node js]
+
+how to set response header.
+
+response.writeHead().
+that write before res.end();
+
+
+
+differnce between readstream and readFile in node js
+readFile will load the entire file into memory as you pointed out, while as fs. createReadStream will read the file in chunks of the size you specify.
+ The client will also start receiving data faster using fs. createReadStream as it is sent out in chunks as it is being read, while as fs.
+
+
+pipe() method in node js
+
+usig readble writable stream ]
+some time speed of data is reading is more then write data and solve this problem we used pipe method in readble 
+
+readbleSource.pipe(writableDestinantion);
+
+pipe method only applied inn readble streams.
+
+
+
+installing express js 
+
+npm install express
+You should install some other important modules along with express. Following is the list
+
+body-parser: This is a node.js middleware for handling JSON, Raw, Text and URL encoded form data.
+cookie-parser: It is used to parse Cookie header and populate req.cookies with an object keyed by the cookie names.
+multer: This is a node.js middleware for handling multipart/form-data.
+
+
+Express.js Request Object:Express.js Request and Response objects are the parameters of the callback function which is used in Express applications.
+
+-->The express.js request object represents the HTTP request and has properties for the request query string, parameters, body, HTTP headers, and so on.
+
+
+Response Object Methods:
+res.append(field [, value])-->This method appends the specified value to the HTTP response header field. That means if the specified value is not appropriate
+ then this method redress that.
+
+
+-->res.attachment([filename])  
+This method facilitates you to send a file as an attachment in the HTTP response.
+
+
+-->res.cookie(name, value [, options])  
+-->This method is used to set a cookie name to value. The value can be a string or object converted to JSON.
+
+
+Response Download method
+res.download(path [, filename] [, fn])   
+
+This method transfers the file at path as an "attachment" and enforces the browser to prompt user for download.
+
+res.end([data] [, encoding])   
+This method is used to end the response process.
+
+
+res.format(object)   
+This method performs content negotiation on the Accept HTTP header on the request object, when present.
+
+res.get(field)   
+This method provides HTTP response header specified by field.
+
+
+res.redirect([status,] path)   
+This method redirects to the URL derived from the specified path, with specified HTTP status
+
+Examples:
+
+res.redirect('http://example.com');  
+
+
+res.type(type)   
+This method sets the content-type HTTP header to the MIME type.
+
+Examples:
+
+res.type('.html');              // => 'text/html'  
+res.type('html');               // => 'text/html'  
+res.type('json');               // => 'application/json'  
+res.type('application/json');   // => 'application/json'  
+res.type('png');                // => image/png:  
+
+
+ses.send method is only usse when cotent is text or html for json content not used 
+
+in middle custom middlaw are always call as app.use((req,req,neex)=>{})
+app.use(morgan())
+in morgan they written as loger function.
+when called morgan middle ware it display infromation   GET /getListOfMovie 200 5.834 ms - 396
+
+
+-->apply middlaware for certain route
+
+
+******************************************************middlwear 
+Middleware is a key concept in Node.js, especially when using the Express.js framework. It refers to functions that execute during the lifecycle of a request
+ to the server. Middleware can manipulate requests and responses, perform additional logic, and pass control to the next middleware function in the stack.
+ 
+ req: The HTTP request object.
+res: The HTTP response object.
+next: A callback function to pass control to the next middleware in the chain. If not called, the request will hang.
+
+Built-in Middleware:
+Third-Party Middleware:
+
+
+Middleware from external libraries, installed via npm.
+Example: morgan for logging HTTP requests.
+javascript
+Copy code
+const morgan = require('morgan');
+app.use(morgan('tiny')); // Log HTTP requests
+
+
+
+Secure Your App:
+
+Use middleware like helmet to enhance security.
+javascript
+Copy code
+const helmet = require('helmet');
+app.use(helmet());
+
+
+User-defined middleware for specific logic.
+Error-Handling Middleware:
+
+
+
+cretae env file in node js 
+
+npm install dotenev
+
+then import const dotenv = require('dotenv')
+
+
+authorization and authentication concept:
+
+https://www.bezkoder.com/node-js-jwt-authentication-mysql/
+
+
+what is Sequelize  why it need during authrixzation and authenction concept in node express js
+
+Sequelize is an Object-Relational Mapping (ORM) library for Node.js,
+ which provides a way to interact with relational databases by abstracting the SQL queries.
+ It supports various database management systems like MySQL, PostgreSQL, SQLite, and MSSQL.
+
+When it comes to authentication and authorization in Node.js and Express.js applications,
+ Sequelize can be used in conjunction with a database to manage user data, credentials, and permissions. 
+ Here's how Sequelize is relevant to these concepts:
+
+
+Authentication:
+
+User Data Storage: Sequelize allows you to define models that represent user entities.
+ These models can include fields like username, email, password, and any other relevant information.
+Secure Password Storage: Sequelize can be used to hash and store passwords securely. It helps to avoid storing plaintext passwords in the database,
+ enhancing security.
+
+
+
+Authorization:
+
+Role Management: Sequelize can be used to define models for roles and permissions. This helps in implementing role-based access control (RBAC), where users are assigned specific roles, and each role has certain permissions.
+Database Querying: Sequelize simplifies the process of querying the database to check whether a user has the necessary permissions to perform certain actions.
+
+
+
+We need to install necessary modules: express, cors, sequelize, mysql2, jsonwebtoken and bcryptjs.
+Run the command:
+
+npm install express sequelize mysql2 cors jsonwebtoken bcryptjs --save
+
+
+
+A template engine is a tool used to generate HTML or other output based on dynamic data.
+ Express.js supports several template engines, such as EJS and Handlebars.
+ These engines can dynamically render HTML pages based on data stored in the application.
+
+
+
+step to create node js application
+
+npm init -y
+npm install express
+
+create app.js
+in app.js import express then app to listen specific port.
+
+run app.js file using this cmd node app.js
+
+npm install express mongoose cors --save
+
+
+conncet mongo db data base in node js 
+
+in config model create db.congif file module.export ={ url = "import your mongo db url"}
+step 2 then in model folder create index.js file 
+
+const dbConfig = require("../config/db.config.js");
+
+const mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
+
+const db = {};
+db.mongoose = mongoose;
+db.url = dbConfig.url;
+db.tutorials = require("./tutorial.model.js")(mongoose)[this will change as per model ;
+module.exports = db;
+
+step 3 in server .js file conncet db
+
+const db = require("./app/models");
+db.mongoose
+  .connect(db.url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connected to the database!");
+  })
+  .catch((err) => {
+    console.log("Cannot connect to the database!", err);
+  });
+  
+  mongoDB DIFFRNENT Methods
+  create and save -- create new object then that object.save
+  
+   returive all tutorials from the database---> Tutorial.find(condition)
+   
+    Find a single Tutorial with an id  -->Tutorial.findById
+	
+	Update a Tutorial by the id in the request  findByIdAndUpdate
+	
+	Delete a Tutorial with the specified id in the request-->findByIdAndRemove
+	
+	npm install express mongoose cors jsonwebtoken bcryptjs --save
+	
+	
+	
+	Key Characteristics of First-Class Functions
+Assigned to Variables: Functions can be assigned to variables, object properties, and array elements.
+Passed as Arguments: Functions can be passed as arguments to other functions.
+Returned from Functions: Functions can be returned from other functions.
+
+https://vskills.in/interview-questions/mern-stack-interview-questions-vskills
+
+
+
+event loop programming in node js
+	  
+
+-->Node.js uses an event-driven, non-blocking I/O model, making it lightweight and efficient for building scalable network applications.
+ The core of Node.js is its event loop, which allows it to perform non-blocking I/O operations, despite being single-threaded.
+	How the Event Loop Works :there are generally 6 phase to work as event loop programing
+	 
+Timers: Executes callbacks scheduled by setTimeout() and setInterval().
+Pending Callbacks: Executes I/O callbacks deferred to the next loop iteration.
+Idle, Prepare: Internal use only.
+Poll: Retrieves new I/O events; executes I/O related callbacks (excluding close, timers, and setImmediate() callbacks).
+Check: Executes setImmediate() callbacks.
+Close Callbacks: Executes close event callbacks, e.g., socket.on('close', ...).
+
+
+How It Works:
+When you start a Node.js application, it initializes and starts running the event loop.
+Asynchronous tasks (like file reading, HTTP requests, database queries, etc.) are handed off to the underlying system (e.g., file system or network APIs).
+Once the asynchronous task completes, the callback function associated with that task is queued up in the event loop to be executed in the appropriate phase.
+The event loop continuously checks for tasks, executes them, and moves to the next phase.
+This loop continues as long as there are tasks to perform (e.g., pending I/O operations or scheduled timers).
+
+
+Use setImmediate and process.nextTick Wisely:
+
+process.nextTick() schedules a callback to be invoked in the same phase of the event loop, before any I/O tasks.
+setImmediate() schedules a callback to be invoked in the check phase, after I/O tasks.
+
+
+
+
+process.nextTick()
+Timing:
+
+process.nextTick() schedules a callback to be executed in the current phase of the event loop, after the current operation completes
+ but before the event loop continues.
+It places the callback at the top of the next iteration of the event loop, effectively prioritizing it over other I/O tasks.
+
+
+setImmediate()
+Timing:
+
+setImmediate() schedules a callback to be executed in the check phase of the event loop, which comes after the poll phase (where I/O operations are processed).
+It places the callback in the queue to be executed on the next iteration of the event loop, after I/O events have been processed.
+
+main diffrance between them 
+process.nextTick() runs within the same phase of the event loop.
+setImmediate() runs in the check phase, after the I/O events have been processed.
+
+
+https://javascriptcentric.medium.com/top-50-nodejs-interview-questions-and-answers-for-2024-5e460dac7852
+
+
+Task Types in the Event Loop:
+Microtasks: Promises and process.nextTick() have priority over the phases and are executed as soon as the current operation finishes.
+Macrotasks: Callbacks from I/O, setTimeout, setInterval, and setImmediate.
+
+
+worker thred in node js
+
+isMainThread and parentPort: These variables are provided by the worker_threads module to differentiate between the main thread and worker threads, 
+and to communicate between them.
+
+event loop in js
+Call Stack:lifo When you call a function, it gets pushed onto the stack. When the function returns, it gets popped off the stack.
+Web APIs / Background Tasks:web api set timeour
+Callback Queue:fifo Once an asynchronous operation completes, the callback associated with it is placed in the callback queue (also known as the task queue)
+
+
+Event Loop:The event loop continuously checks if the call stack is empty. If it is, it looks at the callback queue to see if there are any tasks waiting to be
+ executed. If there are, it pushes the first task in the queue onto the call stack, allowing it to run.
+Microtask Queue:Promises and other microtasks (like process.nextTick in Node.js) are handled with a higher priority than tasks in the callback queue
+
+
+node js child process:there are 4 ways to define child process 1)exec medthod 2)exec file  method 3)spawn method 4)fork method.
+
+
+exec method:The exec method is used to run a command in a shell and buffer the output.It is ideal for running a command where you need to capture the output
+ as a string, such as executing shell commands like ls, grep, etc.
+Limited buffer size (200KB by default). If the command generates more output, the process might fail.
+
+2. execFile Method
+The execFile method is similar to exec, but it is used to execute a file directly without involving a shell.
+ This makes it safer and faster when you don't need shell features
+
+Use Case: Running binaries or scripts where you don't need shell features (e.g., running a Python script or a compiled binary).
+
+spawn Method
+Description: The spawn method is used to launch a new process with a given command, without buffering the output. It streams the output
+ (stdout and stderr) as the process runs, making it suitable for large data or long-running processes.
+Use Case: Running processes where you need to handle large outputs or want to interact with the process as it runs 
+(e.g., running a long-running script and processing its output in real-time).
+
+const { spawn } = require('child_process');
+
+const child = spawn('ls', ['-l', '/usr']);
+
+child.stdout.on('data', (data) => {
+  console.log(`Stdout: ${data}`);
+});
+
+child.stderr.on('data', (data) => {
+  console.error(`Stderr: ${data}`);
+});
+
+child.on('close', (code) => {
+  console.log(`Child process exited with code ${code}`);
+});
+
+
+4. fork Method
+Description: The fork method is a special case of spawn used specifically for creating new Node.js processes.
+ It allows you to run a separate Node.js script as a child process and communicate with it via an IPC (Inter-Process Communication) channel.
+ This is useful for splitting work across multiple Node.js processes.
+Use Case: Running separate Node.js scripts as ch
+
+Use Case: Running separate Node.js scripts as child processes, especially when you need to communicate between the parent and child process
+ (e.g., offloading CPU-intensive tasks to a separate process).
+
+https://www.bezkoder.com/node-js-mongodb-auth-jwt/  -user authentication example
+
+
+
+
+
+in controller must be db file is imported.
+
+
+---------------------------------------------------------------------------------------Mongoose Paginate v2 for MongoDB pagination--------------------------------------------------------------------
+To deal with this situation, mongoose-paginate-v2 library provides way to implement pagination with offset and limit properties 
+in the query object that we pass to query methods.
+
+offset: quantity of items to skip
+limit: quantity of items to fetch
+
+
+
+libuv is a core library used by Node.js to handle asynchronous I/O operations across multiple platforms.
+ It provides an abstraction layer that allows Node.js to perform non-blocking I/O operations on different operating systems,
+ such as Windows, macOS, and Linux, without relying on OS-specific APIs.
+ Essentially, it powers the event-driven, non-blocking architecture of Node.js, handling operations like file system access, networking, and timers.
+ 
+ 
+node js that every develope needs to know concept.
+ -->. Event-Driven Architecture
+ -->Asynchronous Programming (Callbacks, Promises, Async/Await)
+ --.3. Streams and Buffers
+4. File System (fs)
+Cluster and Worker Threads
+6. Process Management
+7. Environment Variables and Configuration
+8. Package Management (NPM/Yarn)
+10. WebSockets (Real-Time Communication)
+9. Task Scheduling (cron jobs)
+Logging-- winston 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.json(),
+	transports: [
+    new winston.transports.Console(),
+    new winston.transports.File({ filename: 'app.log' }),
+  ],
+});
+
+logger.info('Application started');
+
+
+ Optimization:
+ Caching: Use tools like Redis or memory caching to reduce database load.
+Lazy Loading: Load dependencies or modules only when required.
+Cluster Mode: Use Node.js's cluster or PM2 to distribute workload across multiple CPU cores.
+
+
+****************************************************Cron Job Concept in Node.js
+
+A cron job is a timed job that runs a specific command or script at a specified interval,
+ which can be used to automate repetitive tasks. In Node.js, you can use a library called cron to implement cron jobs.
+ 
+ const CronJob = require('cron').CronJob;
+
+// Create a new cron job that runs every minute
+new CronJob('0 * * * * *', function() {
+  console.log('Running cron job every minute!');
+}, null, true, 'America/New_York');
+
+
+Using cron jobs in Node.js can be beneficial in various ways, such as:
+
+Automation: Cron jobs can automate repetitive tasks, freeing up time for more important tasks.
+Scheduling: Cron jobs can be used to schedule tasks to run at specific times or intervals, ensuring that tasks are executed when needed.
+Reliability: Cron jobs can ensure that tasks are executed even when the system is not actively being used.
+
+cron job s concept
+
+
+const task = ()=>{
+console.log("task running in " , date.now);
+}
+
+crons.scheduplle("*****", task);
+
+*****
+minute , hour,day,month,day(week)
+
+
+*********************************************************************** Exploring Using node-cron to Back Up Databases****************************************
+
+Ensuring the preservation of user data is key to any business. If an unforeseen event happens and your database becomes corrupted or damaged,
+ you will need to restore your database from a backup. You will be in serious trouble if you do not have any form of existing backup for your business.
+
+Consider a scenario where you need to routinely back up a dump of the database at 11:59 PM every day. You can accomplish this with node-cron.
+
+
+sqlite3 database.sqlite .dump > data_dump.sql
+
+
+This command takes the database, database.sqlite, and runs the .dump command, and outputs the result as a file named data_dump.sql
+
+Next, install shelljs, a Node module that will allow you to run the previous shell command:
+
+
+npm install shelljs@0.8.4
+
+// Backup a database at 11:59 PM every day.
+cron.schedule('59 23 * * *', function() {
+  console.log('---------------------');
+  console.log('Running Cron Job');
+  if (shell.exec('sqlite3 database.sqlite .dump > data_dump.sql').code !== 0) {
+    shell.exit(1);
+  }
+  else {
+    shell.echo('Database backup complete');
+  }
+});
+
+
+
+Step 5 — Exploring Using node-cron to Send Scheduled Emails
+
+
+*************************************************************passport based authetincationnotes for authorization***********************
+const OIDCStrategy = require('passport-azure-ad').OIDCStrategy;
+AZURE_AD_CLIENT_ID =092d6669-e98c-4bdf-8f66-6afb6e44890f
+AZURE_AD_CLIENT_SECRET = f8G8Q~b7-IKOpgASqQP6DokeB7igZyb3CCgRRbi3
+AZURE_AD_TENANT_ID=961e6cf8-5d46-4f39-9609-c3df3998ce0f
+AZURE_AD_CALLBACK_URL = http://localhost:5000/auth/azure/callback
+
+
+in passport.js file this things is require
+
+module.exports = (passport) => { 
+
+passport.use(new OIDCStrategy({
+    identityMetadata: `https://login.microsoftonline.com/${process.env.AZURE_AD_TENANT_ID}/v2.0/.well-known/openid-configuration`,
+    clientID: process.env.AZURE_AD_CLIENT_ID,
+    clientSecret: process.env.AZURE_AD_CLIENT_SECRET,
+    responseType: 'code',
+    responseMode: 'query',
+    redirectUrl: process.env.AZURE_AD_CALLBACK_URL,
+    allowHttpForRedirectUrl: true, // Only in development
+    passReqToCallback: false,
+    scope: ['openid', 'profile', 'email']
+    },   async (accessToken, refreshToken, profile, done) => {
+}
+
+
+// Serialize and deserialize user
+// Serialize user
+passport.serializeUser((user, done) => {
+    done(null, user.id);
+});
+
+// Deserialize user
+passport.deserializeUser(async (id, done) => {
+    try {
+        const user = await User.findById(id);
+        done(null, user);
+    } catch (err) {
+        done(err, null);
+    }
+});
+
+}
+
+in routes we can give router.get('/azure/login', passport.authenticate('azuread-openidconnect'));
+
+// Azure AD callback route
+router.get('/azure/callback',
+    passport.authenticate('azuread-openidconnect', { failureRedirect: '/login' }),
+    authController.login
+); this type of routes
+
+
+*********************************Speeding Up MongoDB Queries with Caching in Redis using Node.js**************
+When dealing with a large-scale MongoDB database, you might encounter slow query performance due to the volume of data or the complexity of queries.
+ To mitigate this, 
+you can use Redis, an in-memory data structure store, to cache frequently queried data, reducing the load on MongoDB and speeding up the overall response time.
+
+Basic Workflow:
+Check Cache (Redis): When a query request is made, first check Redis to see if the requested data is already cached.
+Return Cached Data (if available): If the data is found in Redis, return it.
+Query MongoDB (if cache miss): If the data is not found in Redis, query MongoDB.
+Store Result in Cache: After fetching from MongoDB, store the result in Redis so that future queries can fetch the data directly from the cache.
+
+
+
+
+
+
+
+******************************thread *********************************************
+In Node.js, threads (particularly worker threads) are used for parallel execution of JavaScript code.
+ They can communicate with each other using a messaging system, but threads are not typically used in the same way as in UI frameworks like React,
+ where data is passed from parent to child components through "props." In the context of Node.js, threads are used to execute
+ tasks concurrently and can share data between parent and child threads, but this is done via messaging rather than traditional data passing.
+
+Worker Threads in Node.js
+ Node.js is single-threaded by default (because of its event-driven nature),
+ but the worker_threads module allows the use of multiple threads.
+ You can create "worker threads" that run JavaScript in parallel, useful for CPU-intensive tasks.
+ 
+ 
+ 
+ 
+ *********************cluster
+ 
+In Node.js, clustering refers to the ability to take advantage of multi-core systems by creating child processes (workers) 
+that run simultaneously to handle requests. Each worker runs on a separate core, and they all share the same server port.
+This approach allows Node.js to handle more requests concurrently, boosting the performance of the server on multi-core machines.
+
+
+Node.js provides a built-in cluster module, which makes it easy to fork multiple worker processes and distribute incoming connections to each worker. Each worker runs on its own thread but shares the same TCP connection.
+
+
+cluster.isMaster: This checks if the current process is the master process.
+If it is, we fork the master process into worker processes equal to the number of CPU cores.
+cluster.fork(): Creates a new worker process.
+cluster.on('exit'): When a worker dies, this event gets triggered and restarts a new worker to keep the cluster stable.
+If the process is a worker, it runs the Express server, sharing the same port across multiple worker processes.
+
+
+
+
+**********************************buffer in node js***************************************************
+In Node.js, buffers are a way to handle binary data (such as files, images, videos, and data streams) directly.
+ Buffers allow you to work with binary data in Node.js without requiring conversion to other data formats (like strings or JSON),
+ making them efficient for handling I/O operations.
+ 
+ 
+ What is a Buffer?
+A Buffer in Node.js is a temporary storage area for raw binary data. It is a fixed-size chunk of memory allocated outside the JavaScript V8 heap. 
+Buffers are mainly used to handle I/O operations that come from file systems or network streams, which involve binary data.
+
+When to Use Buffers in Live Projects
+File Operations (e.g., Reading/Uploading Files) When reading or writing files in Node.js using fs 
+(file system) module, you'll encounter binary data, which can be processed using buffers. For example:
+
+
+Network Data (e.g., HTTP Requests, WebSocket, TCP Streams)
+ Buffers are helpful when handling network data in chunks, like streaming data over HTTP, TCP, or WebSockets. For instance, when handling a TCP connection:
+ 
+ 
+ Image/Video Processing When you are working with APIs or services that return or accept binary formats like images or videos, 
+ buffers allow you to process and manipulate that
+ data directly without needing to convert it.
+ 
+ Streams (e.g., Large File Transfer) When transferring large files or handling real-time data streams, 
+ buffers are used to manage chunks of data instead of loading everything into memory at once. Node.js streams use buffers to handle these chunks efficiently.
+ 
+ const fs = require('fs');
+const readableStream = fs.createReadStream('largeFile.mp4');
+readableStream.on('data', (chunk) => {
+    console.log(chunk);  // Each chunk is a buffer
+});
+
+
+
+
+******************************improve perfomance adn security of node js applications.
+-->Use Asynchronous Code and Avoid Blocking the Event Loop
+-->Enable HTTP/2
+HTTP/2 improves performance by multiplexing requests, which allows multiple requests over a single TCP connection, reducing latency.
+-->Use the http2 module in Node.js instead of the older http modul
+-->Use Clustering and Load Balancing:Node.js runs on a single core by default. To utilize multi-core CPUs, use clustering to spawn multiple instances of your application.
+-->Optimize Database Queries:
+-->Use indexes on frequently queried fields in your database to speed up query execution.
+-->Implement caching with systems like Redis to store frequently accessed data.
+-->Reduce Middleware and Optimize Routes:Limit the number of middlewares and ensure they are only applied where necessary to avoid unnecessary overhead.
+-->Use a Content Delivery Network (CDN)
+Serve static assets like images, CSS, and JavaScript files via a CDN to reduce latency and offload bandwidth from your server.
+
+Security Best Practices for Node.js Applications
+-->. Use Helmet for Secure HTTP Headers
+Use the helmet middleware to set secure HTTP headers like X-Frame-Options, XSS-Protection, and Strict-Transport-Security.
+-->Implement Rate Limiting and Throttling
+Implement rate limiting to protect against DDoS attacks or brute-force login attempts. Use libraries like express-rate-limit.
+-->Sanitize User Input to Prevent Injection Attacks
+Use libraries like express-validator or validator.js to validate and sanitize user input to prevent SQL injection or NoSQL injection attacks.
+--> Implement Authentication and Authorization
+--> Keep Dependencies Updated and Secure
+:Regularly update your npm dependencies and audit them for vulnerabilities using the built-in npm audit command.
+ -->Prevent Cross-Site Scripting (XSS)
+ 
+ 
+ 
+ 
+ **********************************************What is Transaction in DB
+ A transaction in a database is a sequence of one or more operations (like queries or updates) that are executed as a single unit of work. Transactions
+ ensure data integrity by guaranteeing that these operations are executed in a way that they either all succeed (commit) or none of them succeed (rollback) 
+ in case of failure.
+ The acronym ACID defines the key properties of transactions:atomicity , consistancy, isolation, durability
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ************************************************What is cascading in DB
+ In a database, cascading refers to a feature that automatically propagates certain changes
+ made to one table's data to related tables. It is typically used in relational databases to maintain referential integrity between related tables when
+ performing operations like deletion or updating of data.
+
+When a foreign key constraint is defined between two tables, cascading actions
+ can be applied to ensure that the changes made in the parent table are reflected in the child table
+ as well. Cascading is most commonly associated with two actions:
+ 
+ ****************ON DELETE CASCADE
+ When a row in the parent table (the table referenced by a foreign key) is deleted, 
+ the corresponding rows in the child table (the table with the foreign key) are automatically deleted.
+ 
+ ********************ON UPDATE CASCADE
+ -->When a primary key in the parent table is updated, all related foreign key values in the child table are updated automatically.	
+ 
+ *********************************
+  What are some common security vulnerabilities in web applications?
+ 
+ SQL injection: Exploiting user input to inject malicious SQL code into database queries.
+Cross-Site Scripting (XSS): Injecting malicious scripts into web pages, executed by users' browsers.
+Cross-Site Request Forgery (CSRF): Tricking a user's browser into performing unauthorized actions on a trusted website.
+Insecure data handling: Not properly validating and sanitizing user input, leading to potential data breaches.
+
+
+
+
+*******open same databse in mutiple system:
+https://chatgpt.com/share/670e1994-7f1c-800a-b866-dfd4d759cafb
+
+
+
+
+
+
+************************************************************What does event-driven programming mean
+Event-driven programming is a programming paradigm in which the flow of the program is determined by events,
+ such as user actions (clicks, keypresses), sensor outputs,
+ or messages from other programs. 
+ event: A customer places an order.
+Event Handler: The kitchen prepares the meal (the callback function).
+Event Loop: The kitchen staff keeps checking for new orders (events) and processes each as it comes in.
+Event Emitter: The waiter or ordering system that collects the customer’s order and notifies the kitchen.
+Listener: The chef listens for the order (subscribes to the event) and starts preparing the food.
+
+const EventEmitter = require('events');
+
+// Create a new instance of EventEmitter
+const eventEmitter = new EventEmitter();
+
+// Create an event listener
+eventEmitter.on('greet', (name) => {
+  console.log(`Hello, ${name}!`);
+});
+
+// Emit an event
+eventEmitter.emit('greet', 'Alice');
+
+
+
+
+********************************************************file fs module with asyncronous in syncronous
+-->In Node.js, working with the file system is a common task, and the core module for interacting with the file system is called fs (short for File System).
+ This module provides various synchronous and asynchronous methods to work with files and directories such as reading, writing, renaming, deleting, and more.
+ 
+ 
+ -->Asynchronous File Read (fs.readFile)
+Asynchronous file reading is non-blocking, meaning other operations can continue while the file is being read.
+
+-->Synchronous File Read (fs.readFileSync)
+Synchronous methods block the execution of the script until the operation completes.
+
+
+
+Asynchronous File Write (fs.writeFile)
+If the file doesn’t exist, it will be created. If it exists, it will be overwritten.
+
+Synchronous File Write (fs.writeFileSync)
+The synchronous version works similarly but blocks the event loop.
+
+
+4. Appending to a File
+You can add data to the end of a file without overwriting the existing content.
+Asynchronous Append (fs.appendFile)
+
+
+
+In Node.js, working with the file system is a common task, and the core module for interacting with the file system is called fs (short for File System). This module provides various synchronous and asynchronous methods to work with files and directories such as reading, writing, renaming, deleting, and more.
+
+Here’s a breakdown of the most commonly used file-related functionalities in Node.js using the fs module:
+
+1. Loading the fs Module
+First, you'll need to import the fs module in your Node.js script:
+
+javascript
+Copy code
+const fs = require('fs');
+2. Reading Files
+You can read the content of files either synchronously or asynchronously.
+
+Asynchronous File Read (fs.readFile)
+Asynchronous file reading is non-blocking, meaning other operations can continue while the file is being read.
+
+javascript
+Copy code
+fs.readFile('path/to/file.txt', 'utf8', (err, data) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  console.log(data);
+});
+Synchronous File Read (fs.readFileSync)
+Synchronous methods block the execution of the script until the operation completes.
+
+javascript
+Copy code
+try {
+  const data = fs.readFileSync('path/to/file.txt', 'utf8');
+  console.log(data);
+} catch (err) {
+  console.error(err);
+}
+3. Writing Files
+You can write data to a file using either the asynchronous or synchronous approach.
+
+Asynchronous File Write (fs.writeFile)
+If the file doesn’t exist, it will be created. If it exists, it will be overwritten.
+
+javascript
+Copy code
+fs.writeFile('path/to/file.txt', 'Hello World!', (err) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  console.log('File written successfully');
+});
+Synchronous File Write (fs.writeFileSync)
+The synchronous version works similarly but blocks the event loop.
+
+javascript
+Copy code
+try {
+  fs.writeFileSync('path/to/file.txt', 'Hello World!');
+  console.log('File written successfully');
+} catch (err) {
+  console.error(err);
+}
+4. Appending to a File
+You can add data to the end of a file without overwriting the existing content.
+
+Asynchronous Append (fs.appendFile)
+javascript
+Copy code
+fs.appendFile('path/to/file.txt', '\nAppended data', (err) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  console.log('Data appended successfully');
+});
+Synchronous Append (fs.appendFileSync)
+javascript
+Copy code
+try {
+  fs.appendFileSync('path/to/file.txt', '\nAppended data');
+  console.log('Data appended successfully');
+} catch (err) {
+  console.error(err);
+}
+5. Deleting Files
+You can remove a file from the file system.
+
+Asynchronous File Deletion (fs.unlink)
+
+
+
+6. Renaming or Moving Files
+The fs.rename function can be used to rename or move files.
+
+Asynchronous Rename/Move (fs.rename)
+
+
+. Checking If a File Exists
+In modern versions of Node.js (from v10.0.0), you can use fs.promises.access to check for the existence and permissions of a file.
+
+Using fs.access (Asynchronous)
+
+
+
+Reading Directories
+You can list the files and directories in a folder.
+
+Asynchronous Directory Read (fs.readdir)
+
+
+9. Creating Directories
+You can create directories as needed.
+
+Asynchronous Directory Creation (fs.mkdir)
+
+
+10. Watching for File Changes
+You can watch for changes in files or directories using fs.watch.
+
+File Watch (fs.watch)
+javascript
+Copy code
+fs.watch('path/to/file.txt', (eventType, filename) => {
+  console.log(`Event Type: ${eventType}`);
+  console.log(`Filename: ${filename}`);
+});
+
+
+11. File Streams
+When dealing with large files, reading or writing data as streams is more efficient than loading the entire content into memory.
+
+Reading a File as a Stream
+
+
+
+*************************************************************The HTTP OPTIONS method is used to describe the communication options for a specific resource or the server in general.
+ It allows clients to discover what HTTP methods (e.g., GET, POST, PUT, etc.) are supported by the server for a given URL and can also reveal other relevant information about the server’s configuration, 
+ such as allowed headers, credentials, and whether cross-origin requests are permitted.
+ 
+ Allow: Lists the HTTP methods allowed for the resource.
+Access-Control-Allow-Origin: Specifies which origins are allowed to access the resource.
+Access-Control-Allow-Methods: Lists the methods that are allowed for cross-origin requests.
+Access-Control-Allow-Headers: Lists the headers that are allowed for cross-origin requests.
+
+*****************************************what is call back queue in javascript
+
+In JavaScript, the callback queue (also known as the task queue) is an integral part of the event loop mechanism that helps manage asynchronous operations.
+ To understand the callback queue,
+ we first need to look at how JavaScript handles asynchronous code execution, including the event loop, call stack, and how callbacks are managed.
+
+Key Concepts
+Single-Threaded Execution:
+
+JavaScript is single-threaded, meaning it can execute only
+one piece of code at a time. This is important for managing tasks without concurrency issues.
+Call Stack:
+
+The call stack is a data structure that keeps track of the function calls made in your program. When a function is invoked, 
+it gets pushed onto the stack. When the function returns, it is popped off the stack.
+Event Loop:
+
+The event loop monitors the call stack and the callback queue. If the call stack is empty (i.e., there are no functions currently executing),
+ the event loop will move tasks
+ from the callback queue to the call stack for execution.
+Callback Queue:
+
+The callback queue holds callback functions that are ready to be executed.
+ These callbacks are usually the result of asynchronous operations (like setTimeout, Promises, or events).
+ Once the call stack is clear, the event loop takes the first function from the callback queue and pushes it onto the call stack for execution.
+
+
+
+************************************************************************1. Worker Threads
+Worker Threads in Node.js allow you to run JavaScript code in parallel by creating separate threads within the same process.
+ They are part of the worker_threads module, introduced in Node.js v10.5.0 and stabilized in later versions.
+ -->The Cluster module in Node.js allows you to create child processes (forks) that can each handle incoming requests separately. This allows the application to take advantage of multi-core systems,
+ as each child process runs independently with its own memory.
+ 
+ 
+ 
+ ******************************************************************************************************
+ 4. Phases of the Event Loop
+The event loop has several phases, each handling different types of tasks:
+Timers: Executes callbacks scheduled by setTimeout() and setInterval().
+Pending Callbacks: Handles callbacks for certain system operations (e.g., errors).
+Idle, Prepare: Internal operations for Node.js (less commonly relevant).
+Poll: This phase retrieves new I/O events, executing their callbacks as appropriate.
+Check: Executes callbacks scheduled by setImmediate().
+Close Callbacks: Executes callbacks for events like closing sockets.
+5. Asynchronous Execution with Promises and async/await
+Promises and async/await enable asynchronous programming in Node.js, keeping code non-blocking while making it readable.
+They add tasks to the microtask queue, which the event loop processes at the end of each phase.
+Example Workflow in Node.js
+Consider an HTTP server in Node.js:
+
+The server receives an HTTP request, triggering an event.
+If the request involves reading from a file or database, it’s handled asynchronously (e.g., using fs.readFile).
+Node.js immediately returns to handle any other events in the queue, while the file operation is handled by the OS.
+When the file read completes, its callback is added to the event loop.
+The event loop eventually picks up this callback and sends the response to the client.
+This architecture, powered by the event loop, enables Node.js to handle high concurrency efficiently without multi-threading, which is especially beneficial for I/O-bound tasks.
+
+
+
+
+
+
+
+ thred url :https://blog.logrocket.com/complete-guide-threads-node-js/
+ 
+ 
+ ***********************************************************accesstoken refrsh token functionality
+ User Login:
+
+The client sends login credentials to the server.
+The server verifies the credentials and issues:
+An access token (short-lived).
+A refresh token (long-lived, secure).
+The refresh token is stored in an HTTP-only cookie.
+Using the Access Token:
+
+The client includes the access token in the Authorization header of API requests:
+makefile
+Copy code
+Authorization: Bearer <access_token>
+If the token is valid, the server processes the request.
+Access Token Expiration:
+
+When the access token expires, the client uses the refresh token to request a new one.
+Refreshing the Token:
+
+The client sends the refresh token (via cookie or body) to the /refresh-token endpoint.
+The server validates the refresh token, issues a new access token, and optionally generates a new refresh token.
+Logout:
+
+The refresh token is invalidated (e.g., removed from the database) and cleared from the client-side cookie.
+
+
+
+
+
+********************************************************ethream 
+-->The purpose of Ethereum is to serve as a decentralized platform that enables developers to build and deploy applications that operate
+ without central authority. These applications,
+ called decentralized applications (dApps), run on a global, peer-to-peer network of computers using smart contracts—self-executing agreements written in code.
+ 
+ 
+ Decentralized Applications (dApps)
+Definition: Applications that run on the Ethereum blockchain.
+Purpose:
+Provide secure, trustless, and tamper-proof solutions.
+Examples:
+DeFi (Decentralized Finance): Protocols like Uniswap or Aave for lending, borrowing, and trading without intermediaries.
+NFTs (Non-Fungible Tokens): Platforms for digital ownership of art, music, and assets.
+Gaming: Play-to-earn games where users truly own in-game items.
+
+
+
+
+
+***********************************deploye node js application azure devops
+-->https://learn.microsoft.com/en-us/azure/devops/pipelines/ecosystems/javascript?view=azure-devops&tabs=yaml
+
+
+
+
+
+
+
+************Session Management in Node.js
+
+Session management is a way to maintain user state across multiple requests in a web application. It is commonly used for:
+
+User authentication
+Storing user-specific data (e.g., cart items, preferences)
+Preventing unauthorized access to protected routes
+
+
+express-session: Middleware for managing sessions in Express
+
+connect-mongo: To store sessions in a MongoDB database (persistent storage).
+
+

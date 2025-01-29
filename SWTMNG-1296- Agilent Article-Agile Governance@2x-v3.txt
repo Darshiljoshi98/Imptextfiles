@@ -1,0 +1,67 @@
+
+Team
+Program
+Portfolio
+Agile Governance
+Roles
+Ceremonies
+•
+Portfolio owner
+• Area project owner
+• Program manager
+• Portfolio grooming
+•
+Portfolio planning
+·
+• Area project owner
+·
+• Program manager
+• Release planning
+• Scrum of Scrums Release review
+•
+•
+Tracking and metrics
+Burndown chart taskboard
+Burnup chart (for release)
+Governance points
+• Initiative
+·
+assessment
+Funding decisons
+• Monitoring
+• Quality assessment
+·
+·
+Release handoffs
+• Staging readiness
+Production readiness
+• Production deploy validation
+Artifacts
+• Portfolio backlog
+• Decision matrix
+• Agile charter
+•
+Business case
+• Definition of done
+• Release plan
+• Scrum master
+• Product owner • Team
+• Backlog grooming
+• Sprint planning
+⚫ Daily scrum
+• Sprint review
+. Retrospective
+• Burnup chart (for initiatives)
+• Ranking
+• Estimation
+• Stories and epics
+• Story/requirement development
+• Product backlog
+• Sprint backlog
+• Definition of done
+Portfolio level
+Investment decisions and planning Centralized coordinated management of portfolio components to achieve organizational objectives.
+Program level
+Cross-team decisions and planning Centralized coordinated management of a program to achieve the programs' strategic objectives and benefits.
+Team level
+Team decisions and planning Applications of knowledge, skills, tools, and techniques to meet project requirements.

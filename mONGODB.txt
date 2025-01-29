@@ -7,7 +7,7 @@ https://www.youtube.com/watch?v=DZBGEVgL2eE
 Mongo NoSQL Injection Attack and How to Prevent Them /with NodeJs-Express Code Examples:
 https://medium.com/@huseyin.isik000/mongo-nosql-injection-attack-and-how-to-prevent-them-with-nodejs-express-code-examples-beebae1a3d98Mongo NoSQL Injection Attack and How to Prevent Them /with NodeJs-Express Code Examples
 
-
+virtul field
 RoadMap
 ------------------------------------------------------
 Certainly! Here's a list of beginner to advanced concepts in MongoDB:
@@ -1128,4 +1128,61 @@ const leanDoc = await MyModel.findOne().lean();
 	
 	
 	
-	
+===========================
+Data restore and backup
+==============================
+
+way1:
+1install command line tool https://www.mongodb.com/try/download/database-tools
+->install MongoDB Command Line Database Tools Download (msi files_)
+2  Run uinstaller
+3 show path C:\Program Files\MongoDB\Tools\100\bin
+4 open mongosh by command mongosh
+5 switch to  mongodbbackup command use mongodbbackup
+6 in c drive create folder backup go inside folder and open cmd
+7 write set path=""C:\Program Files\MongoDB\Tools\100\bin"
+8now for backup write command mongodump
+9 for restore write command mongorestore
+
+
+way2:
+set path=""C:\Program Files\MongoDB\Tools\100\bin"
+backup:
+mongodump --host localhost --port 27017 --out C:\mongodb_backup
+Restore:
+mongorestore --host localhost --port 27017 C:\mongodb_backup
+
+
+Backup a Specific Database
+mongodump --db mydatabase --out C:\mongodb_backup
+Backup a Specific Collection
+mongodump --db mydatabase --collection mycollection --out C:\mongodb_backup
+Backup with Authentication
+mongodump --host localhost --port 27017 --username myuser --password mypassword --authenticationDatabase admin --out C:\mongodb_backup
+
+Restore a Specific Database
+mongorestore --db mydatabase --drop C:\mongodb_backup\mydatabase
+
+Restore a Specific Collection
+mongorestore --db mydatabase --collection mycollection --drop C:\mongodb_backup\mydatabase\mycollection.bson
+
+------------Automating schdule---------
+$backupPath = "C:\mongodb_backup\$(Get-Date -Format 'yyyyMMdd_HHmmss')"
+mongodump --host localhost --port 27017 --out $backupPath
+------------------------------Restote Atlas Database--------------------
+
+mongodump --uri="mongodb+srv://darshil2015:e96nVB9g8eMATAMv@cluster0.yi5y6i5.mongodb.net/work" --out C:\mongodb_backup_atlas
+
+mongorestore --uri="mongodb+srv://darshil2015:e96nVB9g8eMATAMv@cluster0.yi5y6i5.mongodb.net"  C:\mongodb_backup_atlas
+------------------
+Set system variable:
+	to avoid write C:\Program Files\MongoDB\Tools\100\bin
+1.Press Win + R, type sysdm.cpl, and press Enter.
+2.Go to the Advanced tab and click Environment Variables.
+3.Under System Variables, find and select Path, then click Edit.
+4.Click New and add these paths:
+	C:\Program Files\MongoDB\Tools\100\bin
+	C:\Program Files\MongoDB\Server\6.0\bin
+
+
+

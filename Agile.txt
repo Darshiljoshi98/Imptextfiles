@@ -5,12 +5,79 @@ PLANNING POKER
 
 
 Agile
-https://www.youtube.com/watch?v=hgPUM-_SMg8
+
 https://www.youtube.com/watch?v=KNBHQ0pyaG8
 
-https://www.youtube.com/watch?v=wmJfx7zAfQI&list=PLEiEAq2VkUUJKZEL96YBV78Dd5gsHSVZ7 - last
+	https://www.youtube.com/watch?v=wmJfx7zAfQI&list=PLEiEAq2VkUUJKZEL96YBV78Dd5gsHSVZ7 - last
 
 
+https://www.youtube.com/watch?v=NDVSMlVYxm8&t=81s - jira
+https://www.youtube.com/watch?v=Beozx9pUajA - jira
+
+https://www.youtube.com/watch?v=wmJfx7zAfQI&list=PLEiEAq2VkUUJKZEL96YBV78Dd5gsHSVZ7 - whole series
+
+Methodologies:
+
+light weight:
+	Scrum
+	lean software devlopment
+	kanban
+	Extreme pogramming(Xp)
+	Feture driven pogramming(FDD)
+	Test driven pogramming(TDD)
+	crystal
+Large scale :
+Scrum of scrum
+Scrum at scale
+large scale scrum
+Scaled agile framework
+Disciplined agile Delivery
+DSDM
+aGILE UNDEFINED process
+
+Types of Projects in Scrum
+Software Development: Building, testing, and delivering software applications.
+Product Development: Creating new products or enhancing existing ones.
+Marketing Projects: Managing campaigns, content creation, and launches.
+IT and Infrastructure: Implementing IT systems or improving infrastructure.
+Research and Development: Conducting experiments and exploring innovations.
+Business Process Improvement: Streamlining operations and workflows.Types of Projects in Scrum.
+
+
+
+### **Types of Projects in Agile**  
+
+1. **Software Development**  
+   - Building, testing, and delivering software applications iteratively.  
+
+2. **Product Development**  
+   - Creating or enhancing products based on customer feedback.  
+
+3. **Marketing Campaigns**  
+   - Planning and executing dynamic marketing strategies and campaigns.  
+
+4. **IT and Infrastructure**  
+   - Upgrading systems, migrating data, or improving IT frameworks.  
+
+5. **Research and Development**  
+   - Experimenting and exploring innovative ideas in an iterative manner.  
+
+6. **Business Process Improvement**  
+   - Optimizing workflows, systems, and organizational processes.  
+
+7. **Event Planning**  
+   - Managing events with flexibility and adaptability to changing needs.  
+
+8. **Data Analytics and Reporting**  
+   - Delivering insights and dashboards in an iterative and incremental way.  
+
+Agile's flexibility makes it suitable for various industries and project types.
+---------------------
+Epics
+Story
+	subtask
+Bug 
+task
 
 Agile:Agile manifesto outlines four values
 		Individuals and interactions over processes and tools
@@ -56,6 +123,7 @@ The scrum master:
 The scrum development team:
 		The scrum team drives the plan for each sprint. They forecast how much work they believe they 
 		can complete over the iteration using their historical velocity as a guide
+		min -5 max-9
 		
 --------------		
 Scrum artifacts:Iportant information used by the scrum team that helps define the product and what work 
@@ -197,6 +265,7 @@ Sprint retrospective:
 Product Backlog - What is it & How to create one
 ->A product backlog is a prioritized list of work for the development team that is derived from the product 
 	roadmap and its requirements.
+	(list of new fetures,changes bug)
 
 Start with the two "R"s:(roadmap and requirements)
 RoadMap: Roadmap initiatives break down into several epics, and each epic will have several requirements and user stories.
@@ -409,7 +478,11 @@ Encourage collaboration: Foster a culture of collaboration within your team, whe
 
 Utilize kanban cards: Represent each task as a kanban card on the board, containing essential details such as task description, assignee, and estimated time for completion. Kanban cards facilitate visual tracking of task progress and promote transparency within the team.
 
-
+components  Element:
+List of work (or stories)
+Columns or lanes
+Work in Progress Limits (WIP)
+Continuous Releases
 
 Elements of a kanban board:
 Visual signals, columns, work-in-progress limits, a commitment point, and a delivery point.
@@ -460,3 +533,911 @@ to understand the number of work items in each state. CFDs help identify specifi
 need to be resolved for better throughput.
 
 ---------------What is agile project management?-----------------------------------
+Agile project management is an iterative approach to managing software development projects that focuses on 
+	continuous releases and incorporating customer feedback with every iteration.
+	
+Project Estimation techniques:
+					planning poker, ideal hours, or story points to determine a numeric value for the task at hand.
+Agile reporting:
+		Burndown charts, show how many "story points" are completed during the sprint	
+Backlog management and grooming
+
+What is a workflow?
+
+A workflow defines a sequence of project tasks from start to finish. 
+Each workflow details roles, processes, and timelines for achieving project objectives.		
+
+project management workflow
+Initiation:: This phase defines project goals, scope, and initial resources.
+Planning: In this phase, the team breaks down tasks, creates schedules, and allocates resources. 
+Execution: This phase implements tasks according to the plan and manages team performance.
+Monitoring and control: This phase tracks progress and adjusts to ensure project success and continuous improvement.
+----------------------------------------
+
+How to create an Agile workflow to ensure project success
+Define project goals
+Break down tasks and milestones
+Assign tasks and responsibilities
+Create a timeline and schedule
+Monitor progress and adjust
+--------------------------------
+Agile SmapleFlow
+To do: This is for work waiting to begin.
+In progress: The team is working on these items.
+Code review: Finished work awaits review.
+Done: These tasks meet the team's definition of done. 
+Awaiting QA: This category is for implemented work and is awaiting a tester review.
+Ready to merge: This is reviewed code that is ready to merge into the main or release branch.
+--------------------
+Stories, epics, and initiatives
+
+Stories:also called “user stories,” are short requirements or requests written from the perspective of an end user.
+Epics: are large bodies of work that can be broken down into a number of smaller tasks (called stories).
+Initiatives are collections of epics that drive toward a common goal.
+
+Epic
+		An epic is a large body of work that encompasses multiple related tasks or features. 
+		It represents a high-level business objective or goal, often too big to be completed in a single iteration.
+		Epics are broken down into smaller, manageable user stories to make progress measurable.
+
+		Example: "Develop a user authentication system for the app."
+		This could include tasks like creating login pages, setting up two-factor authentication, and integrating with a database.
+		Epic
+story		
+		A user story is a small, specific unit of work that represents a feature or functionality from 
+		the perspective of the end user. It is written in simple language to ensure shared understanding
+		and is often framed as:
+		"As a [user], I want [goal] so that [benefit]."
+		Example: "As a user, I want to reset my password so that I can regain access to my account if I forget it."
+Initiative:(initiatives are made up of epics)[we call our initiatives “PC Tickets.” ]
+		An initiative is a strategic effort or objective that aligns with an organization's goals. 
+		It sits above epics in the hierarchy, often spanning multiple teams, epics, and projects. 
+		Initiatives represent broad themes or business outcomes that require significant coordination
+		and time to achieve.
+
+	Example: "Improve customer retention by enhancing the onboarding experience."
+	This initiative might include multiple epics like redesigning the onboarding process, 
+	creating tutorial videos, and developing personalized user tips.
+	
+Burndown charts can be used to visualize epics, and serve to keep teams motivated and the executive 
+stakeholders informed
+--------
+How to write user stories
+Definition of “done” 
+Outline subtasks or tasks
+User personas
+Ordered Steps
+Listen to feedback
+Time 
+
+---------------------------------
+Planning Poker
+			Planning Poker, also known as Scrum Poker, is a collaborative estimation
+			technique used in Agile development to estimate the effort or complexity of tasks (usually user stories). 
+			It combines discussion, consensus-building, and relative estimation to ensure accurate and 
+			shared understanding among team members.
+
+How It Works
+Prepare the Cards:
+		Each team member gets a set of cards with numbers (e.g., Fibonacci sequence: 1, 2, 3, 5, 8, 13, 21, etc.). 
+		These numbers represent the estimated effort or complexity.
+Review the Story:
+		The Product Owner or facilitator presents the user story or task to the team, including any relevant details.
+Discussion:
+		Team members can ask questions or clarify uncertainties about the task.
+Vote:
+		Each team member privately selects a card that reflects their estimate and places it face down.
+Reveal the Cards:
+	All cards are revealed simultaneously, and the estimates are discussed.
+	If estimates vary significantly, team members explain their reasoning.
+Achieve Consensus:
+	After discussion, the team re-votes until they reach a consensus on the estimate.
+	
+Benefits of Planning Poker
+Encourages Collaboration: Everyone's input is valued, promoting team alignment.
+Reduces Bias: Simultaneous voting prevents anchoring or influence by others.
+Improves Accuracy: Discussions uncover hidden complexities or misunderstandings.
+Supports Agile Principles: Focuses on team consensus and iterative refinement.
+-------------------------------------------------
+How to use agile KPI metrics to optimize your delivery
+Sprint burndown:
+			A Sprint Burndown Chart is a graphical representation used in Agile Scrum 
+			to track the progress of work during a sprint. It helps teams monitor how much work 
+			remains compared to the sprint timeline, ensuring they stay on track to meet the sprint goal
+			
+			=>The x-axis represents time, and the y-axis refers to the amount of work left to complete, 
+			measured in either story points or hours. The goal is to have all the forecasted work completed by the end 
+			of the sprint
+			
+			=>Epic and release (or version) burndown charts track the progress of development over 
+			a larger body of work than the sprint burndown, and guide development for both scrum and kanban teams. 
+			
+Velocity:
+		Velocity is the average amount of work a scrum team completes during a sprint, 
+		measured in either story points or hours, and is very useful for forecasting
+		
+		=> The product owner can use velocity to predict how quickly a team can work through the backlog
+Control chart:
+			Control charts focus on the cycle time of individual issues–the total time 
+			from "in progress" to"done". 
+Cummlative flow:
+				=>Kanban metric which show status of task
+Throughput:
+				Mesure avrage task prceeded in unit time
+----------------------------------------
+Cycle Time vs. Lead Time
+
+					Cycle Time and Lead Time are key metrics used in Agile and Lean methodologies 
+					to measure the efficiency and speed of workflows. Although related, 
+					they focus on different aspects of the process.
+
+1. Cycle Time
+			Definition: The time it takes to complete a task from when work starts to when it is finished.
+
+			Focus: Measures the active work time of an item within the workflow.
+
+			Purpose: Helps teams understand how quickly they can deliver work once they start it.
+
+			Formula:
+				Cycle Time= EndDate−StartDate
+			Example:
+
+				If a task starts on Monday and is completed on Wednesday, the cycle time is 2 days.
+
+2. Lead Time
+		Definition: The total time it takes for a task to go from the initial request (commitment point) to 
+					completion (delivery point).
+
+		Focus: Measures the entire process, including time spent waiting or in queues.
+
+		Purpose: Captures the overall responsiveness of the workflow from the customer's perspective.
+
+		Formula:
+			Lead Time= DeliveryDate−RequestDate
+
+		Example:
+		If a task is requested on Monday, starts on Wednesday, and is delivered on Friday, the lead time is 4 days.
+		
+Cycle Time	:
+	Time from start to finish of active work.	(in progress to done)
+Lead Time:
+	Total time from request to delivery.(Backlog to deliver)
+
+Lead Time includes both Cycle Time and the time an item spends waiting in queues.
+
+LeadTime= CycleTime+WaitTime
+--------------------------------
+Gantt Chart:
+		->A Gantt chart is a visual bar chart used to plan and track a project's progress.
+		->It acts as a timeline that shows the list of tasks involved, their start and end dates, milestones, 
+		  dependencies between tasks, and assignees. 
+		->Gantt charts are an essential tool in project management. 
+		They offer a visual timeline to track tasks and milestones throughout the project life cycle.
+	Jira includes two roadmap tools to create Gantt charts for your projects.
+		 Timelines create plans around Jira issues assigned to a team, 
+		 while Plans do the same thing across teams and companies.		
+How to create a Gantt chart
+	Define the project scope
+	List all tasks and subtasks
+	Estimate task duration
+	Determine task dependencies
+	Choose a Gantt chart tool
+	Input data
+Example:
+1. Dependency mapping	
+2. Task management
+3.Project planning
+4.Date shifting
+5.Resource allocation
+
+---------------------------
+Projects VS Programs
+
+Projects have: 
+A set of tasks with a clear deliverable and a deadline for completion
+Relates to creating, updating, or reviewing a particular document, process, outcome, or another single unit of work
+A predefined scope that is limited to a specific output
+Improves quality, efficiency, cost management, or customer satisfaction in a specific and predetermined way
+ 
+Programs have:
+Unknown or fluid deadlines due to the large scope and impact of the work that must be done continuously over a long period of time
+Multiple deliverables with inter-related dependencies that may continue to evolve based on changing business needs
+A series of deliverables completed together to increase efficiency, accuracy, reliability, or other business needs
+The work enables the company to achieve a long-term business goal or initiative that will run in perpetuity
+Success delivers long-term benefits or unlocks new capabilities for the organization
+
+---------------------------------------------- project baseline-----------------------
+*A project baseline is a fixed reference point used to compare project performance over time.
+*Adding project baselines can help you understand how the status of a project over time contributed to the 
+ completion of the project goals. 
+*Key elements of a project baseline
+	Scope
+	Schedule
+	Cost
+
+--------------The Plan-Do-Check-Act Principle (PDCA)-----------------------
+Software teams execute PDCA loops when they launch new features via “feature flagging”. 
+Feature flagging is the process of rolling out a new feature to a small subset of real customers
+ in a limited test
+ 
+---------Lean Principles----------------------
+ Lean is set of tool & priniciples  aim to indenify and remove  waste 
+ and increase speed of process devlopment
+	Lean is the most prevalent methodology for increasing efficiency in project management. 
+	The five principles of Lean provide a framework for continuous improvement.
+
+	Lean project management eliminates waste in product development, significantly speeding up delivery. 
+	Value
+		Identify what provides value from the customer’s perspective.
+		Focus on delivering only what meets the customer's needs and expectations.
+	Value Stream
+		Map out all steps in the process of delivering the product or service.
+		Eliminate unnecessary steps or waste to optimize the value stream.
+	Flow
+		Ensure the workflow progresses smoothly and efficiently without interruptions.
+		Minimize delays, bottlenecks, and redundancies to maintain a steady flow.
+	Pull
+		Produce work only when there is demand from the customer.
+		Avoid overproduction by aligning output with actual needs.
+	Perfection
+		Continuously improve processes to achieve higher efficiency and quality.
+		Strive for perfection by identifying and addressing areas for optimization.
+------------Three Pillars of Scrum-----------------------
+Three core pillars: transparency, inspection, and adaptation. 
+
+Transparency:
+		At the heart of Scrum lies transparency, an overarching principle that centers on open and unobstructed 
+		communication. By promoting clear and candid information-sharing across all project stakeholders, 
+		transparency is the core of trust and collaboration. 
+
+		How to Ensure Transparency in Scrum
+
+		Sprint Backlog: 	
+				This dynamic list encompasses tasks committed to within a sprint, fostering clarity on the team's focus.
+		Product Backlog: 
+			A prioritized catalog of features and requirements, aligning the team with project goals.
+		Sprint Review: 
+			A platform to showcase accomplished work, enabling stakeholders to evaluate and provide valuable feedback.
+		Definition of Done (DoD): 
+			A crystal-clear set of criteria
+	
+Inspection:
+		Inspection, the second pillar, revolves around consistent evaluation and review.  
+		Teams can identify deviations through regular assessments, fostering improvement and maintaining a 
+		trajectory toward project success.
+
+
+		Sprint Planning: 
+				At the start of each sprint, teams examine the product backlog and collaboratively 
+				determine the work to undertake in the upcoming sprint.
+		Daily Stand-ups: 
+			Daily stand-up meetings provide a platform for team members to inspect their progress, share updates, 
+			and identify impediments.
+		Sprint Review: 
+			At the end of each sprint, the team presents the completed work to stakeholders for inspection and feedback.
+		Sprint Retrospective: 
+					After the sprint review, the team holds an agile retrospective to examine their processes, 
+					identify what went well and what needs improvement, and devise strategies for enhancement. 
+
+Adaptation:
+			Adaptation, the third core principle of Scrum, goes hand-in-hand with inspection. Once the team has 
+			inspected the product and process, they adapt their strategies based on the insights gained. As teams 
+			uncover new information and gain a deeper understanding of their project's dynamics, they are empowered
+			to make nimble course corrections. .Whether it's adjusting the sprint backlog mid-sprint, adapting daily
+			plans based on emerging challenges, or refining strategies based on feedback received during the sprint 
+			review, adaptability is central to Scrum's success.
+			
+			Sprint Backlog Adjustments: 
+				During the sprint, if new insights or changes emerge, the team can adapt the sprint backlog to
+				accommodate them. Jira allows teams to create a dedicated Scrum Board for their sprint backlog,
+				making it easy to track changes, prioritize tasks, and ensure that the backlog aligns with the e
+				volving project requirements.
+			Daily Stand-up Adaptations: 
+				Daily stand-up meetings provide a platform for team members to adapt their plans for the
+				day based on progress and any impediments. By configuring a custom workflow in Jira, teams can 
+				visualize the status of tasks, identify bottlenecks, and make real-time adjustments during these 
+				daily stand-ups, fostering agility and collaboration.				
+			Sprint Review Feedback: 
+				Feedback gathered during the sprint review guides adaptations for upcoming sprints. 
+				With Jira, teams can set up a cross project board specifically for sprint reviews and retrospectives. 
+				This dual-board approach facilitates a smooth transition from reviewing feedback to planning adaptations,
+				ensuring that valuable insights are translated into actionable improvements.
+
+
+
+-----------------What Is a Scrum Board?-----------------------------
+	The scrum board is an agile project management tool that enables teams that aim to work iteratively,
+	to visualize, track, and manage work during a sprint, or fixed period of time. Its structure encourages 
+	clear communication, transparent workflows, and optimized task management
+
+Key Components of a Scrum Board:
+    Scrum Artifacts:Product Backlog,Sprint Backlog,Sprint Goal (Increment)
+	Scrum Team:Product Owner,Scrum Master,Scrum Development Team
+Scrum vs kanban
+	Scrum Boards
+			Scrum boards focus on sprints, providing a clear structure for planning, executing, and reviewing 
+			tasks that will occur within a fixed set of time. This focus allows scrum boards to deliver incremental 
+			value at the end of each sprint.
+	kanban boards
+			On the other hand, kanban boards focus on visualizing and managing workflow continuously 
+			while limiting overloads of in-progress work. Unlike scrum, kanban embraces a fluid structure 
+			not tied to time-boxed sprints. 
+			
+			------------Teams That Commonly Use Scrum Boards------------
+			Scrum boards are ideal for teams working on time-boxed, iterative projects and following 
+			the Agile Scrum framework. These teams include:
+
+			IT and Operations Teams: For managing development cycles and sprint-based deployments.
+			Marketing Teams: To plan and execute campaigns in short, iterative cycles.
+			Design Teams: To manage creative projects with clear deliverables within sprints.
+			Sales Teams: To organize lead generation and follow-ups in structured timeframes.
+			Product Teams: To manage feature development and sprint deliverables.
+			-------------------------Teams That Commonly Use Kanban Boards--------------------
+			Kanban boards are suited for teams that prioritize continuous flow and flexibility,
+			allowing tasks to move fluidly through stages. These teams include:
+
+			Customer Support Teams: To manage tickets and ensure a steady flow of issue resolution.
+			DevOps Teams: For continuous integration and delivery workflows.
+			HR Teams: To track recruitment, onboarding, and other operational tasks.
+			Content Teams: To manage editorial calendars and publishing workflows.
+			Manufacturing Teams: To streamline production processes and ensure quality control.
+			R&D Teams: To handle research and innovation tasks requiring iterative improvements.
+
+------------Sprint Velocity in Scrum: How to Measure and Improve Performance--------------------
+
+	Sprint Velocity measures the amount of work a team completes during a sprint, 
+	helping estimate future capacity. Here's how to calculate it:
+
+	Plan a Sprint:
+		Define the user stories and their story points for the sprint.
+	List Completed User Stories:
+		At the end of the sprint, identify which user stories are fully completed (
+		meeting the Definition of Done).
+	Check Story Points:
+		Confirm the story points assigned to each completed user story.
+	Sum Points:
+		Add up the story points of all completed user stories to determine the velocity for that sprint.
+	Average Velocity:
+		Over multiple sprints, calculate the average velocity to improve planning and predictability.
+	Example
+	Sprint 1: 25 story points completed.
+	Sprint 2: 30 story points completed.
+	Sprint 3: 28 story points completed.
+	Average Velocity = (25+	30+28)/3=27.67
+	(25+30+28)/3=27.67.
+-------------------------Definition of Ready (DoR) --------------------
+
+	The Definition of Ready (DoR) is a set of agreed-upon criteria 
+	that a user story or task must meet before a team commits to w
+	orking on it during a sprint. I
+	t ensures that all necessary information, context, and prerequisites are in place for the team to 
+	start work efficiently without delays.
+
+	Key Aspects of the Definition of Ready
+	Clearly Defined Requirements
+		The user story is well-written and follows a format like:
+		"As a [user], I want [feature], so that [benefit]."
+	Acceptance Criteria
+		Clear, testable acceptance criteria are included, defining when the story is considered done.
+	Dependencies Resolved
+		All external dependencies (e.g., APIs, approvals) are identified and addressed.
+	Estimation
+		The team has estimated the story (e.g., in story points) and agreed on its size.
+	Prioritization
+		The Product Owner has prioritized the story in the backlog.
+	Feasibility and Scope
+		The story is small enough to be completed within a single sprint.
+-----------------Scrumban: Mastering two Agile methodologies---------------
+The Scrumban methodology combines the best features of Scrum and 
+Kanban into a hybrid project management framework
+It uses Scrum's stable structure of sprints, standups, and retrospectives. 
+Then it adds Kanban's visual workflow and work-in-progress limitations. 
+The result is a truly flexible method for managing projects of any size.
+------------What Is a Sprint Backlog-----------------------
+Product backlog:
+		A product backlog is the list of items to include in a given product, such as new features, 
+		customer requests, bug fixes, and other improvements.
+Sprint Backlog:
+			A sprint backlog comprises specific items on the product backlog, 
+			making it a subset. Your team chooses which product backlog items to work on 
+			in a sprint and puts them on the sprint backlog.
+			
+A sprint backlog is created from a product backlog, so the sprint
+backlog cannot exist without a product backlog. During each sprint planning 
+meeting, the project manager and their team discuss the priorities of the 
+backlog items with the product manager. The team then determines the plan of 
+action to deliver the items included in the sprint backlog.
+
+*Key components of a sprint backlog
+	User story
+	Tasks and subtasks:Tasks are created from the user stories, and each task may comprise numerous subtasks
+	Technical blockers
+	Assignees
+	Burndown chart:A burndown chart visually represents the work completed and the work remaining
+	Estimated and actual time
+*How to create a sprint backlog
+	Determine your sprint goals
+	Discuss the backlog with your team
+	Organize and prioritize tasks
+	Monitor and update as needed
+	
+Product backlog Managed by the Product Owner.Covers the entire product roadmap.
+Sprint backlog Owned and updated by the Scrum Team.Focuses only on the current sprint.
+-----------------------------------Burn up chart-----------------------------
+	you could use a Gantt chart to track your projects 
+	but they can be bulky and bloated with too many details
+	as well as tedious to build. 
+=>Agile teams use burn up charts to track a project's progress over time in a simple and clear graph. 
+=>A burn up chart is a roadmap that plots your work on two lines along a vertical axis. 
+	One line indicates the entire workload for the project. The other depicts the work 
+	completed thus far. When you finish the project, the two lines meet
+	
+When to use a burn up chart:Use for Scrum projects and sprint planning.
+							use them to visually represent your sprints so you can 
+							see the entire project's scope. You can then track that 
+							against the progress of completed work or what still needs to be done.
+							
+						=>Burn up charts are particularly helpful when scope creep happens. 
+						  Any changes in scope can kill a project's momentum, especially 
+						  with Agile workflows. You can use your burn up chart to manage creep 
+						  and mitigate delays.
+				
+*What is the difference between a burn up chart vs. a burn down chart?
+	A burn down chart marks the amount of work remaining, whereas a 
+	Burn up shows how much work the team has completed.
+*Where To use
+	Burn downs are perfect for a project with a fixed scope. 
+				It's rare for a project to have an accurate, well-defined scope. 
+				But if it does, use a burn down chart. 
+	Burn ups are great for Agile project management. 
+				Burn up charts track progress but are flexible and adjust to 
+				any changes during a project. This makes them a better 
+				option for Agile project management.
+*Short Defination:
+	Burn Down Chart:
+			Definition: A visual representation showing the remaining work (e.g., story points, tasks) over time 
+						in a sprint or project.
+			Purpose: Tracks progress toward sprint or project completion by showing how much work is left.
+			Key Insight: Highlights whether the team is on track to complete the sprint.
+	Burn Up Chart:
+			Definition: A visual representation showing the total work and the completed work over time.
+			Purpose: Tracks progress by showing how much work has been completed versus the total scope.
+			Key Insight: Highlights both progress and scope changes over time.
+			
+---------------4 Kanban Principles-------------------
+
+Start with what you do know
+Agree to pursue incremental, evolutionary change
+Respect the current process, roles, responsibilities, and titles
+Encourage acts of leadership at all levels in your company
+
+
+*What is the difference between a Kanban board and a Kanban card?
+			A Kanban card represents an individual task within a workflow. 
+			A Kanban board is a visual tool that displays an entire workflow.
+*4 Kanban metric	
+	Lead time: Time between (in progress to done)
+	Cycle time:Time between(in progress to done)
+	Work-in-progress:represents the number of tasks currently in the "active" or "in-progress" 	
+					 stages within the Kanban system. 
+	Throughput:quantifies the number of tasks or work items your team successfully 
+			  completes within a specific time frame, such as a day or a week.
+			  It measures the team's output or productivity over that period.
+How are these metrics measured?
+Control charts:
+	A control chart is a graphical representation and diagnostic tool that 
+	offers insights into your workflow's stability and variability.
+Cumulative flow diagrams:
+	Unlike control charts, which zero in on cycle time, a cumulative flow 
+	diagram provides a layered view of all four important Kanban metrics simultaneously.	
+---------------------------------Definition of Done---------------------------
+	“Is this task done?” 
+	Answering this seemingly simple question requires checking if 
+	an item or product increment is complete or in progress. But 
+	it doesn’t work unless a team and its stakeholders have expressly 
+	defined it as “done.” 
+
+	A DoD is a set of criteria that a product increment must meet for the 
+	team to consider it complete and ready for customers. It is a shared 
+	understanding among the team members of when a product increment is 
+	ready for release, even when the increment is large and consists of many items. 
+	By clearly defining what “done” means to the project, an Agile team can focus on
+	 delivering value with every sprint and minimizing rework. 	
+	 
+Definition of done vs. definition of ready
+		*The DoD is a set of high-level criteria that defines when a product increment is complete. 
+		It ensures the quality and consistency of a deliverable. Teams typically use the DoD at 
+		the end of a sprint when checking the quality of a product increment. 
+	
+		*The definition of ready (DoR) is a set of low-level and specific criteria 
+		that applies only to product backlog items. The DoR defines when a backlog 
+		item is ready for a team to work on in an upcoming sprint. A team uses the 
+		DoR during the backlog refinement process at the start of a sprint.
+*Why is the definition of done important
+	Boosts quality
+	Minimizes risk
+	Improves team alignment:
+	Measures progress
+*Steps to creating a definition of done
+	Work with the right team
+	Establish the criteria
+Acceptance criteria (AC) refer to the conditions that user stories must meet to 
+become acceptable to customers. This differs from the DoD criteria because it 
+deals with user stories or features instead of product increments. 
+----------------What is backlog grooming------------------------
+	Backlog grooming, or backlog refinement, is the regular updation of the product backlog. 
+*Agile backlog grooming involves: 
+	Deciding which user stories to pursue in the next sprint
+	Pruning the backlog of stories that aren’t relevant to the team’s current objectives 
+	Adding stories based on current or changing customer needs 
+	Estimating timelines and deliverables
+	Dividing user stories that are too large to tackle into smaller tasks.
+*The backlog grooming process
+	. Gather and analyze data
+	  Categorize backlogged items
+	  Reprioritize backlogged items
+	  Build your sprint
+*Backlog refinement meetings, also known as “sessions,” are the events 
+that allow a team to update and prepare the backlog for an upcoming sprint. 
+----------------------Scrum values in project management-----------------------
+Scrum values provide a code of ethics and behavioral guidelines for teams to interact
+	*The five Scrum values are commitment, courage, focus, openness, and respect. 
+	Commitment: Team members are dedicated to achieving the goals of the Scrum team.  
+	Focus: Everyone focuses on the work of the sprint and the goals of the team.  
+	Openness: Transparency and openness about progress, challenges, and decisions.  
+	Respect: Team members respect each other's skills, contributions, and opinions.  
+	Courage: The courage to take on challenges, address difficult issues, and do the right thing.  
+
+	These values guide the behavior of the Scrum team and foster collaboration, trust, and effective work.
+
+*Scrum principles
+		1. **Empirical Process Control**  
+		   - Decisions are based on observation, experimentation, and transparency.  
+
+		2. **Self-Organization**  
+		   - Teams organize themselves to deliver the best results without external micromanagement.  
+
+		3. **Collaboration**  
+		   - Teams work together, sharing knowledge and skills to achieve common goals.  
+
+		4. **Value-Based Prioritization**  
+		   - Work is prioritized based on delivering the highest value to stakeholders.  
+
+		5. **Iterative Development**  
+		   - Continuous delivery of increments to gather feedback and improve over time.  
+
+		6. **Time-Boxing**  
+		   - Work is limited to fixed time periods (e.g., sprints) to ensure focus and efficiency.  
+*Scrum values vs. Scrum principles
+	Values emphasize team mindset and interactions.
+	Principles guide the framework's execution and delivery process.
+---------------------Scope of work-----------------------------
+SoW indicates what tasks are and aren’t part of the project
+This structure ensures clarity and alignment among all parties involved.
+Key Components of a Scope of Work (SOW)
+	Project Objectives**: Clear definition of goals and purpose of the project.  
+	Deliverables**: Specific outcomes or products to be delivered.  
+	Scope of Work**: Detailed tasks and activities required to complete the project.  
+	Roles and Responsibilities**: Identification of stakeholders and their duties.  
+	Budget,resourese,Border guide **: Allocation of costs and financial resources.  
+	Acceptance Criteria**: Standards to verify deliverables meet expectations.  
+	Constraints and Assumptions**: Known limitations and underlying assumptions for the project.  
+	Inclusions and exclusions:what the project includes and what exclude
+	Project assumptions
+How to create a scope of work
+	Gather information
+	Define objectives and deliverables
+	Specify inclusions and exclusions
+	Set boundaries and constraints:
+	State assumptions
+	Create a timeline
+-------------------Trello & jira----------------
+Jira:
+	Jira allows teams to manage projects across the company, 
+	giving members real-time project data. Create dependencies and build automations
+	 so you overlook nothing, especially when disparate groups are working on the same project.
+
+Trello:
+	Trello’s easy-to-use, highly visual interface for project management 
+	supports small teams with iteration planning, automating repetitive tasks, 
+	and tracking sprints. It also integrates with commonly used tools such as Slack.
+----------------
+What is a task tracker?
+	A task tracker is a tool that helps individuals and teams organize, prioritize, 
+	and track the progress of tasks and projects. It plays a significant role in workflow
+	optimization by providing a centralized platform for task management. 
+-------------------------Status Report========================
+Status Report
+	A project status report is a concise, timely update on your project's progress.
+	Types of project status reports
+		Weekly status report:
+		Monthly status report
+		Quarterly status report:
+		Daily status report:
+---------------------------------------
+What is a workflow diagram?
+		A workflow diagram (or flowchart) is a 
+		visual representation of a process. 
+		It outlines a sequence of steps from start to finish 
+
+What is a project roadmap?
+	A project roadmap is a visual and 
+	strategic tool that clearly outlines a project’s key components, 
+	milestones, and timelines and gives a high-level overview of the 
+	project’s goals, deliverables, and progress indicators. 
+	ex:jira,kanban
+
+What is issue tracking software?
+	Issue tracking software helps teams document, prioritize, 
+	and resolve issues that arise during project development.
+	This can include tasks, bugs, and other project-related challenges
+
+How issue tracking software works
+	Streamline the process from issue identification to resolution with these steps:
+	Create tickets,Assign issues,Track issues,Iterate
+
+What is a sprint demo?
+	*A sprint demo, an integral event in Agile development and 
+	Scrum sprints, is a meeting where the development team showcases the work accomplished during a sprint
+
+Sprint review vs. sprint demo
+		*The sprint review is a broader, collaborative meeting held at the end of a sprint. 
+		In it, the Scrum team and stakeholders inspect the sprint’s outcome, 
+		discuss what the team accomplished, and plan future adaptations based on feedback
+
+		*A sprint demo is more focused and showcases the work the team 
+		completed during the sprint to stakeholders.
+--------------------------Sprint Cadence------------------------------
+	**Sprint Cadence** refers to the consistent, regular rhythm at which sprints are conducted in Scrum. It ensures predictability and stability for the team, stakeholders, and planning activities. 
+
+	- **Fixed Duration:** Sprints typically last 1-4 weeks.  
+	- **Purpose:** Provides a reliable cycle for planning, executing, reviewing, and improving work.  
+	- **Benefits:** Promotes discipline, aligns team efforts, and enables continuous delivery of value.  
+
+	By maintaining a steady sprint cadence, teams can better manage workload, 
+	track progress, and adapt to changes efficiently.
+===========================================product manager-------------
+A product manager is the person who identifies the customer need and the larger business objectives that a product or feature will fulfill, articulates what success looks like for a product, and rallies a team to turn that vision into a reality.
+
+Product manager responsibilities
+**Product Manager Responsibilities**:  
+
+1. **Vision & Strategy**: Define product goals and align them with business objectives.  
+2. **Roadmap Planning**: Develop and prioritize the product roadmap.  
+3. **Stakeholder Collaboration**: Work with cross-functional teams (engineering, design, marketing, etc.).  
+4. **Customer Focus**: Understand customer needs through research and feedback.  
+5. **Feature Definition**: Write user stories and requirements for product features.  
+6. **Performance Monitoring**: Track product metrics and success indicators.  
+7. **Market Analysis**: Stay updated on industry trends and competitor offerings.  
+
+A Product Manager ensures the product delivers value and meets user needs while achieving business goals.
+*Product manager vs. product owner
+
+		=>A Product Manage focuses on the strategic aspects of a product, including defining 
+		the vision, aligning it with business objectives, and understanding the market and customer 
+		needs. They work across departments, from marketing to sales, to ensure the product's success. 
+		
+		=>A Product Owner, on the other hand, operates at the tactical level within Agile teams, 
+		managing the product backlog, writing user stories, and ensuring the development team 
+		builds the right features. While the Product Manager emphasizes "what" and "why" for the long term, 
+		the Product Owner prioritizes "how" and "when" for the immediate delivery of value.
+-------------------------
+ product requirements document (PRD) defines the requirements of a particular product, including the product’s purpose, features, functionality, and behavior.
+ ---------------------------
+ What is	
+Product analytics is the process of analyzing how users engage with a product or service.
+
+
+-----------------------------
+framework for scale agile:
+SAFe: For large enterprises with multiple teams, complex programs, and portfolios.
+LeSS: If you are already using Scrum and want to scale it with minimal overhead.
+Spotify Model: Focus on autonomy, alignment, and culture, with a flexible, decentralized approach.
+Nexus: For organizations using Scrum and looking for lightweight scaling across multiple teams.
+Scrum@Scale: If you want a minimalist scaling approach built on Scrum principles.
+DAD: For organizations with complex requirements or hybrid Agile approaches.
+
+1. SAFe (Scaled Agile Framework)
+		SAFe is one of the most widely used frameworks for scaling Agile across large enterprises. 
+		It provides a detailed and structured approach to scaling Agile at various levels—team,
+		program, large solution, and portfolio.
+		
+		->set of organizational and workflow patterns for implementing agile practices at 
+		an enterprise scale
+		
+		-> It was formed around three primary bodies of knowledge: 
+				agile software development, lean product development, and systems thinking
+
+	Key Components:
+		Team Level (Agile Teams): Teams operate in Scrum, Kanban, or a combination.
+		Program Level (Agile Release Trains): Multiple Agile teams (5-12) work together in a "train" 
+						(ART - Agile Release Train) to deliver value in coordinated releases.
+		Portfolio Level: 
+				Focuses on aligning strategic business goals with Agile execution, 
+					including value streams, portfolio governance, and managing investment funding.
+		Large Solution Level: 
+					This is for large-scale solutions that require coordination between multiple 
+					ARTs or suppliers.
+	Core Concepts:
+		PI (Program Increment): A timebox for delivering value, typically 8-12 weeks, 
+								containing multiple sprints.
+		ART (Agile Release Train): A virtual organization of multiple teams working together 
+									to deliver value.
+		Lean-Agile Leadership: Leadership is empowered to support teams by removing roadblocks, 
+								creating a culture of innovation, and leading by example.
+
+	Roles:
+		Release Train Engineer (RTE): Facilitates and coordinates ART execution.
+		Product Owner/Product Manager: Manage the product backlog at the team and program level.
+		Scrum Master: Ensures Scrum processes are followed at the team level.
+	SAFe Levels:
+		Team (Scrum, Kanban, or XP)
+		Program (ART)
+		Large Solution (Coordination across multiple ARTs)
+		Portfolio (Strategic alignment and funding)
+	When to Use SAFe:
+		When you need to scale Agile across large teams, projects, or entire portfolios.
+		Organizations with complex needs, multiple departments, and dependencies.
+		
+		
+		The 12 steps for implementing SAFe include:
+
+		#Reaching the tipping point
+		#Train lean-agile change agents
+		#Train executives, managers, and leaders
+		#Create a lean-agile center of excellence
+		#Identify value streams and ARTs (Agile Release Trains)
+		#Create the implementation plan
+		#Prepare for ART launch
+		#Train teams and launch the ART
+		#Coach the ART execution
+		#Launch more ARTs and value streams
+		#Extend to the portfolio
+		#Sustain and improve
+		
+2. LeSS (Large Scale Scrum)
+				LeSS is a lightweight framework for scaling Scrum across multiple teams 
+				working on the same product. It builds upon Scrum principles while simplifying 
+				scaling efforts.
+
+	Key Components:
+		Basic LeSS: One Product Owner, one Product Backlog, and a single team of Scrum Masters 
+					for multiple Scrum teams (usually up to 8 teams).
+		LeSS Huge: For more than 8 teams working on the same product, with a more detailed 
+				   structure for organizing multiple teams and dealing with large-scale dependencies.
+	Core Concepts:
+		Single Product Backlog: All teams pull work from the same product backlog.
+		Sprint Planning: Multiple teams coordinate to plan the sprint at the beginning of each cycle.
+		Sprint Review: All teams contribute to a single sprint review, showcasing the integrated work.
+	Roles:
+		Product Owner: One person is responsible for the Product Backlog.
+		Scrum Master: One Scrum Master for each team, plus additional coordination at the higher levels.
+		Area Product Owners: In LeSS Huge, to manage cross-team dependencies.
+	When to Use LeSS:
+		Organizations that want to keep scaling simple and remain as close to the Scrum framework 
+		as possible.
+		Suitable for organizations with a limited number of teams (usually up to 8).
+			
+3. Spotify Model
+		The Spotify Model is an Agile scaling approach inspired by the way Spotify organizes 
+		its teams, with a focus on autonomy, alignment, and culture. It’s more of a model 
+		or philosophy than a prescribed framework.
+
+		Key Components:
+			Squads: Autonomous, cross-functional teams that work on a specific feature or product area. 
+					Squads use Scrum, Kanban, or other Agile methodologies.
+			Chapters: Specialists within the company who share skills and practices 
+						across squads (e.g., testers, developers).
+			Tribes: Groups of squads that work on related features or products. 
+					Tribes have a Tribe Lead who ensures alignment and collaboration.
+			Guilds: Communities of practice that are cross-functional and 
+					voluntary (e.g., all developers, designers, or testers across the organization).
+			Alloy: The technical architecture or "platform" teams that help support all the squads.
+		Core Concepts:
+			Autonomy & Alignment: Each squad has a high level of autonomy but aligns 
+							with the company’s overall mission and strategy.
+			Servant Leadership: Leaders (Tribe Leads, Chapter Leads) focus on supporting 
+								teams rather than directing them.
+		When to Use the Spotify Model:
+			If you need a flexible, culturally aligned scaling solution with a focus on team autonomy.
+			Best suited for organizations that prioritize culture, innovation, and collaboration.
+
+4. Nexus
+	Nexus is a lightweight framework for scaling Scrum, developed by Scrum.org, that focuses
+	on integrating multiple Scrum teams working together on a single product.
+
+	Key Components:
+	Nexus Integration Team: A team that ensures coordination and integration of work from
+							all Scrum teams.
+	Nexus Sprint: A synchronized sprint where multiple Scrum teams work together towards a common goal.
+	Nexus Sprint Review: A review event where all teams present their work and integrate
+						it for the product increment.
+
+		Core Concepts:
+			Nexus Events: Similar to Scrum events (e.g., Sprint Planning, Sprint Review), but with 
+						additional roles and coordination mechanisms for the multiple teams involved.
+			Nexus Backlog: A single backlog used by all teams to ensure alignment and integrated delivery.
+
+		Roles:
+			Nexus Integration Team: A cross-functional team responsible for ensuring proper coordination
+									and integration across teams.
+			Scrum Masters and Product Owners: Continue their usual roles in individual teams, 
+								with the Nexus Integration Team helping ensure alignment.
+
+				When to Use Nexus:
+				If you are already using Scrum at the team level and want to scale it to include 
+				multiple teams working together.
+				Best for organizations looking for a lightweight and less prescriptive solution for 
+				scaling Scrum.
+
+5. Scrum@Scale
+			Scrum@Scale is an Agile framework developed by Jeff Sutherland, the co-creator of Scrum,
+			for scaling Scrum beyond individual teams. It uses Scrum principles but adapts them 
+			for larger organizational contexts.
+
+		Key Components:
+				Scrum of Scrums: Multiple Scrum teams meet regularly to coordinate work and 
+								address cross-team dependencies.
+				Scaled Daily Scrum: Teams synchronize daily to share progress, dependencies, 
+							and blockages.
+				Executive Action Team (EAT): A leadership group that helps eliminate organizational
+							impediments and fosters the growth of Scrum in the organization.
+		Core Concepts:
+				Scaled Scrum: The framework takes Scrum’s core principles and applies them to 
+							larger organizational structures.
+				Minimalist Approach: Scrum@Scale focuses on scaling Scrum with as little overhead as 
+							possible, encouraging simplicity and transparency.
+		When to Use Scrum@Scale:
+				Organizations that are already comfortable with Scrum and want a scalable framework 
+				without adding too much structure.Suitable for organizations that need flexibility in 
+				adapting Scrum to their specific needs.
+
+6. Disciplined Agile Delivery (DAD)
+		Disciplined Agile Delivery (DAD) is a process decision framework that provides a flexible, 
+		context-sensitive approach to scaling Agile.
+
+		Key Components:
+			Agile Governance: Focuses on delivering value while managing risk, compliance, and 
+				governance.
+			Lifecycle Choices: Supports multiple lifecycles, such as Agile, Lean, and 
+				continuous delivery.
+			Architecture and Design: Includes practices for defining and evolving system 
+				architecture at scale.
+		Core Concepts:
+			Process Decision Framework: Helps teams decide which practices to adopt depending on 
+					their context (e.g., Agile, Lean, or traditional methods).
+			Enterprise Scale: DAD is designed for scaling across large, complex organizations 
+					and projects.
+		When to Use DAD:
+			Organizations with complex governance, regulatory requirements, or need for 
+			hybrid approaches to Agile.When you need flexibility in choosing practices based on 
+			context, team maturity, and organizational needs.
+			
+			
+---------
+burn down -work left vs time(show completed work of epic and story and remain total  work of sprint)
+burn up-completed work over time
+Gantt charts:A **Gantt chart** is a type of bar chart used to visually represent a project schedule, showing tasks or events along a timeline with their start and end dates.
+velocity-how much work complete in given time
+measure of the amount of work a team completes in a sprint, typically expressed in story points or hours.
+
+
+- **Burndown Chart**: 
+			Shows the remaining work (tasks, effort, etc.) over time, typically used in agile 
+			to track progress towards completing a project or sprint. It decreases as tasks 
+			are completed.
+
+- **Burnup Chart**: 
+			Shows the completed work over time and the total scope of the project, 
+			allowing teams to track both progress and changes in project scope. It 
+			increases as work is finished.
+			
+What is Lean Portfolio Management?
+
+Lean Portfolio Management (LPM) describes how senior leadership applies lean principles 
+to connect strategy to execution. Portfolio management teams learn about an enterprise’s 
+strategy and allocate a budget towards the execution of that strategy.
+
+What is an OKR?
+An OKR is a popular management strategy that defines objectives and tracks results. 
+It helps create alignment and engagement around measurable goals

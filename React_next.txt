@@ -24,11 +24,9 @@ React:
 
 16React 18 Feture :https://www.acil.in/what-new-in-react-18/
 
+https://www.npmjs.com/package/react-grid-layout
 
-----------------------------------------------------------------------------------------------------------
-
-
-
+=================================================================
 NextJs
 -------------------------------------------------------------------------------------------------------
 Notes: Run dev server ->npm run dev /Run production:npm start
@@ -43,790 +41,28 @@ Notes: Run dev server ->npm run dev /Run production:npm start
 9: optimize 3rdf party script:https://nextjs.org/docs/pages/building-your-application/optimizing/scripts
 Cache issue
 https://www.youtube.com/watch?v=3RyguimNe8s&t=697s
-export const dynamic = "force-dynamic"
--Next.js is a flexible React framework that gives you building blocks to create fast web applications.
--CSR,SSR,SSG
--Imperative & Declarative Programming:
-									The code above is a good example of imperative programming. You’re writing the steps for how the user interface should be updated. 
-									But when it comes to building user interfaces, a declarative approach is often preferred because it can speed up the development process. 
-									Instead of having to write DOM methods, it would be helpful if developers were able to declare what they want to 
-									show (in this case, an h1 tag with some text).In other words,  programming is like giving a chef step-by-step instructions on 
-									how to make a pizza. Declarative programming is like ordering a pizza without being concerned about the steps it takes to make the pizza. 🍕
-The environment where your code runs: Development vs. Production
-When your code runs: Build Time vs. Runtime
-Where rendering happens: Client vs. Server
--Minification:
-				Minification is the process of removing unnecessary code formatting and comments without changing the code’s functionality. 
-				The goal is to improve the application’s performance by decreasing file sizes.
--What is Compiling?
-					Developers write code in languages that are more developer-friendly such as JSX, TypeScript, and modern versions of JavaScript. 
-					While these languages improve the efficiency and confidence of developers, they need to be compiled into JavaScript before browsers can understand them.
--client-side rendering:
-					React application, the browser receives an empty HTML shell from the server along with the JavaScript instructions to construct the UI. 
-					This is called client-side rendering because the initial rendering work happens on the user's device.
--Bundling:
-		Bundling is the process of resolving the web of dependencies and merging (or ‘packaging’) the files (or modules) into optimized bundles for the browser, 
-		with the goal of reducing the number of requests for files when a user visits a web page.
--What is the difference between compiling and bundling in web development?
-																		Compiling is transforming code into something parsable by browsers. 
-																		Bundling is resolving your applications dependency graph and reducing the number of files
-Some Concepts:
--Routing as folder
--each folder has page.js file.
--The useRouter hook allows you to programmatically change routes.
--This hook can only be used inside Client Components and is imported from next/navigation.
--The useRouter hook allows you to programmatically change routes.
--This hook can only be used inside Client Components and is imported from next/navigation.
--NextResponse:The NextResponse API allows you to:Redirect the incoming request to a different URL
-												 Rewrite the response by displaying a given URL
-												 Set request headers for API Routes, getServerSideProps, and rewrite destinations
-												 Set response cookies
-												 Set response headers
-												 Fetching data after some time  time based/ondemand  Revalidation
-												 React renders Server Components into a special data format called the React Server Component Payload (RSC Payload).
-
-Static Site Generation (SSG): 
-							Static Generation is a server-side rendering method where Next.js generates HTML at build time. 
-							During the build process, Next.js fetches data from APIs or other data sources and pre-renders the HTML pages. 
-							These pre-rendered pages can then be served to the client upon request. SSG is suitable for websites with content that doesn't frequently change.
-Server-Side Rendering (SSR): 
-							Server-Side Rendering is another method where Next.js generates HTML on each request.
-							When a user visits a page, Next.js fetches the data and renders the HTML on the server before sending it to the client. 
-							SSR is useful for websites with frequently updated content or personalized user experiences.
-Incremental Static Regeneration (ISR): 
-										ISR is a feature in Next.js that allows you to statically generate pages on-demand, rather than at build time. 
-										This means that your site can be both statically generated and dynamic at the same time.
-SWR:The team behind Next.js has created a React hook for data fetching called SWR. 
-	We highly recommend it if you’re fetching data on the client side. It handles caching, revalidation, focus tracking, refetching on interval, and more. 
-	We won’t cover the details here, but here’s an example usage:
-
-
-												 
--folder->page.tsx is used for routing
--component like is not use for routing like add to cart button
 
 Nextjs:https://www.youtube.com/watch?v=OgS1ZWZItno&list=PLu71SKxNbfoBAaWGtn9GA2PTw0HO0tXzq
 Next auth :https://www.youtube.com/watch?v=3BEn2E9PvBM&list=PLu71SKxNbfoCXO80Z4miZHTL5GxfFbz7A
 Backend series:https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW&pp=iAQB
 Shared folder:https://medium.com/capriza-engineering/sharing-source-code-and-libraries-in-react-bd30926df312
----------------------------------------------------------------------------------------------------------
-with return keyword in map
-const names = characters.map((character) ⇒ { return character.name;});
+Rest api
+https://www.youtube.com/watch?v=-MFiza7ZRzs
+https://www.freecodecamp.org/news/build-a-full-stack-application-with-nextjs/
+
+Intercepting Routes 
+https://www.youtube.com/watch?v=zDZBKEvU8b0
+Parallel Routes I
+https://www.youtube.com/watch?v=wi8kF8UniUI
 
-without return 
-const minified Records = characters.map((character) ⇒ (//thisbracket show as return object 
-{
-name: character.name,
-height: character.height,
-}));
-
-
----------------------------
-
-          setUnreadMessages((prevUnreadMessages) => {       
-            const receiverMessages = prevUnreadMessages[id] || {};
-            const currentCount = senderId ? receiverMessages[senderId] || 0 : 0; 
-   
-            return {
-              ...prevUnreadMessages,
-              [id]: {
-                ...receiverMessages,
-                [senderId as string]: currentCount + 1,
-              },
-            };
-          });
-        });
-	
-	  setUnreadMessages((prevUnreadMessages) THIS LINE GIVES MOST RECENT UPDATE STATE
-	  return {
-              ...prevUnreadMessages,
-              [id]:  this remain previous state as it is only update or create filed which is id
-----------------------------------------------------------
-
-
-
-React with TypeScript
-
-
-1. Ensure Proper Typing for State and Props
-	State and Props: Every component’s state and props need to be typed. 
-	This is one of the most crucial parts of a TypeScript React project.
-
-	// Example: Typing the props and state for a functional component
-	interface MyComponentProps {
-	  title: string;
-	}
-
-	interface MyComponentState {
-	  count: number;
-	}
-
-	const MyComponent: React.FC<MyComponentProps> = ({ title }) => {
-	  const [count, setCount] = useState<MyComponentState['count']>(0);
-
-	  return (
-		<div>
-		  <h1>{title}</h1>
-		  <button onClick={() => setCount(count + 1)}>{count}</button>
-		</div>
-	  );
-	};
-useState with TypeScript: Ensure that hooks like useState are typed correctly, 
-particularly when dealing with objects or complex structures.
-
-2. Handling Event Types
-
-When using event handlers like onClick, onChange, or other DOM events, 
-TypeScript requires you to specify the event type. For example:
-
-	const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-	  console.log("Button clicked");
-	};
-	This ensures you're working with the correct types and prevents runtime errors.
-
-3. Use React.FC (Functional Components) for Typing Components
-	You can use the React.FC (Function Component) type for your components to 
-	automatically infer the return type and children types. However, keep in mind that React.FC can
-	 sometimes be overly restrictive, especially when you don’t want to use the children prop, 
-	 so be selective in its usage.
-
-
-		const MyComponent: React.FC = () => {
-		  return <div>Hello, TypeScript!</div>;
-		};
-		
-		If you don’t want to include children, you might need to use a more explicit typing approach:
-		
-		const MyComponent = (props: MyComponentProps) => {
-		  return <div>{props.title}</div>;
-		};
-		
-4. Component Defaults
-
-	TypeScript also ensures that you have correctly defined defaults for props.
-
-	const MyComponent = ({ title }: { title?: string }) => {
-	  const defaultTitle = title || "Default Title"; // You can have defaults
-	  return <h1>{defaultTitle}</h1>;
-	};
-	
-5. Optional Chaining and Nullish Coalescing
-	TypeScript 3.7+ supports optional chaining and nullish coalescing, 
-	which you can use to safely access nested properties:
-
-	const name = user?.profile?.name ?? "Guest";
-	
-	This helps in cases where a property might be null or undefined, 
-	ensuring safe navigation through deeply nested objects.
-
-6. Using any and Avoiding it
-	While any can be used as a last resort, TypeScript’s strength lies in strong typing, 
-	and any defeats this purpose. Avoid using any unless absolutely necessary. Instead, 
-	use more specific types (e.g., unknown, Record<string, any>, etc.).
-
-	// Avoid this:
-	const data: any = fetchData();
-
-	// Use more specific types:
-	const data: MyDataType = fetchData();
-	
-7. TypeScript with Context API
-	When using the Context API, you need to type both the context provider and the consumer properly:
-
-	interface AppContextType {
-	  user: string;
-	  isLoggedIn: boolean;
-	}
-
-	const AppContext = React.createContext<AppContextType | undefined>(undefined);
-
-	const AppProvider: React.FC = ({ children }) => {
-	  const [user, setUser] = useState<string>('John Doe');
-	  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-
-	  return (
-		<AppContext.Provider value={{ user, isLoggedIn }}>
-		  {children}
-		</AppContext.Provider>
-	  );
-	};
-
-	const useAppContext = () => {
-	  const context = useContext(AppContext);
-	  if (!context) throw new Error('useAppContext must be used within AppProvider');
-	  return context;
-	};
-	
-8. TypeScript with Redux
-	When using Redux, you'll need to type actions, reducers, and state:
-
-Actions:
-	interface AddUserAction {
-	  type: "ADD_USER";
-	  payload: { name: string; age: number };
-	}
-
-	type UserActions = AddUserAction;
-
-	const addUser = (user: { name: string; age: number }): AddUserAction => ({
-	  type: "ADD_USER",
-	  payload: user,
-	});
-	
-Reducers:
-	interface UserState {
-	  name: string;
-	  age: number;
-	}
-
-	const initialState: UserState = {
-	  name: '',
-	  age: 0,
-	};
-
-	const userReducer = (state = initialState, action: UserActions): UserState => {
-	  switch (action.type) {
-		case "ADD_USER":
-		  return { ...state, ...action.payload };
-		default:
-		  return state;
-	  }
-	};
-	
-Dispatch:
-	const dispatch = useDispatch();
-	dispatch(addUser({ name: 'John Doe', age: 30 }));
-	
-9. Using enum for Stronger Type Control
-	Enums are a great way to represent a set of constants, such as status codes, action types, etc. 
-	TypeScript will enforce the types of these constants.
-
-	enum Status {
-	  Success = 'success',
-	  Error = 'error',
-	}
-
-	const handleStatus = (status: Status) => {
-	  if (status === Status.Success) {
-		console.log('Operation was successful');
-	  }
-	};
-	
-10. Asynchronous Code with TypeScript
-	When working with asynchronous code (e.g., using async/await), you
-	 should type the return values of the promises and any associated variables.
-
-	const fetchData = async (): Promise<MyDataType> => {
-	  const response = await fetch('api/data');
-	  const data = await response.json();
-	  return data;
-	};
-	
-	This ensures that TypeScript knows exactly what type fetchData will return, helping to avoid runtime errors.
-
-11. Type Assertion
-
-	Sometimes, TypeScript can't infer the type of a variable, especially when working with 
-	dynamic data (e.g., data from an API). In such cases, you can use type assertion to tell 
-	TypeScript what the type should be:
-
-
-	const value = someValue as string;
-	
-	While this can be useful in some situations, it should be used sparingly as it bypasses type safety.
-
-12. Types for External Libraries
-	If you're using external libraries that don’t provide TypeScript definitions, 
-	consider installing type definitions from DefinitelyTyped.
-
-
-	npm install --save-dev @types/library-name
-If no types are available, you can define the types yourself.
-
-
-1. Union Types in React
-	Union types allow a prop to accept multiple types. For example, a Button component 
-	that can accept both string and JSX as children:
-
-	import React from 'react';
-
-	type ButtonProps = {
-	  children: string | JSX.Element;
-	  onClick: () => void;
-	};
-
-	const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
-	  return <button onClick={onClick}>{children}</button>;
-	};
-
-	export const App = () => {
-	  return (
-		<div>
-		  <Button onClick={() => alert('Clicked!')}>Click Me</Button>
-		  <Button onClick={() => alert('Clicked!')}>
-			<strong>Click Me Strong</strong>
-		  </Button>
-		</div>
-	  );
-	};
-In this example, the children prop can either be a string or a JSX.Element. 
-This demonstrates how Union Types can be used to allow multiple possible types.
-
-2. Intersection Types in React
-
-Intersection types allow combining multiple props from different interfaces. 
-For example, a UserProfile component that needs both User and Address details:
-
-tsx
-Copy code
-import React from 'react';
-
-interface User {
-  name: string;
-  age: number;
-}
-
-interface Address {
-  city: string;
-  country: string;
-}
-
-type UserProfileProps = User & Address;
-
-const UserProfile: React.FC<UserProfileProps> = ({ name, age, city, country }) => {
-  return (
-    <div>
-      <h1>{name}</h1>
-      <p>Age: {age}</p>
-      <p>City: {city}</p>
-      <p>Country: {country}</p>
-    </div>
-  );
-};
-
-export const App = () => {
-  return (
-    <UserProfile
-      name="Alice"
-      age={30}
-      city="New York"
-      country="USA"
-    />
-  );
-};
-In this example, the UserProfileProps type is an intersection of the User and Address interfaces. 
-The UserProfile component needs to have both user information and address information.
-
-3. Mapped Types in React
-Mapped types allow transforming existing types. 
-For instance, if you want to make all props of a component optional:
-
-	import React from 'react';
-
-	type ComponentProps = {
-	  title: string;
-	  description: string;
-	  isActive: boolean;
-	};
-
-	type OptionalProps<T> = {
-	  [K in keyof T]?: T[K];
-	};
-
-	type OptionalComponentProps = OptionalProps<ComponentProps>;
-
-	const Component: React.FC<OptionalComponentProps> = ({ title, description, isActive }) => {
-	  return (
-		<div>
-		  <h1>{title}</h1>
-		  <p>{description}</p>
-		  <p>{isActive ? 'Active' : 'Inactive'}</p>
-		</div>
-	  );
-	};
-
-	export const App = () => {
-	  return (
-		<div>
-		  <Component title="Hello" description="This is a component" isActive={true} />
-		  <Component title="Only Title" />
-		</div>
-	  );
-	};
-Here, OptionalProps is a mapped type that makes all properties of ComponentProps optional.
- The Component can now accept partial props, making it more flexible.
- 
-
-Here's how you can use Union Types, Intersection Types, Mapped Types, Conditional Types, and Generics in real-time React projects:
-
-1. Union Types in React
-Union types allow a prop to accept multiple types. For example, a Button component that can accept both string and JSX as children:
-
-tsx
-Copy code
-import React from 'react';
-
-type ButtonProps = {
-  children: string | JSX.Element;
-  onClick: () => void;
-};
-
-const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
-  return <button onClick={onClick}>{children}</button>;
-};
-
-export const App = () => {
-  return (
-    <div>
-      <Button onClick={() => alert('Clicked!')}>Click Me</Button>
-      <Button onClick={() => alert('Clicked!')}>
-        <strong>Click Me Strong</strong>
-      </Button>
-    </div>
-  );
-};
-In this example, the children prop can either be a string or a JSX.Element. This demonstrates how Union Types can be used to allow multiple possible types.
-
-2. Intersection Types in React
-Intersection types allow combining multiple props from different interfaces. For example, a UserProfile component that needs both User and Address details:
-
-tsx
-Copy code
-import React from 'react';
-
-interface User {
-  name: string;
-  age: number;
-}
-
-interface Address {
-  city: string;
-  country: string;
-}
-
-type UserProfileProps = User & Address;
-
-const UserProfile: React.FC<UserProfileProps> = ({ name, age, city, country }) => {
-  return (
-    <div>
-      <h1>{name}</h1>
-      <p>Age: {age}</p>
-      <p>City: {city}</p>
-      <p>Country: {country}</p>
-    </div>
-  );
-};
-
-export const App = () => {
-  return (
-    <UserProfile
-      name="Alice"
-      age={30}
-      city="New York"
-      country="USA"
-    />
-  );
-};
-In this example, the UserProfileProps type is an intersection of the User and Address interfaces. The UserProfile component needs to have both user information and address information.
-
-3. Mapped Types in React
-Mapped types allow transforming existing types. For instance, if you want to make all props of a component optional:
-
-tsx
-Copy code
-import React from 'react';
-
-type ComponentProps = {
-  title: string;
-  description: string;
-  isActive: boolean;
-};
-
-type OptionalProps<T> = {
-  [K in keyof T]?: T[K];
-};
-
-type OptionalComponentProps = OptionalProps<ComponentProps>;
-
-const Component: React.FC<OptionalComponentProps> = ({ title, description, isActive }) => {
-  return (
-    <div>
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <p>{isActive ? 'Active' : 'Inactive'}</p>
-    </div>
-  );
-};
-
-export const App = () => {
-  return (
-    <div>
-      <Component title="Hello" description="This is a component" isActive={true} />
-      <Component title="Only Title" />
-    </div>
-  );
-};
-Here, OptionalProps is a mapped type that makes all properties of ComponentProps optional. The Component can now accept partial props, making it more flexible.
-
-4. Conditional Types in React
-Conditional types can be used for prop validation based on conditions.
- For example, you can create a Status component that behaves differently depending on whether the status is a string or a boolean:
-
-import React from 'react';
-
-type StatusProps<T> = T extends boolean ? { active: T } : { message: T };
-
-const Status: React.FC<StatusProps<string | boolean>> = (props) => {
-  if (typeof props.active === 'boolean') {
-    return <div>{props.active ? 'Active' : 'Inactive'}</div>;
-  }
-  return <div>{props.message}</div>;
-};
-
-export const App = () => {
-  return (
-    <div>
-      <Status active={true} />
-      <Status message="Service is down" />
-    </div>
-  );
-};
-In this example, StatusProps is a conditional type that checks whether T is a boolean or a string. 
-If T is a boolean, it expects an active prop; if it's a string, it expects a message prop.
- This demonstrates Conditional Types for prop validation.
-
-5. Generics in React
-Generics are useful when you want to make components reusable with different types. 
-For instance, a List component that can display different types of data:
-
-
-import React from 'react';
-
-type ListProps<T> = {
-  items: T[];
-  renderItem: (item: T) => React.ReactNode;
-};
-
-function List<T>({ items, renderItem }: ListProps<T>): JSX.Element {
-  return (
-    <div>
-      {items.map((item, index) => (
-        <div key={index}>{renderItem(item)}</div>
-      ))}
-    </div>
-  );
-}
-
-export const App = () => {
-  return (
-    <div>
-      <List
-        items={[1, 2, 3, 4]}
-        renderItem={(item) => <p>{item}</p>}
-      />
-      <List
-        items={['Apple', 'Banana', 'Cherry']}
-        renderItem={(item) => <strong>{item}</strong>}
-      />
-    </div>
-  );
-};
-Here, List is a generic component that can accept an array of any type (T). T
-he renderItem function defines how each item is rendered, and TypeScript ensures
- type safety based on the array passed in items.
-
-
-
------------------------------------------------------------
-
-Redux
-
-Redux is really:
-
-A single store containing "global" state
-Dispatching plain object actions to the store when something happens in the app
-Pure reducer functions looking at those actions and returning immutably updated state
-
-createStore to actually create a Redux store
-combineReducers to combine multiple slice reducers into a single larger reducer
-applyMiddleware to combine multiple middleware into a store enhancer
-compose to combine multiple store enhancers into a single store enhancer
-
-
-Demo
-store=>Reducer=>state=>ui=>dispatch=>store
-						Store:
-
-							export const configureStore = (services) => createStore(
-								reducers, 
-								
-							);
-
-
-							index.js
-							ReactDOM.render(
-								<Provider store={configureStore(services)} context={ReactReduxContext} >
-									<AuthComp />
-									{/* <App /> */}
-								</Provider>,
-								document.getElementById('root')
-							);
-
-
-							Action
-
-							export const getDataSuccess = result => ({
-								type: GET_DATA_SUCCESS,
-								payload: result,
-							});
-
-
-							Reducer
-							const initialState = {
-							  
-								allData: [],
-							   
-							};
-
-							const reducer = (state = initialState, action) => {
-								switch (action.type) {
-									case GET_DATA_SUCCESS:
-										return { ...state, allData: action.payload, error: null };        
-									default:
-										return state;
-								}
-							}
-
-							export default reducer;
-
-
-							Selector
-
-							export const getisEnable = state => state.home.isEnable;GET_DATA_SUCCESS
-
-							Reducer index file
-
-							const createRootReducer = (history) => combineReducers({
-								router: connectRouter(history),
-								ui,
-								home,
-								addNew,
-								historyReducer,
-								requestSearchSEReducer,
-								multiSearchReducer
-							})
-
-							export default createRootReducer
-
-
-
-							Dispatch
-							  dispatch(getDataSuccess(result));
-
-							Selector
-							  const isEnable = useSelector(getisEnable);
-  
-  
-  
- ---------------------------------------------------
-  
-  
- Redux toolkit
-  
-  Important Points:
--No need to action
--Vite is a build tool and development server designed to improve the development process of modern web applications. It does this by dividing your application modules into dependencies and source code. Dependencies are modules that do not change often, while source code is typically edited frequently during developmen
--configureStore(): wraps createStore to provide simplified configuration options and good defaults. It can automatically combine your slice reducers, adds whatever Redux middleware you supply, includes redux-thunk by default, and enables use of the Redux DevTools Extension.
--createReducer(): that lets you supply a lookup table of action types to case reducer functions, rather than writing switch statements. In addition, it automatically uses the immer library to let you write simpler immutable updates with normal mutative code, like state.todos[3].completed = true.
--createAction(): generates an action creator function for the given action type string. The function itself has toString() defined, so that it can be used in place of the type constant.
--createSlice(): accepts an object of reducer functions, a slice name, and an initial state value, and automatically generates a slice reducer with corresponding action creators and action types.
--createAsyncThunk: accepts an action type string and a function that returns a promise, and generates a thunk that dispatches pending/fulfilled/rejected action types based on that promise
--createEntityAdapter: generates a set of reusable reducers and selectors to manage normalized data in the store
--The createSelector utility from the Reselect library, re-exported for ease of use.
-https://www.youtube.com/watch?v=2OaAbSgmIWo
-
-
--What do you understand about Redux Thunk?
--Using Redux Thunk middleware, we can write action creators returning a function instead of an action. This thunk can postpone the dispatch of an action, or do conditional dispatchment. The arguments passed to the inner function are the store methods dispatch and getState(). In the event of an action creator returning a function, the function gets executed by the Redux Thunk middleware and it does not have to be pure. In other words, the function is allowed to have side effects, including executing asynchronous API calls. It can even dispatch actions. Redux thunk is used to delay the dispatch of an action, or to dispatch in the event of a certain condition being met. At the time of dispatch of a function instead of an action object, if Redux Thunk middleware is enabled, the middleware will call that function with the dispatch method itself as the first argument.
--What are the workflow features in Redux?
-
-Store
-reducer -> need to change value
-useselector
-usedispatch
-
-
-  
-  Slice/Reducer
-  
-			  import { createSlice } from '@reduxjs/toolkit';
-
-			export const counterSlice = createSlice({
-			  name: 'counter',
-			  initialState: {
-				count: 0,
-			  },
-			  reducers: {
-				increment: (state) => {
-				  state.count += 1;
-				},
-				decrement: (state) => {
-				  state.count -= 1;
-				},
-			  },
-			});
-
-			// Action creators are generated for each case reducer function
-			export const { increment, decrement } = counterSlice.actions;
-
-			export default counterSlice.reducer;
-			
-	Store
-	
-				import { configureStore } from '@reduxjs/toolkit';
-			import counterReducer from '../features/counter/counterSlice';
-
-			export const store = configureStore({
-			  reducer: {
-				counter: counterReducer,
-			  },
-});
-
-	index,js
-	ReactDOM.render(
-	  <Provider store={store}>
-		<App />
-	  </Provider>,
-	  document.getElementById('root')
-	);
-				 
-	app.js
-								import React from 'react';
-			import { useSelector, useDispatch } from 'react-redux';
-			import { increment, decrement } from './features/counter/counterSlice';
-
-			function App() {
-			  const count = useSelector((state) => state.counter.count);
-			  const dispatch = useDispatch();
-
-			  return (
-				<div>
-				  <h1>Counter: {count}</h1>
-				  <button onClick={() => dispatch(increment())}>Increment</button>
-				  <button onClick={() => dispatch(decrement())}>Decrement</button>
-				</div>
-			  );
-			}
-
-			export default App;
-  
-  
---------------------------------------------------------------------------------------------------------------
-
-session vs jwt
-session data store in server and jwt data store in client side
-React
 -------------------------------
+Q=>session vs jwt
+	session data store in server and jwt data store in client side	React
+Q=>	**Vite** is faster than **Create React App** because it uses native ES modules for development, 
+	enabling on-demand compilation and faster Hot Module Replacement (HMR). In contrast,
+	 **Create React App** relies on Webpack, which performs slower builds by bundling the
+	 entire project upfront, making it less efficient during development and builds.
+
 Q=>difference between useCallback and useMemo 
 		To summarize, the main difference between useCallback and useMemo is the type of value they return. useCallback returns 
 		a memoized callback function, while useMemo returns a
@@ -847,223 +83,727 @@ spread and rest operators in JavaScript use the same syntax (...) but serve diff
 on the context. Here's a detailed explanation of each:
 
 
-1. Spread Operator (...)
-The spread operator expands elements of an array or object into individual elements or properties. It's commonly used for copying, merging, or passing elements of arrays and objects.
+		1. Spread Operator (...)
+		The spread operator expands elements of an array or object into individual elements or properties. It's commonly used for copying, merging, or passing elements of arrays and objects.
 
-Key Uses of Spread Operator
-Copying Arrays:
-
-
-const arr1 = [1, 2, 3];
-const arr2 = [...arr1]; // Copy arr1 into arr2
-console.log(arr2); // Output: [1, 2, 3]
-Merging Arrays:
+		Key Uses of Spread Operator
+		Copying Arrays:
 
 
-const arr1 = [1, 2];
-const arr2 = [3, 4];
-const merged = [...arr1, ...arr2];
-console.log(merged); // Output: [1, 2, 3, 4]
-Copying Objects:
+		const arr1 = [1, 2, 3];
+		const arr2 = [...arr1]; // Copy arr1 into arr2
+		console.log(arr2); // Output: [1, 2, 3]
+		Merging Arrays:
 
 
-const obj1 = { a: 1, b: 2 };
-const obj2 = { ...obj1 }; // Shallow copy of obj1
-console.log(obj2); // Output: { a: 1, b: 2 }
-
-Merging Objects:
-const obj1 = { a: 1, b: 2 };
-const obj2 = { b: 3, c: 4 };
-const merged = { ...obj1, ...obj2 }; // `b` from obj2 overrides `b` from obj1
-console.log(merged); // Output: { a: 1, b: 3, c: 4 }
-
-Passing Array Elements as Arguments:
-const numbers = [1, 2, 3];
-console.log(Math.max(...numbers)); // Output: 3
-
-2. Rest Operator (...)
-The rest operator collects multiple elements or properties and condenses them into a single 
-array or object. It's often used in function arguments and destructuring.
-
-Key Uses of Rest Operator
-
-Function Parameters: Collects all remaining arguments into a single array.
-
-function sum(...numbers) {
-    return numbers.reduce((acc, num) => acc + num, 0);
-}
-console.log(sum(1, 2, 3, 4)); // Output: 10
-
-Destructuring Arrays: Collects remaining elements into an array.
-const [first, ...rest] = [1, 2, 3, 4];
-console.log(first); // Output: 1
-console.log(rest);  // Output: [2, 3, 4]
-
-Destructuring Objects: Collects remaining properties into a new object.
-const { a, ...rest } = { a: 1, b: 2, c: 3 };
-console.log(a);    // Output: 1
-console.log(rest); // Output: { b: 2, c: 3 }
-
-Comparison Table
-
-Feature	     Spread Operator	                            Rest Operator
-Purpose	 Expands arrays or objects into individual elements	--Collects multiple elements into an array/object
-Context	Used in array and object manipulation	            --Used in function parameters or destructuring
-Example Usage	...array → Expands array elements	        ...args → Collects arguments into an array
-Input/Output	Spreads out elements	                   Collects elements into one
-Examples of Both in Action
+		const arr1 = [1, 2];
+		const arr2 = [3, 4];
+		const merged = [...arr1, ...arr2];
+		console.log(merged); // Output: [1, 2, 3, 4]
+		Copying Objects:
 
 
-Using Spread in Arrays:
-const numbers = [1, 2, 3];
-const newNumbers = [...numbers, 4, 5];
-console.log(newNumbers); // Output: [1, 2, 3, 4, 5]
+		const obj1 = { a: 1, b: 2 };
+		const obj2 = { ...obj1 }; // Shallow copy of obj1
+		console.log(obj2); // Output: { a: 1, b: 2 }
 
-Using Rest in Function:
-function printNumbers(first, ...rest) {
-    console.log(first); // First element
-    console.log(rest);  // Remaining elements
-}
-printNumbers(1, 2, 3, 4); // Output: 1, [2, 3, 4]
+		Merging Objects:
+		const obj1 = { a: 1, b: 2 };
+		const obj2 = { b: 3, c: 4 };
+		const merged = { ...obj1, ...obj2 }; // `b` from obj2 overrides `b` from obj1
+		console.log(merged); // Output: { a: 1, b: 3, c: 4 }
 
-Using Both Together:
-const [first, ...rest] = [1, 2, 3, 4, 5]; // Rest
-const all = [first, ...rest];             // Spread
-console.log(all); // Output: [1, 2, 3, 4, 5]
+		Passing Array Elements as Arguments:
+		const numbers = [1, 2, 3];
+		console.log(Math.max(...numbers)); // Output: 3
 
-Operator	React Use Case
-Spread->	Passing props, merging state, combining additional props
-Rest->	Extracting props, handling variable arguments, dynamically updating state fields
+		2. Rest Operator (...)
+		The rest operator collects multiple elements or properties and condenses them into a single 
+		array or object. It's often used in function arguments and destructuring.
 
-*Spread Operator in React
--Passing Props to Components
-	const Button = ({ label, onClick }) => (
-	  <button onClick={onClick}>{label}</button>
-	);
+		Key Uses of Rest Operator
 
-	const App = () => {
-	  const buttonProps = {
-		label: "Click Me",
-		onClick: () => alert("Button clicked!")
-	  };
+		Function Parameters: Collects all remaining arguments into a single array.
 
-	  return <Button {...buttonProps} />;
+		function sum(...numbers) {
+			return numbers.reduce((acc, num) => acc + num, 0);
+		}
+		console.log(sum(1, 2, 3, 4)); // Output: 10
+
+		Destructuring Arrays: Collects remaining elements into an array.
+		const [first, ...rest] = [1, 2, 3, 4];
+		console.log(first); // Output: 1
+		console.log(rest);  // Output: [2, 3, 4]
+
+		Destructuring Objects: Collects remaining properties into a new object.
+		const { a, ...rest } = { a: 1, b: 2, c: 3 };
+		console.log(a);    // Output: 1
+		console.log(rest); // Output: { b: 2, c: 3 }
+
+		Comparison Table
+
+		Feature	     Spread Operator	                            Rest Operator
+		Purpose	 Expands arrays or objects into individual elements	--Collects multiple elements into an array/object
+		Context	Used in array and object manipulation	            --Used in function parameters or destructuring
+		Example Usage	...array → Expands array elements	        ...args → Collects arguments into an array
+		Input/Output	Spreads out elements	                   Collects elements into one
+		Examples of Both in Action
+
+
+		Using Spread in Arrays:
+		const numbers = [1, 2, 3];
+		const newNumbers = [...numbers, 4, 5];
+		console.log(newNumbers); // Output: [1, 2, 3, 4, 5]
+
+		Using Rest in Function:
+		function printNumbers(first, ...rest) {
+			console.log(first); // First element
+			console.log(rest);  // Remaining elements
+		}
+		printNumbers(1, 2, 3, 4); // Output: 1, [2, 3, 4]
+
+		Using Both Together:
+		const [first, ...rest] = [1, 2, 3, 4, 5]; // Rest
+		const all = [first, ...rest];             // Spread
+		console.log(all); // Output: [1, 2, 3, 4, 5]
+
+		Operator	React Use Case
+		Spread->	Passing props, merging state, combining additional props
+		Rest->	Extracting props, handling variable arguments, dynamically updating state fields
+
+		*Spread Operator in React
+		-Passing Props to Components
+			const Button = ({ label, onClick }) => (
+			  <button onClick={onClick}>{label}</button>
+			);
+
+			const App = () => {
+			  const buttonProps = {
+				label: "Click Me",
+				onClick: () => alert("Button clicked!")
+			  };
+
+			  return <Button {...buttonProps} />;
+			};
+			
+		-Merging State Updates
+		When using useState, the spread operator helps preserve existing state while updating specific fields.
+		const App = () => {
+		  const [user, setUser] = React.useState({ name: "John", age: 30 });
+
+		  const updateName = () => {
+			setUser(prevState => ({ ...prevState, name: "Jane" }));
+		  };
+
+		  return (
+			<div>
+			  <p>{user.name}</p>
+			  <button onClick={updateName}>Change Name</button>
+			</div>
+		  );
+		};
+
+		-Combining Props
+		The spread operator can merge additional props into existing ones.
+
+
+		const App = () => {
+		  const baseProps = { className: "button", type: "submit" };
+		  const extraProps = { disabled: true };
+
+		  return <button {...baseProps} {...extraProps}>Submit</button>;
+		};
+
+		*Rest Operator in React
+
+		-Destructuring Props
+		The rest operator allows you to extract specific props and collect the rest into a single object.
+
+		const Button = ({ label, ...rest }) => (
+		  <button {...rest}>{label}</button>
+		);
+
+		const App = () => {
+		  return <Button label="Click Me" onClick={() => alert("Clicked!")} />;
+		};
+
+		-Handling Variable Arguments in Event Handlers
+		The rest operator is useful in functions that accept varying numbers of arguments.
+
+		const handleEvent = (type, ...args) => {
+		  console.log(`Event Type: ${type}`, args);
+		};
+
+		const App = () => {
+		  return <button onClick={() => handleEvent("click", 1, 2, 3)}>Click</button>;
+		};
+
+		-State Updates with Dynamic Keys
+		You can dynamically update multiple state fields by collecting them into an object.
+
+		const App = () => {
+		  const [formData, setFormData] = React.useState({ name: "", email: "" });
+
+		  const handleChange = (e) => {
+			const { name, value } = e.target;
+			setFormData(prevState => ({ ...prevState, [name]: value }));
+		  };
+
+		  return (
+			<form>
+			  <input name="name" value={formData.name} onChange={handleChange} />
+			  <input name="email" value={formData.email} onChange={handleChange} />
+			</form>
+		  );
+		};
+
+------------------------------------------
+By convention, functions that use async transitions are called “Actions”. 
+==========================================================================
+React 18 Feature
+=>suspense
+=>Automatic batching
+=>Userid ->The useId() hook is an easy way to generate a random and unique ID number in React 18
+=>concurrent rendering
+=>Server component
+=>Portals in React
+				Portals are a new concept in React 18 which allows you to render content in a different
+				part of the DOM. 
+				Portals are only supported on React 18.
+						 return ReactDOM.createPortal(
+			<h1>Portal demo</h1>,
+			document.getElementById('portal')
+		  )
+		  
+		  
+=>Forword ref:
+
+		when you use multiple input fileld with comman componenet so we need to pass refrence to 
+		component in that case forword ref use
+
+like common component name->inputfield
+main component name- login
+so we need to pass ref to inputfield to login component
+
+=======================================================
+React 19 Feture
+https://react.dev/blog/2024/12/05/react-19#whats-new-in-react-19
+=> include new compiler which compile react code
+=>Automatic memoization
+=>Document meta data
+=>Ref pass as regular prop(no need to pass as forwordref)
+
+
+	Before this:
+		const MyComponent = React.forwardRef((props, ref) => {
+		  return <input ref={ref} />;
+		});
+	Now:
+	const MyComponent = (props) => {
+	  return <input {...props} />;
 	};
+
+	const Parent = () => {
+	  const inputRef = React.createRef();
+	  return <MyComponent ref={inputRef} />;
+	};
+=> no more react.lazy [ it handle automatically]
+=><context.provider> replace with <context>
+->Reconsilation
+===============================================================================
+React 19 Hooks
+	use()  -> replace useContext()
+		a new API to read resources in render
+		The use function allows you to use promises directly within React componen
+		import {use} from 'react';
+
+		function Comments({commentsPromise}) {
+		  // `use` will suspend until the promise resolves.
+		  const comments = use(commentsPromise);
+		  return comments.map(comment => <p key={comment.id}>{comment}</p>);
+		}
+
+		function Page({commentsPromise}) {
+		  // When `use` suspends in Comments,
+		  // this Suspense boundary will be shown.
+		  return (
+			<Suspense fallback={<div>Loading...</div>}>
+			  <Comments commentsPromise={commentsPromise} />
+			</Suspense>
+		  )
+		}
+		
+		->   const theme = use(ThemeContext);
+		
+		->import React, { use } from "react";
+
+		async function fetchData() {
+		  const response = await fetch("https://api.example.com/data");
+		  return response.json();
+		}
+
+		export default function MyComponent() {
+		  const data = use(fetchData()); // `use` suspends until the promise resolves.
+
+		  return (
+			<div>
+			  <h1>Data:</h1>
+			  <pre>{JSON.stringify(data, null, 2)}</pre>
+			</div>
+		  );
+		}
+		
+useFormStatus():
+			The useFormStatus() hook is used to track the status of a form submission. 
+			It's commonly employed when working with Server Actions or handling asynchronous
+			form submissions.
+			
+			Key Features:
+			Tracks whether a form is currently being submitted (pending).
+			Provides an easier way to disable buttons or show loading indicators during form submission.
+			
+			'use client'; // Mark this component as a Client Component
+
+			import { experimental_useFormStatus as useFormStatus } from 'react-dom'; // Experimental API
+
+			function SubmitButton() {
+			  const { pending } = useFormStatus(); // Track form status
+
+			  return (
+				<button type="submit" disabled={pending}>
+				  {pending ? 'Submitting...' : 'Submit'}
+				</button>
+			  );
+			}
+
+			export default function Form() {
+			  async function handleSubmit(formData) {
+				// Server-side logic to handle the form submission
+				console.log(formData);
+			  }
+
+			  return (
+				<form action={handleSubmit}>
+				  <input name="username" placeholder="Username" required />
+				  <SubmitButton />
+				</form>
+			  );
+			}
+
+useOptimistic:
+		The useOptimistic() hook helps manage optimistic UI updates, where changes are reflected 
+		in the UI before the server confirms the update. It’s useful for providing instant feedback 
+		to users.
+		
+		Key Features:
+				Temporarily updates state based on a user action, assuming success.
+				Rolls back to the original state if the server response fails.
+		
+					'use client'; // Client Component
+
+					import { useState } from 'react';
+					import { useOptimistic } from 'react';
+
+					export default function OptimisticCounter() {
+					  const [count, setCount] = useState(0);
+
+					  // Optimistic update logic
+					  const [optimisticCount, updateOptimisticCount] = useOptimistic(
+						count,
+						(currentCount, increment) => currentCount + increment
+					  );
+
+					  const handleIncrement = async () => {
+						updateOptimisticCount(1); // Optimistically update the count
+						try {
+						  await fakeServerUpdate(); // Simulate server update
+						} catch (error) {
+						  updateOptimisticCount(-1); // Roll back on failure
+						}
+					  };
+
+					  return (
+						<div>
+						  <p>Count: {optimisticCount}</p>
+						  <button onClick={handleIncrement}>Increment</button>
+						</div>
+					  );
+					}
+
+					async function fakeServerUpdate() {
+					  return new Promise((resolve) => setTimeout(resolve, 1000));
+					}
+
+
+useActionState:
+					The useActionState() hook manages the state of an action—a function triggered 
+					in response to user interaction, often tied to Server Actions in frameworks like 
+					Next.js.
+				Key Features:
+					Tracks the current state of an action (e.g., idle, pending, success, error).
+					Useful for showing feedback, like success or error messages, during and after an 
+					action.
+					
+					
+					'use client'; // Client Component
+
+					import { useActionState } from 'react';
+
+					function ActionComponent() {
+					  const [actionState, setActionState] = useActionState();
+
+					  const handleAction = async () => {
+						setActionState('pending');
+						try {
+						  await fakeAction(); // Simulate action
+						  setActionState('success');
+						} catch {
+						  setActionState('error');
+						}
+					  };
+
+					  return (
+						<div>
+						  <button onClick={handleAction} disabled={actionState === 'pending'}>
+							{actionState === 'pending' ? 'Processing...' : 'Perform Action'}
+						  </button>
+						  {actionState === 'success' && <p>Action completed successfully!</p>}
+						  {actionState === 'error' && <p>Something went wrong.</p>}
+						</div>
+					  );
+					}
+
+					async function fakeAction() {
+					  return new Promise((resolve, reject) => setTimeout(resolve, 2000));
+					}
+				-----------------------------------Detailed Example----------------
+				'use client';
+
+				import { useActionState } from 'react';
+
+				function LoginForm() {
+				  const [state, loginAction, isPending] = useActionState(
+					async (credentials) => {
+					  const response = await fetch('/api/login', {
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify(credentials),
+					  });
+
+					  if (!response.ok) {
+						throw new Error('Login failed');
+					  }
+
+					  return await response.json(); // Return the user data if successful
+					},
+					{ status: 'idle', user: null, error: null } // Initial state
+				  );
+
+				  const handleSubmit = async (event) => {
+					event.preventDefault();
+					const formData = new FormData(event.target);
+					const credentials = {
+					  username: formData.get('username'),
+					  password: formData.get('password'),
+					};
+
+					try {
+					  const user = await loginAction(credentials); // Call the action
+					  console.log('Login successful:', user);
+					} catch (error) {
+					  console.error('Error:', error.message);
+					}
+				  };
+
+				  return (
+					<div>
+					  <h1>Login</h1>
+					  <form onSubmit={handleSubmit}>
+						<input type="text" name="username" placeholder="Username" required />
+						<input type="password" name="password" placeholder="Password" required />
+						<button type="submit" disabled={isPending}>
+						  {isPending ? 'Logging in...' : 'Login'}
+						</button>
+					  </form>
+					  {state.error && <p style={{ color: 'red' }}>Error: {state.error.message}</p>}
+					  {state.user && <p>Welcome, {state.user.name}!</p>}
+					</div>
+				  );
+				}
+
+
+Comparison: useFormStatus() vs. useActionState()
+useFormStatus:	
+		Tracks the status of form submissions, particularly in frameworks like Next.js with Server Actions.
+		Exposes properties like pending, which tracks whether the form is being submitted.
+useActionState():
+	Manages the state of custom asynchronous actions not necessarily tied to forms.
+	General-purpose hook for tracking custom actions, such as API calls, data fetching, 
+	or other async operations.
+	Allows tracking multiple states like idle, pending, success, and error.
+				
+		
+		
+		
+useCallback	:
+	useCallback is a React Hook used to memoize a callback function, ensuring that the 
+	function reference remains stable across renders. It is particularly useful when 
+	passing callback functions to child components or dependencies of other hooks like 
+	useEffect, preventing unnecessary re-renders or computations.
+		*When to Use useCallback
+			Prevent Unnecessary Re-Renders:
+			Optimize Performance:
+			Dependencies in Hooks:[useEffect, useMemo, or useReducer.]
+			
+			import React, { useState, useCallback } from 'react';
+
+			// List Item Component
+			function ListItem({ item, onClick }) {
+			  console.log('List Item Rendered');
+			  return <div onClick={() => onClick(item)}>{item}</div>;
+			}
+
+			// Parent Component with List
+			function Parent() {
+			  const [items] = useState(['Item 1', 'Item 2', 'Item 3']);
+			  const [selectedItem, setSelectedItem] = useState(null);
+
+			  // Memoizing the click handler function
+			  const handleClick = useCallback((item) => {
+				setSelectedItem(item);
+			  }, []); // The function won't change unless dependencies change
+
+			  return (
+				<div>
+				  <p>Selected Item: {selectedItem}</p>
+				  {items.map((item) => (
+					<ListItem key={item} item={item} onClick={handleClick} />
+				  ))}
+				</div>
+			  );
+			}
+
+			export default Parent;
+			Without useCallback: Every time the Parent component re-renders 
+								(e.g., when selectedItem is updated), a new handleClick function 
+								is passed to the ListItem component, causing each item to re-render.
+			With useCallback: The handleClick function is memoized, and the ListItem components 
+							 only re-render when necessary.
+							 
+		 // Memoizing the function to avoid re-fetching on every render
+		  const fetchUserData = useCallback(async () => {
+			const response = await fetch(`/api/users/${userId}`);
+			const data = await response.json();
+			setUserData(data);
+		  }, [userId]); // Re-run the effect only when userId changes
+
+		  useEffect(() => {
+			fetchUserData();
+		  }, [fetchUserData]); // Use memoized fetch function in effect
+
+			
+useContext->React Hook that allows you to access the value of a context directly within a functional component. 
+useDebugValue	: React Hook that helps to display custom labels or values in the React DevTools for custom hooks
+					useDebugValue(count > 10 ? 'High Count' : 'Low Count');
+
+
+
+useMemo:
+			useMemo is a React Hook that helps optimize performance by memoizing the result of a 
+			computation	it allows you to cache a value and avoid recalculating it on every render, 
+			unless the dependencies change
+			
+			import React, { useState, useMemo } from 'react';
+
+			function List({ items }) {
+			  // Memoize the list of items to avoid re-creating it on every render
+			  const memoizedItems = useMemo(() => items.map((item) => <li key={item}>{item}</li>), [items]);
+
+			  return <ul>{memoizedItems}</ul>;
+			}
+
+			function App() {
+			  const [count, setCount] = useState(0);
+			  const items = ['Item 1', 'Item 2', 'Item 3'];
+
+			  return (
+				<div>
+				  <button onClick={() => setCount(count + 1)}>Increment</button>
+				  <List items={items} />
+				</div>
+			  );
+			}
+
+			export default App;
+
 	
--Merging State Updates
-When using useState, the spread operator helps preserve existing state while updating specific fields.
-const App = () => {
-  const [user, setUser] = React.useState({ name: "John", age: 30 });
-
-  const updateName = () => {
-    setUser(prevState => ({ ...prevState, name: "Jane" }));
-  };
-
-  return (
-    <div>
-      <p>{user.name}</p>
-      <button onClick={updateName}>Change Name</button>
-    </div>
-  );
-};
-
--Combining Props
-The spread operator can merge additional props into existing ones.
-
-
-const App = () => {
-  const baseProps = { className: "button", type: "submit" };
-  const extraProps = { disabled: true };
-
-  return <button {...baseProps} {...extraProps}>Submit</button>;
-};
-
-*Rest Operator in React
-
--Destructuring Props
-The rest operator allows you to extract specific props and collect the rest into a single object.
-
-const Button = ({ label, ...rest }) => (
-  <button {...rest}>{label}</button>
-);
-
-const App = () => {
-  return <Button label="Click Me" onClick={() => alert("Clicked!")} />;
-};
-
--Handling Variable Arguments in Event Handlers
-The rest operator is useful in functions that accept varying numbers of arguments.
-
-const handleEvent = (type, ...args) => {
-  console.log(`Event Type: ${type}`, args);
-};
-
-const App = () => {
-  return <button onClick={() => handleEvent("click", 1, 2, 3)}>Click</button>;
-};
-
--State Updates with Dynamic Keys
-You can dynamically update multiple state fields by collecting them into an object.
-
-const App = () => {
-  const [formData, setFormData] = React.useState({ name: "", email: "" });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({ ...prevState, [name]: value }));
-  };
-
-  return (
-    <form>
-      <input name="name" value={formData.name} onChange={handleChange} />
-      <input name="email" value={formData.email} onChange={handleChange} />
-    </form>
-  );
-};
-
--------------------------------------------
 	
+	
+use blocker:
 
-Context api
-
-context.js
-=> var usecontext =   React.createContext( need to pass defult value)
-export default usecontext
-
-
-provider file
-
-
-const [user,setuser] =React.usestate()
-<usercontext.priovider value={{user,setuser}}>
-{children}
-</usercontext.priovider >
-
-
-Login file
-import UserContext  from 'context.js'
-
-const {setUser} = useContext(UserContext)]
-
+	The useBlocker hook is part of React Router and allows you to block navigation to a route
+	under certain conditions (similar to a prompt). It’s often used to confirm user actions 
+	(e.g., warn the user about unsaved changes) before they navigate away.
+	
+	
+	  useBlocker(() => {
+		if (hasUnsavedChanges) {
+		  const confirmLeave = window.confirm(
+			"You have unsaved changes. Are you sure you want to leave?"
+		  );
+		  return !confirmLeave;
+		} else {
+		  // Logic for when there are no unsaved changes (optional)
+		  console.log("No unsaved changes, proceeding without confirmation.");
+		  return false;
+		}
+	  });
 
 
-profile file
-import UserContext  from 'context.js'
 
-const {user} = useContext(UserContext)
 
-React 18 
+use call back:	useCallback is a hook that returns a memoized version of a callback function, 
+				which means it ensures the function reference stays the same between renders 
+				unless its dependencies change.
+				
+				import React, { useState, useCallback } from "react";
 
-useId =>is a new Hook for generating unique IDs on both the client and server, while avoiding hydration mismatches. 
+				const Product = React.memo(({ product, addToCart }) => {
+				  console.log(`Rendering Product: ${product.name}`);
+				  return (
+					<div style={{ border: "1px solid #ccc", margin: "10px", padding: "10px" }}>
+					  <h2>{product.name}</h2>
+					  <p>Price: ${product.price}</p>
+					  <button onClick={() => addToCart(product)}>Add to Cart</button>
+					</div>
+				  );
+				});
+
+				const ProductList = () => {
+				  const [cart, setCart] = useState([]);
+
+				  const products = [
+					{ id: 1, name: "Apple", price: 1 },
+					{ id: 2, name: "Banana", price: 0.5 },
+					{ id: 3, name: "Cherry", price: 2 },
+				  ];
+
+				  // Memoize the `addToCart` function so it doesn't get recreated on every render
+				  const addToCart = useCallback((product) => {
+					setCart((prevCart) => [...prevCart, product]);
+					console.log(`${product.name} added to cart`);
+				  }, []);
+
+				  return (
+					<div>
+					  <h1>Product List</h1>
+					  <div>
+						{products.map((product) => (
+						  <Product key={product.id} product={product} addToCart={addToCart} />
+						))}
+					  </div>
+
+					  <h2>Shopping Cart</h2>
+					  {cart.length > 0 ? (
+						cart.map((item, index) => <p key={index}>{item.name}</p>)
+					  ) : (
+						<p>Your cart is empty</p>
+					  )}
+					</div>
+				  );
+				};
+
+				export default ProductList;
+
+
+
+		useMemo
+				Purpose: It memoizes the result of a function call and only recalculates 
+						it when the dependencies change.
+						const expensiveValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+		useCallback
+				Purpose: It memoizes the function itself and ensures that the same function instance 
+						is returned unless its dependencies change.
+								const memoizedCallback = useCallback(() => {
+		  // Some logic
+		}, [dependencies]);
+		Key Differences:
+			useMemo is used for memoizing values (results of computations).
+			useCallback is used for memoizing functions (function instances).
+=================================================================================
+React 18 Hooks
+useId =>is a new Hook for generating unique IDs on both the client and server, 
+		while avoiding hydration mismatches. 
+		When building forms where <label> and <input> need unique IDs for accessibility.
 		const id = useId()
 		
 useTransition=>The use of Transition hooks allows us to specify certain state updates as less important
+	-used for managing state transitions that are non-urgent or deferred. 
 	if i have 3 tab about/post/contact and post have 2500 post then if i click
 	post tab and click contact then contact not render untill post data comes
-	so we use useTransition to reolve this issue
- 
- const [isPending, startTransition] = useTransition()
+	so we use useTransition to reolve this issue 
+	-The async transition will immediately set the isPending state to true, make the async request(s), 
+	and switch isPending to false after any transitions
+	
+	*When to Use useTransition
+			Smooth UI updates: When updating state for expensive renders that could block more critical 
+							interactions (e.g., typing).
+			Deprioritizing UI updates: For updates that can happen in the background without affecting 
+									the user experience immediately.
+			Handling large data or animations: To allow React to prioritize rendering tasks.
+	*When Not to Use useTransition
+			For urgent updates, like user input or navigation, which should occur immediately.
+			For state updates that are lightweight and don’t impact performance.
+				
+			 const [isPending, startTransition] = useTransition()			 
+			 function UpdateName({}) {
+			  const [name, setName] = useState("");
+			  const [error, setError] = useState(null);
+			  const [isPending, startTransition] = useTransition();
 
+			  const handleSubmit = () => {
+				startTransition(async () => {
+				  const error = await updateName(name);
+				  if (error) {
+					setError(error);
+					return;
+				  } 
+				  redirect("/path");
+				})
+			  };
+
+			  return (
+				<div>
+				  <input value={name} onChange={(event) => setName(event.target.value)} />
+				  <button onClick={handleSubmit} disabled={isPending}>
+					Update
+				  </button>
+				  {error && <p>{error}</p>}
+				</div>
+			  );
+			}
+			
+		->  const handleChange = (event) => {
+			const value = event.target.value;
+			setQuery(value);
+
+			// Defer the filtering to avoid blocking the UI
+			startTransition(() => {
+			  const results = items.filter((item) =>
+				item.toLowerCase().includes(value.toLowerCase())
+			  );
+			  setFilteredItems(results);
+			});
+		  };
+		  
+		->const generateList = () => {
+			startTransition(() => {
+			  const largeArray = Array.from({ length: 10000 }, (_, i) => `Item ${i + 1}`);
+			  setItems(largeArray);
+			});
+		  };
+		  
+		 
 useDeferredValue-The React.useDeferredValue() function is used to achieve asynchronous rendering. 
 	-same as debounce which use for search like if i write one letter then it's call api insted
 	of after 3,4 letter start seraching but react introduce hook same as debounce which help to
@@ -1074,10 +814,26 @@ useDeferredValue-The React.useDeferredValue() function is used to achieve asynch
 	they depend on changes. It is particularly useful for handling high-priority UI updates while deferring 
 	lower-priority updates that do not need to be immediate, thus preventing janky or slow interfaces.
 	
- const deferredValue = useDeferredValue(value); 
+	const deferredValue = useDeferredValue(value); 
+   
+	   const [query, setQuery] = useState('');
+	  const deferredQuery = useDeferredValue(query);
+
+	  const filteredImages = images.filter((image) =>
+		image.alt.toLowerCase().includes(deferredQuery.toLowerCase())
+	  );
+	 
+useDeferredValue vs useTransition:
+
+		useDeferredValue defers a value for rendering or computation.
+		useTransition defers a state update.
+		Use useDeferredValue for computations and rendering; use useTransition for initiating transitions
+
+		Performance Optimization: useDeferredValue helps optimize rendering by delaying updates for 
+		non-urgent values.
  
-useSyncExternalStore => (simple use case use your local variable and when add button 
-						 value add we can achive using this)
+useSyncExternalStore => (simple use case use your local variable and when add button then
+						 value is  added so  we can achive using this)
 					useSyncExternalStore is a hook introduced in React 18 to safely subscribe to external
 					stores or state that are not controlled by React (e.g., external libraries, global 
 					state management systems, or even custom stores). It is particularly useful when 
@@ -1142,9 +898,9 @@ useimprativehandle:
 				explicitly define what methods or properties will be accessible to a parent component 
 				when a child component is wrapped with forwardRef.
 
-To allow a parent component to call specific methods or access properties of a child component.
-To encapsulate internal details of a component and expose only what the parent needs.
-To manipulate DOM elements or trigger child behaviors programmatically.
+		To allow a parent component to call specific methods or access properties of a child component.
+		To encapsulate internal details of a component and expose only what the parent needs.
+		To manipulate DOM elements or trigger child behaviors programmatically.
 
 useImperativeHandle(ref, createHandle, [dependencies])
 							ref: The forwarded ref from the parent component.
@@ -1206,67 +962,11 @@ useLayoutEffect:
 	DOM measurement, layout adjustments, animations
 	For effects that need to manipulate or measure layout immediately after the render
 
-=>suspense
-=>Automatic batching
-=>Userid ->The useId() hook is an easy way to generate a random and unique ID number in React 18
-=>concurrent rendering
-=>Server component
-=>Portals in React
-				Portals are a new concept in React 18 which allows you to render content in a different
-				part of the DOM. 
-				Portals are only supported on React 18.
-						 return ReactDOM.createPortal(
-			<h1>Portal demo</h1>,
-			document.getElementById('portal')
-		  )
-		  
-		  
-=>Forword ref:
+======================================================================
 
-		when you use multiple input fileld with comman componenet so we need to pass refrence to 
-		component in that case forword ref use
+Nextjs Concepts:
+=======================================================================
 
-like common component name->inputfield
-main component name- login
-so we need to pass ref to inputfield to login component
-
-
-React 19
-
-=> include new compiler which compile react code
-=>Automatic memoization
-=>Document meta data
-=>Ref pass as regular prop(no need to pass as forwordref)
-=> no more react.lazy
-=><context.provider> replace with <context>
-Hooks
-use()  -> replace useContext()
-Action
-useFormStatus()
-useFormState()
-useOptimistic(
-)
-]
-
-useActionState
-useCallback
-useContext
-useDebugValue
-useLayoutEffect
-useLayoutEffect
-useMemo
-
-Reconsilation
-
-
-
-use call back
-Nextjs
-------------------------
-Intercepting Routes 
-https://www.youtube.com/watch?v=zDZBKEvU8b0
-Parallel Routes I
-https://www.youtube.com/watch?v=wi8kF8UniUI
 catch all
 default
 catch all vsdefault
@@ -1407,6 +1107,193 @@ folder->page.tsx is used for routing
 component like is not use for routing like add to cart button
 
 
+
+export const dynamic = "force-dynamic"
+-Next.js is a flexible React framework that gives you building blocks to create fast web applications.
+-CSR,SSR,SSG
+-Imperative & Declarative Programming:
+									The code above is a good example of imperative programming. You’re writing the steps for how the user interface should be updated. 
+									But when it comes to building user interfaces, a declarative approach is often preferred because it can speed up the development process. 
+									Instead of having to write DOM methods, it would be helpful if developers were able to declare what they want to 
+									show (in this case, an h1 tag with some text).In other words,  programming is like giving a chef step-by-step instructions on 
+									how to make a pizza. Declarative programming is like ordering a pizza without being concerned about the steps it takes to make the pizza. 🍕
+The environment where your code runs: Development vs. Production
+When your code runs: Build Time vs. Runtime
+Where rendering happens: Client vs. Server
+-Minification:
+				Minification is the process of removing unnecessary code formatting and comments without changing the code’s functionality. 
+				The goal is to improve the application’s performance by decreasing file sizes.
+-What is Compiling?
+					Developers write code in languages that are more developer-friendly such as JSX, TypeScript, and modern versions of JavaScript. 
+					While these languages improve the efficiency and confidence of developers, they need to be compiled into JavaScript before browsers can understand them.
+-client-side rendering:
+					React application, the browser receives an empty HTML shell from the server along with the JavaScript instructions to construct the UI. 
+					This is called client-side rendering because the initial rendering work happens on the user's device.
+-Bundling:
+		Bundling is the process of resolving the web of dependencies and merging (or ‘packaging’) the files (or modules) into optimized bundles for the browser, 
+		with the goal of reducing the number of requests for files when a user visits a web page.
+-What is the difference between compiling and bundling in web development?
+																		Compiling is transforming code into something parsable by browsers. 
+																		Bundling is resolving your applications dependency graph and reducing the number of files
+Some Concepts:
+-Routing as folder
+-each folder has page.js file.
+-The useRouter hook allows you to programmatically change routes.
+-This hook can only be used inside Client Components and is imported from next/navigation.
+-The useRouter hook allows you to programmatically change routes.
+-This hook can only be used inside Client Components and is imported from next/navigation.
+-NextResponse:The NextResponse API allows you to:Redirect the incoming request to a different URL
+												 Rewrite the response by displaying a given URL
+												 Set request headers for API Routes, getServerSideProps, and rewrite destinations
+												 Set response cookies
+												 Set response headers
+												 Fetching data after some time  time based/ondemand  Revalidation
+												 React renders Server Components into a special data format called the React Server Component Payload (RSC Payload).
+
+Static Site Generation (SSG): 
+							Static Generation is a server-side rendering method where Next.js generates HTML at build time. 
+							During the build process, Next.js fetches data from APIs or other data sources and pre-renders the HTML pages. 
+							These pre-rendered pages can then be served to the client upon request. SSG is suitable for websites with content that doesn't frequently change.
+Server-Side Rendering (SSR): 
+							Server-Side Rendering is another method where Next.js generates HTML on each request.
+							When a user visits a page, Next.js fetches the data and renders the HTML on the server before sending it to the client. 
+							SSR is useful for websites with frequently updated content or personalized user experiences.
+Incremental Static Regeneration (ISR): 
+										ISR is a feature in Next.js that allows you to statically generate pages on-demand, rather than at build time. 
+										This means that your site can be both statically generated and dynamic at the same time.
+SWR:The team behind Next.js has created a React hook for data fetching called SWR. 
+	We highly recommend it if you’re fetching data on the client side. It handles caching, revalidation, focus tracking, refetching on interval, and more. 
+	We won’t cover the details here, but here’s an example usage:
+
+
+												 
+-folder->page.tsx is used for routing
+-component like is not use for routing like add to cart button
+=============================================================================
+Comman For react and Nextjs
+=========================================================================
+When to Use Each Method
+		SSR:[server side only] Use SSR for pages that need to be rendered on each request and where data is frequently 
+			 changing (e.g., dashboards, user profiles, or content that updates regularly).
+			 *Best for real-time dynamic content.
+			 *No caching by default, always fresh data
+			 *getServerSideProps (on each request)
+		ISR: Use ISR when you want static pages that can be re-generated periodically, ensuring
+			 they stay up-to-date without the need for full site rebuilds (e.g., blogs, product pages).
+			 * Combines the benefits of static and dynamic rendering, ideal for semi-dynamic content.
+			 *Caching with background regeneration
+			 *getStaticProps (with revalidate option)
+		SSG: Use SSG for content that doesn't change often and can be pre-rendered during the 
+			 build process (e.g., blogs, documentation, marketing websites).
+			 *Best for static content that doesn’t need frequent updates.
+			 *Fully cached
+			 *getStaticProps (with revalidate option)
+		example:
+		SSR:
+			export async function getServerSideProps(context) {
+			  const res = await fetch('https://api.example.com/data');
+			  const data = await res.json();
+
+			  return {
+				props: { data }, // Pass the data as a prop to the page
+			  };
+			}
+
+			export default function Page({ data }) {
+			  return <div>{data}</div>;
+			}
+		ISR:
+			export async function getStaticProps() {
+			  const res = await fetch('https://api.example.com/data');
+			  const data = await res.json();
+
+			  return {
+				props: { data },
+				revalidate: 60, // Re-generate the page every 60 seconds
+			  };
+			}
+
+			export default function Page({ data }) {
+			  return <div>{data}</div>;
+			}
+		SSG:	
+			export async function getStaticProps() {
+			  const res = await fetch('https://api.example.com/data');
+			  const data = await res.json();
+
+			  return {
+				props: { data }, // Pass the fetched data to the page
+			  };
+			}
+
+			export default function Page({ data }) {
+			  return <div>{data}</div>;
+			}
+====================================
+Route in nextjs
+====================================
+ Dynamic Routes ->/pages/post/[id].js
+ Parallel Routes->
+					Parallel Routes allow rendering multiple routes simultaneously in the same 
+					application. This is helpful when you want to display different content in 
+					independent areas of the UI, such as a sidebar and a main content area.
+					
+					Slots are defined with the @folder
+					like @sidebar,@main
+					
+				// layout.js
+				export default function RootLayout({ children }) {
+				  return (
+					<html lang="en">
+					  <body>
+						<div style={{ display: 'flex' }}>
+						  <div style={{ width: '300px', borderRight: '1px solid black' }}>
+							{children.sidebar} {/* Parallel Route: Sidebar */}
+						  </div>
+						  <div style={{ flex: 1 }}>{children.main} {/* Parallel Route: Main Content */}</div>
+						</div>
+					  </body>
+					</html>
+				  );
+				}
+				
+ Intercepting Routes:Intercepting routes allow you to show a modal, drawer, or other UI elements 
+					 without changing the main layout or context of the current page.
+					 
+					 Example:
+						Imagine you want to show a modal when navigating to /post/123, 
+						but the user stays on the /home page in the background.
+												
+						(.) to match segments on the same level
+						(..) to match segments one level above
+						(..)(..) to match segments two levels above
+						(...) to match segments from the root app directory
+												
+					1.Define a route that intercepts:	
+					/app/(home)/post/[id]/page.js
+					2.Use (grouping) in the /app directory to keep the base route (/home) separate:
+					/app/(home)/page.js
+
+				// app/(home)/page.js
+				export default function HomePage() {
+				  return (
+					<div>
+					  <h1>Home Page</h1>
+					</div>
+				  );
+				}
+
+				// app/(home)/post/[id]/page.js
+				export default function PostModal({ params }) {
+				  return (
+					<div style={{ background: 'white', padding: '20px', position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)' }}>
+					  <h2>Post ID: {params.id}</h2>
+					  <p>This is a modal overlay
+
+
+=============================================================================
+Redux Thunk
+=================================================================================
 Redux Thunk
 Q=>What do you understand about Redux Thunk?
 Using Redux Thunk middleware, we can write action creators returning a function instead of an action. 
@@ -1422,26 +1309,46 @@ effects, including executing asynchronous API calls. It can even dispatch action
 
 
 
+=====================================================
+React and java script code snipest
+=====================================================
+-------------------------------------------------------
+with return keyword in map
+	const names = characters.map((character) ⇒ { return character.name;});
+
+without return 
+	const minified Records = characters.map((character) ⇒ (//thisbracket show as return object 
+	{
+	name: character.name,
+	height: character.height,
+	}));
 
 
-"FORCE-DYNAMIC" force next js to load page dynamivally
+---------------------------
+          setUnreadMessages((prevUnreadMessages) => {       
+            const receiverMessages = prevUnreadMessages[id] || {};
+            const currentCount = senderId ? receiverMessages[senderId] || 0 : 0; 
+   
+            return {
+              ...prevUnreadMessages,
+              [id]: {
+                ...receiverMessages,
+                [senderId as string]: currentCount + 1,
+              },
+            };
+          });
+        });
+	
+	  setUnreadMessages((prevUnreadMessages) THIS LINE GIVES MOST RECENT UPDATE STATE
+	  return {
+              ...prevUnreadMessages,
+              [id]:  this remain previous state as it is only update or create filed which is id
+----------------------------------------------------------
 
-
-
-
-
-
-Rest api
-https://www.youtube.com/watch?v=-MFiza7ZRzs
-
-https://www.freecodecamp.org/news/build-a-full-stack-application-with-nextjs/
-
---------------------------------------
 @google-cloud/translate:
 
 Google Cloud Translation API client for Node.js.
-js
-Copy code
+
 const { Translate } = require('@google-cloud/translate').v2;
 const translate = new Translate();
 
@@ -1450,3 +1357,747 @@ async function translateText(text) {
   console.log(`Translation: ${translation}`);
 }
 translateText('Hello, world!');
+--------------------------------------------
+ResizeObserver for React Developers:
+	ResizeObserver is a browser API that allows you to monitor changes to the size of an element. 
+	When working with React, you can use the ResizeObserver API to handle size changes in a React component. 
+
+	https://medium.com/@chamaraS/resizeobserver-for-react-developers-a91df3608944
+
+	import React, { useEffect, useRef, useState } from "react";
+
+	const ResizableComponent = () => {
+	  const [size, setSize] = useState({ width: 0, height: 0 });
+	  const ref = useRef(null);
+
+	  useEffect(() => {
+		const element = ref.current;
+
+		const resizeObserver = new ResizeObserver((entries) => {
+		  for (let entry of entries) {
+			const { width, height } = entry.contentRect;
+			setSize({ width, height });
+		  }
+		});
+
+		if (element) {
+		  resizeObserver.observe(element);
+		}
+
+		return () => {
+		  if (element) {
+			resizeObserver.unobserve(element);
+		  }
+		  resizeObserver.disconnect();
+		};
+	  }, []);
+
+	  return (
+		<div ref={ref} style={{ resize: "both", overflow: "auto", padding: "20px", border: "1px solid #ccc" }}>
+		  <p>Resize this box!</p>
+		  <p>Width: {size.width}px</p>
+		  <p>Height: {size.height}px</p>
+		</div>
+	  );
+	};
+
+	export default ResizableComponent;
+
+=============
+Context api
+=================
+
+	context.js
+	=> var usecontext =   React.createContext( need to pass defult value)
+	export default usecontext
+
+
+	provider file
+
+
+	const [user,setuser] =React.usestate()
+	<usercontext.priovider value={{user,setuser}}>
+	{children}
+	</usercontext.priovider >
+
+
+	Login file
+	import UserContext  from 'context.js'
+
+	const {setUser} = useContext(UserContext)]
+
+
+
+	profile file
+	import UserContext  from 'context.js'
+
+	const {user} = useContext(UserContext)
+
+
+=======================================
+Redux
+======================================
+
+
+Redux is really:
+
+A single store containing "global" state
+Dispatching plain object actions to the store when something happens in the app
+Pure reducer functions looking at those actions and returning immutably updated state
+
+createStore to actually create a Redux store
+combineReducers to combine multiple slice reducers into a single larger reducer
+applyMiddleware to combine multiple middleware into a store enhancer
+compose to combine multiple store enhancers into a single store enhancer
+
+
+Demo
+store=>Reducer=>state=>ui=>dispatch=>store
+						Store:
+
+							export const configureStore = (services) => createStore(
+								reducers, 
+								
+							);
+
+
+							index.js
+							ReactDOM.render(
+								<Provider store={configureStore(services)} context={ReactReduxContext} >
+									<AuthComp />
+									{/* <App /> */}
+								</Provider>,
+								document.getElementById('root')
+							);
+
+
+							Action
+
+							export const getDataSuccess = result => ({
+								type: GET_DATA_SUCCESS,
+								payload: result,
+							});
+
+
+							Reducer
+							const initialState = {
+							  
+								allData: [],
+							   
+							};
+
+							const reducer = (state = initialState, action) => {
+								switch (action.type) {
+									case GET_DATA_SUCCESS:
+										return { ...state, allData: action.payload, error: null };        
+									default:
+										return state;
+								}
+							}
+
+							export default reducer;
+
+
+							Selector
+
+							export const getisEnable = state => state.home.isEnable;GET_DATA_SUCCESS
+
+							Reducer index file
+
+							const createRootReducer = (history) => combineReducers({
+								router: connectRouter(history),
+								ui,
+								home,
+								addNew,
+								historyReducer,
+								requestSearchSEReducer,
+								multiSearchReducer
+							})
+
+							export default createRootReducer
+
+
+
+							Dispatch
+							  dispatch(getDataSuccess(result));
+
+							Selector
+							  const isEnable = useSelector(getisEnable);
+  
+  
+  
+ --------------------------------------------------- 
+  ===========================
+   Redux toolkit
+  ===========================  
+	  Important Points:
+	-No need to action
+	--configureStore(): wraps createStore to provide simplified configuration options and good defaults. It can automatically combine your slice reducers, adds whatever Redux middleware you supply, includes redux-thunk by default, and enables use of the Redux DevTools Extension.
+	-createReducer(): that lets you supply a lookup table of action types to case reducer functions, rather than writing switch statements. In addition, it automatically uses the immer library to let you write simpler immutable updates with normal mutative code, like state.todos[3].completed = true.
+	-createAction(): generates an action creator function for the given action type string. The function itself has toString() defined, so that it can be used in place of the type constant.
+	-createSlice(): accepts an object of reducer functions, a slice name, and an initial state value, and automatically generates a slice reducer with corresponding action creators and action types.
+	-createAsyncThunk: accepts an action type string and a function that returns a promise, and generates a thunk that dispatches pending/fulfilled/rejected action types based on that promise
+	-createEntityAdapter: generates a set of reusable reducers and selectors to manage normalized data in the store
+	-The createSelector utility from the Reselect library, re-exported for ease of use.
+	https://www.youtube.com/watch?v=2OaAbSgmIWo
+
+
+	-What do you understand about Redux Thunk?
+	-Using Redux Thunk middleware, we can write action creators returning a function instead of an action. This thunk can postpone the dispatch of an action, or do conditional dispatchment. The arguments passed to the inner function are the store methods dispatch and getState(). In the event of an action creator returning a function, the function gets executed by the Redux Thunk middleware and it does not have to be pure. In other words, the function is allowed to have side effects, including executing asynchronous API calls. It can even dispatch actions. Redux thunk is used to delay the dispatch of an action, or to dispatch in the event of a certain condition being met. At the time of dispatch of a function instead of an action object, if Redux Thunk middleware is enabled, the middleware will call that function with the dispatch method itself as the first argument.
+	-What are the workflow features in Redux?
+
+	Store
+	reducer -> need to change value
+	useselector
+	usedispatch
+
+
+  
+  Slice/Reducer
+  
+			  import { createSlice } from '@reduxjs/toolkit';
+
+			export const counterSlice = createSlice({
+			  name: 'counter',
+			  initialState: {
+				count: 0,
+			  },
+			  reducers: {
+				increment: (state) => {
+				  state.count += 1;
+				},
+				decrement: (state) => {
+				  state.count -= 1;
+				},
+			  },
+			});
+
+			// Action creators are generated for each case reducer function
+			export const { increment, decrement } = counterSlice.actions;
+
+			export default counterSlice.reducer;
+			
+	Store
+	
+				import { configureStore } from '@reduxjs/toolkit';
+			import counterReducer from '../features/counter/counterSlice';
+
+			export const store = configureStore({
+			  reducer: {
+				counter: counterReducer,
+			  },
+});
+
+	index,js
+	ReactDOM.render(
+	  <Provider store={store}>
+		<App />
+	  </Provider>,
+	  document.getElementById('root')
+	);
+				 
+	app.js
+								import React from 'react';
+			import { useSelector, useDispatch } from 'react-redux';
+			import { increment, decrement } from './features/counter/counterSlice';
+
+			function App() {
+			  const count = useSelector((state) => state.counter.count);
+			  const dispatch = useDispatch();
+
+			  return (
+				<div>
+				  <h1>Counter: {count}</h1>
+				  <button onClick={() => dispatch(increment())}>Increment</button>
+				  <button onClick={() => dispatch(decrement())}>Decrement</button>
+				</div>
+			  );
+			}
+
+			export default App;
+
+
+=========================================
+React with typescript
+=========================================
+
+1. Ensure Proper Typing for State and Props
+	State and Props: Every component’s state and props need to be typed. 
+	This is one of the most crucial parts of a TypeScript React project.
+
+	// Example: Typing the props and state for a functional component
+	interface MyComponentProps {
+	  title: string;
+	}
+
+	interface MyComponentState {
+	  count: number;
+	}
+
+	const MyComponent: React.FC<MyComponentProps> = ({ title }) => {
+	  const [count, setCount] = useState<MyComponentState['count']>(0);
+
+	  return (
+		<div>
+		  <h1>{title}</h1>
+		  <button onClick={() => setCount(count + 1)}>{count}</button>
+		</div>
+	  );
+	};
+	useState with TypeScript: Ensure that hooks like useState are typed correctly, 
+	particularly when dealing with objects or complex structures.
+
+2. Handling Event Types
+
+	When using event handlers like onClick, onChange, or other DOM events, 
+	TypeScript requires you to specify the event type. For example:
+
+		const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+		  console.log("Button clicked");
+		};
+		This ensures you're working with the correct types and prevents runtime errors.
+
+3. Use React.FC (Functional Components) for Typing Components
+	You can use the React.FC (Function Component) type for your components to 
+	automatically infer the return type and children types. However, keep in mind that React.FC can
+	 sometimes be overly restrictive, especially when you don’t want to use the children prop, 
+	 so be selective in its usage.
+
+
+		const MyComponent: React.FC = () => {
+		  return <div>Hello, TypeScript!</div>;
+		};
+		
+		If you don’t want to include children, you might need to use a more explicit typing approach:
+		
+		const MyComponent = (props: MyComponentProps) => {
+		  return <div>{props.title}</div>;
+		};
+		
+4. Component Defaults
+
+	TypeScript also ensures that you have correctly defined defaults for props.
+
+	const MyComponent = ({ title }: { title?: string }) => {
+	  const defaultTitle = title || "Default Title"; // You can have defaults
+	  return <h1>{defaultTitle}</h1>;
+	};
+	
+5. Optional Chaining and Nullish Coalescing
+	TypeScript 3.7+ supports optional chaining and nullish coalescing, 
+	which you can use to safely access nested properties:
+
+	const name = user?.profile?.name ?? "Guest";
+	
+	This helps in cases where a property might be null or undefined, 
+	ensuring safe navigation through deeply nested objects.
+
+6. Using any and Avoiding it
+	While any can be used as a last resort, TypeScript’s strength lies in strong typing, 
+	and any defeats this purpose. Avoid using any unless absolutely necessary. Instead, 
+	use more specific types (e.g., unknown, Record<string, any>, etc.).
+
+	// Avoid this:
+	const data: any = fetchData();
+
+	// Use more specific types:
+	const data: MyDataType = fetchData();
+	
+7. TypeScript with Context API
+	When using the Context API, you need to type both the context provider and the consumer properly:
+
+	interface AppContextType {
+	  user: string;
+	  isLoggedIn: boolean;
+	}
+
+	const AppContext = React.createContext<AppContextType | undefined>(undefined);
+
+	const AppProvider: React.FC = ({ children }) => {
+	  const [user, setUser] = useState<string>('John Doe');
+	  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+
+	  return (
+		<AppContext.Provider value={{ user, isLoggedIn }}>
+		  {children}
+		</AppContext.Provider>
+	  );
+	};
+
+	const useAppContext = () => {
+	  const context = useContext(AppContext);
+	  if (!context) throw new Error('useAppContext must be used within AppProvider');
+	  return context;
+	};
+	
+8. TypeScript with Redux
+	When using Redux, you'll need to type actions, reducers, and state:
+
+	Actions:
+		interface AddUserAction {
+		  type: "ADD_USER";
+		  payload: { name: string; age: number };
+		}
+
+		type UserActions = AddUserAction;
+
+		const addUser = (user: { name: string; age: number }): AddUserAction => ({
+		  type: "ADD_USER",
+		  payload: user,
+		});
+		
+	Reducers:
+		interface UserState {
+		  name: string;
+		  age: number;
+		}
+
+		const initialState: UserState = {
+		  name: '',
+		  age: 0,
+		};
+
+		const userReducer = (state = initialState, action: UserActions): UserState => {
+		  switch (action.type) {
+			case "ADD_USER":
+			  return { ...state, ...action.payload };
+			default:
+			  return state;
+		  }
+		};
+		
+	Dispatch:
+		const dispatch = useDispatch();
+		dispatch(addUser({ name: 'John Doe', age: 30 }));
+	
+9. Using enum for Stronger Type Control
+	Enums are a great way to represent a set of constants, such as status codes, action types, etc. 
+	TypeScript will enforce the types of these constants.
+
+	enum Status {
+	  Success = 'success',
+	  Error = 'error',
+	}
+
+	const handleStatus = (status: Status) => {
+	  if (status === Status.Success) {
+		console.log('Operation was successful');
+	  }
+	};
+	
+10. Asynchronous Code with TypeScript
+	When working with asynchronous code (e.g., using async/await), you
+	 should type the return values of the promises and any associated variables.
+
+	const fetchData = async (): Promise<MyDataType> => {
+	  const response = await fetch('api/data');
+	  const data = await response.json();
+	  return data;
+	};
+	
+	This ensures that TypeScript knows exactly what type fetchData will return, helping to avoid runtime errors.
+
+11. Type Assertion
+
+	Sometimes, TypeScript can't infer the type of a variable, especially when working with 
+	dynamic data (e.g., data from an API). In such cases, you can use type assertion to tell 
+	TypeScript what the type should be:
+
+
+	const value = someValue as string;
+	
+	While this can be useful in some situations, it should be used sparingly as it bypasses type safety.
+
+12. Types for External Libraries
+	If you're using external libraries that don’t provide TypeScript definitions, 
+	consider installing type definitions from DefinitelyTyped.
+
+
+	npm install --save-dev @types/library-name
+If no types are available, you can define the types yourself.
+
+
+1. Union Types in React
+	Union types allow a prop to accept multiple types. For example, a Button component 
+	that can accept both string and JSX as children:
+
+	import React from 'react';
+
+	type ButtonProps = {
+	  children: string | JSX.Element;
+	  onClick: () => void;
+	};
+
+	const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
+	  return <button onClick={onClick}>{children}</button>;
+	};
+
+	export const App = () => {
+	  return (
+		<div>
+		  <Button onClick={() => alert('Clicked!')}>Click Me</Button>
+		  <Button onClick={() => alert('Clicked!')}>
+			<strong>Click Me Strong</strong>
+		  </Button>
+		</div>
+	  );
+	};
+	In this example, the children prop can either be a string or a JSX.Element. 
+	This demonstrates how Union Types can be used to allow multiple possible types.
+
+2. Intersection Types in React
+
+	Intersection types allow combining multiple props from different interfaces. 
+	For example, a UserProfile component that needs both User and Address details:
+
+	tsx
+	Copy code
+	import React from 'react';
+
+	interface User {
+	  name: string;
+	  age: number;
+	}
+
+	interface Address {
+	  city: string;
+	  country: string;
+	}
+
+	type UserProfileProps = User & Address;
+
+	const UserProfile: React.FC<UserProfileProps> = ({ name, age, city, country }) => {
+	  return (
+		<div>
+		  <h1>{name}</h1>
+		  <p>Age: {age}</p>
+		  <p>City: {city}</p>
+		  <p>Country: {country}</p>
+		</div>
+	  );
+	};
+
+	export const App = () => {
+	  return (
+		<UserProfile
+		  name="Alice"
+		  age={30}
+		  city="New York"
+		  country="USA"
+		/>
+	  );
+	};
+	In this example, the UserProfileProps type is an intersection of the User and Address interfaces. 
+	The UserProfile component needs to have both user information and address information.
+
+3. Mapped Types in React
+	Mapped types allow transforming existing types. 
+	For instance, if you want to make all props of a component optional:
+
+		import React from 'react';
+
+		type ComponentProps = {
+		  title: string;
+		  description: string;
+		  isActive: boolean;
+		};
+
+		type OptionalProps<T> = {
+		  [K in keyof T]?: T[K];
+		};
+
+		type OptionalComponentProps = OptionalProps<ComponentProps>;
+
+		const Component: React.FC<OptionalComponentProps> = ({ title, description, isActive }) => {
+		  return (
+			<div>
+			  <h1>{title}</h1>
+			  <p>{description}</p>
+			  <p>{isActive ? 'Active' : 'Inactive'}</p>
+			</div>
+		  );
+		};
+
+		export const App = () => {
+		  return (
+			<div>
+			  <Component title="Hello" description="This is a component" isActive={true} />
+			  <Component title="Only Title" />
+			</div>
+		  );
+		};
+	Here, OptionalProps is a mapped type that makes all properties of ComponentProps optional.
+	 The Component can now accept partial props, making it more flexible.
+	 
+
+Here's how you can use Union Types, Intersection Types, Mapped Types, Conditional Types, and Generics in real-time React projects:
+
+1. Union Types in React
+Union types allow a prop to accept multiple types. For example, a Button component that can accept both string and JSX as children:
+
+		import React from 'react';
+
+		type ButtonProps = {
+		  children: string | JSX.Element;
+		  onClick: () => void;
+		};
+
+		const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
+		  return <button onClick={onClick}>{children}</button>;
+		};
+
+		export const App = () => {
+		  return (
+			<div>
+			  <Button onClick={() => alert('Clicked!')}>Click Me</Button>
+			  <Button onClick={() => alert('Clicked!')}>
+				<strong>Click Me Strong</strong>
+			  </Button>
+			</div>
+		  );
+		};
+		In this example, the children prop can either be a string or a JSX.Element. This demonstrates how Union Types can be used to allow multiple possible types.
+
+2. Intersection Types in React
+Intersection types allow combining multiple props from different interfaces. For example, a UserProfile component that needs both User and Address details:
+
+		import React from 'react';
+
+		interface User {
+		  name: string;
+		  age: number;
+		}
+
+		interface Address {
+		  city: string;
+		  country: string;
+		}
+
+		type UserProfileProps = User & Address;
+
+		const UserProfile: React.FC<UserProfileProps> = ({ name, age, city, country }) => {
+		  return (
+			<div>
+			  <h1>{name}</h1>
+			  <p>Age: {age}</p>
+			  <p>City: {city}</p>
+			  <p>Country: {country}</p>
+			</div>
+		  );
+		};
+
+		export const App = () => {
+		  return (
+			<UserProfile
+			  name="Alice"
+			  age={30}
+			  city="New York"
+			  country="USA"
+			/>
+		  );
+		};
+		In this example, the UserProfileProps type is an intersection of the User and Address interfaces. The UserProfile component needs to have both user information and address information.
+
+3. Mapped Types in React
+	Mapped types allow transforming existing types. For instance, if you want to make all props of a component optional:
+
+	import React from 'react';
+
+	type ComponentProps = {
+	  title: string;
+	  description: string;
+	  isActive: boolean;
+	};
+
+	type OptionalProps<T> = {
+	  [K in keyof T]?: T[K];
+	};
+
+	type OptionalComponentProps = OptionalProps<ComponentProps>;
+
+	const Component: React.FC<OptionalComponentProps> = ({ title, description, isActive }) => {
+	  return (
+		<div>
+		  <h1>{title}</h1>
+		  <p>{description}</p>
+		  <p>{isActive ? 'Active' : 'Inactive'}</p>
+		</div>
+	  );
+	};
+
+	export const App = () => {
+	  return (
+		<div>
+		  <Component title="Hello" description="This is a component" isActive={true} />
+		  <Component title="Only Title" />
+		</div>
+	  );
+	};
+	Here, OptionalProps is a mapped type that makes all properties of ComponentProps optional. The Component can now accept partial props, making it more flexible.
+
+	4. Conditional Types in React
+	Conditional types can be used for prop validation based on conditions.
+	 For example, you can create a Status component that behaves differently depending on whether the status is a string or a boolean:
+
+	import React from 'react';
+
+	type StatusProps<T> = T extends boolean ? { active: T } : { message: T };
+
+	const Status: React.FC<StatusProps<string | boolean>> = (props) => {
+	  if (typeof props.active === 'boolean') {
+		return <div>{props.active ? 'Active' : 'Inactive'}</div>;
+	  }
+	  return <div>{props.message}</div>;
+	};
+
+	export const App = () => {
+	  return (
+		<div>
+		  <Status active={true} />
+		  <Status message="Service is down" />
+		</div>
+	  );
+	};
+	In this example, StatusProps is a conditional type that checks whether T is a boolean or a string. 
+	If T is a boolean, it expects an active prop; if it's a string, it expects a message prop.
+	 This demonstrates Conditional Types for prop validation.
+
+5. Generics in React
+	Generics are useful when you want to make components reusable with different types. 
+	For instance, a List component that can display different types of data:
+
+
+	import React from 'react';
+
+	type ListProps<T> = {
+	  items: T[];
+	  renderItem: (item: T) => React.ReactNode;
+	};
+
+	function List<T>({ items, renderItem }: ListProps<T>): JSX.Element {
+	  return (
+		<div>
+		  {items.map((item, index) => (
+			<div key={index}>{renderItem(item)}</div>
+		  ))}
+		</div>
+	  );
+	}
+
+	export const App = () => {
+	  return (
+		<div>
+		  <List
+			items={[1, 2, 3, 4]}
+			renderItem={(item) => <p>{item}</p>}
+		  />
+		  <List
+			items={['Apple', 'Banana', 'Cherry']}
+			renderItem={(item) => <strong>{item}</strong>}
+		  />
+		</div>
+	  );
+	};
+	Here, List is a generic component that can accept an array of any type (T). T
+	he renderItem function defines how each item is rendered, and TypeScript ensures
+	 type safety based on the array passed in items.

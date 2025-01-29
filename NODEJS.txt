@@ -53,491 +53,65 @@ Mongo NoSQL Injection Attack and How to Prevent Them /with NodeJs-Express Code E
 https://medium.com/@huseyin.isik000/mongo-nosql-injection-attack-and-how-to-prevent-them-with-nodejs-express-code-examples-beebae1a3d98Mongo NoSQL Injection Attack and How to Prevent Them /with NodeJs-Express Code Examples
 express-mongo-sanitize - package
 
+microservices [service discovery, API gateways, and distributed tracing.]
+https://www.youtube.com/watch?v=fEDT4lWWe9g
+https://radixweb.com/blog/building-microservices-with-node-js
 
-jAVASCRIPT
--------------------
 
-JS full series : https://www.youtube.com/watch?v=WvTMIKHvPxU&list=PLRAV69dS1uWSxUIk5o3vQY2-_VKsOpXLD&index=57  - done
-ts full : https://www.youtube.com/watch?v=j89BvWz8Eag&list=PLRAV69dS1uWRPSfKzwZsIm-Axxq-LxqhW  done
+Nest js
+https://www.freecodecamp.org/news/build-web-apis-with-nestjs-beginners-guide/
 
-=>Architecture View layer of MVC
-=>Data-Binding Uni-directional
-=>Rendering Server-Side
-( functiobn abc(){ console.log('h1)})()  -it execute aautomatically without calLING
-IIFE- Immediately Invoked Function Expression
-=>json.parse() - convert json into js object
-When you insert data in local storgae set as json.stringify
-=>Localstorgae give value as sting so always convort into json.parse
-=> We are not use this keyword in arrow function we can create function with function keyword
-=>if nothing is assigned - value is “undefined  ex let name
+
+cloudflared tunnel --url http://localhost:4000/
+
+
+
+=======================
+Notes
+====================
+
+=>fs.read and fs.write read/write data attime and store buffer and give to us
+
+=>Architecture
+https://www.youtube.com/watch?v=59C1dvLRIrI&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_LhxS&index=28
 	
-Flat
-const arr1 = [0, 1, 2, [3, 4]];
-console.log(arr1.flat());
-const arr2 = [0, 1, 2, [[[3, 4]]]];
-console.log(arr2.flat(2));
-[0, 1, 2, 3, 4]
-[0, 1, 2, 3, 4]
+=>process:one type of task which is excute
+=>thread: which is responsible for excute process(node js single thred)
 
-Flatmap
-const arr1 = [1, 2, [3], [4, 5], 6, []];
-const flattened = arr1.flatMap(num => num);
-[1, 2, 3, 4, 5, 6]
+=>Express node js framework
+=>Piping is a mechanism used to connect the output of one stream to another stream. 
+It is normally used to retrieve data from one stream and pass output to another stream
 
+=>Passport:Passport is Express-compatible authentication middleware for Node.js.
 
-const myArr = [1, 2, 3, 4, 5, 6];
-const newArr = myArr.flatMap(x => [x, x * 10]);
+=>Security:
+	Dos attack -> send multilple request -> Rate limit->express-rate-limit
+	Password encryption ->node.bcrypt.js
+	Schema validation ->joi
+	HTML & CSS escaping->escap-html
+	Use orm
+=============================================
 
-1,10,2,20,3,30,4,40,5,50,6,60
 
-const data = {
-    "676bf981779ad64309c107b9": {
-      "67495f4c342037f34ca10016": 3,
-      "67495f9d342037f34ca10028": 2,
-    }
-  };
 
-  // Process the data to get key-value pairs
-  const keyValuePairs = [];
-  Object.keys(data).forEach((topKey) => {
-    const nestedObject = data[topKey];
-    Object.entries(nestedObject).forEach(([nestedKey, value]) => {
-      keyValuePairs.push({ topKey, nestedKey, value });
-    });
-  });
 
 
-Object.keys() returns the keys (properties) of any object type.
-
-Object.values() returns the values of all object keys (properties).
-
-Object.entries() returns the keys and values of any object types.
-
-The methods above return an Iterable (enumerable array).
-
-Iterables makes it simpler to use objects in loops and to convert objects into maps.
-
- Object.fromEntries():method creates an object from a list of key/value pairs.[array to object]
- Object.defineProperty() adds or changes one property.
-
-Object.defineProperties() adds or changes many properties.
-
-
-Object.getOwnPropertyNames() returns the property names of an object.
-
-Object.getOwnPropertyDescriptor() returns the descriptor of a property.
-
-Object.getOwnPropertyDescriptors() returns the descriptors of all properties.
-
-ARRAY:
-The at() method returns an indexed element from an array.
-
-The concat() method concatenates (joins) two or more arrays.
-
-Array Iteration Methods:
-The entries() method returns an Iterator object with the key/value pairs from an array:
-The every() method executes a function for each array element.Not change arry need funaction as argument
-
-
-The filter() method creates a new array filled with elements that pass a test provided by a function.
-		The filter() method does not execute the function for empty elements.
-		The filter() method does not change the original array.
-		 receiverId: participantsContactId.filter((id) => id !== LoginUserId),
-		
-The forEach() method calls a function for each element in an array.
-  receiverIds.forEach((id: any) => {
-          setUnreadMessages((prevUnreadMessages) => {       
-            const receiverMessages = prevUnreadMessages[id] || {};
-            const currentCount = senderId ? receiverMessages[senderId] || 0 : 0; 
-   
-            return {
-              ...prevUnreadMessages,
-              [id]: {
-                ...receiverMessages,
-                [senderId as string]: currentCount + 1,
-              },
-            };
-          });
-        });
-The keys() method returns an Iterator object with the keys of an array.does not change the original array.
-map() creates a new array from calling a function for every array element.
-	map() does not execute the function for empty elements.
-	map() does not change the original array.
---
-The fill() method fills specified elements in an array with a value.
-The find() method returns the value of the first element that passes a test.
-The findIndex() method executes a function for each array element.
-The findLast() method returns the value of the last element that passes a test.
-The findLastIndex() method returns the index (position) of the last element that passes a test.
-
-The flat() method concatenates sub-array elements.
-The flatMap() method maps all array elements and creates a new flat array.
-flatMap() creates a new array from calling a function for every array element.
-
-The indexOf() method returns the first index (position) of a specified value.
-
-The indexOf() method returns -1 if the value is not found.
-
-The isArray() method returns true if an object is an array, otherwise false.
-Array.isArray(fruits);
-
-The join() method returns an array as a string.
-const fruits = ["Banana", "Orange", "Apple", "Mango"];
-let text = fruits.join();
-Banana,Orange,Apple,Mango
-
-The pop() method removes (pops) the last element of an array.
-
-prototype allows you to add new properties and methods to arrays.
-
-The reduce() method executes a reducer function for array 
-			element.returns a single value: the function's 
-			accumulated result.
-			
-const numbers = [ 11,2,5,5,7,8];
-
-numbers.reduce(getSum, 0);
-
-function getSum(total, num) {
-  return total + Math.round(num);
-}
-
--38
-
-The reverse() method reverses the order of the elements in an array.
-The shift() method removes the first item of an array.
-	The shift() method returns the shifted element: fruits.shift();
-
-The slice() method returns selected elements in an array, as a new array.
-const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
-const citrus = fruits.slice(1, 3);
-Orange,Lemon
-
-The some() method checks if any array elements pass a test (provided as a callback function).
-
-The some() method executes the callback function once for each array element.
-The sort() method sorts the elements of an array.
-
-The splice() method adds and/or removes array elementsoverwrites the original array.
-// At position 2, remove 2 items
-fruits.splice(2, 2);
-// At position 2, remove 1 item, add "Lemon" and "Kiwi"
-fruits.splice(2, 1, "Lemon", "Kiwi");
-The toSorted() method sorts the elements of an array in alphabetical order.
-The unshift() method adds new elements to the beginning of an array.
-
-Type script:
-Array ->const names: string[] = [];
-Tuple:let ourTuple: [number, boolean, string];ourTuple = [5, false, 'Coding God was here'];
-	 const graph: [x: number, y: number] = [55.2, 41.3];
-Object:	const car: { type: string, model: string, year: number } = {
-	  type: "Toyota",
-	  model: "Corolla",
-	  year: 2009
-	};
-TypeScript Utility Types:
-Partial Partial changes all the properties in an object to be optional.
-	let pointPart: Partial<Point> = {}; // `Partial` allows x and y to be optional [point is interface]
-			interface UserProfile {
-			  name: string;
-			  email: string;
-			  age: number;
-			}
-				
-		const UserForm: React.FC<Partial<UserProfile>> = (props) => {
-		  const { name, email, age } = props;
-
-		  return (
-			<form>
-			  <input placeholder="Name" value={name} readOnly />
-			  <input placeholder="Email" value={email} readOnly />
-			  <input placeholder="Age" value={age?.toString()} readOnly />
-			</form>
-		  );
-		};
-
-		// Usage: Passing only partial data
-		<UserForm name="John Doe" />;
-	
-	
-	
-
-Required:Required changes all the properties in an object to be required.
-	let myCar: Required<Car> = {
-	  make: 'Ford',
-	  model: 'Focus',
-	  mileage: 12000 // `Required` forces mileage to be defined
-	}; in interfaces mileage is optional but hear it's become Required
-	
-Record:Record is a shortcut to defining an object type with a specific key type and value type.
-	Record<string, number> is equivalent to { [key: string]: number }
-	const nameAgeMap: Record<string, number> = {
-	  'Alice': 21,
-	  'Bob': 25
-	};
-	{ Alice: 21, Bob: 25 }
-	
-	 Record<string, Record<string, number>>
-	 {
-	 senderid:{
-	 "reciverid":count of unreadmessage,
-	 "reciverid":count of unreadmessage
-	 }
-	 }
-	 
-	Note:Get data with object
-	 
-	 
-
-Omit:Omit removes keys from an object type.
-			The Omit<T, K> utility type creates a new type by removing specific keys from an existing 
-			.type. This is useful when you need most properties but want to exclude a few.
-
-
-
-	const bob: Omit<Person, 'age' | 'location'> = {
-	  name: 'Bob'
-	  // `Omit` has removed age and location from the type and they can't be defined here
-	};
-
-	console.log(bob); { name: 'Bob' }
-	
-			
-	interface UserProfile {
-		  name: string;
-		  email: string;
-		  age: number;
-		  password: string;
-		}
-
-		type UserWithoutPassword = Omit<UserProfile, 'password'>;
-
-		const PublicUserProfile: React.FC<UserWithoutPassword> = ({ name, email, age }) => (
-		  <div>
-			<h2>{name}</h2>
-			<p>Email: {email}</p>
-			<p>Age: {age}</p>
-		  </div>
-		);
-
-		// Usage
-		<PublicUserProfile name="John Doe" email="john@example.com" age={30} />;
-	
-	
-
-pick:Pick removes all but the specified keys from an object type.
-		The Pick<T, K> utility type creates a new type by selecting specific keys from an 
-		existing type. This is helpful when you only need a subset of a type.
-		
-		const bob: Pick<Person, 'name'> = {
-	  name: 'Bob'
-	  // `Pick` has only kept name, so age and location were removed from the type and they can't be defined here
-			};
-			
-				interface UserProfile {
-				  name: string;
-				  email: string;
-				  age: number;
-				  address: string;
-				}
-
-				type UserBasicInfo = Pick<UserProfile, 'name' | 'email'>;
-
-				const UserCard: React.FC<UserBasicInfo> = ({ name, email }) => (
-				  <div>
-					<h2>{name}</h2>
-					<p>{email}</p>
-				  </div>
-				);
-
-				// Usage
-				<UserCard name="Jane Doe" email="jane@example.com" />;
-			
-Exclude:Exclude removes types from a union.
-	type Primitive = string | number | boolean
-	const value: Exclude<Primitive, string> = true; // a string cannot be used here since Exclude removed it 
-	from the type.
-	
-
-Parameters:Parameters extracts the parameter types of a function type as an array.
-
-
-pick and partial
-interface UserProfile {
-  name: string;
-  email: string;
-  age: number;
-  address: string;
-}
-
-type EditableUserInfo = Partial<Pick<UserProfile, 'email' | 'address'>>;
-
-const EditUserForm: React.FC<EditableUserInfo> = (props) => {
-  const { email, address } = props;
-
-  return (
-    <form>
-      <input placeholder="Email" defaultValue={email} />
-      <input placeholder="Address" defaultValue={address} />
-    </form>
-  );
-};
-
-// Usage
-<EditUserForm email="jane@example.com" />;
-
-
-
-partial FOR STATE UPdate
----------------
-interface UserProfile {
-  name: string;
-  email: string;
-  age: number;
-}
-
-const UserProfileEditor: React.FC = () => {
-  const [profile, setProfile] = React.useState<UserProfile>({
-    name: '',
-    email: '',
-    age: 0,
-  });
-
-  const updateProfile = (updates: Partial<UserProfile>) => {
-    setProfile((prev) => ({ ...prev, ...updates }));
-  };
-
-  return (
-    <div>
-      <button onClick={() => updateProfile({ name: 'John Doe' })}>
-        Update Name
-      </button>
-      <button onClick={() => updateProfile({ age: 25 })}>Update Age</button>
-    </div>
-  );
-};
-
-
-omit in redux
-
-interface UserProfile {
-  id: string;
-  name: string;
-  email: string;
-  password: string;
-}
-
-type UserProfileForAction = Omit<UserProfile, 'password'>;
-
-const updateUser = (user: UserProfileForAction) => ({
-  type: 'UPDATE_USER',
-  payload: user,
-});
-
-// Usage
-dispatch(updateUser({ id: '123', name: 'Jane', email: 'jane@example.com' }));
-
-
-
-Union Types
-Union types allow a variable to have more than one type. You define them using the pipe (|) symbol.
-
-	type StringOrNumber = string | number;
-
-	function printLength(value: StringOrNumber): void {
-	  if (typeof value === 'string') {
-		console.log(value.length); // Works for string
-	  } else {
-		console.log(value.toString().length); // Works for number
-	  }
-	}
-
-	printLength("Hello"); // 5
-	printLength(12345); // 5
-	In this example, the value parameter can be either a string or a number, and TypeScript 
-	infers the type of value inside the if statement based on the check.
-
-2. Intersection Types
-	Intersection types allow you to combine multiple types into one. It combines all properties 
-	of the types you intersect.
-
-	Example:
-
-	interface Person {
-	  name: string;
-	  age: number;
-	}
-
-	interface Employee {
-	  company: string;
-	  role: string;
-	}
-
-	type EmployeeDetails = Person & Employee;
-
-	const employee: EmployeeDetails = {
-	  name: "Alice",
-	  age: 30,
-	  company: "Tech Corp",
-	  role: "Developer",
-	};
-
-	console.log(employee);
-	In this example, the EmployeeDetails type combines both the Person and Employee interfaces, 
-	so the employee object must include all properties from both types.
-
-3. Mapped Types
-	Mapped types allow you to create new types by iterating over the keys of another type. 
-	You can modify or add properties dynamically.
-
-
-	type User = {
-	  name: string;
-	  age: number;
-	};
-
-	type ReadOnlyUser = {
-	  readonly [K in keyof User]: User[K];
-	};
-
-	const user: ReadOnlyUser = { name: 'John', age: 25 };
-	// user.name = 'Doe'; // Error: Cannot assign to 'name' because it is a read-only property.
-	Here, ReadOnlyUser is created by iterating over the keys of User and making each property readonly.
-
-4. Conditional Types
-	Conditional types allow you to choose between types based on a condition.
-	type IsString<T> = T extends string ? "Yes, it's a string" : "No, it's not a string";
-
-			type Test1 = IsString<string>; // "Yes, it's a string"
-			type Test2 = IsString<number>; // "No, it's not a string"
-			In this example, the IsString type uses a conditional check to determine whether the provided type T is a string. If it is, it returns the type "Yes, it's a string", otherwise it returns "No, it's not a string".
-
-5. Generics
-	Generics allow you to define types that can work with any type while maintaining type safety. You define a placeholder type using angle brackets (<T>).
-
-	function identity<T>(value: T): T {
-	  return value;
-	}
-
-	const stringResult = identity("Hello, TypeScript!"); // string
-	const numberResult = identity(123); // number
-
-	console.log(stringResult); // "Hello, TypeScript!"
-	console.log(numberResult); // 123
-
-
-Union Types: Use | to combine multiple types.
-Intersection Types: Use & to combine multiple types into one.
-Mapped Types: Use loops over existing types to create new ones with modified properties.
-Conditional Types: Choose between types based on a condition.
-Generics: Define reusable types that maintain type safety across different inputs.
-
+============================================================
 Node jS
-----------------------------------------------------
-nvm manages different versions of node. And node contains npm (package manager).
-Use Node.js: If you only need a single, stable version for your projects and don't expect frequent changes in requirements.
-Use NVM: If you're working on multiple projects with different Node.js version requirements or testing applications in different Node environments.
-npx depcheck ->for find unused npm
+============================================================
+Q=>Node various concepts:
+	=>nvm manages different versions of node. And node contains npm (package manager).
+	=>Use Node.js: If you only need a single, stable version for your projects and don't expect frequent changes in requirements.
+	=>Use NVM: If you're working on multiple projects with different Node.js version requirements or testing applications in different Node environments.
+	=>npx depcheck ->for find unused npm
+	=> npm init vs imp init  -y
+		if you run npm init it asks you a bunch of questions to configure your package.json, 
+		but if you include the -y flag then it auto generates it with no specific information provided. 
+		It's perfectly fine to do it. 
+		It won't hurt anything, and in fact is common to do.	
+	=>Dependencies are present in the package.json file.
+
+		
 Q=>Node js:
 node js It is different from other JavaScript environments because it is asynchronous and event-driven.
 Google uses V8 for Node.js because it is faster and more efficient. It compiles the JavaScript code directly into machine code.
@@ -546,505 +120,478 @@ applications.In such cases, the multiple thread options are better but they are 
 if a relational database is used with Node.js, it behaves strangely, preventing favorable outcomes that the users can be sure of. Since Node.js does not support multiple threads, it is better suited for lightweight applications but not large-scale or heavy applications
 We use req.connection.remote address to get the IP address.
 
-
 Q=>Exit code : Exit codes are a collection of specific codes whose function is to complete a specific process.
 			   Examples of exit codes are fatal error, unused, internal JavaScript evaluation failure, etc.
 			   https://www.geeksforgeeks.org/node-js-exit-codes/
-
-=>Dependencies are present in the package.json file.
+Q=>Layers in node js
 There are three layers in the application architecture - API, service, and integration layers.
 Two input arguments for asynchronous queue are concurrency value and task function.
 It is possible to run external processes with Node.js. This can be done with the help of the child_process module.
 
 Q=>How does Node.js handle concurrency if it is single-threaded?
+
 Node.js prevents bottlenecks and aids programmers in easily writing the code because of the single-thread model. 
 Internally, there are several POSIX threads for different I/O operations like File, DNS, etc.
 So, when Node receives an I/O request, it uses one of these threads for the I/O operation. Once the operation is complete, 
 the result joins the event queue. Because of the event mechanism, the event loop starts after each event, checks the queue, and if Node’s execution stack is free, then the loop adds the queue result to it, thus managing concurrency.
 The emit() function is used to fire an event.
 
-=>Error-first callbacks are used to pass data and identify if an error has occurred.
-
-=>Libuv is a library that provides an event loop and a thread pool for handling asynchronous operations seamlessly. 
-It helps in handling file systems, child processes, files, DNS, etc.
-Punycode is a way of encoding internationalized domain names that use characters outside of the ASCII range.
-
-=>Traditionally on the web, we had a request/response format where a user sends an HTTP request and the server responds to that. 
-This is still applicable in most cases, especially those using RESTful API. But a need was felt for the server to also 
-communicate with the client, without getting polled(or requested) by the client.
- The server in itself should be able to send information to the client or the browser. 
- This is where Web Socket comes into the picture.
+Q=>Error-first callbacks
+	Error-first callbacks are used to pass data and identify if an error has occurred.
+Q=>Libuv
+		*Libuv is a library that provides an event loop and a thread pool for handling asynchronous 
+		 operations seamlessly.It helps in handling file systems, child processes, files, DNS, etc.
+		 Punycode is a way of encoding internationalized domain names that use characters outside of the 
+		 ASCII range.
+Q=>Web socket		 
+	=>Traditionally on the web, we had a request/response format where a user sends an HTTP request and 
+	  the server responds to that.This is still applicable in most cases, especially those using RESTful 
+	  API. 	  But a need was felt for the server to also communicate with the client, without getting 
+	  polled(or requested) by the client.	  The server in itself should be able to send information 
+	  to the client or the browser.This is where Web Socket comes into the picture.
 
 
 Q=>What is Callback hell? How can you avoid them?(a=>CALL BACK INSIDE CALLBACK)
-A problematic phenomenon for a JavaScript developer when he tries to execute multiple asynchronous operations consecutively 
-is termed callback hell. An asynchronous function is one that requires some external activity completion before processing a 
-result. These asynchronous functions require a callback function to tackle errors and process the result.
+	A problematic phenomenon for a JavaScript developer when he tries to execute multiple asynchronous 
+	operations consecutively 	is termed callback hell. An asynchronous function is one that requires 
+	some external activity completion before processing a 	result. These asynchronous functions require
+	a callback function to tackle errors and process the result.
 
 
 Q=>Spawned Child Processes
-The spawn function launches a command in a new process and we can use it to pass that command any arguments.
- For example, here’s code to spawn a new process that will execute the pwd command.
+	The spawn function launches a command in a new process and we can use it to pass that 
+	command any arguments. For example, here’s code to spawn a new process that will execute the 
+	pwd command.
  
-Q=>child process methods 
- 			
-fork -> utilize cpu power				
-Exec-> error -> when command is not found  vs standard error -> come after command excute
-- it's fetch output and store in buffer and give output so it's not used for big command 
-ExecFile-> it's use for some command but not for all because give maxbuffer error
-spwn-> for run big process
+Q=>child process methods 				
+	fork -> utilize cpu power				
+	Exec-> error -> when command is not found  vs standard error -> come after command excute
+		- it's fetch output and store in buffer and give output so it's not used for big command 
+	ExecFile-> it's use for some command but not for all because give maxbuffer error
+	spwn-> for run big process
 
+	The spawn() method is used to launch a new process with a given command. 
+	It is the most flexible and efficient way to start a child process.
 
+	const { spawn } = require('child_process');
 
+	const ls = spawn('ls', ['-lh', '/usr']); // Running the `ls` command with arguments
 
+	ls.stdout.on('data', (data) => {
+	  console.log(`Output: ${data}`);
+	});
 
+	ls.stderr.on('data', (data) => {
+	  console.error(`Error: ${data}`);
+	});
 
-
-The spawn() method is used to launch a new process with a given command. 
-It is the most flexible and efficient way to start a child process.
-
-const { spawn } = require('child_process');
-
-const ls = spawn('ls', ['-lh', '/usr']); // Running the `ls` command with arguments
-
-ls.stdout.on('data', (data) => {
-  console.log(`Output: ${data}`);
-});
-
-ls.stderr.on('data', (data) => {
-  console.error(`Error: ${data}`);
-});
-
-ls.on('close', (code) => {
-  console.log(`Child process exited with code ${code}`);
-});
+	ls.on('close', (code) => {
+	  console.log(`Child process exited with code ${code}`);
+	});
 ----------------------------------------
-exec() Method:
-The exec() method is used to run a command in a shell and buffer the output. 
-This method is simpler but less efficient than spawn() because it buffers the output, 
-making it less suitable for handling large amounts of data.
+	exec() Method:
+	The exec() method is used to run a command in a shell and buffer the output. 
+	This method is simpler but less efficient than spawn() because it buffers the output, 
+	making it less suitable for handling large amounts of data.
 
-const { exec } = require('child_process');
+	const { exec } = require('child_process');
 
-exec('ls -lh /usr', (error, stdout, stderr) => {
-  if (error) {
-    console.error(`Error: ${error.message}`);
-    return;
-  }
-  if (stderr) {
-    console.error(`Stderr: ${stderr}`);
-    return;
-  }
-  console.log(`Stdout: ${stdout}`);
-});
-
----------------------------------------------
-execFile() Method
-The execFile() method is similar to exec(), but it directly executes a file without invoking a shell.
- It is more efficient and safer when you do not need shell features.
-
-javascript
-Copy code
-const { execFile } = require('child_process');
-
-execFile('node', ['--version'], (error, stdout, stderr) => {
-  if (error) {
-    console.error(`Error: ${error.message}`);
-    return;
-  }
-  if (stderr) {
-    console.error(`Stderr: ${stderr}`);
-    return;
-  }
-  console.log(`Stdout: ${stdout}`);
-});
+	exec('ls -lh /usr', (error, stdout, stderr) => {
+	  if (error) {
+		console.error(`Error: ${error.message}`);
+		return;
+	  }
+	  if (stderr) {
+		console.error(`Stderr: ${stderr}`);
+		return;
+	  }
+	  console.log(`Stdout: ${stdout}`);
+	});
 
 ---------------------------------------------
- execSync() and spawnSync()
-If you need to run a process synchronously (blocking the main event loop until the process completes),
- you can use execSync() or spawnSync(). These methods are similar to exec() and spawn(), 
- but they run synchronously.
+	execFile() Method
+	The execFile() method is similar to exec(), but it directly executes a file without invoking a shell.
+	 It is more efficient and safer when you do not need shell features.
 
-javascript
-Copy code
-const { execSync } = require('child_process');
+	
+	const { execFile } = require('child_process');
 
-try {
-  const output = execSync('ls -lh /usr');
-  console.log(`Output: ${output.toString()}`);
-} catch (error) {
-  console.error(`Error: ${error.message}`);
-}
+	execFile('node', ['--version'], (error, stdout, stderr) => {
+	  if (error) {
+		console.error(`Error: ${error.message}`);
+		return;
+	  }
+	  if (stderr) {
+		console.error(`Stderr: ${stderr}`);
+		return;
+	  }
+	  console.log(`Stdout: ${stdout}`);
+	});
+
+---------------------------------------------
+	execSync() and spawnSync()
+		If you need to run a process synchronously (blocking the main event loop until the process
+		completes),		 you can use execSync() or spawnSync(). These methods are similar to exec()
+		and spawn(), but they run synchronously.
+
+		const { execSync } = require('child_process');
+
+		try {
+		  const output = execSync('ls -lh /usr');
+		  console.log(`Output: ${output.toString()}`);
+		} catch (error) {
+		  console.error(`Error: ${error.message}`);
+		}
 
 -------------------------------------
 
+	fork() Method
+	The fork() method is a special case of spawn() used to create a new Node.js process. 
+	It’s specifically designed for spawning new Node.js processes, 
+	and it allows inter-process communication (IPC) between the parent and child processes.
 
+	const { fork } = require('child_process');
 
-fork() Method
-The fork() method is a special case of spawn() used to create a new Node.js process. 
-It’s specifically designed for spawning new Node.js processes, 
-and it allows inter-process communication (IPC) between the parent and child processes.
+	const child = fork('child.js'); // Running a Node.js script in a new process
 
-javascript
-Copy code
-const { fork } = require('child_process');
+	child.on('message', (msg) => {
+	  console.log('Message from child:', msg);
+	});
 
-const child = fork('child.js'); // Running a Node.js script in a new process
+	child.send({ hello: 'world' }); // Sending a message to the child process
+	 
+------------------------------------------	
 
-child.on('message', (msg) => {
-  console.log('Message from child:', msg);
-});
-
-child.send({ hello: 'world' }); // Sending a message to the child process
- 
- 
-=>fs.read and fs.write read/write data attime and store buffer and give to us
-
-=>Architecture
-	luvb -> thredpool,eventloop->responsible for excute code in asynchronous( where all callback function is waitfor execution)
-=>process:one type of task which is excute
-=>thread: which is responsible for excute process(node js single thred)
-
-=>Express node js framework
-=>param middleware : 	
-			Param middleware is middleware that runs only when certain parameters are present in the URL. It enables you to 
-			apply specific middleware functions to routes that have particular parameters, making your code more organized and 
-			efficient. 
+Q=>param middleware : 	
+			Param middleware is middleware that runs only when certain parameters are present in the URL. 
+			It enables you to apply specific middleware functions to routes that have particular 
+			parameters, making your code more organized and efficient. 
 			https://medium.com/@navneetskahlon/using-param-middleware-in-express-simplifying-route-validation-36e939635567#:~:text=Setting%20Up%20Param%20Middleware&text=Define%20Your%20Middleware%20Function%3A%20Create,res%20)%2C%20and%20next%20function.
 			router.param('id', checkID);
 			we check based on id - like localhost:3000/movie/:id			
 			req.query=fetch data from url
 			re.body - fetch dat afrom body
 	
-=>Put vs patch
-
-PUT is a method of modifying resources where the client sends data that updates the entire resource.
-PATCH does partial update e.g. Fields that need to be updated by the client, only that field is updated without modifying the other field.
+Q=>Put vs patch
+	PUT :is a method of modifying resources where the client sends data that updates the entire resource.
+	PATCH: does partial update e.g. Fields that need to be updated by the client, only that field is 
+		 updated without modifying the other field.
 
 example: if only need to update name then in put you need to send whole request (means all filed which avilable in table) if used put
 {name:"dj2",lastname:"45"} 
 in patch if u want upadte name then u send only name like {name:"dj2"} no need to send whole object send field which is necessary
 
 
-Multithreading :
-we have two api first is blocking.unblocking
-in blocking we have some large process 
-so When this process start to excute it's use main thread so this action is also block ourSecond api
-which is unblocking sO OUR APPLIATION IS NOT WORK untill blocking process complete
-https://www.youtube.com/watch?v=MuwJJrfIfsU
-
-worker.js -> worker_thread
-postmessage is method for communicate with main thread
+Q=>Multithreading :
+	we have two api first is blocking.unblocking
+	in blocking we have some large process 
+	so When this process start to excute it's use main thread so this action is also block ourSecond api
+	which is unblocking sO OUR APPLIATION IS NOT WORK untill blocking process complete
+	https://www.youtube.com/watch?v=MuwJJrfIfsU
 
 
-Worker Threads
+Q=>Worker Threads
+	worker.js -> worker_thread
+	postmessage is method for communicate with main thread
 
-Why Use Worker Threads?
-Node.js is traditionally single-threaded, meaning that the main event loop
- runs on a single thread. This can become a bottleneck for CPU-bound tasks,
- such as data processing, image manipulation, or complex calculations.
- Worker Threads provide a way to offload these tasks to separate threads,
- allowing the main thread to remain responsive.
+Q=>Why Use Worker Threads?
+	 Node.js is traditionally single-threaded, meaning that the main event loop
+	 runs on a single thread. This can become a bottleneck for CPU-bound tasks,
+	 such as data processing, image manipulation, or complex calculations.
+	 Worker Threads provide a way to offload these tasks to separate threads,
+	 allowing the main thread to remain responsive.
 
-How Worker Threads Work
+	How Worker Threads Work
 
-Key Points:
-Worker: Represents a worker thread. You instantiate it with a file that contains the code to run in the worker thread.
-parentPort: A reference to the communication channel between the main thread and the worker thread. It allows you to send and receive messages.
-postMessage: Used to send messages from the main thread to the worker thread or vice versa.
-on('message'): Listens for messages sent from the other thread.
+	Key Points:
+	Worker: Represents a worker thread. You instantiate it with a file that contains the code to 
+			run in the worker thread.
+	parentPort: A reference to the communication channel between the main thread and the worker thread. 
+				It allows you to send and receive messages.
+	postMessage: Used to send messages from the main thread to the worker thread or vice versa.
+	on('message'): Listens for messages sent from the other thread.
 
 
-Worker Threads are part of the worker_threads module in Node.js.
- A worker thread runs in its own context, meaning it has its own event loop, memory,
- and global objects. You can pass data between the main thread and worker threads using postMessage() 
- and parentPort.on('message').
+	Worker Threads are part of the worker_threads module in Node.js.
+	 A worker thread runs in its own context, meaning it has its own event loop, memory,
+	 and global objects. You can pass data between the main thread and worker threads using postMessage() 
+	 and parentPort.on('message').
  
  
  worker.js
- // worker.js
-const { parentPort } = require('worker_threads');
+		 // worker.js
+		const { parentPort } = require('worker_threads');
 
-// Perform a CPU-intensive task (e.g., calculating Fibonacci sequence)
-function fibonacci(n) {
-  if (n < 2) return n;
-  return fibonacci(n - 1) + fibonacci(n - 2);
-}
+		// Perform a CPU-intensive task (e.g., calculating Fibonacci sequence)
+		function fibonacci(n) {
+		  if (n < 2) return n;
+		  return fibonacci(n - 1) + fibonacci(n - 2);
+		}
 
-// Listen for messages from the main thread
-parentPort.on('message', (n) => {
-  const result = fibonacci(n);
-  parentPort.postMessage(result); // Send result back to the main thread
-});
+		// Listen for messages from the main thread
+		parentPort.on('message', (n) => {
+		  const result = fibonacci(n);
+		  parentPort.postMessage(result); // Send result back to the main thread
+		});
 
 
 main.js
 
-// main.js
-const { Worker } = require('worker_threads');
+		// main.js
+		const { Worker } = require('worker_threads');
 
-function runWorker(n) {
-  return new Promise((resolve, reject) => {
-    const worker = new Worker('./worker.js');
+		function runWorker(n) {
+		  return new Promise((resolve, reject) => {
+			const worker = new Worker('./worker.js');
 
-    // Send data to the worker
-    worker.postMessage(n);
+			// Send data to the worker
+			worker.postMessage(n);
 
-    // Receive data from the worker
-    worker.on('message', (result) => {
-      resolve(result);
-    });
+			// Receive data from the worker
+			worker.on('message', (result) => {
+			  resolve(result);
+			});
 
-    // Handle errors
-    worker.on('error', reject);
+			// Handle errors
+			worker.on('error', reject);
 
-    // Handle worker exit
-    worker.on('exit', (code) => {
-      if (code !== 0) {
-        reject(new Error(`Worker stopped with exit code ${code}`));
-      }
-    });
-  });
-}
+			// Handle worker exit
+			worker.on('exit', (code) => {
+			  if (code !== 0) {
+				reject(new Error(`Worker stopped with exit code ${code}`));
+			  }
+			});
+		  });
+		}
 
 // Run the worker and get the result
-runWorker(10)
-  .then((result) => {
-    console.log(`Fibonacci result: ${result}`);
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+	runWorker(10)
+	  .then((result) => {
+		console.log(`Fibonacci result: ${result}`);
+	  })
+	  .catch((err) => {
+		console.error(err);
+	  });
+
+Q=>Rate limit vs. Throttle
+	The key difference between rate limit and throttle lies in the level 
+	at which these techniques operate and their responses when limits are reached. 
+	Rate limiting gently slows down clients, reminding them of the specified request limits,
+	 while throttling takes a more rigid approach,
+	 temporarily [RESTRICT] halting clients from making requests for a set period.
+
+	-> rate limit
+		https://medium.com/@olumideadewusis/implementing-rate-limiting-in-node-js-apis-94f18cd74695
+		const rateLimit = require('express-rate-limit');
+
+		const limiter = rateLimit({
+		  windowMs: 60 * 1000, // 1 minute
+		  max: 2, // maximum number of requests allowed in the windowMs
+		  message: 'Too many requests, please try again later.',
+		});
+
+	module.exports = limiter;
 
 
-=>Piping is a mechanism used to connect the output of one stream to another stream. 
-It is normally used to retrieve data from one stream and pass output to another stream
-
-
-=>Rate limit vs. Throttle
-The key difference between rate limit and throttle lies in the level 
-at which these techniques operate and their responses when limits are reached. 
-Rate limiting gently slows down clients, reminding them of the specified request limits,
- while throttling takes a more rigid approach,
- temporarily halting clients from making requests for a set period.
-
--> rate limit
-https://medium.com/@olumideadewusis/implementing-rate-limiting-in-node-js-apis-94f18cd74695
-const rateLimit = require('express-rate-limit');
-
-const limiter = rateLimit({
-  windowMs: 60 * 1000, // 1 minute
-  max: 2, // maximum number of requests allowed in the windowMs
-  message: 'Too many requests, please try again later.',
-});
-
-module.exports = limiter;
-
-https://www.digitalocean.com/community/tutorials/understanding-the-event-loop-callbacks-promises-and-async-await-in-javascript
-
-5. If Node.js is single-threaded, then how does it handle concurrency?
-The Multi-Threaded Request/Response Stateless Model is not followed by the Node JS Platform, and it adheres to the Single-Threaded Event Loop Model. The Node JS Processing paradigm is heavily influenced by the JavaScript Event-based model and the JavaScript callback system. As a result, Node.js can easily manage more concurrent client requests. The event loop is the processing model's beating heart in Node.js.
-
-
-Q. If Node.js is single-threaded, then how does it handle concurrency?
-The Multi-Threaded Request/Response Stateless Model is not followed by the Node JS Platform,
- and it adheres to the Single-Threaded Event Loop Model. The Node JS Processing paradigm is 
- heavily influenced by the JavaScript Event-based model and the JavaScript callback system.
- As a result, Node.js can easily manage more concurrent client requests. 
- The event loop is the processing model's beating heart in Node.js.
-
+Q=>If Node.js is single-threaded, then how does it handle concurrency?
+		The Multi-Threaded Request/Response Stateless Model is not followed by the Node JS Platform,
+		and it adheres to the Single-Threaded Event Loop Model. The Node JS Processing paradigm is 
+		heavily influenced by the JavaScript Event-based model and the JavaScript callback system. 
+		As a result, Node.js can easily manage more concurrent client requests. 
+		The event loop is the processing model's beating heart in Node.js.
 
 Q:How is Node.js most frequently used?
-Node.js is widely used in the following applications:
+	Node.js is widely used in the following applications:
 
-Real-time chats
-Internet of Things
-Complex SPAs (Single-Page Applications)
-Real-time collaboration tools
-Streaming applications
-Microservices architecture
+	Real-time chats
+	Internet of Things
+	Complex SPAs (Single-Page Applications)
+	Real-time collaboration tools
+	Streaming applications
+	Microservices architecture
 
 
 Q:What is the purpose of the module .Exports?
-In Node.js, a module encapsulates all related codes into a single unit of code that 
-can be parsed by moving all relevant functions into a single file. 
-You may export a module with the module and export the function, 
-which lets it be imported into another file with a needed keyword.
+	In Node.js, a module encapsulates all related codes into a single unit of code that 
+	can be parsed by moving all relevant functions into a single file. 
+	You may export a module with the module and export the function, 
+	which lets it be imported into another file with a needed keyword.
 
 Q. What does event-driven programming mean?
-An event-driven programming approach uses events to trigger various functions. 
-An event can be anything, such as typing a key or clicking a mouse button.
-A call-back function is already registered with the element executes whenever an event is triggered.
+	An event-driven programming approach uses events to trigger various functions. 
+	An event can be anything, such as typing a key or clicking a mouse button.
+	A call-back function is already registered with the element executes whenever an event is triggered.
 
 Q. What is an Event Loop in Node.js?
-Event loops handle asynchronous callbacks in Node.js. 
-It is the foundation of the non-blocking input/output in Node.js,
- making it one of the most important environmental features.
+	Event loops handle asynchronous callbacks in Node.js. 
+	It is the foundation of the non-blocking input/output in Node.js,
+	 making it one of the most important environmental features.
+		
+	https://www.digitalocean.com/community/tutorials/understanding-the-event-loop-callbacks-promises-and-async-await-in-javascript
 
-Q. Differentiate between process.nextTick() and setImmediate()?
-The distinction between method and product. This is accomplished through the use of nextTick() 
-and setImmediate(). next Tick() postpones the execution of action until the next pass around
- the event loop, or it simply calls the callback function once the event loop's 
- current execution is complete, whereas setImmediate() executes a callback on the next cycle 
- of the event loop and returns control to the event loop for any I/O operations.
- 
-QWhat is REPL in Node.js?
-REPL stands for Read Eval Print Loop, and it represents a computer environment. 
-It’s similar to a Windows console or Unix/Linux shell in which a command is entered.
- Then, the system responds with an output
+Q.What is REPL in Node.js?
+	REPL stands for Read Eval Print Loop, and it represents a computer environment. 
+	It’s similar to a Windows console or Unix/Linux shell in which a command is entered.
+	Then, the system responds with an output
  
  
  
- Qfork() VS spawn()
+Q=>fork() VS spawn()
+		
+	fork() is a particular case of spawn() that generates a new instance of a V8 engine.
 
-	
-fork() is a particular case of spawn() that generates a new instance of a V8 engine.
+	Spawn() launches a new process with the available set of commands.
 
-Spawn() launches a new process with the available set of commands.
+	fork() Multiple workers run on a single node code base for multiple tasks.
 
-fork() Multiple workers run on a single node code base for multiple tasks.
-
-Spawn()  This method doesn’t generate a new V8 instance, and only a single copy of the node module is 
-			active on the processor.
+	Spawn()  This method doesn’t generate a new V8 instance, and only a single copy of the node module is 
+				active on the processor.
 			
 Q->What is a reactor pattern in Node.js?
 A reactor pattern is a concept of non-blocking I/O operations. 
 This pattern provides a handler that is associated with each I/O operation. 
 As soon as an I/O request is generated, it is then submitted to a demultiplexer
 
-q-> List the various Node.js timing features.
-The setTimeout() function schedules the execution of a callback function after a 
-specified delay (in milliseconds). The callback is executed once after the delay has passed.
+Q-> List the various Node.js timing features].
+	
+	1.The setTimeout() function schedules the execution of a callback function after a 
+	  specified delay (in milliseconds). The callback is executed once after the delay has passed.
 
-The setInterval() function schedules the execution of a callback function at regular 
-intervals (in milliseconds). 
-The callback is executed repeatedly until the interval is cleared.
+	2.The setInterval() function schedules the execution of a callback function at regular 
+	  intervals (in milliseconds). 
+	  The callback is executed repeatedly until the interval is cleared.
 
-The setImmediate() function schedules the execution of a callback function 
-to occur immediately after the current event loop cycle.
- This allows you to execute code after the I/O events callbacks.
+	3.The setImmediate() function schedules the execution of a callback function 
+	  to occur immediately after the current event loop cycle.
+	  This allows you to execute code after the I/O events callbacks.
+	 
+	 
+	4.The process.nextTick() function schedules a callback function to be 
+	  executed on the next iteration of the event loop, before any I/O events. 
+	  It's typically used to defer the execution of a function until the current operation completes.
+
+	5.Promise and async/await (Microtasks)
+		Though not part of the traditional timing functions, Promises and async/await are worth 
+		mentioning as they deal with microtask scheduling. The callbacks attached to a Promise 
+		(via .then()or catch()) are executed in the microtask queue, which is processed after the 
+		current operation and before the next event loop tick.
+
+	6.queueMicrotask()
+		The queueMicrotask() function allows you to queue a microtask directly, 
+		which is similar to process.nextTick() but more standardized.
+
+	Key Differences Between These Timing Functions:
+
+	setTimeout() and setInterval(): Schedule callbacks to run after a delay or repeatedly at intervals. 
+	These are part of the macro task queue.
+
+	setImmediate(): Runs after the current event loop cycle. Useful for deferring execution to allow 
+	I/O to 	complete.
+
+	process.nextTick(): Runs before any I/O events in the next event loop tick. It has higher priority 
+	than setImmediate() and setTimeout().
+
+	queueMicrotask(): Schedules microtasks to run after the current operation and before 
+	the next event loop tick. Similar to process.nextTick() but part of the standard.
+	
+Q. Differentiate between process.nextTick() and setImmediate()?
+	The distinction between method and product. This is accomplished through the use of nextTick() 
+	and setImmediate(). next Tick() postpones the execution of action until the next pass around
+	the event loop, or it simply calls the callback function once the event loop's 
+	current execution is complete, whereas setImmediate() executes a callback on the next cycle 
+	of the event loop and returns control to the event loop for any I/O operations.
  
- 
-The process.nextTick() function schedules a callback function to be 
-executed on the next iteration of the event loop, before any I/O events. 
-It's typically used to defer the execution of a function until the current operation completes.
 
-Promise and async/await (Microtasks)
-
-Though not part of the traditional timing functions, Promises and async/await are worth mentioning 
-as they deal with microtask scheduling. The callbacks attached to a Promise (via .then() 
-or catch()) are executed in the microtask queue, which is processed after the current operation and 
-before the next event loop tick.
-
-queueMicrotask()
-The queueMicrotask() function allows you to queue a microtask directly, 
-
-
-which is similar to process.nextTick() but more standardized.
-
-Key Differences Between These Timing Functions:
-
-setTimeout() and setInterval(): Schedule callbacks to run after a delay or repeatedly at intervals. 
-These are part of the macro task queue.
-
-setImmediate(): Runs after the current event loop cycle. Useful for deferring execution to allow I/O to 
-complete.
-
-process.nextTick(): Runs before any I/O events in the next event loop tick. It has higher priority 
-than setImmediate() and setTimeout().
-
-queueMicrotask(): Schedules microtasks to run after the current operation and before 
-the next event loop tick. Similar to process.nextTick() but part of the standard.
-
-
-QList down the two arguments that async. First, does the queue take as input?
-The async.queue function in Node.js takes two arguments as input:
- a worker function and an optional  concurrency limit. 
-It is used to create a task queue executed in parallel.
+Q->List down the two arguments that async. First, does the queue take as input?
+	The async.queue function in Node.js takes two arguments as input:
+	a worker function and an optional  concurrency limit. 
+	It is used to create a task queue executed in parallel.
 
 Q-What is Libuv?
-Libuv is a critical component of Node.js, and it's what makes it possible to handle
- I/O operations in a non-blocking and efficient manner.
+	Libuv is a critical component of Node.js, and it's what makes it possible to handle
+	I/O operations in a non-blocking and efficient manner.
  
 Q-What is a thread pool, and which library handles it in Node.js?
-A thread pool is a collection of threads that are used to execute tasks in parallel. 
-In Node.js, the thread pool is handled by the libuv library, which is a multi-platform support 
-library that provides asynchronous I/O operations.
+	A thread pool is a collection of threads that are used to execute tasks in parallel. 
+	In Node.js, the thread pool is handled by the libuv library, which is a multi-platform support 
+	library that provides asynchronous I/O operations.
 
-QHow are worker threads different from clusters?
-Worker threads and clusters are two different approaches to leveraging the
- power of multiple CPUs in Node.js. While clusters create multiple instances of a
- Node.js process, each running on a separate CPU core, worker threads provide a way to create
- multiple threads within a single process.
+Q.How are worker threads different from clusters?
+	 Worker threads and clusters are two different approaches to leveraging the
+	 power of multiple CPUs in Node.js. While clusters create multiple instances of a
+	 Node.js process, each running on a separate CPU core, worker threads provide a way to create
+	 multiple threads within a single process.
 
 Q->What is a passport in Node.js?
-Passport is a popular authentication middleware for Node.js. It provides a simple and modular way to 
-implement authentication in Node.js applications. Passport supports many authentication mechanisms,
- including username/password, social logins like Facebook and Google, and JSON Web Tokens (JWTs).
-Advance concepts
+	Passport is a popular authentication middleware for Node.js. It provides a simple and modular way to 
+	implement authentication in Node.js applications. Passport supports many authentication mechanisms,
+	including username/password, social logins like Facebook and Google, and JSON Web Tokens (JWTs).
+	Advance concepts
 ----------------------------
-Libuv/ Architecture Node js
-->https://www.youtube.com/watch?v=59C1dvLRIrI&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_LhxS&index=27
-event Loop - > Responsible for execute Normal task like io/execute Call Back Function/network
+Q=>Libuv/ Architecture Node js
+	Libuv -> thredpool,eventloop->responsible for excute code in asynchronous
+				( where all callback function is waitfor execution)
+	->https://www.youtube.com/watch?v=59C1dvLRIrI&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_LhxS&index=27
+	event Loop - > Responsible for execute Normal task like io/execute Call Back Function/network
+	Thread pool->Responsible for execute Normal task FILE ACCESS/COMPARASION/crypto task
+					( we have 4 Thread pool)
+	Process:Which is currently	executing -> use by process keyword in node js
+	Thread:Responsible for executing pogram code in process
 
-Thread pool->Responsible for execute Normal task FILE ACCESS/COMPARASION/crypto task( we have 4 Thread pool)
+	->Code which have not call back run main Thread 
+	->Function which run  ASYNCHRONOUSLY  is run in ThreadPool
+	-> And callback of ThreadPool execute in Eventloop
+	->Eventloop move function to MAin thread
 
-Process:Which is currently	executing -> use by process keyword in node js
-Thread:> Responsible for executing pogram code in process
+	like fs.readFile('Demo.txt', 'utf8', function (err, data) {
+		// Display the file content
+		console.log(data);
+	});
 
-->Code which have not call back run main Thread 
-->Function which run  ASYNCHRONOUSLY  is run in ThreadPool
--> And callback of ThreadPool execute in Eventloop
-->Eventloop move function to MAin thread
+	->demo.txt scan and run in thread pool but err,data which is callback is executed in Eventloop
 
-like fs.readFile('Demo.txt', 'utf8', function (err, data) {
-    // Display the file content
-    console.log(data);
-});
-
-->demo.txt scan and run in thread pool but err,data which is callback is executed in Eventloop
-
-
+=================================================================================
 Advance Concept Node js
-[ The order of execution is determined by the event loop.]
-1. Event Loop and Non-blocking I/O
-->each cycle  of eventloop is tick
-	What it is: Mechanism allowing Node.js to perform non-blocking I/O despite being single-threaded.
-	Components:
-		Call Stack: Executes synchronous code.
-		Callback Queue: Holds callbacks waiting to be executed after their asynchronous operations complete.
-		Event Loop: Checks if call stack is empty, then fetches callbacks from the callback queue.
-	Important Functions:
-		process.nextTick(): Places callback in a separate queue, which runs before the event loop next cycle.
-		setImmediate(): Queues callback to be executed in the next event loop cycle.
-		
-=>Differentiate between process.nextTick() and setImmediate()?
-		The distinction between method and product. This is accomplished through the use of nextTick() 
-		and setImmediate(). next Tick() postpones the execution of action until the next pass around
-		 the event loop, or it simply calls the callback function once the event loop's 
-		 current execution is complete, whereas setImmediate() executes a callback on the next cycle 
-		 of the event loop and returns control to the event loop for any I/O operations.
-		 
-=>What are the asynchronous tasks that should occur in an event loop?
-Asynchronous tasks that should occur in an event loop in Node.js include I/O operations,
- timers, and callback functions. By performing these tasks asynchronously, 
- Node.js can handle a large number of concurrent requests without blocking the event loop.
- 
- 
-Microtask queue :Store callback which is Attach of resolve promise
-Next click Queue:Store callback which is process.nextClick() function
-Above queue executed after current phase executed
-ex:if 1st phase running and promise resolved so first Microtask/Next click  executed insted of 2 nd phase
-Phase of event loop:
-->When all callback of particular phase is completed then next phase is executed
-Expired tIMERS:[Set timeout/set Intervals]
-io task & polling[file system operation (fs.read/writ file)] -> polling is looking for new io operation and put in to call back
-setImmediate callback[setImmediate]:it's special function which excute after 2nd phase complete
-closed callback:[socket.on('close')]->webserver and websocket is closed 
-
-
+==========================================================
+*Event Loop and Non-blocking I/O[ The order of execution is determined by the event loop.
+	->each cycle  of eventloop is tick
+		What it is: Mechanism allowing Node.js to perform non-blocking I/O despite being single-threaded.
+		Components:
+			Call Stack: Executes synchronous code.
+			Callback Queue: Holds callbacks waiting to be executed after their asynchronous operations complete.
+			Event Loop: Checks if call stack is empty, then fetches callbacks from the callback queue.
+		Important Functions:
+			process.nextTick(): Places callback in a separate queue, which runs before the event loop next cycle.
+			setImmediate(): Queues callback to be executed in the next event loop cycle.
+			
+	=>Differentiate between process.nextTick() and setImmediate()?
+			The distinction between method and product. This is accomplished through the use of nextTick() 
+			and setImmediate(). next Tick() postpones the execution of action until the next pass around
+			 the event loop, or it simply calls the callback function once the event loop's 
+			 current execution is complete, whereas setImmediate() executes a callback on the next cycle 
+			 of the event loop and returns control to the event loop for any I/O operations.
+			 
+	=>What are the asynchronous tasks that should occur in an event loop?
+	  Asynchronous tasks that should occur in an event loop in Node.js include I/O operations,
+	  timers, and callback functions. By performing these tasks asynchronously, 
+	  Node.js can handle a large number of concurrent requests without blocking the event loop.
+	 
+	 
+		Microtask queue :Store callback which is Attach of resolve promise
+		Next click Queue:Store callback which is process.nextClick() function
+			Above queue executed after current phase executed
+				ex:if 1st phase running and promise resolved so first Microtask/Next click 
+					executed insted of 2 nd phase
+	Phase of event loop:
+		->When all callback of particular phase is completed then next phase is executed
+		->Expired tIMERS:[Set timeout/set Intervals]
+		->io task & polling[file system operation (fs.read/writ file)]
+		-> polling is looking for new io operation and put in to call back
+		setImmediate callback[setImmediate]:it's special function which excute after 2nd phase complete
+		closed callback:[socket.on('close')]->webserver and websocket is closed 
 		
 https://www.youtube.com/watch?v=5F4iO-W0ZbY&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_LhxS&index=28
+Refer[List the various Node.js timing features]
 2. Buffers:
 		What they are: Raw memory allocations outside V8’s heap.
 		Usage:
@@ -1126,173 +673,257 @@ https://www.youtube.com/watch?v=5F4iO-W0ZbY&list=PL1BztTYDF-QPdTvgsjf8HOwO4ZVl_L
 	
 
 ----------------------------
+=================================================
+Sample code
+==================================================
 app.set("view engine", "ejs");
 
-The line app.set("view engine", "ejs"); is used in an Express.js application to set up the view engine to 
-use EJS (Embedded JavaScript) for rendering HTML templates.
+		The line app.set("view engine", "ejs"); is used in an Express.js application to set up the 
+		view engine to 	use EJS (Embedded JavaScript) for rendering HTML templates.
 
-Explanation
+	Explanation:
+		EJS (Embedded JavaScript): A templating language that lets you generate HTML markup 
+		with plain JavaScript.It allows you to embed JavaScript code within your HTML templates.
+	Purpose
+		By setting the view engine to EJS, you enable Express to render .ejs files located in your 
+		views directory. This makes it easier to dynamically generate HTML pages based on your 
+		application data.
 
-EJS (Embedded JavaScript): A templating language that lets you generate HTML markup with plain JavaScript. 
-It allows you to embed JavaScript code within your HTML templates.
-Purpose
-By setting the view engine to EJS, you enable Express to render .ejs files located in your views directory. This makes it easier to dynamically generate HTML pages based on your application data.
+	Usage
+		Set Up EJS in Express:
 
-Usage
-Set Up EJS in Express:
+	Ensure you have installed EJS:
+		npm install ejs
+		Then, in your Express application, set EJS as the view engine:
+		const express = require('express');
+		const app = express();
 
-Ensure you have installed EJS:
-npm install ejs
-Then, in your Express application, set EJS as the view engine:
-const express = require('express');
-const app = express();
+		// Set the view engine to EJS
+		app.set('view engine', 'ejs');
+		Create an EJS Template:
 
-// Set the view engine to EJS
-app.set('view engine', 'ejs');
-Create an EJS Template:
+		Create a directory named views in the root of your project. 
+		Inside the views directory, create an EJS file, for example, index.ejs:
 
-Create a directory named views in the root of your project. 
-Inside the views directory, create an EJS file, for example, index.ejs:
+	html
 
-html
-Copy code
-<!-- views/index.ejs -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
-</head>
-<body>
-  <h1>Welcome to <%= title %></h1>
-  <p>Hello, <%= user %>!</p>
-</body>
-</html>
-Render the EJS Template in a Route:
+		<!-- views/index.ejs -->
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+		  <meta charset="UTF-8">
+		  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		  <title>Home Page</title>
+		</head>
+		<body>
+		  <h1>Welcome to <%= title %></h1>
+		  <p>Hello, <%= user %>!</p>
+		</body>
+		</html>
+		Render the EJS Template in a Route:
 
-Define a route in your Express application that renders the index.ejs template:
+	Define a route in your Express application that renders the index.ejs template:
+	
+		app.get('/', (req, res) => {
+		  res.render('index', { title: 'My Website', user: 'John Doe' });
+		});
 
-javascript
-Copy code
-app.get('/', (req, res) => {
-  res.render('index', { title: 'My Website', user: 'John Doe' });
-});
+		app.listen(3000, () => {
+		  console.log('Server is running on port 3000');
+		});
+		Start the Server:
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
-});
-Start the Server:
+		Run your Express server:
 
-Run your Express server:
+	
+	node app.js
+	When you navigate to http://localhost:3000 in your browser, 
+	you should see the rendered HTML content from index.ejs, with the dynamic values for title 
+	and user injected.
 
-sh
-Copy code
-node app.js
-When you navigate to http://localhost:3000 in your browser, 
-you should see the rendered HTML content from index.ejs, with the dynamic values for title and user injected.
-
-
-
-Setting the view engine to EJS in an Express.js application allows you to render dynamic HTML pages using EJS templates. 
-This enhances your application's ability to generate HTML content dynamically based on the data passed from your server-side code.
+	Setting the view engine to EJS in an Express.js application allows you to render dynamic HTML 
+	pages using EJS templates. 	This enhances your application's ability to generate HTML content 
+	dynamically based on the data passed from your server-side code.
 
 
----------------------
-	Passport:Passport is Express-compatible authentication middleware for Node.js.
+---------------------	
 Node.js Async Flows:
-https://www.youtube.com/watch?v=WXF8RxqhP_c&list=PLg7SrwZOiNdXEoMc0vFEXUV2xmcrrtJ3X&index=3
-https://medium.com/velotio-perspectives/understanding-node-js-async-flows-parallel-serial-waterfall-and-queues-6f9c4badbc17
-1. Parallel
-When we have to run multiple tasks independent of each other without waiting until the previous 
-task has completed, parallel comes into the picture.
+	1. Parallel
+		When we have to run multiple tasks independent of each other without waiting until the previous 
+		task has completed, parallel comes into the picture.
 
-async.parallel(tasks, callback)
-async.parallel([]) or async.parallel({})
+		async.parallel(tasks, callback)
+		async.parallel([]) or async.parallel({})
+		
+		tasks: A collection of functions to run. It can be an array, an object or any iterable.
+		Callback: This is the callback where all the task results are passed and executed once all
+		the task execution has completed.
 
-asks: A collection of functions to run. It can be an array, an object or any iterable.
+		In case an error is passed to a function’s callback, the main callback is immediately called
+		with the error. Although parallel is about starting I/O tasks in parallel, it’s not about parallel 
+		execution since Javascript is single-threaded.
+			-> if one function give error it's stop execution
 
-Callback: This is the callback where all the task results are passed and executed once all the task
- execution has completed.
+	2. Series
+		When we have to run multiple tasks which depend on the output of the previous task, 
+		series comes to our rescue.
+		async.series(tasks, callback)
 
-In case an error is passed to a function’s callback, the main callback is immediately called
- with the error. Although parallel is about starting I/O tasks in parallel, it’s not about parallel 
- execution since Javascript is single-threaded.
--> if one function give error it's stop execution
+		Tasks: A collection of functions to run. It can be an array, an object or any iterable.
 
-2. Series
-When we have to run multiple tasks which depend on the output of the previous task, 
-series comes to our rescue.
-async.series(tasks, callback)
+		Callback: This is the callback where all the task results are passed and executed once all the 
+		task execution has completed.
 
-Tasks: A collection of functions to run. It can be an array, an object or any iterable.
+		The callback function receives an array of result objects when all the tasks have completed. 
+		If an error is encountered in any of the tasks,
+		 no more functions are run but the final callback is called with the error value.
+		-> it runs with array
+	3.Waterfall
+			When we have to run multiple tasks which depend on the output of the previous task,
+		    Waterfall can be helpful.
+		   
+			async.waterfall(tasks, callback)
 
-Callback: This is the callback where all the task results are passed and executed once all the 
-task execution has completed.
-
-The callback function receives an array of result objects when all the tasks have completed. 
-If an error is encountered in any of the tasks,
- no more functions are run but the final callback is called with the error value.
--> it runs with array
-3.Waterfall
-When we have to run multiple tasks which depend on the output of the previous task,
- Waterfall can be helpful.
-async.waterfall(tasks, callback)
-
-Tasks: A collection of functions to run. It can be an array, an object or any iterable structure.
-
-Callback: This is the callback where all the task results are passed and is executed once all the 
-task execution has completed.
-
-It will run one function at a time and pass the result of the previous function to the next one.
-
-4.Queue
-When we need to run a set of tasks asynchronously, a queue can be used. 
-A queue object based on an asynchronous function can be created which is passed as a worker.
-async.queue(task, concurrency)
-
-Task: Here, it takes two parameters, first — the task to be performed and second — the callback function.
-
-Concurrency: It is the number of functions to be run in parallel.
-
-async.queue returns a queue object that supports few properties:
-
-Push: Adds tasks to the queue to be processed.
-Drain: The drain function is called after the last task of the queue.
-Unshift: Adds tasks in front of the queue.
-->list all object from  s3
-5.Priority Queue
-It is the same as the queue, the only difference being that a priority can be assigned to 
-the tasks which are considered in ascending order.	
+			Tasks: A collection of functions to run. It can be an array, an object or any iterable 
+				  structure.
 	
-async.priorityQueue(task,concurrency)
-Task: Here, it takes three parameters:
-
-First — The task to be performed.
-Second — Priority, it is a number that determines the sequence of execution. For an array of tasks, 
-the priority remains the same for all of them.
-Third — Callback function.
-
-6.Race
-It runs all the tasks in parallel, but as soon as any of the function completes its execution 
-or passes an error to its callback, the main callback is immediately called
-async.race(tasks, callback)
-Task: Here, it is a collection of functions to run. It is an array or any iterable.
-
-Callback: The result of the first complete execution is passed. It may be the result or error.
+			Callback: This is the callback where all the task results are passed and is executed 
+					 once all the 			task execution has completed.
 	
-	
+			=>It will run one function at a time and pass the result of the previous function 
+			  to the next one.
+
+	4.Queue
+		When we need to run a set of tasks asynchronously, a queue can be used. 
+		A queue object based on an asynchronous function can be created which is passed as a worker.
+		async.queue(task, concurrency)
+
+		Task: Here, it takes two parameters, first — the task to be performed and 		
+											 second — the callback function.
+
+		Concurrency: It is the number of functions to be run in parallel.
+
+		async.queue returns a queue object that supports few properties:
+
+		Push: Adds tasks to the queue to be processed.
+		Drain: The drain function is called after the last task of the queue.
+		Unshift: Adds tasks in front of the queue.
+		->list all object from  s3
+	5.Priority Queue
+		It is the same as the queue, the only difference being that a priority can be assigned to 
+		the tasks which are considered in ascending order.	
+			
+		async.priorityQueue(task,concurrency)
+		Task: Here, it takes three parameters:
+
+		First — The task to be performed.
+		Second — Priority, it is a number that determines the sequence of execution. 
+				 For an array of tasks,the priority remains the same for all of them.
+		Third — Callback function.
+
+	6.Race
+		It runs all the tasks in parallel, but as soon as any of the function completes its execution 
+		or passes an error to its callback, the main callback is immediately called
+		async.race(tasks, callback)
+		Task: Here, it is a collection of functions to run. It is an array or any iterable.
+
+		Callback: The result of the first complete execution is passed. It may be the result or error.
+Refrence:	
+	https://www.youtube.com/watch?v=WXF8RxqhP_c&list=PLg7SrwZOiNdXEoMc0vFEXUV2xmcrrtJ3X&index=3
+	https://medium.com/velotio-perspectives/understanding-node-js-async-flows-parallel-serial-waterfall-and-queues-6f9c4badbc17
+					
 --------------------	
-Security:
-Dos attack -> send multilple request -> Rate limit->express-rate-limit
-Password encryption ->node.bcrypt.js
-Schema validation ->joi
-HTML & CSS escaping->escap-html
-Use orm
+Promisification:
+	Promisification is the process of converting a function that uses callbacks 
+	(often in asynchronous programming) into a function that returns a Promise. 
+	A Promise represents the eventual completion (or failure) of an asynchronous operation 
+	and its resulting value.
+
+	Here's a breakdown of how to promisify a function:
+
+	Why Promisify?
+
+	Better error handling: Promises allow for .catch() for handling errors, instead of relying on 
+						  callback-based error handling.
+	Chainability: Promises can be chained with .then(), making the code more readable and structured.
+	Avoid "Callback Hell": Promises help in avoiding deeply nested callbacks.
+	Example of Promisifying a Callback-Based Function
+
+	Let's say you have a function that uses callbacks, like fs.readFile() in Node.js:
+
+
+	const fs = require('fs');
+
+		fs.readFile('file.txt', 'utf8', function (err, data) {
+		  if (err) {
+			console.error('Error reading file', err);
+		  } else {
+			console.log('File content:', data);
+		  }
+		});
+	You can promisify this function using Promise:
+
+	Manual Promisification	
+		const fs = require('fs');
+
+		function promisifiedReadFile(filePath, encoding) {
+		  return new Promise((resolve, reject) => {
+			fs.readFile(filePath, encoding, function (err, data) {
+			  if (err) {
+				reject(err); // reject the promise if error occurs
+			  } else {
+				resolve(data); // resolve the promise if operation is successful
+			  }
+			});
+		  });
+		}
+
+		promisifiedReadFile('file.txt', 'utf8')
+		  .then(data => console.log('File content:', data))
+		  .catch(err => console.error('Error reading file', err));
+		  
+		Promisification Using util.promisify in Node.js
+		Node.js provides a utility method util.promisify to automatically convert callback-based functions into Promise-based ones.
+
+
+		const util = require('util');
+		const fs = require('fs');
+
+		const promisifiedReadFile = util.promisify(fs.readFile);
+
+		promisifiedReadFile('file.txt', 'utf8')
+		  .then(data => console.log('File content:', data))
+		  .catch(err => console.error('Error reading file', err));
+-----------------------------------------------
+
+Map:	
+	In Node.js, Map is a built-in object type used to store key-value pairs, preserving the insertion 
+	order.
+
+	const myMap = new Map();
+
+	// Adding key-value pairs
+	myMap.set("name", "John");
+	myMap.set("age", 30);
+	myMap.set("profession", "Developer");
+
+	// Accessing values
+	console.log(myMap.get("name")); // Output: John
+
+	// Iterating through Map
+	myMap.forEach((value, key) => {
+	  console.log(`${key}: ${value}`);
+	});
+
+	global.onlineUsers.set("user1", { socketId: "1234", name: "Alice" });
+	global.onlineUsers.set("user2", { socketId: "5678", name: "Bob" });
+
+	console.log(global.onlineUsers.get("user1")); 
+	// Output: { socketId: '1234', name: 'Alice' }
+---------------------------
 	
 	
-	
-	
+================================================
 Package with use------------------
 Unifaires  Code:
 
@@ -1552,1423 +1183,1386 @@ Unifaires  Code:
 	const stripe = require('stripe')('your-stripe-secret-key');
 	const paymentIntent = await stripe.paymentIntents.create({ amount: 1000, currency: 'usd' }
 	
-	sharp:
+35.sharp:
 
-A high-performance image processing library.
-js
+	A high-performance image processing library.
+	js
 
-const sharp = require('sharp');
+	const sharp = require('sharp');
 
-sharp('input.jpg')
-  .resize(200, 200)
-  .toFile('output.jpg', (err, info) => {
-    if (err) throw err;
-    console.log(info);
-  });
+	sharp('input.jpg')
+	  .resize(200, 200)
+	  .toFile('output.jpg', (err, info) => {
+		if (err) throw err;
+		console.log(info);
+	  });
   
  ------------------------------------------------------------------------------	 
-
+========================================
 Sequelize  Method
+=======================================
 Basic Retrieval
-findOne: Finds a single entry that matches the query options.
-findByPk: Finds a single entry by its primary key.
-findAll: Finds all entries that match the query options.
-findOrCreate: Finds or creates an entry. If the entry does not exist, it will be created.
-findAndCountAll: Finds all entries and counts the total number of matching records.
-findAndCount: Similar to findAndCountAll but more flexible.
-findAndCountByPk: Finds a single entry by its primary key and counts total number of matching records.
-Advanced Retrieval
-aggregate: Runs an aggregation function (e.g., sum, avg) over specified attributes.
-count: Counts the number of matching records.
-max: Returns the maximum value of a specified attribute.
-min: Returns the minimum value of a specified attribute.
-sum: Returns the sum of a specified attribute.
-Bulk Retrieval
-findAll: Finds all entries that match the query options.
-findAndCountAll: Finds all entries and counts the total number of matching records.
-findOrCreate: Finds or creates an entry. If the entry does not exist, it will be created.
-findCreateFind: Tries to find an existing entry and create it if not found.
-Insertion Methods
-create: Creates a new entry in the database.
-bulkCreate: Creates multiple entries in the database in bulk.
-Update Methods
-update: Updates multiple entries in the database that match the query options.
-increment: Increments the value of one or more attributes.
-decrement: Decrements the value of one or more attributes.
-Deletion Methods
-destroy: Deletes multiple entries in the database that match the query options.
-truncate: Truncates the table, deleting all entries.
-Instance Methods
-Instance methods operate on instances (records) of the model.
+	findOne: Finds a single entry that matches the query options.
+	findByPk: Finds a single entry by its primary key.
+	findAll: Finds all entries that match the query options.
+	findOrCreate: Finds or creates an entry. If the entry does not exist, it will be created.
+	findAndCountAll: Finds all entries and counts the total number of matching records.
+	findAndCount: Similar to findAndCountAll but more flexible.
+	findAndCountByPk: Finds a single entry by its primary key and counts total number of matching records.
+	Advanced Retrieval
+	aggregate: Runs an aggregation function (e.g., sum, avg) over specified attributes.
+	count: Counts the number of matching records.
+	max: Returns the maximum value of a specified attribute.
+	min: Returns the minimum value of a specified attribute.
+	sum: Returns the sum of a specified attribute.
+	Bulk Retrieval
+	findAll: Finds all entries that match the query options.
+	findAndCountAll: Finds all entries and counts the total number of matching records.
+	findOrCreate: Finds or creates an entry. If the entry does not exist, it will be created.
+	findCreateFind: Tries to find an existing entry and create it if not found.
+	Insertion Methods
+	create: Creates a new entry in the database.
+	bulkCreate: Creates multiple entries in the database in bulk.
+	Update Methods
+	update: Updates multiple entries in the database that match the query options.
+	increment: Increments the value of one or more attributes.
+	decrement: Decrements the value of one or more attributes.
+	Deletion Methods
+	destroy: Deletes multiple entries in the database that match the query options.
+	truncate: Truncates the table, deleting all entries.
+	Instance Methods
+	Instance methods operate on instances (records) of the model.
+	save: Saves an instance to the database (either inserting or updating).
+	destroy: Deletes an instance from the database.
+	reload: Reloads an instance from the database.
+	update: Updates an instance with new values.
+	increment: Increments the value of one or more attributes of an instance.
+	decrement: Decrements the value of one or more attributes of an instance.
+	Association Methods
+	Association methods are used to manage relationships between models.
+	belongsTo: Defines a many-to-one relationship.
+	hasOne: Defines a one-to-one relationship.
+	hasMany: Defines a one-to-many relationship.
+	belongsToMany: Defines a many-to-many relationship.
+	Miscellaneous Methods
+	sync: Syncs the model with the database, creating the table if it doesn’t exist.
+	drop: Drops the table associated with the model.
+	describe: Describes the table structure.
+	scope: Applies predefined scopes to queries.
+	unscoped: Removes applied scopes from queries.
+	Transaction Methods
+	Sequelize also provides methods to manage transactions.
+	transaction: Starts a new transaction.
+	commit: Commits the transaction.
+	rollback: Rolls back the transaction.
+Hook Methods:
+	Hooks (also known as lifecycle events) allow you to execute custom logic at various points 
+	in the model lifecycle.
 
-save: Saves an instance to the database (either inserting or updating).
-destroy: Deletes an instance from the database.
-reload: Reloads an instance from the database.
-update: Updates an instance with new values.
-increment: Increments the value of one or more attributes of an instance.
-decrement: Decrements the value of one or more attributes of an instance.
-Association Methods
-Association methods are used to manage relationships between models.
-
-belongsTo: Defines a many-to-one relationship.
-hasOne: Defines a one-to-one relationship.
-hasMany: Defines a one-to-many relationship.
-belongsToMany: Defines a many-to-many relationship.
-Miscellaneous Methods
-sync: Syncs the model with the database, creating the table if it doesn’t exist.
-drop: Drops the table associated with the model.
-describe: Describes the table structure.
-scope: Applies predefined scopes to queries.
-unscoped: Removes applied scopes from queries.
-Transaction Methods
-Sequelize also provides methods to manage transactions.
-
-transaction: Starts a new transaction.
-commit: Commits the transaction.
-rollback: Rolls back the transaction.
-Hook Methods
-Hooks (also known as lifecycle events) allow you to execute custom logic at various points in the model lifecycle.
-
-beforeCreate: Triggered before an instance is created.
-afterCreate: Triggered after an instance is created.
-beforeUpdate: Triggered before an instance is updated.
-afterUpdate: Triggered after an instance is updated.
-beforeDestroy: Triggered before an instance is destroyed.
-afterDestroy: Triggered after an instance is destroyed.
-beforeBulkCreate: Triggered before multiple instances are created in bulk.
-afterBulkCreate: Triggered after multiple instances are created in bulk.
-beforeBulkUpdate: Triggered before multiple instances are updated in bulk.
-afterBulkUpdate: Triggered after multiple instances are updated in bulk.
-beforeBulkDestroy: Triggered before multiple instances are destroyed in bulk.
-afterBulkDestroy: Triggered after multiple instances are destroyed in bulk.
-
+	beforeCreate: Triggered before an instance is created.
+	afterCreate: Triggered after an instance is created.
+	beforeUpdate: Triggered before an instance is updated.
+	afterUpdate: Triggered after an instance is updated.
+	beforeDestroy: Triggered before an instance is destroyed.
+	afterDestroy: Triggered after an instance is destroyed.
+	beforeBulkCreate: Triggered before multiple instances are created in bulk.
+	afterBulkCreate: Triggered after multiple instances are created in bulk.
+	beforeBulkUpdate: Triggered before multiple instances are updated in bulk.
+	afterBulkUpdate: Triggered after multiple instances are updated in bulk.
+	beforeBulkDestroy: Triggered before multiple instances are destroyed in bulk.
+	afterBulkDestroy: Triggered after multiple instances are destroyed in bulk.
 	
-	const { Sequelize } = require('sequelize');
+	Example:
+	Main file
+			const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize({
-  dialect: 'sqlite',
-  storage: './database.sqlite',
-  logging: false,
-});
+				const sequelize = new Sequelize({
+				  dialect: 'sqlite',
+				  storage: './database.sqlite',
+				  logging: false,
+				});
 
-module.exports = sequelize;
+			module.exports = sequelize;
+	Model File:
+	User
+		const { Model, DataTypes } = require('sequelize');
+		const sequelize = require('../config/database');
 
+		class User extends Model {
+		  static associate(models) {
+			this.hasMany(models.Post, { foreignKey: 'userId', as: 'posts' });
+		  }
+		}
 
+		User.init({
+		  username: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		  },
+		  email: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		  },
+		}, {
+		  sequelize,
+		  modelName: 'User',
+		});
 
+		module.exports = User;
+	post:
+		const { Model, DataTypes } = require('sequelize');
+		const sequelize = require('../config/database');
 
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+		class Post extends Model {
+		  static associate(models) {
+			this.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
+		  }
+		}
 
-class User extends Model {
-  static associate(models) {
-    this.hasMany(models.Post, { foreignKey: 'userId', as: 'posts' });
-  }
-}
+		Post.init({
+		  title: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		  },
+		  content: {
+			type: DataTypes.TEXT,
+			allowNull: false,
+		  },
+		}, {
+		  sequelize,
+		  modelName: 'Post',
+		});
 
-User.init({
-  username: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  email: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-}, {
-  sequelize,
-  modelName: 'User',
-});
-
-module.exports = User;
-
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
-
-class Post extends Model {
-  static associate(models) {
-    this.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
-  }
-}
-
-Post.init({
-  title: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  content: {
-    type: DataTypes.TEXT,
-    allowNull: false,
-  },
-}, {
-  sequelize,
-  modelName: 'Post',
-});
-
-module.exports = Post;
-
-
+		module.exports = Post;
 
 
-const sequelize = require('../config/database');
-const User = require('./User');
-const Post = require('./Post');
 
-const models = {
-  User,
-  Post,
-};
+	model main file
+		const sequelize = require('../config/database');
+		const User = require('./User');
+		const Post = require('./Post');
 
-Object.keys(models).forEach(modelName => {
-  if (models[modelName].associate) {
-    models[modelName].associate(models);
-  }
-});
+		const models = {
+		  User,
+		  Post,
+		};
 
-models.sequelize = sequelize;
-models.Sequelize = Sequelize;
+		Object.keys(models).forEach(modelName => {
+		  if (models[modelName].associate) {
+			models[modelName].associate(models);
+		  }
+		});
 
-module.exports = models;
+		models.sequelize = sequelize;
+		models.Sequelize = Sequelize;
 
-const { Sequelize } = require('sequelize');
-const models = require('./models');
+		module.exports = models;
+	main file 
+		const { Sequelize } = require('sequelize');
+		const models = require('./models');
 
-async function main() {
-  await models.sequelize.sync({ force: true }); // Sync database
+		async function main() {
+		  await models.sequelize.sync({ force: true }); // Sync database
 
-  // Create a user
-  const user = await models.User.create({ username: 'john_doe', email: 'john.doe@example.com' });
-  console.log('User created:', user.toJSON());
+		  // Create a user
+		  const user = await models.User.create({ username: 'john_doe', email: 'john.doe@example.com' });
+		  console.log('User created:', user.toJSON());
 
-  // Create a post
-  const post = await models.Post.create({ title: 'First Post', content: 'This is the first post.', userId: user.id });
-  console.log('Post created:', post.toJSON());
+		  // Create a post
+		  const post = await models.Post.create({ title: 'First Post', content: 'This is the first post.', userId: user.id });
+		  console.log('Post created:', post.toJSON());
 
-  // Find one user
-  const foundUser = await models.User.findOne({ where: { username: 'john_doe' } });
-  console.log('User found:', foundUser ? foundUser.toJSON() : 'User not found');
+		  // Find one user
+		  const foundUser = await models.User.findOne({ where: { username: 'john_doe' } });
+		  console.log('User found:', foundUser ? foundUser.toJSON() : 'User not found');
 
-  // Find user by primary key
-  const userByPk = await models.User.findByPk(user.id);
-  console.log('User found by primary key:', userByPk ? userByPk.toJSON() : 'User not found');
+		  // Find user by primary key
+		  const userByPk = await models.User.findByPk(user.id);
+		  console.log('User found by primary key:', userByPk ? userByPk.toJSON() : 'User not found');
 
-  // Find all users
-  const users = await models.User.findAll();
-  console.log('All users:', users.map(u => u.toJSON()));
+		  // Find all users
+		  const users = await models.User.findAll();
+		  console.log('All users:', users.map(u => u.toJSON()));
 
-  // Count users
-  const userCount = await models.User.count();
-  console.log('Number of users:', userCount);
+		  // Count users
+		  const userCount = await models.User.count();
+		  console.log('Number of users:', userCount);
 
-  // Update a user
-  const [affectedRows] = await models.User.update({ email: 'john.new@example.com' }, { where: { username: 'john_doe' } });
-  console.log(`Number of rows updated: ${affectedRows}`);
+		  // Update a user
+		  const [affectedRows] = await models.User.update({ email: 'john.new@example.com' }, { where: { username: 'john_doe' } });
+		  console.log(`Number of rows updated: ${affectedRows}`);
 
-  // Find or create a user
-  const [newUser, created] = await models.User.findOrCreate({
-    where: { username: 'jane_doe' },
-    defaults: { email: 'jane.doe@example.com' },
-  });
-  console.log('User find or created:', newUser.toJSON(), 'Created:', created);
+		  // Find or create a user
+		  const [newUser, created] = await models.User.findOrCreate({
+			where: { username: 'jane_doe' },
+			defaults: { email: 'jane.doe@example.com' },
+		  });
+		  console.log('User find or created:', newUser.toJSON(), 'Created:', created);
 
-  // Increment user's email
-  await user.increment('age', { by: 1 });
-  console.log('User age incremented:', (await user.reload()).toJSON());
+		  // Increment user's email
+		  await user.increment('age', { by: 1 });
+		  console.log('User age incremented:', (await user.reload()).toJSON());
 
-  // Destroy a user
-  const rowsDeleted = await models.User.destroy({ where: { username: 'john_doe' } });
-  console.log(`Number of rows deleted: ${rowsDeleted}`);
+		  // Destroy a user
+		  const rowsDeleted = await models.User.destroy({ where: { username: 'john_doe' } });
+		  console.log(`Number of rows deleted: ${rowsDeleted}`);
 
-  // Find user and associated posts
-  const userWithPosts = await models.User.findOne({
-    where: { username: 'jane_doe' },
-    include: { model: models.Post, as: 'posts' },
-  });
-  console.log('User with posts:', userWithPosts ? userWithPosts.toJSON() : 'User not found');
+		  // Find user and associated posts
+		  const userWithPosts = await models.User.findOne({
+			where: { username: 'jane_doe' },
+			include: { model: models.Post, as: 'posts' },
+		  });
+		  console.log('User with posts:', userWithPosts ? userWithPosts.toJSON() : 'User not found');
 
-  await models.sequelize.close(); // Close connection
-}
+		  await models.sequelize.close(); // Close connection
+		}
 
-main().catch(err => {
-  console.error('Error occurred:', err);
-});
+		main().catch(err => {
+		  console.error('Error occurred:', err);
+		});
 
 
 Relationship
 
-This code defines the relationships between three models in an ORM (Object-Relational Mapping) setup, likely using Sequelize, a popular ORM for Node.js. Here’s a breakdown of each part:
+	This code defines the relationships between three models in an ORM (Object-Relational Mapping) setup,
+	likely using Sequelize, a popular ORM for Node.js. Here’s a breakdown of each part:
 
 Models
-Help: This model represents a help request or ticket.
-HelpTrack: This model tracks changes or assignments related to a help request.
-User: This model represents a user in the system.
-Associations
-Help.hasMany(HelpTrack, { foreignKey: { allowNull: false } }):
+		Help: This model represents a help request or ticket.
+		HelpTrack: This model tracks changes or assignments related to a help request.
+		User: This model represents a user in the system.
+		Associations:
+			Help.hasMany(HelpTrack, { foreignKey: { allowNull: false } }):		
+		Association: This sets up a one-to-many relationship between Help and HelpTrack.
+		Details: One Help can have many HelpTrack entries. The foreignKey constraint ensures that the foreign key in HelpTrack referring to Help cannot be null, meaning every HelpTrack must be associated with a Help.
+			HelpTrack.belongsTo(Help):
+		
+		Association: This sets up a many-to-one relationship from HelpTrack back to Help.
+		Details: Each HelpTrack entry belongs to a single Help. This is the inverse of the previous association.
+		HelpTrack.belongsTo(User, { foreignKey: "assignToId", as: "assignToUser" }):
+		
+		Association: This sets up a many-to-one relationship from HelpTrack to User.
+		Details: Each HelpTrack entry is assigned to a user, identified by the foreign key assignToId. The association is given an alias assignToUser for easier reference in queries.
+		HelpTrack.belongsTo(User, { foreignKey: "assignById", as: "assignByUser" }):
+		
+		Association: This sets up another many-to-one relationship from HelpTrack to User.
+		Details: Each HelpTrack entry is assigned by a user, identified by the foreign key assignById. The association is given an alias assignByUser for easier reference in queries.
+		Summary
+		A Help can have multiple HelpTrack entries.
+		Each HelpTrack entry is associated with a single Help.
+		Each HelpTrack entry is assigned to a user (assignToUser).
+		Each HelpTrack entry is assigned by a user (assignByUser).
 
-Association: This sets up a one-to-many relationship between Help and HelpTrack.
-Details: One Help can have many HelpTrack entries. The foreignKey constraint ensures that the foreign key in HelpTrack referring to Help cannot be null, meaning every HelpTrack must be associated with a Help.
-HelpTrack.belongsTo(Help):
+		1. .belongsTo()
+		Defines a many-to-one relationship. The model on which you call this method has a foreign key that references the primary key of another model.
 
-Association: This sets up a many-to-one relationship from HelpTrack back to Help.
-Details: Each HelpTrack entry belongs to a single Help. This is the inverse of the previous association.
-HelpTrack.belongsTo(User, { foreignKey: "assignToId", as: "assignToUser" }):
+		2. .hasOne()
+		Defines a one-to-one relationship. The model on which you call this method has a foreign key that references the primary key of another model. This is the inverse of .belongsTo().
 
-Association: This sets up a many-to-one relationship from HelpTrack to User.
-Details: Each HelpTrack entry is assigned to a user, identified by the foreign key assignToId. The association is given an alias assignToUser for easier reference in queries.
-HelpTrack.belongsTo(User, { foreignKey: "assignById", as: "assignByUser" }):
+		3. .hasMany()
+		Defines a one-to-many relationship. The model on which you call this method has multiple records in the associated model.
 
-Association: This sets up another many-to-one relationship from HelpTrack to User.
-Details: Each HelpTrack entry is assigned by a user, identified by the foreign key assignById. The association is given an alias assignByUser for easier reference in queries.
-Summary
-A Help can have multiple HelpTrack entries.
-Each HelpTrack entry is associated with a single Help.
-Each HelpTrack entry is assigned to a user (assignToUser).
-Each HelpTrack entry is assigned by a user (assignByUser).
+		4. .belongsToMany()
+		Defines a many-to-many relationship through a junction table (or join table). Both models will have foreign keys that reference each other.
 
-1. .belongsTo()
-Defines a many-to-one relationship. The model on which you call this method has a foreign key that references the primary key of another model.
+		Methods Breakdown
+		.belongsTo(targetModel, options)
+		targetModel: The model that this model belongs to.
+		options: Options to customize the association (e.g., foreignKey, as, constraints).
+		.hasOne(targetModel, options)
+		targetModel: The model that this model has one instance of.
+		options: Options to customize the association.
+		.hasMany(targetModel, options)
+		targetModel: The model that this model has many instances of.
+		options: Options to customize the association.
+		.belongsToMany(targetModel, options)
+		targetModel: The model that this model belongs to many instances of, and vice versa.
+		options: Options to customize the association, including specifying the through model.
 
-2. .hasOne()
-Defines a one-to-one relationship. The model on which you call this method has a foreign key that references the primary key of another model. This is the inverse of .belongsTo().
-
-3. .hasMany()
-Defines a one-to-many relationship. The model on which you call this method has multiple records in the associated model.
-
-4. .belongsToMany()
-Defines a many-to-many relationship through a junction table (or join table). Both models will have foreign keys that reference each other.
-
-Methods Breakdown
-.belongsTo(targetModel, options)
-targetModel: The model that this model belongs to.
-options: Options to customize the association (e.g., foreignKey, as, constraints).
-.hasOne(targetModel, options)
-targetModel: The model that this model has one instance of.
-options: Options to customize the association.
-.hasMany(targetModel, options)
-targetModel: The model that this model has many instances of.
-options: Options to customize the association.
-.belongsToMany(targetModel, options)
-targetModel: The model that this model belongs to many instances of, and vice versa.
-options: Options to customize the association, including specifying the through model.
-
-add this field in sequelize model 
-update model
-state2: {
-  type: DataTypes.STRING,
-  allowNull: false,
-},
-Create a New Migration
-npx seCreate a New Migrationquelize-cli migration:generate --name add-state2-to-yourmodel
-Edit the Migration File
-
-
-https://sequelize.org/docs/v6/other-topics/query-interface/  - Methods of  Query Interface
-'use strict';
-
-module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.addColumn('YourModel', 'state2', {
-      type: Sequelize.STRING,
-      allowNull: false,
-    });
-  },
-
-  down: async (queryInterface, Sequelize) => {
-    await queryInterface.removeColumn('YourModel', 'state2');
-  }
-};
+		add this field in sequelize model 
+		update model
+		state2: {
+		  type: DataTypes.STRING,
+		  allowNull: false,
+		},
+		Create a New Migration
+		npx seCreate a New Migrationquelize-cli migration:generate --name add-state2-to-yourmodel
+		Edit the Migration File
 
 
-. Run the Migration
-npx sequelize-cli db:migrate
+		https://sequelize.org/docs/v6/other-topics/query-interface/  - Methods of  Query Interface
+		'use strict';
+
+		module.exports = {
+		  up: async (queryInterface, Sequelize) => {
+			await queryInterface.addColumn('YourModel', 'state2', {
+			  type: Sequelize.STRING,
+			  allowNull: false,
+			});
+		  },
+
+		  down: async (queryInterface, Sequelize) => {
+			await queryInterface.removeColumn('YourModel', 'state2');
+		  }
+		};
 
 
+		. Run the Migration
+		npx sequelize-cli db:migrate
 
-=> npm init vs imp init  -y
-if you run npm init it asks you a bunch of questions to configure your package.json, 
-but if you include the -y flag then it auto generates it with no specific information provided. 
-It's perfectly fine to do it. 
-It won't hurt anything, and in fact is common to do.
-
-
-Nest js Microservice
-
+======================================================================
+Nest js Microservice:
 Real-time updates->	WebSocket->	WebSocket
 Low-latency, synchronous communication->	gRPC->	gRPC with Protocol Buffers
 Asynchronous, event-driven systems->	Message Queue->	RabbitMQ, Kafka, NATS
 Standard request-response API	->HTTP REST API->	HTTP
 Cross-language, high-performance RPC->	gRPC->	gRPC
 Serverless or event-based tasks	->Message Queue or HTTP->	AWS Lambda with SQS or SNS
+==============================================================
 
 
-Nest js
-
+==============================================================
+Nest js 
+==============================================================
+Basic Concept
+-------------
 Controllers:
-
-Controllers handle incoming requests and return responses. They define application endpoints and are responsible for routing.
-Example: @Controller('users') defines a route for handling requests to /users.
+		Controllers handle incoming requests and return responses. 
+		They define application endpoints and are responsible for routing.
+		Example: @Controller('users') defines a route for handling requests to /users.
 
 Providers and Services:
-Providers are classes that provide some form of functionality (like a service) to be used across the application.
-Services are a type of provider and are responsible for the business logic and data manipulation. They can be injected into controllers and other services using dependency injection.
+		*Providers are classes that provide some form of functionality (like a service) to be used across
+		 the application.
+		*Services are a type of provider and are responsible for the business logic and data manipulation. They can be injected into controllers and other services using dependency injection.
 
 Modules:
-Modules encapsulate a specific feature, such as authentication or user management, and help organize code into cohesive groups.
-The AppModule is the root module, but you can create multiple modules to structure the application.
+		*Modules encapsulate a specific feature, such as authentication or user management, 
+		 and help organize code into cohesive groups.
+		*The AppModule is the root module, but you can create multiple modules to structure the 
+		 application.
 
 Middleware:
-Middleware functions process requests before they reach controllers. They are useful for tasks like authentication, logging, and request transformation.
+			*Middleware functions process requests before they reach controllers. 
+			 They are useful for tasks like authentication, logging, and request transformation.
 
 Pipes:
-Pipes transform incoming data or validate it before it reaches the handler. This is helpful for data sanitization and validation.
+			*Pipes transform incoming data or validate it before it reaches the handler. 
+			 This is helpful for data sanitization and validation.
 
 Guards:
-Guards control access to routes based on specific conditions, such as roles or authentication status. They are useful for implementing authorization.
+			*Guards control access to routes based on specific conditions, such as roles or 
+			 authentication status. They are useful for implementing authorization.
 
 Interceptors:
-Interceptors modify or transform requests and responses, such as for logging, caching, or formatting response data.
+			*Interceptors modify or transform requests and responses, such as for logging, 
+			caching, or formatting response data.
 
 
+Example:
+		// app.module.ts
+			import { Module } from '@nestjs/common';
+			import { UsersModule } from './users/users.module';
 
-// app.module.ts
-import { Module } from '@nestjs/common';
-import { UsersModule } from './users/users.module';
+			@Module({
+			  imports: [UsersModule],
+			})
+			export class AppModule {}
 
-@Module({
-  imports: [UsersModule],
-})
-export class AppModule {}
+		// users.module.ts
+			import { Module } from '@nestjs/common';
+			import { UsersService } from './users.service';
+			import { UsersController } from './users.controller';
 
-// users.module.ts
-import { Module } from '@nestjs/common';
-import { UsersService } from './users.service';
-import { UsersController } from './users.controller';
+			@Module({
+			  providers: [UsersService],
+			  controllers: [UsersController],
+			})
+			export class UsersModule {}
 
-@Module({
-  providers: [UsersService],
-  controllers: [UsersController],
-})
-export class UsersModule {}
+		// users.controller.ts
+			import { Controller, Get } from '@nestjs/common';
+			import { UsersService } from './users.service';
 
-// users.controller.ts
-import { Controller, Get } from '@nestjs/common';
-import { UsersService } from './users.service';
+			@Controller('users')
+			export class UsersController {
+			  constructor(private readonly usersService: UsersService) {}
 
-@Controller('users')
-export class UsersController {
-  constructor(private readonly usersService: UsersService) {}
+			  @Get()
+			  findAll() {
+				return this.usersService.findAll();
+			  }
+			}
 
-  @Get()
-  findAll() {
-    return this.usersService.findAll();
-  }
-}
+		// users.service.ts
+			import { Injectable } from '@nestjs/common';
 
-// users.service.ts
-import { Injectable } from '@nestjs/common';
+			@Injectable()
+			export class UsersService {
+			  findAll() {
+				return [{ id: 1, name: 'John Doe' }];
+			  }
+			}
 
-@Injectable()
-export class UsersService {
-  findAll() {
-    return [{ id: 1, name: 'John Doe' }];
-  }
-}
-
-
+-----------------------
 => nest Js Concepts:
 Basic Concepts
-Modules
+		Modules
 
-Definition: Modules are containers that help group related components (controllers, providers, etc.) together. Every NestJS application has at least one module, the root module (often AppModule).
-	Example:
-	typescript
-	Copy code
-	// app.module.ts
-	import { Module } from '@nestjs/common';
-	import { UsersModule } from './users/users.module';
+			Definition: Modules are containers that help group related components (controllers, providers, etc.) together. Every NestJS application has at least one module, the root module (often AppModule).
+				Example:
+				
+				// app.module.ts
+				import { Module } from '@nestjs/common';
+				import { UsersModule } from './users/users.module';
 
-	@Module({
-	  imports: [UsersModule],
-	})
-	export class AppModule {}
+				@Module({
+				  imports: [UsersModule],
+				})
+				export class AppModule {}
 
-Controllers
+		Controllers
 
-	Definition: Controllers handle incoming HTTP requests and return responses to the client. They define application endpoints and route traffic.
-	Example:
-	typescript
-	Copy code
-	import { Controller, Get } from '@nestjs/common';
+			Definition: Controllers handle incoming HTTP requests and return responses to the client. They define application endpoints and route traffic.
+			Example:
+			
+			import { Controller, Get } from '@nestjs/common';
 
-	@Controller('users')
-	export class UsersController {
-	  @Get()
-	  findAll() {
-		return 'This action returns all users';
-	  }
-	}
-	
-Providers and Services
+			@Controller('users')
+			export class UsersController {
+			  @Get()
+			  findAll() {
+				return 'This action returns all users';
+			  }
+			}
+			
+		Providers and Services
 
-	Definition: Providers are classes that Nest can inject as dependencies. Services are a specific type of provider that contain business logic.
-	Example:
-	typescript
-	Copy code
-	import { Injectable } from '@nestjs/common';
+			Definition: Providers are classes that Nest can inject as dependencies. Services are a specific type of provider that contain business logic.
+			Example:
+			
+			import { Injectable } from '@nestjs/common';
 
-	@Injectable()
-	export class UsersService {
-	  findAll() {
-		return ['User1', 'User2'];
-	  }
-	}
-Dependency Injection (DI)
-	Definition: DI is a design pattern in which objects are injected into classes rather than created directly, promoting loose coupling and easier testing.
-	Example:
-	typescript
-	Copy code
-	// Injecting UsersService into UsersController
-	@Controller('users')
-	export class UsersController {
-	  constructor(private readonly usersService: UsersService) {}
+			@Injectable()
+			export class UsersService {
+			  findAll() {
+				return ['User1', 'User2'];
+			  }
+			}
+		Dependency Injection (DI)
+			Definition: DI is a design pattern in which objects are injected into classes rather than created directly, promoting loose coupling and easier testing.
+			Example:		
+			// Injecting UsersService into UsersController
+			@Controller('users')
+			export class UsersController {
+			  constructor(private readonly usersService: UsersService) {}
 
-	  @Get()
-	  findAll() {
-		return this.usersService.findAll();
-	  }
-	}
-Middleware
+			  @Get()
+			  findAll() {
+				return this.usersService.findAll();
+			  }
+			}
+		Middleware
 
-	Definition: Middleware functions execute before the route handler and are useful for tasks like logging and authentication.
-	Example:
-	typescript
-	Copy code
-	import { Injectable, NestMiddleware } from '@nestjs/common';
-	import { Request, Response, NextFunction } from 'express';
+			Definition: Middleware functions execute before the route handler and are useful for tasks like logging and authentication.
+			Example:			
+			import { Injectable, NestMiddleware } from '@nestjs/common';
+			import { Request, Response, NextFunction } from 'express';
 
-	@Injectable()
-	export class LoggerMiddleware implements NestMiddleware {
-	  use(req: Request, res: Response, next: NextFunction) {
-		console.log(`Request...`);
-		next();
-	  }
-	}
-Pipes
+			@Injectable()
+			export class LoggerMiddleware implements NestMiddleware {
+			  use(req: Request, res: Response, next: NextFunction) {
+				console.log(`Request...`);
+				next();
+			  }
+			}
+		Pipes
+			Definition: Pipes transform and validate incoming data before it reaches the route handler.
+			Example:			
+			import { PipeTransform, Injectable, ArgumentMetadata } from '@nestjs/common';
 
-	Definition: Pipes transform and validate incoming data before it reaches the route handler.
-	Example:
-	typescript
-	Copy code
-	import { PipeTransform, Injectable, ArgumentMetadata } from '@nestjs/common';
+			@Injectable()
+			export class ParseIntPipe implements PipeTransform<string, number> {
+			  transform(value: string, metadata: ArgumentMetadata): number {
+				return parseInt(value, 10);
+			  }
+			}			
+		Guards
+			Definition: Guards are used to implement authorization logic and control access to routes.
+			Example:			
+			import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
 
-	@Injectable()
-	export class ParseIntPipe implements PipeTransform<string, number> {
-	  transform(value: string, metadata: ArgumentMetadata): number {
-		return parseInt(value, 10);
-	  }
-	}
-	
-Guards
-	Definition: Guards are used to implement authorization logic and control access to routes.
-	Example:
-	typescript
-	Copy code
-	import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
+			@Injectable()
+			export class AuthGuard implements CanActivate {
+			  canActivate(context: ExecutionContext): boolean {
+				const request = context.switchToHttp().getRequest();
+				return request.headers.authorization === 'secret-token';
+			  }
+			}
+			
+		Interceptors
+			Definition: Interceptors are used to transform or log data before it's sent to the client.
+			Example:			
+			import { Injectable, NestInterceptor, ExecutionContext, CallHandler } from '@nestjs/common';
+			import { Observable } from 'rxjs';
+			import { tap } from 'rxjs/operators';
 
-	@Injectable()
-	export class AuthGuard implements CanActivate {
-	  canActivate(context: ExecutionContext): boolean {
-		const request = context.switchToHttp().getRequest();
-		return request.headers.authorization === 'secret-token';
-	  }
-	}
-	
-Interceptors
-
-	Definition: Interceptors are used to transform or log data before it's sent to the client.
-	Example:
-	typescript
-	Copy code
-	import { Injectable, NestInterceptor, ExecutionContext, CallHandler } from '@nestjs/common';
-	import { Observable } from 'rxjs';
-	import { tap } from 'rxjs/operators';
-
-	@Injectable()
-	export class LoggingInterceptor implements NestInterceptor {
-	  intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
-		console.log('Before...');
-		return next.handle().pipe(tap(() => console.log('After...')));
-	  }
-	}
+			@Injectable()
+			export class LoggingInterceptor implements NestInterceptor {
+			  intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
+				console.log('Before...');
+				return next.handle().pipe(tap(() => console.log('After...')));
+			  }
+			}
 Advanced Concepts
+	Custom Decorators
 
-Custom Decorators
+		Definition: Custom decorators allow you to define custom metadata and reuse logic across 
+					your application.
+		Example:	
+		import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 
-	Definition: Custom decorators allow you to define custom metadata and reuse logic across your application.
-	Example:
-	typescript
-	Copy code
-	import { createParamDecorator, ExecutionContext } from '@nestjs/common';
-
-	export const User = createParamDecorator(
-	  (data: unknown, ctx: ExecutionContext) => {
-		const request = ctx.switchToHttp().getRequest();
-		return request.user;
-	  },
-	);
-Event Emitters
+		export const User = createParamDecorator(
+		  (data: unknown, ctx: ExecutionContext) => {
+			const request = ctx.switchToHttp().getRequest();
+			return request.user;
+		  },
+		);
+	Event Emitters
 
 	Definition: Event Emitters allow you to create and listen to custom events within your application, useful for decoupling services.
 	Example:
-	typescript
-	Copy code
-	import { Injectable, EventEmitter2 } from '@nestjs/event-emitter';
-
-	@Injectable()
-	export class UserService {
-	  constructor(private eventEmitter: EventEmitter2) {}
-
-	  createUser() {
-		// Emit a 'user.created' event
-		this.eventEmitter.emit('user.created', { name: 'John Doe' });
-	  }
-	}
 	
-Microservices
-	Definition: NestJS supports microservices, allowing you to build a distributed system with multiple independent services.
-	Example:
-	typescript
-	Copy code
-	import { Controller, Get } from '@nestjs/common';
-	import { ClientProxy, ClientProxyFactory, Transport } from '@nestjs/microservices';
+		import { Injectable, EventEmitter2 } from '@nestjs/event-emitter';
 
-	@Controller()
-	export class AppController {
-	  private client: ClientProxy;
+		@Injectable()
+		export class UserService {
+		  constructor(private eventEmitter: EventEmitter2) {}
 
-	  constructor() {
-		this.client = ClientProxyFactory.create({
-		  transport: Transport.TCP,
-		  options: { host: 'localhost', port: 8877 },
-		});
-	  }
-
-	  @Get()
-	  sendMessage() {
-		return this.client.send('message_print', 'Hello from microservice');
-	  }
-	}
+		  createUser() {
+			// Emit a 'user.created' event
+			this.eventEmitter.emit('user.created', { name: 'John Doe' });
+		  }
+		}
 	
-WebSockets
-	Definition: WebSockets allow for real-time, bidirectional communication between clients and servers.
-	Example:
-	typescript
-	Copy code
-	import { WebSocketGateway, WebSocketServer, OnGatewayConnection } from '@nestjs/websockets';
-	import { Server } from 'socket.io';
+	Microservices
+		Definition: NestJS supports microservices, allowing you to build a distributed system with multiple independent services.
+		Example:
+			
+			import { Controller, Get } from '@nestjs/common';
+			import { ClientProxy, ClientProxyFactory, Transport } from '@nestjs/microservices';
 
-	@WebSocketGateway()
-	export class ChatGateway implements OnGatewayConnection {
-	  @WebSocketServer()
-	  server: Server;
+			@Controller()
+			export class AppController {
+			  private client: ClientProxy;
 
-	  handleConnection(client: any) {
-		client.emit('message', 'Welcome to the chat');
-	  }
-	}
-GraphQL Integration
-	Definition: NestJS provides a GraphQL module to create GraphQL APIs, offering an alternative to REST.
-	Example:
-	typescript
-	Copy code
-	import { Query, Resolver } from '@nestjs/graphql';
+			  constructor() {
+				this.client = ClientProxyFactory.create({
+				  transport: Transport.TCP,
+				  options: { host: 'localhost', port: 8877 },
+				});
+			  }
 
-	@Resolver()
-	export class UserResolver {
-	  @Query(() => String)
-	  sayHello() {
-		return 'Hello World';
-	  }
-	}
-CQRS (Command Query Responsibility Segregation)
-	Definition: CQRS is a design pattern that separates read and write operations, improving scalability and organization in complex systems.
-	Example:
-	typescript
-	Copy code
-	import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
-
-	export class CreateUserCommand {
-	  constructor(public readonly username: string) {}
-	}
-
-	@CommandHandler(CreateUserCommand)
-	export class CreateUserHandler implements ICommandHandler<CreateUserCommand> {
-	  async execute(command: CreateUserCommand) {
-		const { username } = command;
-		// Logic to create a user
-	  }
-	}
-Authentication with Passport
-	Definition: NestJS integrates with the Passport library to implement various authentication strategies.
-	Example:
-	typescript
-	Copy code
-	import { Injectable } from '@nestjs/common';
-	import { PassportStrategy } from '@nestjs/passport';
-	import { Strategy } from 'passport-local';
-
-	@Injectable()
-	export class LocalStrategy extends PassportStrategy(Strategy) {
-	  async validate(username: string, password: string): Promise<any> {
-		// Validate user
-	  }
-	}
+			  @Get()
+			  sendMessage() {
+				return this.client.send('message_print', 'Hello from microservice');
+			  }
+			}
 	
-Task Scheduling
-	Definition: Schedule recurring tasks within NestJS, useful for periodic tasks like sending notifications or cleaning up data.
-	Example:
-	typescript
-	Copy code
-	import { Injectable } from '@nestjs/common';
-	import { Cron, CronExpression } from '@nestjs/schedule';
+	WebSockets
+		Definition: WebSockets allow for real-time, bidirectional communication between clients and servers.
+			Example:	
+			import { WebSocketGateway, WebSocketServer, OnGatewayConnection } from '@nestjs/websockets';
+			import { Server } from 'socket.io';
 
-	@Injectable()
-	export class TasksService {
-	  @Cron(CronExpression.EVERY_HOUR)
-	  handleCron() {
-		console.log('Task running every hour');
-	  }
-	}
+			@WebSocketGateway()
+			export class ChatGateway implements OnGatewayConnection {
+			  @WebSocketServer()
+			  server: Server;
+
+			  handleConnection(client: any) {
+				client.emit('message', 'Welcome to the chat');
+			  }
+			}
+	GraphQL Integration
+		Definition: NestJS provides a GraphQL module to create GraphQL APIs, offering an alternative to REST.
+		Example:
+		
+		import { Query, Resolver } from '@nestjs/graphql';
+
+		@Resolver()
+		export class UserResolver {
+		  @Query(() => String)
+		  sayHello() {
+			return 'Hello World';
+		  }
+		}
+	CQRS (Command Query Responsibility Segregation)
+		Definition: CQRS is a design pattern that separates read and write operations, improving scalability and organization in complex systems.
+		Example:
+		
+		import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
+
+		export class CreateUserCommand {
+		  constructor(public readonly username: string) {}
+		}
+
+		@CommandHandler(CreateUserCommand)
+		export class CreateUserHandler implements ICommandHandler<CreateUserCommand> {
+		  async execute(command: CreateUserCommand) {
+			const { username } = command;
+			// Logic to create a user
+		  }
+		}
+	Authentication with Passport
+		Definition: NestJS integrates with the Passport library to implement various authentication strategies.
+		Example:
+		typescript
+		Copy code
+		import { Injectable } from '@nestjs/common';
+		import { PassportStrategy } from '@nestjs/passport';
+		import { Strategy } from 'passport-local';
+
+		@Injectable()
+		export class LocalStrategy extends PassportStrategy(Strategy) {
+		  async validate(username: string, password: string): Promise<any> {
+			// Validate user
+		  }
+		}
+		
+	Task Scheduling
+		Definition: Schedule recurring tasks within NestJS, useful for periodic tasks like sending notifications or cleaning up data.
+		Example:
+		typescript
+		Copy code
+		import { Injectable } from '@nestjs/common';
+		import { Cron, CronExpression } from '@nestjs/schedule';
+
+		@Injectable()
+		export class TasksService {
+		  @Cron(CronExpression.EVERY_HOUR)
+		  handleCron() {
+			console.log('Task running every hour');
+		  }
+		}
 	
-Transactional Outbox Pattern
+	Transactional Outbox Pattern
+		Definition: Use this pattern to ensure reliable event propagation by storing events in a transactional outbox.
+		Example: Store an event in the database within a transaction, then use a background worker to publish events from the outbox table to an event bus.
 
-Definition: Use this pattern to ensure reliable event propagation by storing events in a transactional outbox.
-Example: Store an event in the database within a transaction, then use a background worker to publish events from the outbox table to an event bus.
+	Custom Exception Filters
+		Definition: Exception filters handle and format errors globally, or on specific routes.
+		Example:
+		
+		import { ExceptionFilter, Catch, ArgumentsHost, HttpException } from '@nestjs/common';
 
-Custom Exception Filters
-	Definition: Exception filters handle and format errors globally, or on specific routes.
-	Example:
-	typescript
-	Copy code
-	import { ExceptionFilter, Catch, ArgumentsHost, HttpException } from '@nestjs/common';
+		@Catch(HttpException)
+		export class HttpExceptionFilter implements ExceptionFilter {
+		  catch(exception: HttpException, host: ArgumentsHost) {
+			const ctx = host.switchToHttp();
+			const response = ctx.getResponse();
+			const status = exception.getStatus();
 
-	@Catch(HttpException)
-	export class HttpExceptionFilter implements ExceptionFilter {
-	  catch(exception: HttpException, host: ArgumentsHost) {
-		const ctx = host.switchToHttp();
-		const response = ctx.getResponse();
-		const status = exception.getStatus();
+			response.status(status).json({
+			  statusCode: status,
+			  message: exception.message,
+			});
+		  }
+		}
+	Databse Integration
 
-		response.status(status).json({
-		  statusCode: status,
-		  message: exception.message,
-		});
-	  }
-	}
-Databse Integration
+		Mongoose (for MongoDB)
+				Installation:
+				npm install --save @nestjs/mongoose mongoose
 
-Mongoose (for MongoDB)
-Installation:
-npm install --save @nestjs/mongoose mongoose
-
-Example Configuration:
+				Example Configuration:
 
 
-	import { Module } from '@nestjs/common';
-	import { MongooseModule } from '@nestjs/mongoose';
-	import { UsersModule } from './users/users.module';
+					import { Module } from '@nestjs/common';
+					import { MongooseModule } from '@nestjs/mongoose';
+					import { UsersModule } from './users/users.module';
 
-	@Module({
-	  imports: [
-		MongooseModule.forRoot('mongodb://localhost/nest'),
-		UsersModule,
-	  ],
-	})
-	export class AppModule {}
-Schema Example:
+					@Module({
+					  imports: [
+						MongooseModule.forRoot('mongodb://localhost/nest'),
+						UsersModule,
+					  ],
+					})
+					export class AppModule {}
+				Schema Example:
 
-	typescript
-	Copy code
-	import { Schema, Document } from 'mongoose';
+					typescript
+					Copy code
+					import { Schema, Document } from 'mongoose';
 
-	export const UserSchema = new Schema({
-	  name: String,
-	  email: String,
-	});
+					export const UserSchema = new Schema({
+					  name: String,
+					  email: String,
+					});
 
-	export interface User extends Document {
-	  name: string;
-	  email: string;
-	}
+					export interface User extends Document {
+					  name: string;
+					  email: string;
+					}
 	
-Service Example:
+				Service Example:
 
-	import { Injectable } from '@nestjs/common';
-	import { InjectModel } from '@nestjs/mongoose';
-	import { Model } from 'mongoose';
-	import { User } from './user.schema';
+					import { Injectable } from '@nestjs/common';
+					import { InjectModel } from '@nestjs/mongoose';
+					import { Model } from 'mongoose';
+					import { User } from './user.schema';
 
-	@Injectable()
-	export class UsersService {
-	  constructor(@InjectModel('User') private userModel: Model<User>) {}
+					@Injectable()
+					export class UsersService {
+					  constructor(@InjectModel('User') private userModel: Model<User>) {}
 
-	  async findAll(): Promise<User[]> {
-		return this.userModel.find().exec();
-	  }
+					  async findAll(): Promise<User[]> {
+						return this.userModel.find().exec();
+					  }
 
-	  async create(createUserDto: any): Promise<User> {
-		const createdUser = new this.userModel(createUserDto);
-		return createdUser.save();
-	  }
-	}
+					  async create(createUserDto: any): Promise<User> {
+						const createdUser = new this.userModel(createUserDto);
+						return createdUser.save();
+					  }
+					}
 
-SecuritY:
+	SecuritY:
 	
-Rate Limiting in NestJS
-	To prevent brute-force attacks and limit the number of requests a user can make to your API, you can use the Throttler Module.
+			1.Rate Limiting in NestJS
+						To prevent brute-force attacks and limit the number of requests a user 
+						can make to your API, you can use the Throttler Module.
 
-Installation:
-npm install @nestjs/throttler
+					Installation:
+					npm install @nestjs/throttler
 
-Configuration:
-In your AppModule, you can set up rate limiting as follows:
-
-
-	import { Module } from '@nestjs/common';
-	import { ThrottlerModule } from '@nestjs/throttler';
-	import { UsersModule } from './users/users.module';
-
-	@Module({
-	  imports: [
-		ThrottlerModule.forRoot({
-		  ttl: 60,   // Time-to-live in seconds (e.g., 60 seconds)
-		  limit: 10, // Max requests per TTL
-		}),
-		UsersModule,
-	  ],
-	})
-	export class AppModule {}
-	This will limit each user to 10 requests per 60 seconds. You can adjust the ttl and limit as needed for your use case.
-
-Using Rate Limiting in Specific Routes:
-You can apply the rate limit to specific routes with the @UseGuards() decorator:
+					Configuration:
+					In your AppModule, you can set up rate limiting as follows:
 
 
-	import { Controller, Get, UseGuards } from '@nestjs/common';
-	import { ThrottlerGuard } from '@nestjs/throttler';
+						import { Module } from '@nestjs/common';
+						import { ThrottlerModule } from '@nestjs/throttler';
+						import { UsersModule } from './users/users.module';
 
-	@Controller('users')
-	@UseGuards(ThrottlerGuard) // Applies the rate limit to this route
-	export class UsersController {
-	  @Get()
-	  findAll() {
-		return 'This is the rate-limited endpoint';
-	  }
-	}
+						@Module({
+						  imports: [
+							ThrottlerModule.forRoot({
+							  ttl: 60,   // Time-to-live in seconds (e.g., 60 seconds)
+							  limit: 10, // Max requests per TTL
+							}),
+							UsersModule,
+						  ],
+						})
+						export class AppModule {}
+						This will limit each user to 10 requests per 60 seconds. You can adjust 
+						the tell and limit as needed for your use case.
+
+				*Using Rate Limiting in Specific Routes:
+					You can apply the rate limit to specific routes with the @UseGuards() decorator:
+
+						import { Controller, Get, UseGuards } from '@nestjs/common';
+						import { ThrottlerGuard } from '@nestjs/throttler';
+
+						@Controller('users')
+						@UseGuards(ThrottlerGuard) // Applies the rate limit to this route
+						export class UsersController {
+						  @Get()
+						  findAll() {
+							return 'This is the rate-limited endpoint';
+						  }
+						}
 	
-2. Helmet (Securing HTTP Headers)
-Helmet is a middleware to secure your application by setting various HTTP headers like Content-Security-Policy, X-Frame-Options, and others.
+			2. Helmet (Securing HTTP Headers)
+					Helmet is a middleware to secure your application by setting various HTTP headers 
+					like Content-Security-Policy, X-Frame-Options, and others.
 
+					npm install helmet
+					Configuration:
+					In your main main.ts file, add Helmet to secure HTTP headers globally:
 
-	npm install helmet
-	Configuration:
-	In your main main.ts file, add Helmet to secure HTTP headers globally:
-
-	typescript
-	Copy code
-	import { NestFactory } from '@nestjs/core';
-	import { AppModule } from './app.module';
-	import * as helmet from 'helmet';
-
-	async function bootstrap() {
-	  const app = await NestFactory.create(AppModule);
-	  
-	  app.use(helmet()); // Enable Helmet for securing HTTP headers
-	  
-	  await app.listen(3000);
-	}
-	bootstrap();
 	
-3. CORS (Cross-Origin Resource Sharing)
-Cross-Origin Resource Sharing (CORS) helps control which domains can access your APIs. By default, CORS is disabled in NestJS.
+					import { NestFactory } from '@nestjs/core';
+					import { AppModule } from './app.module';
+					import * as helmet from 'helmet';
 
-Enabling CORS:
-To enable CORS for your NestJS application, you can configure it globally:
-
-	typescript
-	Copy code
-	import { NestFactory } from '@nestjs/core';
-	import { AppModule } from './app.module';
-
-	async function bootstrap() {
-	  const app = await NestFactory.create(AppModule);
-
-	  app.enableCors(); // Enable CORS globally
-	  
-	  await app.listen(3000);
-	}
-	bootstrap();
-Configuring CORS:
-You can also specify more restrictive CORS settings, like allowing only specific domains:
-
-
-app.enableCors({
-  origin: 'https://example.com', // Allow only a specific domain
-  methods: 'GET,POST', // Allow specific HTTP methods
-  allowedHeaders: 'Content-Type', // Allow specific headers
-});
-
-4. Data Validation with class-validator and class-transformer
-Data validation ensures the incoming requests meet the expected structure, type, and format.
-
-
-npm install class-validator class-transformer
-Using class-validator:
-You can create a DTO (Data Transfer Object) and use validation decorators to enforce constraints.
-
-import { IsString, IsInt, IsEmail } from 'class-validator';
-
-export class CreateUserDto {
-  @IsString()
-  name: string;
-
-  @IsEmail()
-  email: string;
-
-  @IsInt()
-  age: number;
-}
-
-Applying Validation:
-You can apply the validation pipe globally or to specific routes.
-
-To enable it globally, modify your main.ts file:
-
-import { ValidationPipe } from '@nestjs/common';
-
-async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-
-  app.useGlobalPipes(new ValidationPipe()); // Apply validation globally
-
-  await app.listen(3000);
-}
-bootstrap();
-
-Alternatively, apply the validation pipe to specific routes:
-
-
-	import { Controller, Post, Body } from '@nestjs/common';
-	import { CreateUserDto } from './create-user.dto';
-	import { ValidationPipe } from '@nestjs/common';
-
-	@Controller('users')
-	export class UsersController {
-	  @Post()
-	  create(@Body(new ValidationPipe()) createUserDto: CreateUserDto) {
-		return 'User created successfully';
-	  }
-	}
+					async function bootstrap() {
+					  const app = await NestFactory.create(AppModule);
+					  
+					  app.use(helmet()); // Enable Helmet for securing HTTP headers
+					  
+					  await app.listen(3000);
+					}
+					bootstrap();
 	
-5. Other Security Best Practices
-Here are a few additional security practices that can be implemented in NestJS:
+			3. CORS (Cross-Origin Resource Sharing)
+					Cross-Origin Resource Sharing (CORS) helps control which domains can access your APIs. By default, CORS is disabled in NestJS.
 
-Using JWT for Authentication:
-JWT (JSON Web Token) is widely used for secure user authentication. You can use Passport.js along with the passport-jwt strategy to secure your application.
+					Enabling CORS:
+					To enable CORS for your NestJS application, you can configure it globally:
 
-Install the required libraries:
+						import { NestFactory } from '@nestjs/core';
+						import { AppModule } from './app.module';
 
+						async function bootstrap() {
+						  const app = await NestFactory.create(AppModule);
 
-npm install passport passport-jwt @nestjs/passport @nestjs/jwt
-Example of setting up JWT authentication:
+						  app.enableCors(); // Enable CORS globally
+						  
+						  await app.listen(3000);
+						}
+						bootstrap();
+					Configuring CORS:
+					You can also specify more restrictive CORS settings, like allowing only specific domains:
 
-AuthService:
+					app.enableCors({
+					  origin: 'https://example.com', // Allow only a specific domain
+					  methods: 'GET,POST', // Allow specific HTTP methods
+					  allowedHeaders: 'Content-Type', // Allow specific headers
+					});
 
-	typescript
-	Copy code
-	import { Injectable } from '@nestjs/common';
-	import { JwtService } from '@nestjs/jwt';
+			4. Data Validation with class-validator and class-transformer
+						Data validation ensures the incoming requests meet the expected structure
+						, type, and format.
 
-	@Injectable()
-	export class AuthService {
-	  constructor(private jwtService: JwtService) {}
+						npm install class-validator class-transformer
+					Using class-validator:
+						You can create a DTO (Data Transfer Object) and use validation decorators to enforce constraints.
 
-	  login(user: any) {
-		const payload = { username: user.username, sub: user.userId };
-		return {
-		  access_token: this.jwtService.sign(payload),
-		};
-	  }
-	}
-JwtStrategy:
+						import { IsString, IsInt, IsEmail } from 'class-validator';
 
-	import { Injectable } from '@nestjs/common';
-	import { PassportStrategy } from '@nestjs/passport';
-	import { ExtractJwt, Strategy } from 'passport-jwt';
+						export class CreateUserDto {
+						  @IsString()
+						  name: string;
 
-	@Injectable()
-	export class JwtStrategy extends PassportStrategy(Strategy) {
-	  constructor() {
-		super({
-		  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-		  secretOrKey: 'secretKey',
-		});
-	  }
+						  @IsEmail()
+						  email: string;
 
-	  async validate(payload: any) {
-		return { userId: payload.sub, username: payload.username };
-	  }
-	}
------------------------
-@Global() decorator is used to create globally accessible modules. 
-When a module is decorated with @Global(), it can be imported once and made available across 
-the entire application without needing to import it in each module individually. 
-This is particularly useful for modules that contain shared services or providers,
- such as a logging service, configuration service, or database connection.
+						  @IsInt()
+						  age: number;
+						}
+
+					Applying Validation:
+						You can apply the validation pipe globally or to specific routes.
+						To enable it globally, modify your main.ts file:
+						import { ValidationPipe } from '@nestjs/common';
+
+						async function bootstrap() {
+						  const app = await NestFactory.create(AppModule);
+
+						  app.useGlobalPipes(new ValidationPipe()); // Apply validation globally
+
+						  await app.listen(3000);
+						}
+						bootstrap();
+
+					Alternatively, apply the validation pipe to specific routes:
+
+							import { Controller, Post, Body } from '@nestjs/common';
+							import { CreateUserDto } from './create-user.dto';
+							import { ValidationPipe } from '@nestjs/common';
+
+							@Controller('users')
+							export class UsersController {
+							  @Post()
+							  create(@Body(new ValidationPipe()) createUserDto: CreateUserDto) {
+								return 'User created successfully';
+							  }
+							}
+	
+			5. Other Security Best Practices
+					Here are a few additional security practices that can be implemented in NestJS:
+
+				Using JWT for Authentication:
+						JWT (JSON Web Token) is widely used for secure user authentication. 
+						You can use Passport.js along with the passport-jwt strategy to secure your application.
+
+				I			install the required libraries:
+								npm install passport passport-jwt @nestjs/passport @nestjs/jwt
+								Example of setting up JWT authentication:
+
+						AuthService:
+							import { Injectable } from '@nestjs/common';
+							import { JwtService } from '@nestjs/jwt';
+
+							@Injectable()
+							export class AuthService {
+							  constructor(private jwtService: JwtService) {}
+
+							  login(user: any) {
+								const payload = { username: user.username, sub: user.userId };
+								return {
+								  access_token: this.jwtService.sign(payload),
+								};
+							  }
+							}
+						JwtStrategy:
+								import { Injectable } from '@nestjs/common';
+								import { PassportStrategy } from '@nestjs/passport';
+								import { ExtractJwt, Strategy } from 'passport-jwt';
+
+								@Injectable()
+								export class JwtStrategy extends PassportStrategy(Strategy) {
+								  constructor() {
+									super({
+									  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+									  secretOrKey: 'secretKey',
+									});
+								  }
+
+								  async validate(payload: any) {
+									return { userId: payload.sub, username: payload.username };
+								  }
+								}
+===============
+Imp Concepts
+=================
+	@Global() decorator is used to create globally accessible modules. 
+	When a module is decorated with @Global(), it can be imported once and made available across 
+	the entire application without needing to import it in each module individually. 
+	This is particularly useful for modules that contain shared services or providers,
+	 such as a logging service, configuration service, or database connection.
  
-Create a Global Module
-Define a module with the @Global() decorator:
+		Create a Global Module
+			Define a module with the @Global() decorator:
 
-	import { Global, Module } from '@nestjs/common';
-	import { ConfigService } from './config.service';
+				import { Global, Module } from '@nestjs/common';
+				import { ConfigService } from './config.service';
 
-	@Global()
-	@Module({
-	  providers: [ConfigService],
-	  exports: [ConfigService],
-	})
-	export class ConfigModule {}
-	
-Use the Global Module in AppModule
-Import the global module in the main AppModule:
-
-
-	import { Module } from '@nestjs/common';
-	import { ConfigModule } from './config/config.module';
-
-	@Module({
-	  imports: [ConfigModule],
-	})
-	export class AppModule {}
-	Access the Global Service in Other Modules
-Now, any module that requires ConfigService can inject it without needing to import ConfigModule again:
+				@Global()
+				@Module({
+				  providers: [ConfigService],
+				  exports: [ConfigService],
+				})
+				export class ConfigModule {}
+				
+		Use the Global Module in AppModule
+			Import the global module in the main AppModule:
 
 
-	import { Injectable } from '@nestjs/common';
-	import { ConfigService } from '../config/config.service';
+				import { Module } from '@nestjs/common';
+				import { ConfigModule } from './config/config.module';
 
-	@Injectable()
-	export class SomeService {
-	  constructor(private readonly configService: ConfigService) {}
-
-	  getSomeConfig() {
-		return this.configService.get('someKey');
-	  }
-	}
-	
-=>Recursive issue
-
-recursive issue often happens when there’s a circular dependency between modules or services. 
-This occurs when two or more providers (like services or modules) depend on each other, 
-which can result in an error like Cannot read property 'X' of undefined or Nest can't resolve 
-dependencies.
+				@Module({
+				  imports: [ConfigModule],
+				})
+				export class AppModule {}
+				Access the Global Service in Other Modules
+		Now, any module that requires ConfigService can inject it without needing to import 
+			 ConfigModule again:
 
 
+				import { Injectable } from '@nestjs/common';
+				import { ConfigService } from '../config/config.service';
 
-Example of a Recursive (Circular) Dependency Issue
+				@Injectable()
+				export class SomeService {
+				  constructor(private readonly configService: ConfigService) {}
 
-Suppose we have two services, UserService and OrderService, and each service depends on the other:
+				  getSomeConfig() {
+					return this.configService.get('someKey');
+				  }
+				}
+=======================	
+Recursive issue
+======================
+		recursive issue often happens when there’s a circular dependency between modules or services. 
+		This occurs when two or more providers (like services or modules) depend on each other, 
+		which can result in an error like Cannot read property 'X' of undefined or Nest can't resolve 
+		dependencies.
+		Example of a Recursive (Circular) Dependency Issue
 
-UserService needs OrderService to get user orders.
-OrderService needs UserService to get user details for an order.
+		Suppose we have two services, UserService and OrderService, and each service depends on 
+		the other:
 
-This dependency can create a recursive cycle that causes NestJS to fail when trying to resolve 
-the dependencies.
+			UserService needs OrderService to get user orders.
+			OrderService needs UserService to get user details for an order.
 
-Problem Code
+		This dependency can create a recursive cycle that causes NestJS to fail when trying to resolve 
+		the dependencies.
 
-	// user.service.ts
-	import { Injectable } from '@nestjs/common';
-	import { OrderService } from './order.service';
+		Problem Code
 
-	@Injectable()
-	export class UserService {
-	  constructor(private orderService: OrderService) {}
+		// user.service.ts
+			import { Injectable } from '@nestjs/common';
+			import { OrderService } from './order.service';
 
-	  getUserOrders(userId: string) {
-		return this.orderService.getOrdersByUserId(userId);
-	  }
-	}
+			@Injectable()
+			export class UserService {
+			  constructor(private orderService: OrderService) {}
 
-	// order.service.ts
-	import { Injectable } from '@nestjs/common';
-	import { UserService } from './user.service';
+			  getUserOrders(userId: string) {
+				return this.orderService.getOrdersByUserId(userId);
+			  }
+			}
 
-	@Injectable()
-	export class OrderService {
-	  constructor(private userService: UserService) {}
+		// order.service.ts
+			import { Injectable } from '@nestjs/common';
+			import { UserService } from './user.service';
 
-	  getOrdersByUserId(userId: string) {
-		const user = this.userService.getUserById(userId);
-		// Retrieve orders based on user information
-		return [{ orderId: '123', userId }];
-	  }
-	}
-In this code, UserService depends on OrderService, and OrderService also depends on UserService, 
-creating a circular dependency. NestJS won’t be able to resolve this, and an error will occur.
+			@Injectable()
+			export class OrderService {
+			  constructor(private userService: UserService) {}
 
-Solution: Use forwardRef()
-To resolve this issue, you can use the forwardRef() helper function provided by NestJS. 
-This function allows NestJS to resolve dependencies even when circular references exist.
+			  getOrdersByUserId(userId: string) {
+				const user = this.userService.getUserById(userId);
+				// Retrieve orders based on user information
+				return [{ orderId: '123', userId }];
+			  }
+			}
+		In this code, UserService depends on OrderService, and OrderService also depends on UserService, 
+		creating a circular dependency. NestJS won’t be able to resolve this, and an error will occur.
+
+		Solution: Use forwardRef()
+		To resolve this issue, you can use the forwardRef() helper function provided by NestJS. 
+		This function allows NestJS to resolve dependencies even when circular references exist.
 
 Solution Code
 
 
-	// user.service.ts
-	import { Injectable, Inject, forwardRef } from '@nestjs/common';
-	import { OrderService } from './order.service';
+		// user.service.ts
+			import { Injectable, Inject, forwardRef } from '@nestjs/common';
+			import { OrderService } from './order.service';
+			@Injectable()
+			export class UserService {
+			  constructor(
+				@Inject(forwardRef(() => OrderService))
+				private orderService: OrderService,
+			  ) {}
 
-	@Injectable()
-	export class UserService {
-	  constructor(
-		@Inject(forwardRef(() => OrderService))
-		private orderService: OrderService,
-	  ) {}
+			  getUserOrders(userId: string) {
+				return this.orderService.getOrdersByUserId(userId);
+			  }
 
-	  getUserOrders(userId: string) {
-		return this.orderService.getOrdersByUserId(userId);
-	  }
+			  getUserById(userId: string) {
+				return { id: userId, name: 'John Doe' };
+			  }
+			}
+		// order.service.ts
+			import { Injectable, Inject, forwardRef } from '@nestjs/common';
+			import { UserService } from './user.service';
 
-	  getUserById(userId: string) {
-		return { id: userId, name: 'John Doe' };
-	  }
-	}
+			@Injectable()
+			export class OrderService {
+			  constructor(
+				@Inject(forwardRef(() => UserService))
+				private userService: UserService,
+			  ) {}
 
-	// order.service.ts
-	import { Injectable, Inject, forwardRef } from '@nestjs/common';
-	import { UserService } from './user.service';
-
-	@Injectable()
-	export class OrderService {
-	  constructor(
-		@Inject(forwardRef(() => UserService))
-		private userService: UserService,
-	  ) {}
-
-	  getOrdersByUserId(userId: string) {
-		const user = this.userService.getUserById(userId);
-		return [{ orderId: '123', userId, userName: user.name }];
-	  }
-	}
+			  getOrdersByUserId(userId: string) {
+				const user = this.userService.getUserById(userId);
+				return [{ orderId: '123', userId, userName: user.name }];
+			  }
+			}
 	
-In this solution:
+		In this solution:
+			@Inject(forwardRef(() => UserService)) and @Inject(forwardRef(() => OrderService)) tell 
+			NestJS that these dependencies will be resolved later, breaking the circular dependency.
 
-@Inject(forwardRef(() => UserService)) and @Inject(forwardRef(() => OrderService)) tell NestJS that 
-these dependencies will be resolved later, breaking the circular dependency.
-
-forwardRef() delays the dependency injection until all modules and providers are available.
+		forwardRef() delays the dependency injection until all modules and providers are available.
 
 Module Setup
-To ensure this works, make sure each module exports the services if they need to be used across modules:
+			To ensure this works, make sure each module exports the services if they need to be used 
+			across modules:
 
-// user.module.ts
-import { Module, forwardRef } from '@nestjs/common';
-import { UserService } from './user.service';
-import { OrderModule } from './order.module';
+			// user.module.ts
+			import { Module, forwardRef } from '@nestjs/common';
+			import { UserService } from './user.service';
+			import { OrderModule } from './order.module';
 
-@Module({
-  imports: [forwardRef(() => OrderModule)],
-  providers: [UserService],
-  exports: [UserService],
-})
-export class UserModule {}
+			@Module({
+			  imports: [forwardRef(() => OrderModule)],
+			  providers: [UserService],
+			  exports: [UserService],
+			})
+			export class UserModule {}
 
-// order.module.ts
-import { Module, forwardRef } from '@nestjs/common';
-import { OrderService } from './order.service';
-import { UserModule } from './user.module';
+			// order.module.ts
+			import { Module, forwardRef } from '@nestjs/common';
+			import { OrderService } from './order.service';
+			import { UserModule } from './user.module';
 
-@Module({
-  imports: [forwardRef(() => UserModule)],
-  providers: [OrderService],
-  exports: [OrderService],
-})
-export class OrderModule {}
-Using forwardRef in both modules and services resolves the circular dependency issue,
- allowing UserService and OrderService to access each other without causing a recursive loop error.
- 
- Application
-1. REST API Applications
-	Description: These handle standard HTTP requests and responses using controllers, services, and modules. Suitable for CRUD operations.
-	Use Cases:
-	Web applications
-	Backend services for frontend apps
-	Example:
-	Building a user management system with endpoints like /users.
+			@Module({
+			  imports: [forwardRef(() => UserModule)],
+			  providers: [OrderService],
+			  exports: [OrderService],
+			})
+			export class OrderModule {}
+	Using forwardRef in both modules and services resolves the circular dependency issue,
+	allowing UserService and OrderService to access each other without causing a recursive loop error.
+===========================================
+Diffrent Application using Nestjs
+==========================================
+		1. REST API Applications
+			Description: These handle standard HTTP requests and responses using controllers, services, and modules. Suitable for CRUD operations.
+			Use Cases:
+			Web applications
+			Backend services for frontend apps
+			Example:
+			Building a user management system with endpoints like /users.
+			
+		2. GraphQL API Applications
+			Description: Uses GraphQL to define APIs and handle data querying. NestJS provides integrations with Apollo Server and Mercurius.
+			Use Cases:
+			Data-driven applications with complex relationships
+			Applications needing flexible querying
+			Example:
+			Building a content management system (CMS).
+			
+		3. Microservices
+			Description: Enables building distributed systems using various transport layers like TCP, Redis, NATS, RabbitMQ, Kafka, etc.
+			Use Cases:
+			High-performance and scalable systems
+			Decoupled architecture
+			Example:
+			Building an order processing system using RabbitMQ.
+			
+		4. Server-Side Rendered (SSR) Applications
+			Description: Enables server-side rendering for frontend frameworks like Angular or React using NestJS.
+			Use Cases:
+			SEO-friendly web applications
+			Applications needing fast initial load times
+			Example:
+			An e-commerce site using Angular Universal.
+			
+		5. WebSocket Applications
+			Description: Supports real-time bidirectional communication between the server and the client.
+			Use Cases:
+			Real-time chat applications
+			Live notifications or streaming
+			Example:
+			Building a stock price ticker.
+			
+		6. CLI Tools
+			Description: Custom CLI applications built to automate tasks or perform specific operations.
+			Use Cases:
+			Automated deployments
+			Code generation tools
+			Example:
+			A CLI tool for managing database migrations.
+			
+		7. Hybrid Applications
+			Description: Combines different types of NestJS applications into a single app.
+			Use Cases:
+			Applications requiring a mix of REST APIs, GraphQL APIs, and WebSockets.
+			Example:
+			A social media platform with APIs, real-time updates, and GraphQL for flexible data fetching.
+			
+		8. Task Scheduling Applications
+			Description: Used for cron jobs, recurring tasks, or background processing.
+			Use Cases:
+			Automated reporting
+			Data synchronization
+			Example:
+			A notification system that sends daily emails.
+			
+		9. Event-Driven Applications
+			Description: Uses event patterns for inter-service communication or within the same application.
+			Use Cases:
+			Applications with asynchronous processes
+			Example:
+			An e-commerce system handling inventory updates after order completion.
+			
+		10. Monorepo Applications
+			Description: Organizes code into multiple modules or services under a single repository.
+			Use Cases:
+			Enterprise-level applications
+			Systems needing shared modules or libraries
+			Example:
+			A large-scale application combining user management, product catalog, and order services.
+
+	 Example:
+			1. REST API Application
+
+				// users.controller.ts
+				@Controller('users')
+				export class UsersController {
+				  @Get()
+				  findAll() {
+					return [{ id: 1, name: 'John Doe' }];
+				  }
+
+				  @Post()
+				  create(@Body() user: any) {
+					return { message: 'User created', user };
+				  }
+				}
 	
-2. GraphQL API Applications
-	Description: Uses GraphQL to define APIs and handle data querying. NestJS provides integrations with Apollo Server and Mercurius.
-	Use Cases:
-	Data-driven applications with complex relationships
-	Applications needing flexible querying
-	Example:
-	Building a content management system (CMS).
-	
-3. Microservices
-	Description: Enables building distributed systems using various transport layers like TCP, Redis, NATS, RabbitMQ, Kafka, etc.
-	Use Cases:
-	High-performance and scalable systems
-	Decoupled architecture
-	Example:
-	Building an order processing system using RabbitMQ.
-	
-4. Server-Side Rendered (SSR) Applications
-	Description: Enables server-side rendering for frontend frameworks like Angular or React using NestJS.
-	Use Cases:
-	SEO-friendly web applications
-	Applications needing fast initial load times
-	Example:
-	An e-commerce site using Angular Universal.
-	
-5. WebSocket Applications
-	Description: Supports real-time bidirectional communication between the server and the client.
-	Use Cases:
-	Real-time chat applications
-	Live notifications or streaming
-	Example:
-	Building a stock price ticker.
-	
-6. CLI Tools
-	Description: Custom CLI applications built to automate tasks or perform specific operations.
-	Use Cases:
-	Automated deployments
-	Code generation tools
-	Example:
-	A CLI tool for managing database migrations.
-	
-7. Hybrid Applications
-	Description: Combines different types of NestJS applications into a single app.
-	Use Cases:
-	Applications requiring a mix of REST APIs, GraphQL APIs, and WebSockets.
-	Example:
-	A social media platform with APIs, real-time updates, and GraphQL for flexible data fetching.
-	
-8. Task Scheduling Applications
-	Description: Used for cron jobs, recurring tasks, or background processing.
-	Use Cases:
-	Automated reporting
-	Data synchronization
-	Example:
-	A notification system that sends daily emails.
-	
-9. Event-Driven Applications
-	Description: Uses event patterns for inter-service communication or within the same application.
-	Use Cases:
-	Applications with asynchronous processes
-	Example:
-	An e-commerce system handling inventory updates after order completion.
-	
-10. Monorepo Applications
-	Description: Organizes code into multiple modules or services under a single repository.
-	Use Cases:
-	Enterprise-level applications
-	Systems needing shared modules or libraries
-	Example:
-	A large-scale application combining user management, product catalog, and order services.
+			2. GraphQL API Application
+				
+				// user.resolver.ts
+				@Resolver()
+				export class UserResolver {
+				  @Query(() => String)
+				  hello() {
+					return 'Hello World';
+				  }
 
-	 
- 1. REST API Application
+				  @Query(() => [UserType])
+				  getUsers() {
+					return [{ id: 1, name: 'Jane Doe' }];
+				  }
+				}
+				
+			3. Microservices
 
-	// users.controller.ts
-	@Controller('users')
-	export class UsersController {
-	  @Get()
-	  findAll() {
-		return [{ id: 1, name: 'John Doe' }];
-	  }
+				// main.ts (TCP microservice)
+				async function bootstrap() {
+				  const app = await NestFactory.createMicroservice(AppModule, {
+					transport: Transport.TCP,
+				  });
+				  await app.listen();
+				}
 
-	  @Post()
-	  create(@Body() user: any) {
-		return { message: 'User created', user };
-	  }
-	}
-	
-2. GraphQL API Application
-	
-	// user.resolver.ts
-	@Resolver()
-	export class UserResolver {
-	  @Query(() => String)
-	  hello() {
-		return 'Hello World';
-	  }
+				// app.service.ts
+				@Injectable()
+				export class AppService {
+				  @MessagePattern({ cmd: 'sum' })
+				  accumulate(data: number[]) {
+					return data.reduce((a, b) => a + b, 0);
+				  }
+				}
+				
+			4. Server-Side Rendered (SSR) Application
 
-	  @Query(() => [UserType])
-	  getUsers() {
-		return [{ id: 1, name: 'Jane Doe' }];
-	  }
-	}
-	
-3. Microservices
+				// app.controller.ts
+				@Controller()
+				export class AppController {
+				  @Get()
+				  renderPage(@Res() res: Response) {
+					res.render('index', { title: 'NestJS SSR Example' });
+				  }
+				}
+				
+			5. WebSocket Application
 
-	// main.ts (TCP microservice)
-	async function bootstrap() {
-	  const app = await NestFactory.createMicroservice(AppModule, {
-		transport: Transport.TCP,
-	  });
-	  await app.listen();
-	}
+				// app.gateway.ts
+				@WebSocketGateway()
+				export class AppGateway {
+				  @WebSocketServer()
+				  server: Server;
 
-	// app.service.ts
-	@Injectable()
-	export class AppService {
-	  @MessagePattern({ cmd: 'sum' })
-	  accumulate(data: number[]) {
-		return data.reduce((a, b) => a + b, 0);
-	  }
-	}
-	
-4. Server-Side Rendered (SSR) Application
+				  @SubscribeMessage('message')
+				  handleMessage(@MessageBody() message: string): void {
+					this.server.emit('message', `Echo: ${message}`);
+				  }
+				}
+				
+			6. CLI Tool
 
-	// app.controller.ts
-	@Controller()
-	export class AppController {
-	  @Get()
-	  renderPage(@Res() res: Response) {
-		res.render('index', { title: 'NestJS SSR Example' });
-	  }
-	}
-	
-5. WebSocket Application
+				// cli.ts
+				import { CommandFactory } from 'nest-commander';
+				import { AppModule } from './app.module';
 
-	// app.gateway.ts
-	@WebSocketGateway()
-	export class AppGateway {
-	  @WebSocketServer()
-	  server: Server;
+				CommandFactory.run(AppModule, ['log', '--message=Hello from CLI']);
+				
+			7. Hybrid Application
 
-	  @SubscribeMessage('message')
-	  handleMessage(@MessageBody() message: string): void {
-		this.server.emit('message', `Echo: ${message}`);
-	  }
-	}
-	
-6. CLI Tool
+				// app.module.ts
+				@Module({
+				  imports: [
+					GraphQLModule.forRoot({ autoSchemaFile: true }),
+					HttpModule,
+				  ],
+				  controllers: [UsersController],
+				  providers: [UserResolver],
+				})
+			export class AppModule {}
 
-	// cli.ts
-	import { CommandFactory } from 'nest-commander';
-	import { AppModule } from './app.module';
+			8. Task Scheduling Application
 
-	CommandFactory.run(AppModule, ['log', '--message=Hello from CLI']);
-	
-7. Hybrid Application
+				// app.service.ts
+				@Injectable()
+				export class AppService {
+				  @Cron('45 * * * * *')
+				  handleCron() {
+					console.log('Task runs every 45 seconds');
+				  }
+				}
+				
+			9. Event-Driven Application
 
-	// app.module.ts
-	@Module({
-	  imports: [
-		GraphQLModule.forRoot({ autoSchemaFile: true }),
-		HttpModule,
-	  ],
-	  controllers: [UsersController],
-	  providers: [UserResolver],
-	})
-export class AppModule {}
+				// app.service.ts
+				@Injectable()
+				export class AppService {
+				  @OnEvent('user.created')
+				  handleUserCreated(payload: any) {
+					console.log('User created event received:', payload);
+				  }
+				}
+				
+			10. Monorepo Application
 
-8. Task Scheduling Application
+				// apps/api/users.controller.ts
+				@Controller('users')
+				export class UsersController {
+				  @Get()
+				  findAll() {
+					return [{ id: 1, name: 'Monorepo User' }];
+				  }
+				}
 
-	// app.service.ts
-	@Injectable()
-	export class AppService {
-	  @Cron('45 * * * * *')
-	  handleCron() {
-		console.log('Task runs every 45 seconds');
-	  }
-	}
-	
-9. Event-Driven Application
+				// apps/api/main.ts
+				async function bootstrap() {
+				  const app = await NestFactory.create(AppModule);
+				  await app.listen(3000);
+				}
 
-	// app.service.ts
-	@Injectable()
-	export class AppService {
-	  @OnEvent('user.created')
-	  handleUserCreated(payload: any) {
-		console.log('User created event received:', payload);
-	  }
-	}
-	
-10. Monorepo Application
+=======================
+Nest with mongodb
+========================
+*MongooseModule.forFeature([{ name: Quiz.name, schema: QuizSchema }])
 
-	// apps/api/users.controller.ts
-	@Controller('users')
-	export class UsersController {
-	  @Get()
-	  findAll() {
-		return [{ id: 1, name: 'Monorepo User' }];
-	  }
-	}
-
-	// apps/api/main.ts
-	async function bootstrap() {
-	  const app = await NestFactory.create(AppModule);
-	  await app.listen(3000);
-	}
-
-
-MongooseModule.forFeature([{ name: Quiz.name, schema: QuizSchema }])
-
-is used in NestJS to register a Mongoose model with a specific schema 
-in the module's dependency injection system. Here’s a breakdown of its purpose:
+		is used in NestJS to register a Mongoose model with a specific schema 
+		in the module's dependency injection system. Here’s a breakdown of its purpose:
 
 
 What it Does
 	Registers the Mongoose Model:
 
-	It tells NestJS to associate the Quiz model (identified by the Quiz.name) with the QuizSchema in the context of the module.
+	It tells NestJS to associate the Quiz model (identified by the Quiz.name) with the QuizSchema 
+	in the context of the module.
 	Once registered, this model can be injected into services or other providers in the module using @InjectModel.
 	Makes the Model Available via Dependency Injection:
-
 	After registration, you can use the @InjectModel() decorator in your services to access this model.
+	
 	Example:
 
 	constructor(@InjectModel(Quiz.name) private quizModel: Model<Quiz>) {}
-	This allows you to perform database operations (e.g., create, find, update, delete) on the Quiz collection in MongoDB.
-	Defines the Schema:
-
-	The schema defines the structure of the Quiz documents in MongoDB, including the fields, their types, and any constraints or validations.
+		This allows you to perform database operations (e.g., create, find, update, delete) on the Quiz 
+		collection in MongoDB.
+	Defines the Schema:		
+		The schema defines the structure of the Quiz documents in MongoDB, including the fields, 
+		their types, and any constraints or validations.
 	Example:
-
-	export const QuizSchema = SchemaFactory.createForClass(Quiz);
-	Why It’s Needed
-	Module-Level Scope:
+		export const QuizSchema = SchemaFactory.createForClass(Quiz);
+		Why It’s Needed
+		Module-Level Scope:
 
 	By using MongooseModule.forFeature, the model is scoped only to the module where it’s declared, ensuring modularity and separation of concerns.
 	Reusable Models:
-
 	You can reuse the Quiz model across different modules by importing the module where the model is registered.
 	Database Abstraction:
-
 	It abstracts the low-level database logic, enabling NestJS to handle the lifecycle and provide a consistent API to work with MongoDB.
 
 
+======================
+FROM OFFICIAL DOCS
+===============================
 
-Optional providers
+*Optional providers:
 	Occasionally, you might have dependencies which do not necessarily have to be resolved. 
 	For instance, your class may depend on a configuration object, but if none is passed,
-	 the default values should be used. In such a case, the dependency becomes optional,
-	 because lack of the configuration provider wouldn't lead to errors.
-
+	the default values should be used. In such a case, the dependency becomes optional,
+    because lack of the configuration provider wouldn't lead to errors.
 	To indicate a provider is optional, use the @Optional() decorator in the constructor's signature.
+		
+		import { Injectable, Optional, Inject } from '@nestjs/common';
 
-
-
-	import { Injectable, Optional, Inject } from '@nestjs/common';
-
-	@Injectable()
-	export class HttpService<T> {
-	  constructor(@Optional() @Inject('HTTP_OPTIONS') private httpClient: T) {}
-	}
+		@Injectable()
+		export class HttpService<T> {
+		  constructor(@Optional() @Inject('HTTP_OPTIONS') private httpClient: T) {}
+		}
 
 Global modules#
-
 	If you have to import the same set of modules everywhere, it can get tedious. Unlike in Nest,
 	Angularproviders are registered in the global scope. Once defined, they're available everywhere.
 	Nest, however, encapsulates providers inside the module scope. You aren't able to use a module's
@@ -2976,8 +2570,6 @@ Global modules#
 
 	When you want to provide a set of providers which should be available everywhere out-of-the-box
 	(e.g., helpers, database connections, etc.), make the module global with the @Global() decorator.
-
-
 
 	import { Module, Global } from '@nestjs/common';
 	import { CatsController } from './cats.controller';
@@ -2991,8 +2583,9 @@ Global modules#
 	})
 	export class CatsModule {}
 	The @Global() decorator makes the module global-scoped. Global modules should be registered only 
-	once, generally by the root or core module. In the above example, the CatsService provider will be ubiquitous, and modules that wish to inject the service will not need to import the CatsModule in their imports array.
-
+	once, generally by the root or core module. In the above example, the CatsService provider will be
+	ubiquitous, and modules that wish to inject the service will not need to import the CatsModule 
+	in their imports array.
 
 Dynamic modules#
 	The Nest module system includes a powerful feature called dynamic modules. 
@@ -3044,8 +2637,6 @@ Warning
 	As mentioned above, making everything global is not a good design decision.
 	The DatabaseModule can be imported and configured in the following manner:
 
-
-
 	import { Module } from '@nestjs/common';
 	import { DatabaseModule } from './database/database.module';
 	import { User } from './users/entities/user.entity';
@@ -3074,8 +2665,6 @@ Middleware
 	iddleware function in the application’s request-response cycle. The next middleware function 
 	is commonly denoted by a variable named next.
 	
-	
-	
 	import { Injectable, NestMiddleware } from '@nestjs/common';
 	import { Request, Response, NextFunction } from 'express';
 
@@ -3085,17 +2674,13 @@ Middleware
 		console.log('Request...');
 		next();
 	  }
-	}
-	
-	
+	}	
 		
 Applying middleware#
 			There is no place for middleware in the @Module() decorator.
 			Instead, we set them up using the configure() method of the module class. 
 			Modules that include middleware have to implement the NestModule interface. 
 			Let's set up the LoggerMiddleware at the AppModule level.
-
-
 	app.module.tsJS
 
 	import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
@@ -3110,51 +2695,43 @@ Applying middleware#
 		consumer
 		  .apply(LoggerMiddleware)
 		  .forRoutes('cats');
-	  }
+	  }  
+		Excluding routes#
+			At times we want to exclude certain routes from having the middleware applied
+			. We can easily exclude certain routes with the exclude() method. This method can 
+			take a single string, multiple strings, or a RouteInfo object identifying routes to be 
+			excluded, as shown below:
+			consumer
+			  .apply(LoggerMiddleware)
+			  .exclude(
+				{ path: 'cats', method: RequestMethod.GET },
+				{ path: 'cats', method: RequestMethod.POST },
+				'cats/(.*)',
+			  )
+			  .forRoutes(CatsController);
 	  
-Excluding routes#
-	At times we want to exclude certain routes from having the middleware applied
-	. We can easily exclude certain routes with the exclude() method. This method can 
-	take a single string, multiple strings, or a RouteInfo object identifying routes to be 
-	excluded, as shown below:
-
-
-
-	consumer
-	  .apply(LoggerMiddleware)
-	  .exclude(
-		{ path: 'cats', method: RequestMethod.GET },
-		{ path: 'cats', method: RequestMethod.POST },
-		'cats/(.*)',
-	  )
-	  .forRoutes(CatsController);
-	  
-Multiple middleware#
-, in order to bind multiple middleware that are executed sequentially, 
-	simply provide a comma separated list inside the apply() method:
-	consumer.apply(cors(), helmet(), logger).forRoutes(CatsController);
-Global middleware#
-	If we want to bind middleware to every registered route at once, we can use the use() method that is supplied by the INestApplication instance:
-
-
-	main.tsJS
-
-	const app = await NestFactory.create(AppModule);
-	app.use(logger);
-	await app.listen(process.env.PORT ?? 3000);
+		Multiple middleware#
+			in order to bind multiple middleware that are executed sequentially, 
+			simply provide a comma separated list inside the apply() method:
+			consumer.apply(cors(), helmet(), logger).forRoutes(CatsController);
+		Global middleware#
+			If we want to bind middleware to every registered route at once, we can use the use() 
+			method that is supplied by the INestApplication instance:
+			main.tsJS
+			const app = await NestFactory.create(AppModule);
+			app.use(logger);
+			await app.listen(process.env.PORT ?? 3000);
 	
 Exception filters:
 		Out of the box, this action is performed by a built-in global exception filter, 
 		which handles exceptions of type HttpException (and subclasses of it). 
 		When an exception is unrecognized (is neither HttpException nor a class that inherits
 		from HttpException), the built-in exception filter generates the following default JSON 
-		response
-		
-			
-			{
-	  "statusCode": 500,
-	  "message": "Internal server error"
-	}
+		response			
+		{
+		  "statusCode": 500,
+		  "message": "Internal server error"
+		}
 	
 	Nest provides a built-in HttpException class, exposed from the @nestjs/common package. 
 	For typical HTTP REST/GraphQL API based applications, it's best practice to send standard
@@ -3163,13 +2740,12 @@ Exception filters:
 			@Get()
 	async findAll() {
 	  throw new HttpException('Forbidden', HttpStatus.FORBIDDEN);
-	}
-	
+	}	
 	
 The HttpException constructor takes two required arguments which determine the response:
 
 	The response argument defines the JSON response body.
-		It can be a string or an object as described below.
+	It can be a string or an object as described below.
 	The status argument defines the HTTP status code.
 	By default, the JSON response body contains two properties:
 
@@ -3189,12 +2765,12 @@ The HttpException constructor takes two required arguments which determine the r
 			});
 		  }
 		}
-Custom exceptions:
-		export class ForbiddenException extends HttpException {
-	  constructor() {
-		super('Forbidden', HttpStatus.FORBIDDEN);
-	  }
-	}
+	Custom exceptions:
+			export class ForbiddenException extends HttpException {
+		  constructor() {
+			super('Forbidden', HttpStatus.FORBIDDEN);
+		  }
+		}
 
 
 	@Get()
@@ -3247,44 +2823,43 @@ Custom exceptions:
 		}
 	The @Catch(HttpException) decorator binds the required metadata to the exception filter, 
 	telling Nest that this particular filter is looking for exceptions of type HttpException
-	 and nothing else. The @Catch() decorator may take a single parameter, or a comma-separated list. 
-	 This lets you set up the filter for several types of exceptions at once.
- 
+	and nothing else. The @Catch() decorator may take a single parameter, or a comma-separated list. 
+	This lets you set up the filter for several types of exceptions at once.
 	 
-	 @Post()
-	@UseFilters(new HttpExceptionFilter())
-	async create(@Body() createCatDto: CreateCatDto) {
-	  throw new ForbiddenException();
-	}
+		 @Post()
+		@UseFilters(new HttpExceptionFilter())
+		async create(@Body() createCatDto: CreateCatDto) {
+		  throw new ForbiddenException();
+		}
 	We have used the @UseFilters() decorator here. Similar to the @Catch() decorator, 
 	it can take a single filter instance, or a comma-separated list of filter instances. 
 	Here, we created the instance of HttpExceptionFilter in place. Alternatively,
 	 you may pass the class (instead of an instance), leaving responsibility for instantiation to the 
 	 framework,and enabling dependency injection.
 
-Make it global
+	Make it global
 
-	async function bootstrap() {
-	  const app = await NestFactory.create(AppModule);
-	  app.useGlobalFilters(new HttpExceptionFilter());
-	  await app.listen(process.env.PORT ?? 3000);
-	}
-	bootstrap();
+		async function bootstrap() {
+		  const app = await NestFactory.create(AppModule);
+		  app.useGlobalFilters(new HttpExceptionFilter());
+		  await app.listen(process.env.PORT ?? 3000);
+		}
+		bootstrap();
 
-	app.module.tsJS
+		app.module.tsJS
 
-	import { Module } from '@nestjs/common';
-	import { APP_FILTER } from '@nestjs/core';
+		import { Module } from '@nestjs/common';
+		import { APP_FILTER } from '@nestjs/core';
 
-	@Module({
-	  providers: [
-		{
-		  provide: APP_FILTER,
-		  useClass: HttpExceptionFilter,
-		},
-	  ],
-	})
-	export class AppModule {}
+		@Module({
+		  providers: [
+			{
+			  provide: APP_FILTER,
+			  useClass: HttpExceptionFilter,
+			},
+		  ],
+		})
+		export class AppModule {}
 	
 Pipes
 
@@ -3311,7 +2886,7 @@ Pipes
 		ParseFilePipe
 		They're exported from the @nestjs/common package.
 		
-		
+=====================================================================		
 stripe:
 
 https://www.mitrahsoft.com/blog/stripe-payment-api-using-reactjs-nodejs
@@ -3331,18 +2906,471 @@ Add Card
 Payment -> cardid,customerid,amount
 	stripe.charges.create
   
-  
-oExperience designing and implementing microservices architectures.
-oKnowledge of service discovery, API gateways, and distributed tracing.
-
-microservices
-https://www.youtube.com/watch?v=fEDT4lWWe9g
-https://radixweb.com/blog/building-microservices-with-node-js
+==================================
 
 
-Nest js
-https://www.freecodecamp.org/news/build-web-apis-with-nestjs-beginners-guide/
+======================================================
+JAVASCRIPT
+==========================================================
+
+JS full series : https://www.youtube.com/watch?v=WvTMIKHvPxU&list=PLRAV69dS1uWSxUIk5o3vQY2-_VKsOpXLD&index=57  - done
+ts full : https://www.youtube.com/watch?v=j89BvWz8Eag&list=PLRAV69dS1uWRPSfKzwZsIm-Axxq-LxqhW  done
+
+	=>Architecture View layer of MVC
+	=>Data-Binding Uni-directional
+	=>Rendering Server-Side
+	( functiobn abc(){ console.log('h1)})()  -it execute aautomatically without calLING
+	IIFE- Immediately Invoked Function Expression
+	=>json.parse() - convert json into js object
+	When you insert data in local storgae set as json.stringify
+	=>Localstorgae give value as sting so always convort into json.parse
+	=> We are not use this keyword in arrow function we can create function with function keyword
+	=>if nothing is assigned - value is “undefined  ex let name
+		
+Flat
+	const arr1 = [0, 1, 2, [3, 4]];
+	console.log(arr1.flat());
+	const arr2 = [0, 1, 2, [[[3, 4]]]];
+	console.log(arr2.flat(2));
+	[0, 1, 2, 3, 4]
+	[0, 1, 2, 3, 4]
+
+Flatmap
+	const arr1 = [1, 2, [3], [4, 5], 6, []];
+	const flattened = arr1.flatMap(num => num);
+	[1, 2, 3, 4, 5, 6]
 
 
-cloudflared tunnel --url http://localhost:4000/
+	const myArr = [1, 2, 3, 4, 5, 6];
+	const newArr = myArr.flatMap(x => [x, x * 10]);
 
+	1,10,2,20,3,30,4,40,5,50,6,60
+----------------
+	const data = {
+		"676bf981779ad64309c107b9": {
+		  "67495f4c342037f34ca10016": 3,
+		  "67495f9d342037f34ca10028": 2,
+		}
+	  };
+
+	  // Process the data to get key-value pairs
+	  const keyValuePairs = [];
+	  Object.keys(data).forEach((topKey) => {
+		const nestedObject = data[topKey];
+		Object.entries(nestedObject).forEach(([nestedKey, value]) => {
+		  keyValuePairs.push({ topKey, nestedKey, value });
+		});
+	  });
+
+---------------------
+Object Method
+--------------------------
+	Object.keys() returns the keys (properties) of any object type.
+
+	Object.values() returns the values of all object keys (properties).
+
+	Object.entries() returns the keys and values of any object types.
+				The methods above return an Iterable (enumerable array).
+				Iterables makes it simpler to use objects in loops and to convert objects into maps.
+
+	Object.fromEntries():method creates an object from a list of key/value pairs.[array to object]
+	Object.defineProperty() adds or changes one property.
+	Object.defineProperties() adds or changes many properties.
+
+
+	Object.getOwnPropertyNames() returns the property names of an object.
+
+	Object.getOwnPropertyDescriptor() returns the descriptor of a property.
+
+	Object.getOwnPropertyDescriptors() returns the descriptors of all properties.
+-----------------------------
+ARRAY Method:
+	The at() method returns an indexed element from an array.
+	The concat() method concatenates (joins) two or more arrays.
+	Array Iteration Methods:
+		The entries() method returns an Iterator object with the key/value pairs from an array:
+		The every() method executes a function for each array element.Not change arry need funaction as 
+					argument
+		The filter() method creates a new array filled with elements that pass a test provided by a 
+				function.
+				The filter() method does not execute the function for empty elements.
+				The filter() method does not change the original array.
+				 receiverId: participantsContactId.filter((id) => id !== LoginUserId),		
+		The forEach() method calls a function for each element in an array.
+			  receiverIds.forEach((id: any) => {
+					  setUnreadMessages((prevUnreadMessages) => {       
+						const receiverMessages = prevUnreadMessages[id] || {};
+						const currentCount = senderId ? receiverMessages[senderId] || 0 : 0; 
+			   
+						return {
+						  ...prevUnreadMessages,
+						  [id]: {
+							...receiverMessages,
+							[senderId as string]: currentCount + 1,
+						  },
+						};
+					  });
+					});
+		The keys() method returns an Iterator object with the keys of an array.does not change the 
+						original array.
+		map() creates a new array from calling a function for every array element.
+			map() does not execute the function for empty elements.
+			map() does not change the original array.
+	
+		The fill() method fills specified elements in an array with a value.
+		The find() method returns the value of the first element that passes a test.
+		The findIndex() method executes a function for each array element.
+		The findLast() method returns the value of the last element that passes a test.
+		The findLastIndex() method returns the index (position) of the last element that passes a test.
+
+		The flat() method concatenates sub-array elements.
+		The flatMap() method maps all array elements and creates a new flat array.
+		flatMap() creates a new array from calling a function for every array element.
+
+		The indexOf() method returns the first index (position) of a specified value.
+			The indexOf() method returns -1 if the value is not found.
+
+		The isArray() method returns true if an object is an array, otherwise false.
+			Array.isArray(fruits);
+
+		The join() method returns an array as a string.
+			const fruits = ["Banana", "Orange", "Apple", "Mango"];
+			let text = fruits.join();
+			Banana,Orange,Apple,Mango
+		The pop() method removes (pops) the last element of an array.
+
+		prototype allows you to add new properties and methods to arrays.
+
+		The reduce() method executes a reducer function for array 
+			element.returns a single value: the function's 
+			accumulated result.			
+			const numbers = [ 11,2,5,5,7,8];
+
+			numbers.reduce(getSum, 0);
+
+			function getSum(total, num) {
+			  return total + Math.round(num);
+			}
+
+			-38
+		The reverse() method reverses the order of the elements in an array.
+		The shift() method removes the first item of an array.
+			The shift() method returns the shifted element: fruits.shift();
+
+		The slice() method returns selected elements in an array, as a new array.
+				const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+				const citrus = fruits.slice(1, 3);
+				Orange,Lemon
+
+		The some() method checks if any array elements pass a test (provided as a callback function).
+
+		The some() method executes the callback function once for each array element.
+		The sort() method sorts the elements of an array.
+
+		The splice() method adds and/or removes array elementsoverwrites the original array.
+			// At position 2, remove 2 items
+			fruits.splice(2, 2);
+			// At position 2, remove 1 item, add "Lemon" and "Kiwi"
+			fruits.splice(2, 1, "Lemon", "Kiwi");
+		The toSorted() method sorts the elements of an array in alphabetical order.
+		The unshift() method adds new elements to the beginning of an array.
+==========================
+TypeScript
+==========================
+	Array ->const names: string[] = [];
+	Tuple:let ourTuple: [number, boolean, string];ourTuple = [5, false, 'Coding God was here'];
+			const graph: [x: number, y: number] = [55.2, 41.3];
+	Object:	const car: { type: string, model: string, year: number } = {
+				  type: "Toyota",
+				  model: "Corolla",
+				  year: 2009
+				};
+	TypeScript Utility Types:
+		Partial: Partial changes all the properties in an object to be optional.
+				let pointPart: Partial<Point> = {}; // `Partial` allows x and y to be optional 
+													[point is interface]
+						interface UserProfile {
+						  name: string;
+						  email: string;
+						  age: number;
+						}
+							
+					const UserForm: React.FC<Partial<UserProfile>> = (props) => {
+					  const { name, email, age } = props;
+
+					  return (
+						<form>
+						  <input placeholder="Name" value={name} readOnly />
+						  <input placeholder="Email" value={email} readOnly />
+						  <input placeholder="Age" value={age?.toString()} readOnly />
+						</form>
+					  );
+					};
+
+					// Usage: Passing only partial data
+					<UserForm name="John Doe" />;
+	
+	
+	
+
+		Required:Required changes all the properties in an object to be required.
+					let myCar: Required<Car> = {
+					  make: 'Ford',
+					  model: 'Focus',
+					  mileage: 12000 // `Required` forces mileage to be defined
+					}; in interfaces mileage is optional but hear it's become Required
+					
+		Record:Record is a shortcut to defining an object type with a specific key type and value type.
+				Record<string, number> is equivalent to { [key: string]: number }
+				const nameAgeMap: Record<string, number> = {
+				  'Alice': 21,
+				  'Bob': 25
+				};
+				{ Alice: 21, Bob: 25 }
+				
+				 Record<string, Record<string, number>>
+				 {
+				 senderid:{
+				 "reciverid":count of unreadmessage,
+				 "reciverid":count of unreadmessage
+				 }
+				 }
+				 
+				Note:Get data with object
+	 
+	 
+
+		Omit:Omit removes keys from an object type.
+			The Omit<T, K> utility type creates a new type by removing specific keys from an existing 
+			.type. This is useful when you need most properties but want to exclude a few.
+			
+			const bob: Omit<Person, 'age' | 'location'> = {
+			  name: 'Bob'
+			  // `Omit` has removed age and location from the type and they can't be defined here
+			};
+			console.log(bob); { name: 'Bob' }
+			
+			interface UserProfile {
+				  name: string;
+				  email: string;
+				  age: number;
+				  password: string;
+				}
+
+				type UserWithoutPassword = Omit<UserProfile, 'password'>;
+
+				const PublicUserProfile: React.FC<UserWithoutPassword> = ({ name, email, age }) => (
+				  <div>
+					<h2>{name}</h2>
+					<p>Email: {email}</p>
+					<p>Age: {age}</p>
+				  </div>
+				);
+
+				// Usage
+				<PublicUserProfile name="John Doe" email="john@example.com" age={30} />;
+	
+
+		pick:Pick removes all but the specified keys from an object type.
+			 The Pick<T, K> utility type creates a new type by selecting specific keys from an 
+			 existing type. This is helpful when you only need a subset of a type.
+		
+			const bob: Pick<Person, 'name'> = {
+				name: 'Bob'
+				// `Pick` has only kept name, so age and location were removed from the type and they can't be defined here
+				};
+			
+				interface UserProfile {
+				  name: string;
+				  email: string;
+				  age: number;
+				  address: string;
+				}
+
+				type UserBasicInfo = Pick<UserProfile, 'name' | 'email'>;
+
+				const UserCard: React.FC<UserBasicInfo> = ({ name, email }) => (
+				  <div>
+					<h2>{name}</h2>
+					<p>{email}</p>
+				  </div>
+				);
+
+				// Usage
+				<UserCard name="Jane Doe" email="jane@example.com" />;
+			
+		Exclude:Exclude removes types from a union.
+				type Primitive = string | number | boolean
+				const value: Exclude<Primitive, string> = true; // a string cannot be used here since Exclude removed it 
+				from the type.
+	
+
+		Parameters:Parameters extracts the parameter types of a function type as an array.
+		pick and partial
+				interface UserProfile {
+				  name: string;
+				  email: string;
+				  age: number;
+				  address: string;
+				}
+
+				type EditableUserInfo = Partial<Pick<UserProfile, 'email' | 'address'>>;
+
+				const EditUserForm: React.FC<EditableUserInfo> = (props) => {
+				  const { email, address } = props;
+
+				  return (
+					<form>
+					  <input placeholder="Email" defaultValue={email} />
+					  <input placeholder="Address" defaultValue={address} />
+					</form>
+				  );
+				};
+
+				// Usage
+				<EditUserForm email="jane@example.com" />;
+
+		Partial for state Update
+
+			interface UserProfile {
+			  name: string;
+			  email: string;
+			  age: number;
+			}
+
+			const UserProfileEditor: React.FC = () => {
+			  const [profile, setProfile] = React.useState<UserProfile>({
+				name: '',
+				email: '',
+				age: 0,
+			  });
+
+			  const updateProfile = (updates: Partial<UserProfile>) => {
+				setProfile((prev) => ({ ...prev, ...updates }));
+			  };
+
+			  return (
+				<div>
+				  <button onClick={() => updateProfile({ name: 'John Doe' })}>
+					Update Name
+				  </button>
+				  <button onClick={() => updateProfile({ age: 25 })}>Update Age</button>
+				</div>
+			  );
+			};
+
+
+		omit in redux
+
+			interface UserProfile {
+			  id: string;
+			  name: string;
+			  email: string;
+			  password: string;
+			}
+
+			type UserProfileForAction = Omit<UserProfile, 'password'>;
+
+			const updateUser = (user: UserProfileForAction) => ({
+			  type: 'UPDATE_USER',
+			  payload: user,
+			});
+
+			// Usage
+			dispatch(updateUser({ id: '123', name: 'Jane', email: 'jane@example.com' }));
+
+
+
+		1Union Types
+				Union types allow a variable to have more than one type. You define them using
+				the pipe (|) symbol.
+
+				type StringOrNumber = string | number;
+
+				function printLength(value: StringOrNumber): void {
+				  if (typeof value === 'string') {
+					console.log(value.length); // Works for string
+				  } else {
+					console.log(value.toString().length); // Works for number
+				  }
+				}
+
+				printLength("Hello"); // 5
+				printLength(12345); // 5
+				In this example, the value parameter can be either a string or a number, and TypeScript 
+				infers the type of value inside the if statement based on the check.
+
+		2. Intersection Types
+			Intersection types allow you to combine multiple types into one. It combines all properties 
+			of the types you intersect.
+
+			Example:
+
+			interface Person { 
+			  name: string;
+			  age: number;
+			}
+
+			interface Employee {
+			  company: string;
+			  role: string;
+			}
+
+			type EmployeeDetails = Person & Employee;
+
+			const employee: EmployeeDetails = {
+			  name: "Alice",
+			  age: 30,
+			  company: "Tech Corp",
+			  role: "Developer",
+			};
+
+			console.log(employee);
+			In this example, the EmployeeDetails type combines both the Person and Employee interfaces, 
+			so the employee object must include all properties from both types.
+
+		3. Mapped Types
+			Mapped types allow you to create new types by iterating over the keys of another type. 
+			You can modify or add properties dynamically.
+
+
+			type User = {
+			  name: string;
+			  age: number;
+			};
+
+			type ReadOnlyUser = {
+			  readonly [K in keyof User]: User[K];
+			};
+
+			const user: ReadOnlyUser = { name: 'John', age: 25 };
+			// user.name = 'Doe'; // Error: Cannot assign to 'name' because it is a read-only property.
+			Here, ReadOnlyUser is created by iterating over the keys of User and making each property readonly.
+
+		4. Conditional Types
+			Conditional types allow you to choose between types based on a condition.
+			type IsString<T> = T extends string ? "Yes, it's a string" : "No, it's not a string";
+
+					type Test1 = IsString<string>; // "Yes, it's a string"
+					type Test2 = IsString<number>; // "No, it's not a string"
+					In this example, the IsString type uses a conditional check to determine whether the provided type T is a string. If it is, it returns the type "Yes, it's a string", otherwise it returns "No, it's not a string".
+
+		5. Generics
+			Generics allow you to define types that can work with any type while maintaining type safety. You define a placeholder type using angle brackets (<T>).
+
+			function identity<T>(value: T): T {
+			  return value;
+			}
+
+			const stringResult = identity("Hello, TypeScript!"); // string
+			const numberResult = identity(123); // number
+
+			console.log(stringResult); // "Hello, TypeScript!"
+			console.log(numberResult); // 123
+
+
+		Union Types: Use | to combine multiple types.
+		Intersection Types: Use & to combine multiple types into one.
+		Mapped Types: Use loops over existing types to create new ones with modified properties.
+		Conditional Types: Choose between types based on a condition.
+		Generics: Define reusable types that maintain type safety across different inputs.
